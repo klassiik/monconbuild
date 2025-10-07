@@ -1,0 +1,175 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '../components/ui/button';
+
+const Portfolio = () => {
+  const projects = [
+    {
+      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/6s7jphb3_Untitled.jpg",
+      title: "Custom Library & Built-ins",
+      category: "Finish Carpentry",
+      location: "Placer County, CA",
+      description: "Floor-to-ceiling custom built-in bookshelves featuring rich wood tones, crown molding, and integrated lighting. This project showcases expert finish carpentry with attention to every detail."
+    },
+    {
+      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/zdso40es_Untitled1.png",
+      title: "Custom Home Office",
+      category: "Finish Carpentry",
+      location: "Nevada County, CA",
+      description: "Custom-built corner office with wraparound desk, curved shelving, and integrated storage. Precision carpentry creating a functional and beautiful workspace."
+    },
+    {
+      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/gx2z9lsu_Untitled7.jpg",
+      title: "Covered Entry Construction",
+      category: "General Construction",
+      location: "Colfax, CA",
+      description: "Custom timber frame covered entrance featuring exposed beam construction, ambient lighting, and quality craftsmanship. Complete construction from foundation to finish."
+    },
+    {
+      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/uvmny025_Untitled12.jpg",
+      title: "Sunroom Addition",
+      category: "Residential Construction",
+      location: "Placer County, CA",
+      description: "Beautiful sunroom addition with vaulted wood ceilings, floor-to-ceiling windows, and expert finish work. Seamless integration with existing structure."
+    },
+    {
+      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/pbh4alag_Untitled14.png",
+      title: "Mountain Home Construction",
+      category: "General Construction",
+      location: "Nevada County, CA",
+      description: "Custom mountain home featuring natural materials, expert framing, and quality construction throughout. Built to withstand Sierra Nevada weather conditions."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 md:py-28">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Portfolio</h1>
+            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+              Explore our recent projects showcasing quality craftsmanship in finish carpentry and complete construction services.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Grid */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="grid gap-16">
+            {projects.map((project, index) => (
+              <div 
+                key={index} 
+                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+              >
+                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className="relative overflow-hidden rounded-lg shadow-2xl group">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                      {project.category}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">{project.title}</h2>
+                  <p className="text-lg text-blue-600 font-semibold mb-6">{project.location}</p>
+                  <p className="text-lg text-gray-700 leading-relaxed mb-8">{project.description}</p>
+                  
+                  <div className="border-l-4 border-blue-600 pl-6">
+                    <p className="text-gray-600 italic">
+                      "Every project reflects our commitment to quality craftsmanship and attention to detail."
+                    </p>
+                    <p className="text-slate-900 font-semibold mt-2">— William Rogers, Owner</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 md:py-28 bg-slate-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Our Process</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From initial consultation to final walkthrough, we ensure quality at every step.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                1
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Consultation</h3>
+              <p className="text-gray-600">We discuss your vision, needs, and budget in detail.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                2
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Planning</h3>
+              <p className="text-gray-600">Detailed project planning, timeline, and material selection.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                3
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Construction</h3>
+              <p className="text-gray-600">Expert craftsmanship with regular progress updates.</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                4
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Completion</h3>
+              <p className="text-gray-600">Final walkthrough and your complete satisfaction.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 md:py-28 bg-blue-600 text-white">
+        <div className="container mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
+          <p className="text-xl mb-10 text-blue-100 max-w-3xl mx-auto">
+            Let's create something beautiful together. Contact us today for a free consultation.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300"
+              asChild
+            >
+              <Link to="/contact">Request Free Quote</Link>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg transition-all duration-300"
+              asChild
+            >
+              <a href="tel:9166071972">Call (916) 607-1972</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Portfolio;
