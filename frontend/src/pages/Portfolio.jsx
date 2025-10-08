@@ -46,7 +46,7 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Portfolio</h1>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
               Explore our recent projects showcasing quality craftsmanship in finish carpentry and complete construction services.
