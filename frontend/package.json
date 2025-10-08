@@ -58,7 +58,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "postbuild": "react-snap",
+    "build:static": "craco build && react-snap",
     "test": "craco test"
   },
   "reactSnap": {
