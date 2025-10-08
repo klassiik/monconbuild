@@ -117,7 +117,7 @@ const Services = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Services</h1>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
               From expert finish carpentry to complete construction projects, Monument Construction delivers quality craftsmanship across all services.
