@@ -95,6 +95,40 @@
             }
         </style>
         <script>
+            // Remove Emergent badge dynamically
+            (function removeBadge() {
+                const removeBadges = () => {
+                    // Remove by ID
+                    const badge = document.getElementById('emergent-badge');
+                    if (badge) badge.remove();
+                    
+                    // Remove any links to emergent.sh
+                    document.querySelectorAll('a[href*="emergent.sh"]').forEach(el => el.remove());
+                    
+                    // Remove fixed position elements in bottom right
+                    document.querySelectorAll('a[style*="position: fixed"]').forEach(el => {
+                        if (el.textContent.includes('Emergent') || el.textContent.includes('emergent')) {
+                            el.remove();
+                        }
+                    });
+                };
+                
+                // Run on load
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', removeBadges);
+                } else {
+                    removeBadges();
+                }
+                
+                // Also run periodically to catch dynamically added badges
+                setInterval(removeBadges, 1000);
+                
+                // Observer to catch badges added via MutationObserver
+                const observer = new MutationObserver(removeBadges);
+                observer.observe(document.body, { childList: true, subtree: true });
+            })();
+        </script>
+        <script>
             !(function (t, e) {
                 var o, n, p, r;
                 e.__SV ||
