@@ -74,7 +74,16 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-        <!-- Emergent badge removed -->
+        <!-- Hide Emergent badge -->
+        <style>
+            /* Hide PostHog branding badge */
+            iframe[title*="posthog"],
+            div[id*="posthog"],
+            #emergent-badge,
+            a[href*="emergent.sh"][style*="fixed"] {
+                display: none !important;
+            }
+        </style>
         <script>
             !(function (t, e) {
                 var o, n, p, r;
