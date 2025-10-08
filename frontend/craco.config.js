@@ -13,25 +13,17 @@ module.exports = {
     },
     configure: (webpackConfig) => {
       
-      // Fix source-map-loader issues with certain packages
-      webpackConfig.module.rules = webpackConfig.module.rules.map(rule => {
-        if (rule.oneOf) {
-          rule.oneOf = rule.oneOf.map(oneOfRule => {
-            if (oneOfRule.loader && oneOfRule.loader.includes('source-map-loader')) {
-              return {
-                ...oneOfRule,
-                exclude: [
-                  /node_modules\/cookie/,
-                  /node_modules\/@firebase/,
-                  /node_modules\/react-snap/,
-                ],
-              };
-            }
-            return oneOfRule;
-          });
-        }
-        return rule;
-      });
+      // Fix source-map-loader issues - ignore problematic packages
+      webpackConfig.ignoreWarnings = [
+        function ignoreSourcemapsloaderWarnings(warning) {
+          return (
+            warning.module &&
+            warning.module.resource.includes('node_modules') &&
+            warning.details &&
+            warning.details.includes('source-map-loader')
+          );
+        },
+      ];
 
       // Disable hot reload completely if environment variable is set
       if (config.disableHotReload) {
