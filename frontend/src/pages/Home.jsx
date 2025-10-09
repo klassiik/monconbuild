@@ -200,7 +200,7 @@ const Home = () => {
                   <Award className="w-8 h-8 text-blue-600 flex-shrink-0" />
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-slate-900">Licensed & Experienced</h3>
-                    <p className="text-gray-600">California Contractor License #801602 with extensive experience in residential and commercial projects.</p>
+                    <p className="text-gray-600">California Contractor License #801602 with extensive experience in residential projects.</p>
                   </div>
                 </div>
                 
