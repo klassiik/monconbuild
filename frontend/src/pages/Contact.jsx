@@ -360,7 +360,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">
-                    We specialize in finish carpentry but provide complete construction services from ground work to final touches, including residential and commercial projects, remodeling, additions, and custom woodwork.
+                    We specialize in finish carpentry but provide complete residential construction services from ground work to final touches, including remodeling, additions, and custom woodwork.
                   </p>
                 </CardContent>
               </Card>
