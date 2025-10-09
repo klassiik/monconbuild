@@ -17,12 +17,12 @@ const Home = () => {
       description: "Complete residential projects from ground work to final touches with attention to detail."
     },
     {
-      icon: <Building2 className="w-8 h-8" />,
-      title: "Commercial Projects",
-      description: "Professional commercial construction services for businesses throughout the region."
+      icon: <Wrench className="w-8 h-8" />,
+      title: "Remodeling & Renovations",
+      description: "Transform your existing space with quality craftsmanship and attention to detail."
     },
     {
-      icon: <Wrench className="w-8 h-8" />,
+      icon: <Building2 className="w-8 h-8" />,
       title: "Complete Construction",
       description: "Full-service construction from foundation to finish, bringing your vision to life."
     }
