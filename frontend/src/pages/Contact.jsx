@@ -147,8 +147,8 @@ const Contact = () => {
                       <SelectItem value="finish-carpentry">Finish Carpentry</SelectItem>
                       <SelectItem value="general-construction">General Construction</SelectItem>
                       <SelectItem value="residential">Residential Project</SelectItem>
-                      <SelectItem value="commercial">Commercial Project</SelectItem>
                       <SelectItem value="remodeling">Remodeling/Renovation</SelectItem>
+                      <SelectItem value="addition">Home Addition</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
