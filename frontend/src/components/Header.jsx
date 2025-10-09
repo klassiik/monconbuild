@@ -23,7 +23,7 @@ const Header = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" aria-label="Monument Construction Home">
             <img 
               src="https://customer-assets.emergentagent.com/job_finish-woodwork/artifacts/rdyxjzid_Untitled%283%29.png" 
               alt="Monument Construction - Licensed Contractor Colfax CA" 
