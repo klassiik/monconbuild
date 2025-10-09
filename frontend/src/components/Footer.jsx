@@ -55,7 +55,7 @@ const Footer = () => {
               <li>Finish Carpentry</li>
               <li>General Construction</li>
               <li>Residential Projects</li>
-              <li>Commercial Construction</li>
+              <li>Home Additions</li>
               <li>Custom Woodwork</li>
               <li>Complete Remodeling</li>
             </ul>
