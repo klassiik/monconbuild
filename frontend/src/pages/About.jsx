@@ -54,6 +54,7 @@ const About = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/uvmny025_Untitled12.jpg" 
                 alt="Monument Construction - Quality Workmanship"
+                loading="lazy"
                 className="rounded-lg shadow-2xl"
               />
             </div>
