@@ -292,7 +292,7 @@ const Contact = () => {
                     California Contractor License #801602
                   </p>
                   <p className="text-gray-700">
-                    Fully licensed, bonded, and insured for your protection and peace of mind.
+                    Fully licensed and bonded for your protection and peace of mind.
                   </p>
                 </CardContent>
               </Card>
