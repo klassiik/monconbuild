@@ -44,7 +44,7 @@ const ServiceAreas = () => {
     "Finish Carpentry",
     "General Construction",
     "Residential Projects",
-    "Commercial Construction",
+    "Home Additions",
     "Remodeling & Renovations",
     "Custom Woodwork"
   ];
