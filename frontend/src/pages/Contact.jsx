@@ -345,11 +345,11 @@ const Contact = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Are you licensed and insured?</CardTitle>
+                  <CardTitle>Are you licensed and bonded?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">
-                    Yes, Monument Construction holds California Contractor License #801602 and carries full liability insurance and workers' compensation coverage.
+                    Yes, Monument Construction holds California Contractor License #801602 and is fully licensed and bonded for your protection.
                   </p>
                 </CardContent>
               </Card>
