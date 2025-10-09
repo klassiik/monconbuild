@@ -82,7 +82,7 @@ const Home = () => {
                 className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg transition-all duration-300"
                 asChild
               >
-                <a href="tel:9166071972">
+                <a href="tel:9166071972" aria-label="Call Monument Construction at (916) 607-1972">
                   <Phone className="mr-2 w-5 h-5" />
                   (916) 607-1972
                 </a>
