@@ -150,8 +150,8 @@ const Services = () => {
             
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div className="p-8 bg-white rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold mb-3 text-slate-900">Licensed & Insured</h3>
-                <p className="text-gray-600">California Contractor License #801602. Fully insured for your peace of mind.</p>
+                <h3 className="text-xl font-bold mb-3 text-slate-900">Licensed Contractor</h3>
+                <p className="text-gray-600">California Contractor License #801602. Fully licensed and bonded for your protection.</p>
               </div>
               
               <div className="p-8 bg-white rounded-lg shadow-lg">
