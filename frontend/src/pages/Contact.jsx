@@ -284,7 +284,7 @@ const Contact = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
                     <CheckCircle2 className="w-8 h-8 text-blue-600" />
-                    <span>Licensed & Insured</span>
+                    <span>Licensed & Bonded</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
