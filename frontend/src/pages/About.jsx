@@ -32,7 +32,7 @@ const About = () => {
                 </p>
                 
                 <p>
-                  As a finish carpenter by trade, William brings an unmatched level of detail and craftsmanship to every project. However, his expertise extends far beyond trim work – Monument Construction provides comprehensive construction services from ground work to complete construction, handling both residential and commercial projects with equal skill and dedication.
+                  As a finish carpenter by trade, William brings an unmatched level of detail and craftsmanship to every project. However, his expertise extends far beyond trim work – Monument Construction provides comprehensive residential construction services from ground work to complete construction, with the same dedication to quality in every phase.
                 </p>
                 
                 <p>
