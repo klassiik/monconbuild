@@ -33,19 +33,6 @@ const Services = () => {
       ]
     },
     {
-      icon: <Building2 className="w-12 h-12" />,
-      title: "Commercial Construction",
-      description: "Professional commercial construction services for businesses throughout Placer and Nevada Counties. We understand the importance of timeline and budget in commercial projects.",
-      features: [
-        "Office build-outs and renovations",
-        "Retail space construction",
-        "Restaurant and hospitality projects",
-        "Commercial tenant improvements",
-        "ADA compliance upgrades",
-        "Commercial finish carpentry"
-      ]
-    },
-    {
       icon: <Wrench className="w-12 h-12" />,
       title: "Complete Construction Services",
       description: "From groundbreaking to final walkthrough, we provide comprehensive construction services. Our experience allows us to manage every aspect of your project seamlessly.",
