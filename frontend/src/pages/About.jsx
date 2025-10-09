@@ -46,7 +46,7 @@ const About = () => {
 
               <div className="mt-10 p-6 bg-blue-50 border-l-4 border-blue-600 rounded">
                 <p className="text-lg font-semibold text-slate-900 mb-2">California Contractor License #801602</p>
-                <p className="text-gray-600">Licensed, bonded, and insured for your protection and peace of mind.</p>
+                <p className="text-gray-600">Licensed and bonded for your protection and peace of mind.</p>
               </div>
             </div>
 
