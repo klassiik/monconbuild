@@ -15,6 +15,19 @@
         <link rel="preconnect" href="https://customer-assets.emergentagent.com" crossorigin />
         <link rel="dns-prefetch" href="https://customer-assets.emergentagent.com" />
         
+        <!-- Performance: Resource hints for faster loading -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        
+        <!-- Preload critical resources -->
+        <link rel="preload" href="/static/css/main.css" as="style" />
+        <link rel="preload" href="/static/js/main.js" as="script" />
+        
+        <!-- Performance: Critical CSS inlining placeholder -->
+        <style id="critical-css">
+            /* Critical above-the-fold styles will be inlined here in production */
+        </style>
+        
         <!-- SEO Meta Tags -->
         <title>Monument Construction | Licensed General Contractor Colfax CA | Finish Carpentry & Construction Services</title>
         <meta name="description" content="Monument Construction provides expert finish carpentry and general construction services in Colfax, Placer County, and Nevada County, CA. Licensed contractor #801602. Call (916) 607-1972." />

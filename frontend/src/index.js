@@ -2,6 +2,33 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "@/index.css";
 import App from "@/App";
+import { initializeWebVitals, initializePerformanceObserver } from "./utils/webVitals";
+
+// Register service worker for aggressive caching
+if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('SW registered: ', registration);
+      })
+      .catch((registrationError) => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  });
+}
+
+// Initialize performance monitoring
+initializeWebVitals();
+initializePerformanceObserver();
+
+// Preload critical resources
+if (typeof window !== 'undefined') {
+  const preloadCSS = document.createElement('link');
+  preloadCSS.rel = 'preload';
+  preloadCSS.href = '/static/css/main.css';
+  preloadCSS.as = 'style';
+  document.head.appendChild(preloadCSS);
+}
 
 const rootElement = document.getElementById("root");
 

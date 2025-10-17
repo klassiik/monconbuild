@@ -1,0 +1,223 @@
+name: 'Lighthouse MCP Performance Audit'
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      target_urls:
+        description: 'Comma-separated URLs to audit'
+        required: false
+        default: ''
+
+jobs:
+  lighthouse-mcp-audit:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'yarn'
+        cache-dependency-path: frontend/yarn.lock
+
+    - name: Install dependencies
+      working-directory: ./frontend
+      run: yarn install --frozen-lockfile
+
+    - name: Install Lighthouse MCP
+      run: |
+        npm install -g @lighthouse-mcp/cli lighthouse-ci
+        npm install lighthouse @lighthouse-mcp/core web-vitals
+
+    - name: Build application
+      working-directory: ./frontend
+      run: yarn build
+
+    - name: Start application server
+      working-directory: ./frontend
+      run: |
+        npx serve -s build -l 3000 &
+        sleep 10
+        curl -f http://localhost:3000 || exit 1
+
+    - name: Run Lighthouse MCP Audit
+      run: |
+        # Determine URLs to audit
+        if [ -n "${{ github.event.inputs.target_urls }}" ]; then
+          URLS="${{ github.event.inputs.target_urls }}"
+        else
+          URLS="http://localhost:3000,http://localhost:3000/services,http://localhost:3000/about,http://localhost:3000/portfolio,http://localhost:3000/contact"
+        fi
+        
+        # Run Lighthouse CI with MCP integration
+        lhci autorun \
+          --config=./frontend/.lighthouserc.js \
+          --collect.url="$URLS" \
+          --upload.target=filesystem \
+          --upload.outputDir=./lighthouse-reports
+
+    - name: Run AI Analysis
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        node -e "
+        const LighthouseMCPServer = require('./lighthouse-mcp-server.js');
+        const fs = require('fs');
+        
+        async function runAnalysis() {
+          const server = new LighthouseMCPServer({
+            reportPath: './lighthouse-reports',
+            aiModel: 'gpt-4'
+          });
+          
+          // Read latest reports
+          const reportFiles = fs.readdirSync('./lighthouse-reports')
+            .filter(f => f.endsWith('.json'))
+            .sort()
+            .slice(-5);
+            
+          for (const file of reportFiles) {
+            const report = JSON.parse(fs.readFileSync('./lighthouse-reports/' + file));
+            const analysis = await server.analyzeWithAI({ lhr: report });
+            
+            console.log('=== AI Analysis for', file, '===');
+            console.log('Summary:', analysis.summary);
+            console.log('Critical Issues:', analysis.criticalIssues);
+            console.log('Quick Wins:', analysis.quickWins);
+            console.log('');
+          }
+        }
+        
+        runAnalysis().catch(console.error);
+        "
+
+    - name: Generate Performance Report
+      run: |
+        node -e "
+        const fs = require('fs');
+        const path = require('path');
+        
+        // Read all Lighthouse reports
+        const reportDir = './lighthouse-reports';
+        const reports = fs.readdirSync(reportDir)
+          .filter(f => f.endsWith('.json'))
+          .map(f => {
+            const content = fs.readFileSync(path.join(reportDir, f), 'utf8');
+            return JSON.parse(content);
+          });
+        
+        // Generate summary
+        const summary = {
+          timestamp: new Date().toISOString(),
+          totalPages: reports.length,
+          averageScores: {
+            performance: 0,
+            accessibility: 0,
+            bestPractices: 0,
+            seo: 0
+          },
+          criticalIssues: [],
+          recommendations: []
+        };
+        
+        reports.forEach(report => {
+          if (report.categories) {
+            summary.averageScores.performance += report.categories.performance?.score || 0;
+            summary.averageScores.accessibility += report.categories.accessibility?.score || 0;
+            summary.averageScores.bestPractices += report.categories['best-practices']?.score || 0;
+            summary.averageScores.seo += report.categories.seo?.score || 0;
+          }
+        });
+        
+        // Calculate averages
+        Object.keys(summary.averageScores).forEach(key => {
+          summary.averageScores[key] = Math.round((summary.averageScores[key] / reports.length) * 100);
+        });
+        
+        fs.writeFileSync('./performance-summary.json', JSON.stringify(summary, null, 2));
+        
+        console.log('Performance Summary Generated:');
+        console.log('Average Performance Score:', summary.averageScores.performance);
+        console.log('Average Accessibility Score:', summary.averageScores.accessibility);
+        console.log('Average Best Practices Score:', summary.averageScores.bestPractices);
+        console.log('Average SEO Score:', summary.averageScores.seo);
+        "
+
+    - name: Comment PR with Results
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          try {
+            const summary = JSON.parse(fs.readFileSync('./performance-summary.json', 'utf8'));
+            
+            const comment = `
+            ## 🚀 Lighthouse MCP Performance Report
+            
+            **Performance Scores:**
+            - Performance: ${summary.averageScores.performance}/100 ${summary.averageScores.performance >= 90 ? '🟢' : summary.averageScores.performance >= 70 ? '🟡' : '🔴'}
+            - Accessibility: ${summary.averageScores.accessibility}/100 ${summary.averageScores.accessibility >= 90 ? '🟢' : summary.averageScores.accessibility >= 70 ? '🟡' : '🔴'}
+            - Best Practices: ${summary.averageScores.bestPractices}/100 ${summary.averageScores.bestPractices >= 90 ? '🟢' : summary.averageScores.bestPractices >= 70 ? '🟡' : '🔴'}
+            - SEO: ${summary.averageScores.seo}/100 ${summary.averageScores.seo >= 90 ? '🟢' : summary.averageScores.seo >= 70 ? '🟡' : '🔴'}
+            
+            **Pages Audited:** ${summary.totalPages}
+            **Audit Time:** ${summary.timestamp}
+            
+            ${summary.averageScores.performance < 70 ? '⚠️ **Performance issues detected!** Consider reviewing the detailed reports.' : '✅ **Performance looks good!**'}
+            
+            *Powered by Lighthouse MCP with AI-assisted analysis*
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+          } catch (error) {
+            console.log('Could not create performance comment:', error);
+          }
+
+    - name: Upload Lighthouse Reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: lighthouse-reports
+        path: |
+          lighthouse-reports/
+          performance-summary.json
+        retention-days: 30
+
+    - name: Update Performance Badge
+      if: github.ref == 'refs/heads/main'
+      run: |
+        # Generate performance badge
+        SCORE=$(node -e "
+        const fs = require('fs');
+        const summary = JSON.parse(fs.readFileSync('./performance-summary.json', 'utf8'));
+        console.log(summary.averageScores.performance);
+        ")
+        
+        COLOR="red"
+        if [ "$SCORE" -ge 90 ]; then
+          COLOR="brightgreen"
+        elif [ "$SCORE" -ge 70 ]; then
+          COLOR="yellow"
+        fi
+        
+        curl -o lighthouse-badge.svg "https://img.shields.io/badge/Lighthouse-${SCORE}%25-${COLOR}"
+        
+        # You can commit this badge or upload to a service
+        echo "Performance badge generated: $SCORE%"

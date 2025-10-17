@@ -1,5 +1,18 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
-Sitemap: https://monconbuild.com/sitemap.xml
+# Sitemaps
+Sitemap: https://monumentconstruction.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Disallow admin pages (if any)
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow important resources
+Allow: /images/
+Allow: /css/
+Allow: /js/

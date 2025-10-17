@@ -12,6 +12,47 @@ module.exports = {
       '@': path.resolve(__dirname, 'src'),
     },
     configure: (webpackConfig) => {
+      // Enable code splitting for better performance
+      webpackConfig.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\\\/]node_modules[\\\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            enforce: true,
+            priority: 20
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            enforce: true,
+            priority: 10
+          }
+        }
+      };
+      
+      // Enable tree shaking
+      webpackConfig.optimization.usedExports = true;
+      webpackConfig.optimization.sideEffects = false;
+      
+      // Add compression for production
+      if (process.env.NODE_ENV === 'production') {
+        try {
+          const CompressionPlugin = require('compression-webpack-plugin');
+          webpackConfig.plugins.push(
+            new CompressionPlugin({
+              algorithm: 'gzip',
+              test: /\\.(js|css|html|svg)$/,
+              threshold: 8192,
+              minRatio: 0.8
+            })
+          );
+        } catch (e) {
+          console.log('CompressionPlugin not available, skipping compression');
+        }
+      }
       
       // Fix source-map-loader issues - ignore problematic packages
       webpackConfig.ignoreWarnings = [
