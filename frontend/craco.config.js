@@ -33,14 +33,38 @@ module.exports = {
         }
       };
       
-      // Enable tree shaking
+      // Enable tree shaking and remove unused code
       webpackConfig.optimization.usedExports = true;
       webpackConfig.optimization.sideEffects = false;
+      webpackConfig.optimization.providedExports = true;
+      webpackConfig.optimization.innerGraph = true;
+      
+      // Remove unused modules
+      webpackConfig.optimization.mangleExports = 'size';
+      
+      // Better module concatenation
+      webpackConfig.optimization.concatenateModules = true;
       
       // Add compression for production
       if (process.env.NODE_ENV === 'production') {
         try {
           const CompressionPlugin = require('compression-webpack-plugin');
+          
+          // Brotli compression
+          webpackConfig.plugins.push(
+            new CompressionPlugin({
+              filename: '[path][base].br',
+              algorithm: 'brotliCompress',
+              test: /\\.(js|css|html|svg)$/,
+              compressionOptions: {
+                level: 11,
+              },
+              threshold: 10240,
+              minRatio: 0.8,
+            })
+          );
+          
+          // Gzip compression
           webpackConfig.plugins.push(
             new CompressionPlugin({
               algorithm: 'gzip',
