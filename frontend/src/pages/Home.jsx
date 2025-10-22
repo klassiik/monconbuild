@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Phone, Mail, CheckCircle2, Award, Hammer, Home as HomeIcon, Building2, Wrench } from 'lucide-react';
+import sierraImage from '../assets/sierra.webp';
 
 const Home = () => {
   const services = [
@@ -56,7 +57,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-cover bg-center bg-fixed text-white py-24 md:py-32 overflow-hidden" style={{backgroundImage: "url('/sierra.webp')"}}>
+      <section className="relative bg-cover bg-center bg-fixed text-white py-24 md:py-32 overflow-hidden" style={{backgroundImage: `url(${sierraImage})`}}>
         {/* Overlay for better text readability - darker on top, lighter on bottom */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-green-900/70"></div>
         
