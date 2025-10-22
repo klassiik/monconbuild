@@ -59,7 +59,7 @@
   },
   "scripts": {
     "start": "craco start",
-        "build": "craco build",
+    "build": "craco build",
     "build:analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "build:static": "craco build && react-snap",
     "test": "craco test",
