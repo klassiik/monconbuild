@@ -17,6 +17,8 @@ program
   .option('-o, --output <path>', 'Output directory for reports', './lighthouse-reports')
   .option('-m, --model <model>', 'AI model to use for analysis', 'gpt-4')
   .option('-f, --format <format>', 'Output format (json|html|csv)', 'json')
+  .option('--desktop', 'Run in desktop mode (default is mobile)')
+  .option('--both', 'Run both mobile and desktop audits')
   .option('--ci', 'Run in CI mode with strict thresholds')
   .option('--compare', 'Compare with previous audit results')
   .action(async (options) => {

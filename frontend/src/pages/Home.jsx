@@ -56,7 +56,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24 md:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
         
         <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -79,7 +79,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-green-900 px-8 py-6 text-lg transition-all duration-300"
                 asChild
               >
                 <a href="tel:9166071972" aria-label="Call Monument Construction at (916) 607-1972">
@@ -164,7 +164,7 @@ const Home = () => {
                     loading="lazy"
                     className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900 via-transparent to-transparent opacity-60"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="text-xl font-bold mb-1">{project.title}</h3>
                     <p className="text-sm text-gray-200">{project.description}</p>
@@ -250,7 +250,7 @@ const Home = () => {
       </section>
 
       {/* Service Areas */}
-      <section className="py-20 md:py-28 bg-slate-900 text-white">
+      <section className="py-20 md:py-28 bg-green-900 text-white">
         <div className="container mx-auto px-6 md:px-12">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Serving Your Community</h2>
@@ -268,7 +268,7 @@ const Home = () => {
               "Truckee, CA",
               "All of Placer & Nevada Counties"
             ].map((area, index) => (
-              <div key={index} className="text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors duration-300">
+              <div key={index} className="text-center p-6 bg-green-800 rounded-lg hover:bg-green-700 transition-colors duration-300">
                 <p className="text-lg font-semibold">{area}</p>
               </div>
             ))}
@@ -278,7 +278,7 @@ const Home = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-slate-900 transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-green-900 transition-all duration-300"
               asChild
             >
               <Link to="/service-areas">View All Service Areas</Link>

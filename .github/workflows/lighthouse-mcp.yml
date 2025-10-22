@@ -50,7 +50,7 @@ jobs:
         sleep 10
         curl -f http://localhost:3000 || exit 1
 
-    - name: Run Lighthouse MCP Audit
+    - name: Run Lighthouse MCP Audit (Mobile)
       run: |
         # Determine URLs to audit
         if [ -n "${{ github.event.inputs.target_urls }}" ]; then
@@ -59,12 +59,22 @@ jobs:
           URLS="http://localhost:3000,http://localhost:3000/services,http://localhost:3000/about,http://localhost:3000/portfolio,http://localhost:3000/contact"
         fi
         
-        # Run Lighthouse CI with MCP integration
-        lhci autorun \
-          --config=./frontend/.lighthouserc.js \
-          --collect.url="$URLS" \
-          --upload.target=filesystem \
-          --upload.outputDir=./lighthouse-reports
+        # Run Mobile Lighthouse CI with MCP integration
+        echo "🔍 Running Mobile Performance Audit..."
+        node ../lighthouse-mcp-cli.js audit -u "$URLS" --output ./lighthouse-reports/mobile
+        
+    - name: Run Lighthouse MCP Audit (Desktop)
+      run: |
+        # Determine URLs to audit
+        if [ -n "${{ github.event.inputs.target_urls }}" ]; then
+          URLS="${{ github.event.inputs.target_urls }}"
+        else
+          URLS="http://localhost:3000,http://localhost:3000/services,http://localhost:3000/about,http://localhost:3000/portfolio,http://localhost:3000/contact"
+        fi
+        
+        # Run Desktop Lighthouse CI with MCP integration
+        echo "🖥️ Running Desktop Performance Audit..."
+        node ../lighthouse-mcp-cli.js audit -u "$URLS" --output ./lighthouse-reports/desktop --desktop
 
     - name: Run AI Analysis
       env:
