@@ -4,7 +4,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Phone, Mail, CheckCircle2, Award, Hammer, Home as HomeIcon, Building2, Wrench } from 'lucide-react';
 
-// Hero section with sierra.webp background image
+// Hero section with sierra.webp mountain background image for visual appeal
 const Home = () => {
   const services = [
     {
