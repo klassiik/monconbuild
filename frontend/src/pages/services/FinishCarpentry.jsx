@@ -141,7 +141,7 @@ const FinishCarpentry = () => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Why Choose Monument Construction?</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• Licensed California Contractor #801602</li>
+                    <li>• Licensed California Contractor <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">#801602</a></li>
                     <li>• Featured on DIY Network TV</li>
                     <li>• 25+ years of finish carpentry experience</li>
                     <li>• Serving Placer & Nevada Counties</li>

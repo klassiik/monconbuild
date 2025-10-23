@@ -62,7 +62,7 @@ const HomeAdditions = () => {
             </p>
             <p className="text-lg text-gray-700 mb-8">
               From second-story additions to accessory dwelling units (ADUs), we handle every aspect of your home expansion 
-              project with expert craftsmanship and attention to detail. California Contractor License #801602.
+              project with expert craftsmanship and attention to detail. California Contractor <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a>.
             </p>
 
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Addition Services We Offer</h3>
@@ -81,7 +81,7 @@ const HomeAdditions = () => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Why Choose Us for Your Addition?</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• Licensed California Contractor #801602</li>
+                    <li>• Licensed California Contractor <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">#801602</a></li>
                     <li>• 25+ years building experience</li>
                     <li>• Seamless integration with existing home</li>
                     <li>• Full permitting and inspection coordination</li>

@@ -19,7 +19,7 @@ const Footer = () => {
               Professional construction and finish carpentry services serving Placer and Nevada Counties.
             </p>
             <p className="text-sm font-semibold text-white">
-              License #801602
+              <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">License #801602</a>
             </p>
           </div>
 

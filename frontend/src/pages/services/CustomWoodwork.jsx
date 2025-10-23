@@ -62,7 +62,7 @@ const CustomWoodwork = () => {
             </p>
             <p className="text-lg text-gray-700 mb-8">
               Whether you need custom cabinetry, built-in furniture, or unique decorative elements, we combine traditional 
-              craftsmanship with modern techniques to deliver exceptional results. Licensed contractor #801602.
+              craftsmanship with modern techniques to deliver exceptional results. Licensed contractor <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">#801602</a>.
             </p>
 
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Custom Woodwork Services</h3>
@@ -81,7 +81,7 @@ const CustomWoodwork = () => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Master Craftsmanship</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• California Contractor License #801602</li>
+                    <li>• California Contractor <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a></li>
                     <li>• Featured on DIY Network TV</li>
                     <li>• 25+ years woodworking experience</li>
                     <li>• Custom designs and consultation</li>

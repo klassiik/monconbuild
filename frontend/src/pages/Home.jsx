@@ -124,10 +124,10 @@ const Home = () => {
   ];
 
   const features = [
-    "Licensed Contractor #801602",
-    "Featured on DIY Network TV",
-    "Serving Placer & Nevada Counties",
-    "Referral-Based Excellence"
+    { text: "Licensed Contractor #801602", link: "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" },
+    { text: "Featured on DIY Network TV", link: null },
+    { text: "Serving Placer & Nevada Counties", link: null },
+    { text: "Referral-Based Excellence", link: null }
   ];
 
   return (
@@ -196,7 +196,13 @@ const Home = () => {
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-2 text-sm md:text-base">
                   <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-200">{feature}</span>
+                  {feature.link ? (
+                    <a href={feature.link} target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-blue-400 transition-colors underline">
+                      {feature.text}
+                    </a>
+                  ) : (
+                    <span className="text-gray-100">{feature.text}</span>
+                  )}
                 </div>
               ))}
             </div>
