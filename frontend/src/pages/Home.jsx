@@ -5,7 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Phone, Mail, CheckCircle2, Award, Hammer, Home as HomeIcon, Building2, Wrench } from 'lucide-react';
 
-// Hero section with sierra.webp mountain background image for visual appeal
+// Hero section with hero.webp mountain background image for visual appeal
 const Home = () => {
   // Homepage Schema.org structured data for rich results
   const homepageSchema = {
@@ -25,7 +25,7 @@ const Home = () => {
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": "https://www.monconbuild.com/sierra.webp",
+      "url": "https://www.monconbuild.com/hero.webp",
       "description": "Sierra Nevada mountains in Colfax, California"
     }
   };
@@ -143,7 +143,7 @@ const Home = () => {
         <meta property="og:description" content="Licensed contractor serving Placer & Nevada Counties with quality finish carpentry and complete construction services." />
         <meta property="og:url" content="https://www.monconbuild.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.monconbuild.com/sierra.webp" />
+  <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
         
         {/* Schema.org JSON-LD */}
         <script type="application/ld+json">
@@ -155,7 +155,7 @@ const Home = () => {
       </Helmet>
 
       {/* Hero Section - Semantic HTML with main landmark */}
-      <section role="banner" aria-label="Hero section" className="relative bg-cover bg-center bg-fixed text-white py-24 md:py-32 overflow-hidden" style={{backgroundImage: "url('/sierra.webp')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+  <section role="banner" aria-label="Hero section" className="relative bg-cover bg-center bg-fixed text-white py-24 md:py-32 overflow-hidden" style={{backgroundImage: "url('/hero.webp')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
         {/* Overlay for better text readability - darker on top, lighter on bottom */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-green-900/70" aria-hidden="true"></div>
         
