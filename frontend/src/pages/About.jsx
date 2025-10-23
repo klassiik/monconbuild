@@ -45,7 +45,7 @@ const About = () => {
               </div>
 
               <div className="mt-10 p-6 bg-blue-50 border-l-4 border-blue-600 rounded">
-                <p className="text-lg font-semibold text-slate-900 mb-2">California Contractor <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a></p>
+                <p className="text-lg font-semibold text-slate-900 mb-2">California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a></p>
                 <p className="text-gray-600">Licensed and bonded for your protection and peace of mind.</p>
               </div>
             </div>
@@ -65,7 +65,7 @@ const About = () => {
             <div className="p-8 bg-slate-50 rounded-lg">
               <Award className="w-12 h-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-slate-900">Licensed Professional</h3>
-              <p className="text-gray-600">California Contractor <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a>. Fully licensed and bonded.</p>
+              <p className="text-gray-600">California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a>. Fully licensed and bonded.</p>
             </div>
 
             <div className="p-8 bg-slate-50 rounded-lg">

@@ -124,7 +124,7 @@ const Home = () => {
   ];
 
   const features = [
-    { text: "Licensed Contractor #801602", link: "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" },
+    { text: "Licensed Contractor #801602", link: "https://www.cslb.ca.gov/801602" },
     { text: "Featured on DIY Network TV", link: null },
     { text: "Serving Placer & Nevada Counties", link: null },
     { text: "Referral-Based Excellence", link: null }

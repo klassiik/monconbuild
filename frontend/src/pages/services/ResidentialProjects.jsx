@@ -81,7 +81,7 @@ const ResidentialProjects = () => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Trusted by Homeowners</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• California <a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a></li>
+                    <li>• California <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a></li>
                     <li>• 25+ years residential experience</li>
                     <li>• Featured on DIY Network</li>
                     <li>• Referral-based business</li>
