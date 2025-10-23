@@ -1,9 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import Breadcrumb from '../../components/Breadcrumb';
 import { Button } from '../../components/ui/button';
 import { CheckCircle2, Phone, Mail, Hammer, Award } from 'lucide-react';
 
 const FinishCarpentry = () => {
+  // Breadcrumb data
+  const breadcrumbItems = [
+    { name: 'Services', url: 'https://www.monconbuild.com/services' },
+    { name: 'Finish Carpentry', url: 'https://www.monconbuild.com/services/finish-carpentry' }
+  ];
+
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Finish Carpentry",
+    "provider": {
+      "@type": "GeneralContractor",
+      "name": "Monument Construction",
+      "telephone": "(916) 607-1972",
+      "email": "monumentconstruction@comcast.net",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Colfax",
+        "addressRegion": "CA",
+        "postalCode": "95713",
+        "addressCountry": "US"
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "license",
+        "name": "California Contractor License #801602"
+      }
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Colfax, CA" },
+      { "@type": "City", "name": "Auburn, CA" },
+      { "@type": "City", "name": "Grass Valley, CA" },
+      { "@type": "City", "name": "Nevada City, CA" },
+      { "@type": "City", "name": "Truckee, CA" }
+    ],
+    "description": "Expert finish carpentry services including custom trim work, crown molding, built-ins, and decorative woodwork in Colfax and Placer County.",
+    "url": "https://www.monconbuild.com/services/finish-carpentry"
+  };
+
   const features = [
     "Custom crown molding and baseboards",
     "Built-in cabinets and shelving",
@@ -24,6 +66,24 @@ const FinishCarpentry = () => {
 
   return (
     <div className="min-h-screen">
+      {/* SEO Meta Tags and Schema */}
+      <Helmet>
+        <title>Expert Finish Carpentry in Colfax, CA | Monument Construction</title>
+        <meta name="description" content="Professional finish carpentry services in Colfax, Placer County & Nevada County. Custom trim, molding, built-ins, and woodwork. Licensed contractor #801602. Call (916) 607-1972." />
+        <link rel="canonical" href="https://www.monconbuild.com/services/finish-carpentry" />
+        <meta property="og:title" content="Expert Finish Carpentry in Colfax, CA | Monument Construction" />
+        <meta property="og:description" content="Professional finish carpentry services in Colfax and Placer County. Custom trim, molding, and woodwork." />
+        <meta property="og:url" content="https://www.monconbuild.com/services/finish-carpentry" />
+        
+        {/* Service Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+      </Helmet>
+
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={breadcrumbItems} />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">

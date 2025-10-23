@@ -54,19 +54,28 @@
         <meta property="og:description" content="Licensed contractor serving Placer & Nevada Counties with quality finish carpentry and complete construction services. Featured on DIY Network TV." />
         <meta property="og:image" content="https://customer-assets.emergentagent.com/job_finish-woodwork/artifacts/rdyxjzid_Untitled%283%29.png" />
         
-        <!-- Local Business Schema Markup -->
+        <!-- Organization Schema Markup for Rich Results -->
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "GeneralContractor",
           "name": "Monument Construction",
+          "alternateName": "Monument Construction Colfax",
+          "url": "https://www.monconbuild.com",
+          "logo": "https://www.monconbuild.com/android-chrome-512x512.png",
           "image": "https://customer-assets.emergentagent.com/job_finish-woodwork/artifacts/rdyxjzid_Untitled%283%29.png",
-          "description": "Professional finish carpentry and general construction services in Colfax, CA serving Placer and Nevada Counties.",
+          "description": "Professional finish carpentry and general construction services in Colfax, CA serving Placer and Nevada Counties. Featured on DIY Network TV. Licensed contractor #801602.",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Colfax",
             "addressRegion": "CA",
+            "postalCode": "95713",
             "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "39.1007",
+            "longitude": "-120.9535"
           },
           "telephone": "(916) 607-1972",
           "email": "monumentconstruction@comcast.net",
@@ -74,21 +83,74 @@
           "areaServed": [
             {
               "@type": "City",
-              "name": "Colfax, CA"
+              "name": "Colfax",
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Placer County"
+              }
             },
             {
-              "@type": "AdministrativeArea",
-              "name": "Placer County, CA"
+              "@type": "City",
+              "name": "Auburn"
             },
             {
-              "@type": "AdministrativeArea",
-              "name": "Nevada County, CA"
+              "@type": "City",
+              "name": "Grass Valley"
+            },
+            {
+              "@type": "City",
+              "name": "Nevada City"
+            },
+            {
+              "@type": "City",
+              "name": "Truckee"
             }
           ],
           "hasCredential": {
             "@type": "EducationalOccupationalCredential",
             "credentialCategory": "license",
             "name": "California Contractor License #801602"
+          },
+          "sameAs": [
+            "https://www.facebook.com/monumentconstruction",
+            "https://www.instagram.com/monumentconstruction"
+          ],
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "17:00"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "(916) 607-1972",
+            "contactType": "customer service",
+            "areaServed": ["US"],
+            "availableLanguage": ["English"]
+          }
+        }
+        </script>
+
+        <!-- WebSite Schema for Sitelinks Search Box -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Monument Construction",
+          "url": "https://www.monconbuild.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.monconbuild.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
           }
         }
         </script>

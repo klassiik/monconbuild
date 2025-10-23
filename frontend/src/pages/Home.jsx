@@ -1,11 +1,87 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Phone, Mail, CheckCircle2, Award, Hammer, Home as HomeIcon, Building2, Wrench } from 'lucide-react';
 
 // Hero section with sierra.webp mountain background image for visual appeal
 const Home = () => {
+  // Homepage Schema.org structured data for rich results
+  const homepageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.monconbuild.com/#webpage",
+    "url": "https://www.monconbuild.com/",
+    "name": "Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA",
+    "description": "Professional finish carpentry and general construction services in Colfax, Placer County, and Nevada County, CA. Licensed contractor #801602. Featured on DIY Network TV.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://www.monconbuild.com/#website"
+    },
+    "about": {
+      "@type": "GeneralContractor",
+      "name": "Monument Construction"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.monconbuild.com/sierra.webp",
+      "description": "Sierra Nevada mountains in Colfax, California"
+    }
+  };
+
+  // ItemList Schema for Services (enables rich site links)
+  const servicesListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Construction Services",
+    "description": "Professional construction and finish carpentry services offered by Monument Construction",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://www.monconbuild.com/services/finish-carpentry",
+        "name": "Finish Carpentry",
+        "description": "Expert custom woodwork, trim, moldings, and built-ins"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://www.monconbuild.com/services/general-construction",
+        "name": "General Construction",
+        "description": "Complete construction services from foundation to finish"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://www.monconbuild.com/services/residential-projects",
+        "name": "Residential Projects",
+        "description": "Complete residential construction and renovation projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://www.monconbuild.com/services/home-additions",
+        "name": "Home Additions",
+        "description": "Room additions and home expansions"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "url": "https://www.monconbuild.com/services/custom-woodwork",
+        "name": "Custom Woodwork",
+        "description": "Custom cabinetry and artisan woodwork"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "url": "https://www.monconbuild.com/services/complete-remodeling",
+        "name": "Complete Remodeling",
+        "description": "Whole-house renovations and remodeling"
+      }
+    ]
+  };
+
   const services = [
     {
       icon: <Hammer className="w-8 h-8" />,
@@ -56,13 +132,35 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-cover bg-center bg-fixed text-white py-24 md:py-32 overflow-hidden" style={{backgroundImage: "url('/sierra.webp')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      {/* SEO Meta Tags and Schema.org Structured Data */}
+      <Helmet>
+        <title>Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA</title>
+        <meta name="description" content="Professional finish carpentry and general construction services in Colfax, Placer County, and Nevada County, CA. Licensed contractor #801602. Featured on DIY Network TV. Call (916) 607-1972." />
+        <link rel="canonical" href="https://www.monconbuild.com/" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA" />
+        <meta property="og:description" content="Licensed contractor serving Placer & Nevada Counties with quality finish carpentry and complete construction services." />
+        <meta property="og:url" content="https://www.monconbuild.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.monconbuild.com/sierra.webp" />
+        
+        {/* Schema.org JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(homepageSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(servicesListSchema)}
+        </script>
+      </Helmet>
+
+      {/* Hero Section - Semantic HTML with main landmark */}
+      <section role="banner" aria-label="Hero section" className="relative bg-cover bg-center bg-fixed text-white py-24 md:py-32 overflow-hidden" style={{backgroundImage: "url('/sierra.webp')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
         {/* Overlay for better text readability - darker on top, lighter on bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-green-900/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-green-900/70" aria-hidden="true"></div>
         
         {/* Optional: Add a subtle pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20" aria-hidden="true"></div>
         
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
