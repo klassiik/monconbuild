@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://monumentconstruction.com/sitemap.xml
+Sitemap: https://www.monconbuild.com/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1
