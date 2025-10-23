@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Phone, Mail, CheckCircle2, Award, Hammer, Home as HomeIcon, Building2, Wrench } from 'lucide-react';
+
+// LCP-friendly background image component with blur-in effect
+const HeroBackground = () => {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <img
+      src="/hero.webp"
+      alt="Sierra Nevada mountains in Colfax, California"
+      decoding="async"
+      fetchpriority="high"
+      className={`absolute inset-0 -z-0 w-full h-full object-cover transform transition-all duration-700 ${loaded ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-sm scale-105'}`}
+      onLoad={() => setLoaded(true)}
+    />
+  );
+};
 
 // Hero section with hero.webp mountain background image for visual appeal
 const Home = () => {
@@ -154,15 +169,17 @@ const Home = () => {
         </script>
       </Helmet>
 
-      {/* Hero Section - Semantic HTML with main landmark */}
-  <section role="banner" aria-label="Hero section" className="relative bg-cover bg-center bg-fixed text-white py-24 md:py-32 overflow-hidden" style={{backgroundImage: "url('/hero.webp')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      {/* Hero Section - Semantic HTML with main landmark and LCP-friendly <img> */}
+      <section role="banner" aria-label="Hero section" className="relative text-white py-24 md:py-32 overflow-hidden">
+        {/* Background image as real <img> for better LCP */}
+        <HeroBackground />
         {/* Overlay for better text readability - darker on top, lighter on bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-green-900/70" aria-hidden="true"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-green-900/70 z-10" aria-hidden="true"></div>
         
         {/* Optional: Add a subtle pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20" aria-hidden="true"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20 z-10" aria-hidden="true"></div>
         
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
+  <div className="container mx-auto px-6 md:px-12 relative z-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Professional Construction & Finish Carpentry in <span className="text-blue-400">Colfax, CA</span>
