@@ -89,7 +89,6 @@ jobs:
         fi
 
     - name: Run AI Analysis
-      if: ${{ env.OPENAI_API_KEY != '' }}
       run: |
         node -e "
         const LighthouseMCPServer = require('./lighthouse-mcp-server.js');
