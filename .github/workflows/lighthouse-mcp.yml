@@ -19,6 +19,8 @@ on:
 jobs:
   lighthouse-mcp-audit:
     runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     
     steps:
     - name: Checkout repository
@@ -78,8 +80,6 @@ jobs:
         node ../lighthouse-mcp-cli.js audit -u "$URLS" --output ./lighthouse-reports/desktop --desktop
 
     - name: Validate OpenAI API key
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         if [ -z "$OPENAI_API_KEY" ]; then
           echo "::error::Missing OPENAI_API_KEY secret. Add it in GitHub > Settings > Secrets and variables > Actions."
@@ -89,8 +89,7 @@ jobs:
         fi
 
     - name: Run AI Analysis
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      if: ${{ env.OPENAI_API_KEY != '' }}
       run: |
         node -e "
         const LighthouseMCPServer = require('./lighthouse-mcp-server.js');
