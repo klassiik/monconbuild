@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
+import Breadcrumb from '../components/Breadcrumb';
 
 const Portfolio = () => {
+  const breadcrumbItems = [
+    { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' }
+  ];
+
   const projects = [
     {
       image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/6s7jphb3_Untitled.jpg",
@@ -43,6 +48,9 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={breadcrumbItems} />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
@@ -166,6 +174,36 @@ const Portfolio = () => {
             >
               <a href="tel:9166071972">Call (916) 607-1972</a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Explore More Section */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">Ready to Start Your Project?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Services</h3>
+              <p className="text-gray-600 mb-6">Explore the complete range of construction and carpentry services we offer.</p>
+              <Link to="/services" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+                View Services
+              </Link>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">About Us</h3>
+              <p className="text-gray-600 mb-6">Learn about Monument Construction and our team's expertise.</p>
+              <Link to="/about" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+                About Us
+              </Link>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Get a Quote</h3>
+              <p className="text-gray-600 mb-6">Contact us today to discuss your project and receive a free estimate.</p>
+              <Link to="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       </section>

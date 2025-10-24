@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
+import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { MapPin, Phone, CheckCircle2 } from 'lucide-react';
 
 const ServiceAreas = () => {
+  const breadcrumbItems = [
+    { name: 'Service Areas', url: 'https://www.monconbuild.com/service-areas' }
+  ];
+
   const counties = [
     {
       name: "Placer County",
@@ -51,6 +56,9 @@ const ServiceAreas = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={breadcrumbItems} />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
@@ -220,6 +228,36 @@ const ServiceAreas = () => {
           <p className="text-blue-100">
             Monument Construction • Colfax, CA • License #801602
           </p>
+        </div>
+      </section>
+
+      {/* Explore More Section */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">Learn More About Monument Construction</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Services</h3>
+              <p className="text-gray-600 mb-6">Explore our complete range of construction and carpentry services.</p>
+              <Link to="/services" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+                View Services
+              </Link>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Portfolio</h3>
+              <p className="text-gray-600 mb-6">See examples of our completed projects throughout our service areas.</p>
+              <Link to="/portfolio" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+                View Portfolio
+              </Link>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">About Us</h3>
+              <p className="text-gray-600 mb-6">Learn about our team and years of construction experience.</p>
+              <Link to="/about" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+                About Us
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

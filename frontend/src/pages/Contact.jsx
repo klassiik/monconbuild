@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../components/ui/button';
+import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -9,6 +10,10 @@ import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
 const Contact = () => {
+  const breadcrumbItems = [
+    { name: 'Contact', url: 'https://www.monconbuild.com/contact' }
+  ];
+
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
@@ -66,6 +71,9 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={breadcrumbItems} />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">

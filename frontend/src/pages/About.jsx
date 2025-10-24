@@ -1,11 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
+import Breadcrumb from '../components/Breadcrumb';
 import { Award, CheckCircle2, Tv, Users, Hammer, Star } from 'lucide-react';
 
 const About = () => {
+  const breadcrumbItems = [
+    { name: 'About', url: 'https://www.monconbuild.com/about' }
+  ];
+
   return (
     <div className="min-h-screen">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={breadcrumbItems} />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
@@ -177,6 +185,36 @@ const About = () => {
             >
               <a href="tel:9166071972">Call (916) 607-1972</a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Explore More Section */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">Explore Our Work</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Services</h3>
+              <p className="text-gray-600 mb-6">Discover the complete range of construction and carpentry services we offer.</p>
+              <Link to="/services" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+                View Services
+              </Link>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Portfolio</h3>
+              <p className="text-gray-600 mb-6">See examples of our completed projects and quality workmanship.</p>
+              <Link to="/portfolio" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+                View Portfolio
+              </Link>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Service Areas</h3>
+              <p className="text-gray-600 mb-6">Learn about the regions we serve in Northern California.</p>
+              <Link to="/service-areas" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+                View Areas
+              </Link>
+            </div>
           </div>
         </div>
       </section>

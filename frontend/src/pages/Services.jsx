@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
+import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Hammer, Home, Building2, Wrench, DoorOpen, Drill, PaintBucket, Ruler } from 'lucide-react';
 
 const Services = () => {
+  const breadcrumbItems = [
+    { name: 'Services', url: 'https://www.monconbuild.com/services' }
+  ];
+
   const services = [
     {
       icon: <Hammer className="w-12 h-12" />,
       title: "Finish Carpentry",
+      link: "/services/finish-carpentry",
       description: "Our specialty and passion. Expert finish carpentry including custom trim work, crown molding, baseboards, door and window casings, wainscoting, and decorative millwork. Every detail is crafted with precision and care.",
       features: [
         "Custom trim and molding installation",
@@ -22,6 +28,7 @@ const Services = () => {
     {
       icon: <Home className="w-12 h-12" />,
       title: "Residential Construction",
+      link: "/services/general-construction",
       description: "Complete residential construction services from ground work to final touches. We handle every phase of your home project with the same level of craftsmanship and attention to detail.",
       features: [
         "New home construction",
@@ -35,6 +42,7 @@ const Services = () => {
     {
       icon: <Wrench className="w-12 h-12" />,
       title: "Complete Construction Services",
+      link: "/services/general-construction",
       description: "From groundbreaking to final walkthrough, we provide comprehensive construction services. Our experience allows us to manage every aspect of your project seamlessly.",
       features: [
         "Site preparation and groundwork",
@@ -48,6 +56,7 @@ const Services = () => {
     {
       icon: <DoorOpen className="w-12 h-12" />,
       title: "Custom Doors & Windows",
+      link: "/services/finish-carpentry",
       description: "Expert installation of doors and windows with precise finish carpentry. We ensure proper fit, function, and beautiful trim work for every opening.",
       features: [
         "Interior and exterior door installation",
@@ -61,6 +70,7 @@ const Services = () => {
     {
       icon: <Drill className="w-12 h-12" />,
       title: "Remodeling & Renovations",
+      link: "/services/complete-remodeling",
       description: "Transform your existing space with our expert remodeling services. We bring new life to homes and businesses with quality craftsmanship.",
       features: [
         "Kitchen remodeling",
@@ -74,6 +84,7 @@ const Services = () => {
     {
       icon: <PaintBucket className="w-12 h-12" />,
       title: "Interior Finishing",
+      link: "/services/custom-woodwork",
       description: "Complete interior finishing services that showcase attention to detail. We create beautiful, functional spaces with quality materials and expert workmanship.",
       features: [
         "Hardwood flooring installation",
@@ -87,6 +98,7 @@ const Services = () => {
     {
       icon: <Ruler className="w-12 h-12" />,
       title: "Design & Consultation",
+      link: "/contact",
       description: "Expert guidance from initial concept through completion. We work with you to design solutions that meet your needs, budget, and timeline.",
       features: [
         "Project planning and design",
@@ -101,6 +113,9 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={breadcrumbItems} />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
@@ -118,25 +133,30 @@ const Services = () => {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <Card key={index} className="border-2 hover:border-blue-600 transition-all duration-300 hover:shadow-xl">
-                <CardHeader>
-                  <div className="text-blue-600 mb-4">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-2xl md:text-3xl mb-4">{service.title}</CardTitle>
-                  <p className="text-gray-600 text-lg leading-relaxed">{service.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <span className="text-blue-600 mt-1">•</span>
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <Link key={index} to={service.link} className="no-underline">
+                <Card className="border-2 hover:border-blue-600 transition-all duration-300 hover:shadow-xl h-full cursor-pointer">
+                  <CardHeader>
+                    <div className="text-blue-600 mb-4">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-2xl md:text-3xl mb-4">{service.title}</CardTitle>
+                    <p className="text-gray-600 text-lg leading-relaxed">{service.description}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <span className="text-blue-600 mt-1">•</span>
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 pt-6 border-t border-gray-200">
+                      <span className="text-blue-600 font-semibold hover:text-blue-800">Learn More →</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

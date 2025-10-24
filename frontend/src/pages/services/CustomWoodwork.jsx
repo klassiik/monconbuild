@@ -107,6 +107,57 @@ const CustomWoodwork = () => {
         </div>
       </section>
 
+      {/* Related Services Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <h2 className="text-3xl font-bold mb-12 text-gray-900 text-center">Explore Our Other Services</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Finish Carpentry</h3>
+              <p className="text-gray-700 mb-4">Expert finish carpentry including custom trim, molding, and built-ins.</p>
+              <Link to="/services/finish-carpentry" className="text-blue-600 hover:text-blue-800 font-semibold">
+                Learn More →
+              </Link>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">General Construction</h3>
+              <p className="text-gray-700 mb-4">Complete residential construction services from groundwork to final touches.</p>
+              <Link to="/services/general-construction" className="text-blue-600 hover:text-blue-800 font-semibold">
+                Learn More →
+              </Link>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Home Additions</h3>
+              <p className="text-gray-700 mb-4">Expert room additions and extensions to expand your living space.</p>
+              <Link to="/services/home-additions" className="text-blue-600 hover:text-blue-800 font-semibold">
+                Learn More →
+              </Link>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Residential Projects</h3>
+              <p className="text-gray-700 mb-4">Comprehensive residential project management and execution.</p>
+              <Link to="/services/residential-projects" className="text-blue-600 hover:text-blue-800 font-semibold">
+                Learn More →
+              </Link>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Complete Remodeling</h3>
+              <p className="text-gray-700 mb-4">Full-scope remodeling projects transforming entire homes.</p>
+              <Link to="/services/complete-remodeling" className="text-blue-600 hover:text-blue-800 font-semibold">
+                Learn More →
+              </Link>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">All Services</h3>
+              <p className="text-gray-700 mb-4">View our complete range of construction and carpentry services.</p>
+              <Link to="/services" className="text-blue-600 hover:text-blue-800 font-semibold">
+                View All Services →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-green-900 text-white py-16">
         <div className="container mx-auto px-6 md:px-12 text-center">
