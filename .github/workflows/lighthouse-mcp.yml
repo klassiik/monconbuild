@@ -77,6 +77,17 @@ jobs:
         echo "🖥️ Running Desktop Performance Audit..."
         node ../lighthouse-mcp-cli.js audit -u "$URLS" --output ./lighthouse-reports/desktop --desktop
 
+    - name: Validate OpenAI API key
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        if [ -z "$OPENAI_API_KEY" ]; then
+          echo "::error::Missing OPENAI_API_KEY secret. Add it in GitHub > Settings > Secrets and variables > Actions."
+          exit 1
+        else
+          echo "OPENAI_API_KEY is set. Proceeding with AI analysis."
+        fi
+
     - name: Run AI Analysis
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -88,7 +99,7 @@ jobs:
         async function runAnalysis() {
           const server = new LighthouseMCPServer({
             reportPath: './lighthouse-reports',
-            aiModel: 'gpt-4'
+            aiModel: 'gpt-4o-mini'
           });
           
           // Read latest reports
