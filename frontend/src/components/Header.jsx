@@ -25,7 +25,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center" aria-label="Monument Construction Home">
             <img 
-              src="https://customer-assets.emergentagent.com/job_finish-woodwork/artifacts/rdyxjzid_Untitled%283%29.png" 
+              src="/logo.svg" 
               alt="Monument Construction - Licensed Contractor Colfax CA" 
               className="h-16 md:h-20 w-auto"
             />
