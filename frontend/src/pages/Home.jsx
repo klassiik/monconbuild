@@ -14,7 +14,7 @@ const HeroBackground = () => {
       alt="Sierra Nevada mountains in Colfax, California"
       decoding="async"
       fetchpriority="high"
-      className={`absolute inset-0 -z-0 w-full h-full object-cover transform transition-all duration-700 ${loaded ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-sm scale-105'}`}
+      className={`absolute inset-0 z-0 w-full h-full object-cover transform transition-all duration-700 ${loaded ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-sm scale-105'}`}
       onLoad={() => setLoaded(true)}
     />
   );
