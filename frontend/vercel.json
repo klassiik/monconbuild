@@ -7,7 +7,7 @@
   "framework": "create-react-app",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/:path((?!.*\\.txt$).*)",
       "destination": "/index.html"
     }
   ],
