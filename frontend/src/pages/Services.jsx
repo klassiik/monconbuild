@@ -162,6 +162,35 @@ const Services = () => {
         </div>
       </section>
 
+      {/* All Services Directory Section */}
+      <section className="py-16 md:py-20 bg-blue-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gray-900">Explore All Services</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <Link to="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+                <span className="text-lg font-semibold text-blue-600">Finish Carpentry</span>
+              </Link>
+              <Link to="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+                <span className="text-lg font-semibold text-blue-600">General Construction</span>
+              </Link>
+              <Link to="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+                <span className="text-lg font-semibold text-blue-600">Home Additions</span>
+              </Link>
+              <Link to="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+                <span className="text-lg font-semibold text-blue-600">Residential Projects</span>
+              </Link>
+              <Link to="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+                <span className="text-lg font-semibold text-blue-600">Custom Woodwork</span>
+              </Link>
+              <Link to="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+                <span className="text-lg font-semibold text-blue-600">Complete Remodeling</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-6 md:px-12">
