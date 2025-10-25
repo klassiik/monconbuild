@@ -150,7 +150,7 @@ const Home = () => {
       {/* SEO Meta Tags and Schema.org Structured Data */}
       <Helmet>
         <title>Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA</title>
-        <meta name="description" content="Professional finish carpentry and general construction services in Colfax, Placer County, and Nevada County, CA. Licensed contractor #801602. Featured on DIY Network TV. Call (916) 607-1972." />
+        <meta name="description" content="Professional finish carpentry & construction services in Colfax, CA. Licensed contractor #801602. Featured on DIY Network. (916) 607-1972." />
         <link rel="canonical" href="https://www.monconbuild.com/" />
         
         {/* Open Graph Tags */}

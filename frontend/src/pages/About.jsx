@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import { Award, CheckCircle2, Tv, Users, Hammer, Star } from 'lucide-react';
@@ -11,6 +12,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>About Monument Construction | Expert Contractors in Colfax, CA</title>
+        <meta name="description" content="Monument Construction: 25+ years trusted finish carpentry & construction services in Colfax & Placer County. Featured on DIY Network." />
+        <link rel="canonical" href="https://www.monconbuild.com/about" />
+      </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       

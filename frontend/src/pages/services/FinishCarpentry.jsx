@@ -69,7 +69,7 @@ const FinishCarpentry = () => {
       {/* SEO Meta Tags and Schema */}
       <Helmet>
         <title>Expert Finish Carpentry in Colfax, CA | Monument Construction</title>
-        <meta name="description" content="Professional finish carpentry services in Colfax, Placer County & Nevada County. Custom trim, molding, built-ins, and woodwork. Licensed contractor #801602. Call (916) 607-1972." />
+        <meta name="description" content="Expert finish carpentry in Colfax, CA. Custom trim, molding, built-ins & woodwork. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/finish-carpentry" />
         <meta property="og:title" content="Expert Finish Carpentry in Colfax, CA | Monument Construction" />
         <meta property="og:description" content="Professional finish carpentry services in Colfax and Placer County. Custom trim, molding, and woodwork." />

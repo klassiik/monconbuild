@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
@@ -113,6 +114,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Professional Construction & Carpentry Services | Monument Construction</title>
+        <meta name="description" content="Expert finish carpentry, home additions, remodeling & custom woodwork for Colfax & Placer County. Quality craftsmanship." />
+        <link rel="canonical" href="https://www.monconbuild.com/services" />
+      </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       

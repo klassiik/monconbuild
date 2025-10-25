@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '../../components/ui/button';
 import { CheckCircle2, Phone, Mail, Home, Award } from 'lucide-react';
 
@@ -24,6 +25,11 @@ const ResidentialProjects = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Residential Construction Projects in Colfax, CA | Monument Construction</title>
+        <meta name="description" content="Complete residential construction & remodeling projects in Placer County. Quality craftsmanship from ground to finish." />
+        <link rel="canonical" href="https://www.monconbuild.com/services/residential-projects" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">
