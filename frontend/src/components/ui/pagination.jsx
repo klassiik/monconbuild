@@ -6,26 +6,35 @@ import { buttonVariants } from "@/components/ui/button";
 
 const Pagination = ({
   className,
+  children,
   ...props
 }) => (
   <nav
     role="navigation"
     aria-label="pagination"
     className={cn("mx-auto flex w-full justify-center", className)}
-    {...props} />
+    {...props}
+  >
+    {children}
+  </nav>
 )
 Pagination.displayName = "Pagination"
 
-const PaginationContent = React.forwardRef(({ className, ...props }, ref) => (
+const PaginationContent = React.forwardRef(({ className, children, ...props }, ref) => (
   <ul
     ref={ref}
     className={cn("flex flex-row items-center gap-1", className)}
-    {...props} />
+    {...props}
+  >
+    {children}
+  </ul>
 ))
 PaginationContent.displayName = "PaginationContent"
 
-const PaginationItem = React.forwardRef(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("", className)} {...props} />
+const PaginationItem = React.forwardRef(({ className, children, ...props }, ref) => (
+  <li ref={ref} className={cn("", className)} {...props}>
+    {children}
+  </li>
 ))
 PaginationItem.displayName = "PaginationItem"
 
@@ -33,6 +42,7 @@ const PaginationLink = ({
   className,
   isActive,
   size = "icon",
+  children,
   ...props
 }) => (
   <a
@@ -41,7 +51,10 @@ const PaginationLink = ({
       variant: isActive ? "outline" : "ghost",
       size,
     }), className)}
-    {...props} />
+    {...props}
+  >
+    {children}
+  </a>
 )
 PaginationLink.displayName = "PaginationLink"
 

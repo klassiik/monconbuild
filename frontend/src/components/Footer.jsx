@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -28,22 +27,22 @@ const Footer = () => {
             <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="hover:text-blue-400 transition-colors duration-300">Home</Link>
+                <a href="/" className="hover:text-blue-400 transition-colors duration-300">Home</a>
               </li>
               <li>
-                <Link to="/services" className="hover:text-blue-400 transition-colors duration-300">Services</Link>
+                <a href="/services" className="hover:text-blue-400 transition-colors duration-300">Services</a>
               </li>
               <li>
-                <Link to="/about" className="hover:text-blue-400 transition-colors duration-300">About Us</Link>
+                <a href="/about" className="hover:text-blue-400 transition-colors duration-300">About Us</a>
               </li>
               <li>
-                <Link to="/portfolio" className="hover:text-blue-400 transition-colors duration-300">Portfolio</Link>
+                <a href="/portfolio" className="hover:text-blue-400 transition-colors duration-300">Portfolio</a>
               </li>
               <li>
-                <Link to="/service-areas" className="hover:text-blue-400 transition-colors duration-300">Service Areas</Link>
+                <a href="/service-areas" className="hover:text-blue-400 transition-colors duration-300">Service Areas</a>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-blue-400 transition-colors duration-300">Contact</Link>
+                <a href="/contact" className="hover:text-blue-400 transition-colors duration-300">Contact</a>
               </li>
             </ul>
           </div>
@@ -53,22 +52,22 @@ const Footer = () => {
             <h3 className="text-white font-bold text-lg mb-6">Our Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/finish-carpentry" className="hover:text-blue-400 transition-colors duration-300">Finish Carpentry</Link>
+                <a href="/services/finish-carpentry" className="hover:text-blue-400 transition-colors duration-300">Finish Carpentry</a>
               </li>
               <li>
-                <Link to="/services/general-construction" className="hover:text-blue-400 transition-colors duration-300">General Construction</Link>
+                <a href="/services/general-construction" className="hover:text-blue-400 transition-colors duration-300">General Construction</a>
               </li>
               <li>
-                <Link to="/services/residential-projects" className="hover:text-blue-400 transition-colors duration-300">Residential Projects</Link>
+                <a href="/services/residential-projects" className="hover:text-blue-400 transition-colors duration-300">Residential Projects</a>
               </li>
               <li>
-                <Link to="/services/home-additions" className="hover:text-blue-400 transition-colors duration-300">Home Additions</Link>
+                <a href="/services/home-additions" className="hover:text-blue-400 transition-colors duration-300">Home Additions</a>
               </li>
               <li>
-                <Link to="/services/custom-woodwork" className="hover:text-blue-400 transition-colors duration-300">Custom Woodwork</Link>
+                <a href="/services/custom-woodwork" className="hover:text-blue-400 transition-colors duration-300">Custom Woodwork</a>
               </li>
               <li>
-                <Link to="/services/complete-remodeling" className="hover:text-blue-400 transition-colors duration-300">Complete Remodeling</Link>
+                <a href="/services/complete-remodeling" className="hover:text-blue-400 transition-colors duration-300">Complete Remodeling</a>
               </li>
             </ul>
           </div>

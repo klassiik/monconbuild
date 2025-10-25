@@ -1,10 +1,21 @@
-import { useTheme } from "next-themes"
-import { Toaster as Sonner, toast } from "sonner"
+import React from "react";
+import { Toaster as Sonner, toast } from "sonner";
 
 const Toaster = ({
   ...props
 }) => {
-  const { theme = "system" } = useTheme()
+  // Lightweight theme detection without pulling next-themes
+  const [theme, setTheme] = React.useState(() =>
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  );
+
+  React.useEffect(() => {
+    if (!window.matchMedia) return;
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const handler = (e) => setTheme(e.matches ? 'dark' : 'light');
+    mq.addEventListener?.('change', handler);
+    return () => mq.removeEventListener?.('change', handler);
+  }, []);
 
   return (
     <Sonner

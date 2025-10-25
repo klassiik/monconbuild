@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Menu, X, Phone } from 'lucide-react';
 
@@ -23,26 +23,26 @@ const Header = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center" aria-label="Monument Construction Home">
+          <a href="/" className="flex items-center" aria-label="Monument Construction Home">
             <img 
               src="/logo.svg" 
               alt="Monument Construction - Licensed Contractor Colfax CA" 
               className="h-16 md:h-20 w-auto"
             />
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.path}
-                to={item.path}
+                href={item.path}
                 className={`text-base font-medium transition-colors duration-300 hover:text-blue-600 ${
                   isActive(item.path) ? 'text-blue-600 font-bold' : 'text-gray-700'
                 }`}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -55,7 +55,7 @@ const Header = () => {
               className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
               asChild
             >
-              <Link to="/contact">Get Quote</Link>
+              <a href="/contact">Get Quote</a>
             </Button>
           </div>
 
@@ -73,16 +73,16 @@ const Header = () => {
           <nav className="lg:hidden py-6 border-t border-gray-200">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.path}
-                  to={item.path}
+                  href={item.path}
                   className={`text-lg font-medium transition-colors duration-300 hover:text-blue-600 py-2 ${
                     isActive(item.path) ? 'text-blue-600 font-bold' : 'text-gray-700'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
               <a 
                 href="tel:9166071972" 
@@ -95,7 +95,7 @@ const Header = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white w-full transition-all duration-300"
                 asChild
               >
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Get Free Quote</Link>
+                <a href="/contact" onClick={() => setIsMenuOpen(false)}>Get Free Quote</a>
               </Button>
             </div>
           </nav>

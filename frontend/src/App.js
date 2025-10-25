@@ -1,9 +1,12 @@
 import "./App.css";
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Toaster } from "./components/ui/sonner";
+// Lazy-load Toaster to avoid pulling sonner/next-themes into the main bundle
+const LazyToaster = lazy(() =>
+  import('./components/ui/sonner').then((m) => ({ default: m.Toaster }))
+);
 
 // Lazy load page components for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -29,6 +32,18 @@ const PageLoader = () => (
 );
 
 function App() {
+  // Mount toaster only after idle so it doesn't impact initial route JS
+  const [mountToaster, setMountToaster] = useState(false);
+  useEffect(() => {
+    const onIdle = () => setMountToaster(true);
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(onIdle, { timeout: 3000 });
+    } else {
+      const t = setTimeout(onIdle, 1500);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -96,7 +111,11 @@ function App() {
           } />
         </Routes>
         <Footer />
-        <Toaster />
+        {mountToaster && (
+          <Suspense fallback={null}>
+            <LazyToaster />
+          </Suspense>
+        )}
       </BrowserRouter>
     </div>
   );

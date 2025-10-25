@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
@@ -207,7 +207,7 @@ const Portfolio = () => {
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
-              <Link to="/contact">Request Free Quote</Link>
+              <a href="/contact">Request Free Quote</a>
             </Button>
             <Button 
               size="lg" 
@@ -229,23 +229,23 @@ const Portfolio = () => {
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Services</h3>
               <p className="text-gray-600 mb-6">Explore the complete range of construction and carpentry services we offer.</p>
-              <Link to="/services" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/services" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
                 View Services
-              </Link>
+              </a>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">About Us</h3>
               <p className="text-gray-600 mb-6">Learn about Monument Construction and our team's expertise.</p>
-              <Link to="/about" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/about" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
                 About Us
-              </Link>
+              </a>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Get a Quote</h3>
               <p className="text-gray-600 mb-6">Contact us today to discuss your project and receive a free estimate.</p>
-              <Link to="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
                 Contact Us
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -260,24 +260,24 @@ const Portfolio = () => {
           </p>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link to="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
+              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
                 <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Finish Carpentry</span>
-              </Link>
-              <Link to="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
+              </a>
+              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
                 <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ General Construction</span>
-              </Link>
-              <Link to="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
+              </a>
+              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
                 <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Home Additions</span>
-              </Link>
-              <Link to="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
+              </a>
+              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
                 <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Residential Projects</span>
-              </Link>
-              <Link to="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
+              </a>
+              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
                 <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Custom Woodwork</span>
-              </Link>
-              <Link to="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
+              </a>
+              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
                 <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Complete Remodeling</span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

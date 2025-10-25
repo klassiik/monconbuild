@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../../components/ui/button';
 import { CheckCircle2, Phone, Mail, Wrench, Award } from 'lucide-react';
@@ -41,11 +41,11 @@ const CompleteRemodeling = () => {
               Full-service remodeling and renovation for Placer & Nevada County homeowners
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
+              <a href="/contact">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
                   Get Free Estimate
                 </Button>
-              </Link>
+              </a>
               <a href="tel:9166071972">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-green-900">
                   <Phone className="mr-2 h-5 w-5" />
@@ -171,44 +171,44 @@ const CompleteRemodeling = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Finish Carpentry</h3>
               <p className="text-gray-700 mb-4">Expert finish carpentry including custom trim, molding, and built-ins.</p>
-              <Link to="/services/finish-carpentry" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/finish-carpentry" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Learn More →
-              </Link>
+              </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">General Construction</h3>
               <p className="text-gray-700 mb-4">Complete residential construction services from groundwork to final touches.</p>
-              <Link to="/services/general-construction" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/general-construction" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Learn More →
-              </Link>
+              </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Home Additions</h3>
               <p className="text-gray-700 mb-4">Expert room additions and extensions to expand your living space.</p>
-              <Link to="/services/home-additions" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/home-additions" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Learn More →
-              </Link>
+              </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Custom Woodwork</h3>
               <p className="text-gray-700 mb-4">Bespoke woodwork and cabinetry tailored to your unique vision.</p>
-              <Link to="/services/custom-woodwork" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/custom-woodwork" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Learn More →
-              </Link>
+              </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Residential Projects</h3>
               <p className="text-gray-700 mb-4">Comprehensive residential project management and execution.</p>
-              <Link to="/services/residential-projects" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential-projects" className="text-blue-600 hover:text-blue-800 font-semibold">
                 Learn More →
-              </Link>
+              </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">All Services</h3>
               <p className="text-gray-700 mb-4">View our complete range of construction and carpentry services.</p>
-              <Link to="/services" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services" className="text-blue-600 hover:text-blue-800 font-semibold">
                 View All Services →
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -222,11 +222,11 @@ const CompleteRemodeling = () => {
             Contact Monument Construction for expert remodeling services in Colfax and throughout Placer County.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
+            <a href="/contact">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
                 Request Free Consultation
               </Button>
-            </Link>
+            </a>
             <a href="mailto:monumentconstruction@comcast.net">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-900 text-lg px-8 py-6">
                 <Mail className="mr-2 h-5 w-5" />

@@ -3,24 +3,42 @@ import ReactDOM from "react-dom/client";
 import { HelmetProvider } from 'react-helmet-async';
 import "@/index.css";
 import App from "@/App";
-import { initializeWebVitals, initializePerformanceObserver } from "./utils/webVitals";
+// Defer performance scripts to reduce main bundle size and JS execution on load
+// We'll dynamically import web vitals after the page is idle in production
 
 // Register service worker for aggressive caching
 if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
       .then((registration) => {
-        console.log('SW registered: ', registration);
+        console.warn('SW registered: ', registration);
       })
       .catch((registrationError) => {
-        console.log('SW registration failed: ', registrationError);
+        console.warn('SW registration failed: ', registrationError);
       });
   });
 }
 
-// Initialize performance monitoring
-initializeWebVitals();
-initializePerformanceObserver();
+// Initialize performance monitoring (deferred and production-only)
+if (process.env.NODE_ENV === 'production') {
+  const runAfterIdle = (cb) => {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(cb, { timeout: 3000 });
+    } else {
+      setTimeout(cb, 1500);
+    }
+  };
+
+  runAfterIdle(async () => {
+    try {
+      const mod = await import('./utils/webVitals');
+      mod.initializeWebVitals?.();
+      mod.initializePerformanceObserver?.();
+    } catch (e) {
+      console.warn('Perf scripts failed to load', e);
+    }
+  });
+}
 
 // Preload critical resources
 if (typeof window !== 'undefined') {

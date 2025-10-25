@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
@@ -180,7 +180,7 @@ const Services = () => {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <Link key={index} to={service.link} className="no-underline">
+              <a key={index} href={service.link} className="no-underline">
                 <Card className="border-2 hover:border-blue-600 transition-all duration-300 hover:shadow-xl h-full cursor-pointer">
                   <CardHeader>
                     <div className="text-blue-600 mb-4">
@@ -203,7 +203,7 @@ const Services = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -215,24 +215,24 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gray-900">Explore All Services</h2>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link to="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
                 <span className="text-lg font-semibold text-blue-600">Finish Carpentry</span>
-              </Link>
-              <Link to="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+              </a>
+              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
                 <span className="text-lg font-semibold text-blue-600">General Construction</span>
-              </Link>
-              <Link to="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+              </a>
+              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
                 <span className="text-lg font-semibold text-blue-600">Home Additions</span>
-              </Link>
-              <Link to="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+              </a>
+              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
                 <span className="text-lg font-semibold text-blue-600">Residential Projects</span>
-              </Link>
-              <Link to="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+              </a>
+              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
                 <span className="text-lg font-semibold text-blue-600">Custom Woodwork</span>
-              </Link>
-              <Link to="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
+              </a>
+              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
                 <span className="text-lg font-semibold text-blue-600">Complete Remodeling</span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -278,7 +278,7 @@ const Services = () => {
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
-              <Link to="/contact">Get Free Quote</Link>
+              <a href="/contact">Get Free Quote</a>
             </Button>
             <Button 
               size="lg" 

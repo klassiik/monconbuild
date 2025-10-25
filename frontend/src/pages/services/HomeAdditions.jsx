@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../../components/ui/button';
 import { CheckCircle2, Phone, Mail, PlusCircle, Award } from 'lucide-react';
@@ -41,11 +41,11 @@ const HomeAdditions = () => {
               Expert room additions and home expansions for Placer & Nevada County homes
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
+              <a href="/contact">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
                   Get Free Quote
                 </Button>
-              </Link>
+              </a>
               <a href="tel:9166071972">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-green-900">
                   <Phone className="mr-2 h-5 w-5" />
@@ -171,11 +171,11 @@ const HomeAdditions = () => {
             Contact us for a free consultation on your home addition project in Colfax or anywhere in Placer County.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
+            <a href="/contact">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
                 Request Free Consultation
               </Button>
-            </Link>
+            </a>
             <a href="mailto:monumentconstruction@comcast.net">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-900 text-lg px-8 py-6">
                 <Mail className="mr-2 h-5 w-5" />

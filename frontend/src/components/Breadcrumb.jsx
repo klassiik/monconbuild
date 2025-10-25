@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
@@ -64,8 +63,8 @@ const Breadcrumb = ({ items }) => {
                       {item.name}
                     </span>
                   ) : (
-                    <Link 
-                      to={item.url.replace('https://www.monconbuild.com', '')} 
+                    <a 
+                      href={item.url.replace('https://www.monconbuild.com', '')} 
                       className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                       itemProp="item"
                     >
@@ -73,7 +72,7 @@ const Breadcrumb = ({ items }) => {
                         {isFirst && <Home className="w-4 h-4 inline mr-1" aria-hidden="true" />}
                         {item.name}
                       </span>
-                    </Link>
+                    </a>
                   )}
                   
                   <meta itemProp="position" content={index + 1} />

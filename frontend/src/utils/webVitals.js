@@ -1,4 +1,4 @@
-import { onCLS, onFID, onFCP, onLCP, onTTFB } from 'web-vitals';
+import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals';
 
 // Web Vitals reporting function
 function sendToAnalytics(metric) {
@@ -125,7 +125,7 @@ function generatePerformanceInsights(metric) {
 // Initialize Web Vitals tracking
 export function initializeWebVitals() {
   onCLS(sendToAnalyticsWithInsights);
-  onFID(sendToAnalyticsWithInsights);
+  onINP(sendToAnalyticsWithInsights);
   onFCP(sendToAnalyticsWithInsights);
   onLCP(sendToAnalyticsWithInsights);
   onTTFB(sendToAnalyticsWithInsights);
