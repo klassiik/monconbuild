@@ -65,6 +65,16 @@ const ResidentialProjects = () => {
               manages your project from start to finish with professionalism and care. Licensed contractor #801602.
             </p>
 
+            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Comprehensive Residential Project Management</h3>
+              <p className="text-gray-700 mb-4">
+                Residential construction projects require careful planning, precise execution, and constant attention to detail. Our team brings 25+ years of experience managing projects of all sizes—from targeted renovations to complete home transformations—ensuring every project meets our high standards for quality, safety, and customer satisfaction.
+              </p>
+              <p className="text-gray-700">
+                We handle the full scope of residential work: coordinating all trades, managing permits and inspections, sourcing quality materials, and maintaining clear communication with you throughout the project. Whether it's a kitchen remodel, bathroom renovation, room addition, or complete home remodel, we bring the same dedication and expertise to every project.
+              </p>
+            </div>
+
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Residential Services</h3>
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
@@ -73,6 +83,46 @@ const ResidentialProjects = () => {
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
+            </div>
+
+            <h3 className="text-2xl font-bold mb-6 text-gray-900">Our Residential Project Process</h3>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Initial Consultation</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We meet with you to understand your vision, needs, and budget. We ask questions, listen carefully, and provide professional recommendations based on our years of experience. This consultation helps us create accurate estimates and detailed project plans tailored to your specific goals.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">2</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Planning & Permitting</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We develop detailed plans and handle all permitting requirements with Placer County authorities. Our expertise with local building codes ensures your project complies with all regulations and passes inspections on the first try. We manage the permitting process so you don't have to.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Expert Construction</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Our skilled team executes your project with precision and professionalism. We coordinate all trades—electrical, plumbing, HVAC, carpentry, and more—ensuring seamless integration and efficient workflow. Daily communication keeps you informed every step of the way.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">4</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Quality Completion</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We complete all finishing work, conduct thorough inspections, and ensure everything passes final code review. We'll walk through your completed project with you, address any final questions, and provide documentation. Your satisfaction is our priority.
+                </p>
+              </div>
             </div>
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">

@@ -86,6 +86,52 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Getting Started with Monument Construction</h2>
+            <p className="text-center text-gray-600 mb-12 text-lg">
+              We've made it easy to connect with our team and begin your project. Here's our simple process:
+            </p>
+            
+            <div className="grid md:grid-cols-4 gap-6 mb-12">
+              <div className="bg-white p-6 rounded-lg shadow text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-3">1</div>
+                <h3 className="font-bold text-gray-900 mb-2">Contact Us</h3>
+                <p className="text-sm text-gray-600">Fill out our form or call with your project details</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-3">2</div>
+                <h3 className="font-bold text-gray-900 mb-2">Initial Consultation</h3>
+                <p className="text-sm text-gray-600">We discuss your vision, timeline, and budget</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-3">3</div>
+                <h3 className="font-bold text-gray-900 mb-2">Free Quote</h3>
+                <p className="text-sm text-gray-600">Receive a detailed estimate for your project</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-3">4</div>
+                <h3 className="font-bold text-gray-900 mb-2">Project Starts</h3>
+                <p className="text-sm text-gray-600">We begin with professionalism and expertise</p>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
+              <h3 className="font-bold text-gray-900 mb-2">Why Contact Monument Construction?</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>✓ Licensed and insured contractor with 25+ years experience</li>
+                <li>✓ Free consultations and detailed quotes</li>
+                <li>✓ Fast response times - we contact you within 24 hours</li>
+                <li>✓ Transparent communication throughout your project</li>
+                <li>✓ Referral-based reputation for quality and reliability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Information */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-6 md:px-12">

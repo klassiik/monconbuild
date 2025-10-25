@@ -65,6 +65,16 @@ const HomeAdditions = () => {
               project with expert craftsmanship and attention to detail. California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a>.
             </p>
 
+            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Why Add On vs. Moving?</h3>
+              <p className="text-gray-700 mb-4">
+                A well-designed home addition is often the perfect solution for growing families or changing needs. Rather than the disruption and expense of selling and buying a new home, an addition lets you expand in place, maintain your community connections, and build equity in your existing property.
+              </p>
+              <p className="text-gray-700">
+                Home additions also add significant value to your property. Unlike many home improvements, a quality addition can add 50-80% of its cost back to your home's value, making it one of the best investments you can make in your property.
+              </p>
+            </div>
+
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Addition Services We Offer</h3>
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
@@ -73,6 +83,46 @@ const HomeAdditions = () => {
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
+            </div>
+
+            <h3 className="text-2xl font-bold mb-6 text-gray-900">Our Home Addition Process</h3>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Design & Planning</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We start by understanding your vision and needs. Our team works with you to develop design concepts, review options, and create detailed plans. We'll discuss budget, timeline, and how the addition will integrate with your existing home's style and structure.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">2</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Permits & Approvals</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We handle all permitting and building code compliance. Our licensed contractor expertise ensures your project meets all local requirements in Placer County. We coordinate with inspectors throughout construction to verify quality and safety at each stage.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Expert Construction</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Our skilled construction team executes your addition with precision. We manage site preparation, foundation work, framing, electrical, plumbing, HVAC, and more. We ensure seamless integration with your existing home's systems and aesthetics.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">4</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Finishing & Inspections</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We complete all finishing work including drywall, painting, flooring, cabinetry, and final touches. All work passes final inspections and meets code requirements. We'll walk you through your completed addition and ensure you're completely satisfied.
+                </p>
+              </div>
             </div>
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">

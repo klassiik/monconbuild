@@ -65,6 +65,16 @@ const GeneralConstruction = () => {
               expertise and attention to detail. California Contractor License #801602.
             </p>
 
+            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Complete General Contracting Services</h3>
+              <p className="text-gray-700 mb-4">
+                As a licensed general contractor, Monument Construction handles the full scope of residential construction projects. Whether you're building a new home, adding to an existing one, or completely remodeling, we manage every phase with expertise and attention to detail.
+              </p>
+              <p className="text-gray-700">
+                Our general contracting services include site preparation, structural framing, roofing, siding, coordination of specialized trades (electrical, plumbing, HVAC), and complete interior finishing. We serve as the central point of contact and project manager for your entire construction process.
+              </p>
+            </div>
+
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Construction Services</h3>
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (

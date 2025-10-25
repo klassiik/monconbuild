@@ -65,6 +65,16 @@ const CustomWoodwork = () => {
               craftsmanship with modern techniques to deliver exceptional results. Licensed contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">#801602</a>.
             </p>
 
+            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">What is Custom Woodwork?</h3>
+              <p className="text-gray-700 mb-4">
+                Custom woodwork represents the pinnacle of interior craftsmanship. Unlike standard, mass-produced cabinetry and furniture, custom woodwork is specifically designed and hand-crafted for your space and style preferences. Every piece is unique, tailored to your exact measurements, aesthetic preferences, and functional needs.
+              </p>
+              <p className="text-gray-700">
+                From bespoke kitchen cabinetry that maximizes storage and functionality, to stunning library shelving that becomes a room's focal point, custom woodwork combines artistry with practicality. Our master woodworkers select premium materials, employ time-honored techniques, and apply meticulous attention to detail—resulting in pieces that will be treasured for generations.
+              </p>
+            </div>
+
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Custom Woodwork Services</h3>
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
@@ -73,6 +83,46 @@ const CustomWoodwork = () => {
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
+            </div>
+
+            <h3 className="text-2xl font-bold mb-6 text-gray-900">Our Custom Woodwork Process</h3>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Consultation & Design</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We meet with you to understand your vision, style preferences, and functional requirements. Our design team creates detailed plans and 3D renderings, showing exactly how your custom piece will look and fit in your space. We discuss wood choices, finishes, and budget.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">2</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Material Selection</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We source premium hardwoods and materials, ensuring quality and longevity. Our craftsmen understand wood grain, movement, and finishing properties. We help you select materials that match your design vision and performance needs, whether you need durable oak, elegant walnut, or specialty woods.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Expert Craftsmanship</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Our master woodworkers hand-craft your piece using both traditional techniques and modern precision tools. Every joint is carefully fitted, every surface hand-finished, and every detail checked for perfection. We take pride in the quality that shows in every piece.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">4</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Installation & Finishing</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We expertly install your custom piece, ensuring perfect alignment and secure mounting. Final finishing touches include hardware installation, staining, and protection. You'll receive a beautiful, functional work of art built to last for decades.
+                </p>
+              </div>
             </div>
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">

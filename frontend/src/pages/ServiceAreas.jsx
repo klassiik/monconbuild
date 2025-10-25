@@ -71,6 +71,49 @@ const ServiceAreas = () => {
         </div>
       </section>
 
+      {/* Service Areas Introduction */}
+      <section className="py-20 md:py-28 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Where We Serve</h2>
+            <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
+              <p>
+                Monument Construction serves a wide geographic area throughout Northern California, with a primary focus on Placer County and Nevada County. Since our founding, we've been the trusted construction and finish carpentry partner for homeowners in Colfax and the surrounding communities.
+              </p>
+
+              <p>
+                Our service area includes Colfax, Auburn, Grass Valley, Nevada City, Truckee, and all surrounding communities in Placer and Nevada Counties. Whether you're located in a rural mountain community or a more developed suburban area, we bring the same level of professionalism, craftsmanship, and customer service to every project.
+              </p>
+
+              <p>
+                Being locally based in Colfax provides significant advantages. We understand the local building codes, climate considerations, and community standards. We maintain fast response times, can coordinate inspections efficiently, and have established relationships with local suppliers and subcontractors. This local expertise means your project benefits from our deep understanding of what works in our region.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 my-10">
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                  <h3 className="text-lg font-bold mb-3 text-gray-900">Primary Coverage Area</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li>• Placer County (Colfax, Auburn, Loomis, Rocklin)</li>
+                    <li>• Nevada County (Grass Valley, Nevada City, Penn Valley)</li>
+                    <li>• Mountain Communities (Truckee and surrounding areas)</li>
+                    <li>• All communities in between</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+                  <h3 className="text-lg font-bold mb-3 text-gray-900">Local Advantages</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li>• Fast response times and quick consultations</li>
+                    <li>• Knowledge of local building codes</li>
+                    <li>• Established supplier and contractor relationships</li>
+                    <li>• Understanding of regional climate and construction needs</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Primary Location */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-6 md:px-12">

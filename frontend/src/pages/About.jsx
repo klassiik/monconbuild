@@ -29,6 +29,23 @@ const About = () => {
       {/* Main Content */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-6 md:px-12">
+          <div className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Our Story</h2>
+            <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
+              <p>
+                Monument Construction was founded on a simple principle: delivering exceptional craftsmanship with every project, regardless of size. For over 25 years, we've been the trusted choice for homeowners throughout Placer County, Nevada County, and the greater Colfax area who demand the highest quality in construction and finish carpentry services.
+              </p>
+
+              <p>
+                Our reputation is built on the foundation of personal referrals and word-of-mouth recommendations. We don't advertise broadly because we're selective about the projects we undertake. This allows us to maintain the quality standards and personal attention that have made us successful and trusted in our communities.
+              </p>
+
+              <p>
+                What began as a passion for fine finish carpentry has evolved into a full-service construction company that handles everything from detailed interior trim work to complete residential renovations. Throughout our growth, we've never compromised on the craftsmanship and attention to detail that define our work.
+              </p>
+            </div>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">William Rogers</h2>

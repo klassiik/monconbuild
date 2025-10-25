@@ -227,6 +227,57 @@ const Home = () => {
         </div>
       </section>
 
+      {/* About Monument Construction Section */}
+      <section className="py-20 md:py-28 bg-gradient-to-r from-gray-50 to-blue-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Monument Construction</h2>
+            <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
+              <p>
+                Monument Construction is a licensed general contractor (License #801602) specializing in expert finish carpentry and comprehensive residential construction services. With over 25 years of experience serving Placer County, Nevada County, and the greater Colfax area, we've built a reputation for quality craftsmanship, attention to detail, and customer satisfaction.
+              </p>
+              
+              <p>
+                Our founder, William Rogers, is an accomplished master craftsman who has been featured on DIY Network television for his expert building and construction techniques. This national recognition reflects our commitment to delivering exceptional results on every project, from the smallest finish carpentry detail to complete home renovations.
+              </p>
+              
+              <p>
+                What sets Monument Construction apart is our approach to every project. We don't just build—we listen to our clients, understand their vision, and bring it to life with precision and care. Whether you're looking to add custom trim work, expand your home, or undertake a complete renovation, we bring the same level of craftsmanship and professionalism to every job.
+              </p>
+
+              <p>
+                Operating primarily through referrals and word-of-mouth recommendations, our client base is a testament to the quality of our work. We're selective about the projects we take on, ensuring we can deliver the level of attention and craftsmanship each project deserves.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 mt-8">
+                <div className="bg-white p-6 rounded-lg border-l-4 border-blue-600">
+                  <h3 className="text-lg font-bold mb-3 text-gray-900">Our Expertise</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li>✓ Finish carpentry and custom woodwork</li>
+                    <li>✓ General residential construction</li>
+                    <li>✓ Home additions and extensions</li>
+                    <li>✓ Complete remodeling projects</li>
+                    <li>✓ Custom design consultation</li>
+                    <li>✓ Permit and compliance coordination</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-6 rounded-lg border-l-4 border-green-600">
+                  <h3 className="text-lg font-bold mb-3 text-gray-900">Why Choose Us</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li>✓ Licensed and fully insured</li>
+                    <li>✓ 25+ years of experience</li>
+                    <li>✓ Featured on DIY Network TV</li>
+                    <li>✓ Referral-based reputation</li>
+                    <li>✓ Attention to every detail</li>
+                    <li>✓ Local community expertise</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-6 md:px-12">

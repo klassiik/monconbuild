@@ -65,6 +65,16 @@ const CompleteRemodeling = () => {
               professional expertise and meticulous attention to detail. California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a>.
             </p>
 
+            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">What is a Complete Home Remodel?</h3>
+              <p className="text-gray-700 mb-4">
+                A complete home remodel goes beyond simple cosmetic updates. It's a comprehensive transformation that can involve structural changes, system upgrades (electrical, plumbing, HVAC), new layouts, and complete aesthetic redesigns. Whether your home is 20 or 50 years old, remodeling allows you to modernize it completely—updating outdated systems, improving energy efficiency, and creating the home you've always wanted.
+              </p>
+              <p className="text-gray-700">
+                Complete remodeling projects can include kitchen and bathroom renovations, flooring replacement, interior redesigns, exterior updates, and more. The result is a home that's not only more beautiful and functional but also more valuable and efficient. With our 25+ years of experience, we make the entire remodeling process smooth and stress-free.
+              </p>
+            </div>
+
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Remodeling Services</h3>
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
@@ -73,6 +83,46 @@ const CompleteRemodeling = () => {
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
+            </div>
+
+            <h3 className="text-2xl font-bold mb-6 text-gray-900">Our Complete Remodeling Process</h3>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Vision & Planning</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We start by understanding your complete vision for your remodeled home. Our team discusses your priorities, lifestyle, aesthetic preferences, and budget. We may suggest design improvements and share examples of successful remodels. Detailed plans and design visualizations show exactly how your new space will look and function.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">2</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Design & Permits</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Our designers create detailed architectural plans and specifications. We handle all permitting with Placer County, ensuring full code compliance. We manage inspections at key stages, from foundation and framing to final completion. Our experience means fewer surprises and better results.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Skilled Execution</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Our team coordinates all trades—demolition, framing, electrical, plumbing, HVAC, tile work, cabinetry, and more. We maintain clean, organized work sites and minimize disruption to your household. Regular communication and updates keep you informed throughout construction.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">4</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Completion & Enjoyment</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We complete all finishing details—paint, flooring, hardware, fixtures, and final touches. Final inspections verify code compliance. We conduct a thorough walkthrough, address any final items, and provide all documentation. Then you get to enjoy your beautiful new home!
+                </p>
+              </div>
             </div>
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">

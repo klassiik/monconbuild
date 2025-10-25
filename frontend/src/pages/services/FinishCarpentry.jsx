@@ -125,6 +125,36 @@ const FinishCarpentry = () => {
               attention to detail and superior craftsmanship on every project. Licensed contractor #801602.
             </p>
 
+            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">What is Finish Carpentry?</h3>
+              <p className="text-gray-700 mb-4">
+                Finish carpentry is the art of adding the final touches to a space—the details that transform a room from basic to beautiful. Unlike rough carpentry (framing and structural work), finish carpentry focuses on the visible elements that define a room's character and elegance.
+              </p>
+              <p className="text-gray-700">
+                This includes crown molding, baseboards, window and door casings, wainscoting, built-in cabinetry, custom mantels, coffered ceilings, and decorative woodwork. These elements require precision, craftsmanship, and an eye for design to ensure they enhance the room while maintaining structural integrity.
+              </p>
+            </div>
+
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Finish Carpentry Process</h3>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                <h4 className="text-lg font-bold mb-3 text-gray-900">Consultation & Design</h4>
+                <p className="text-gray-700">We meet with you to understand your vision, discuss design options, and provide recommendations based on your home's architecture and your personal style.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                <h4 className="text-lg font-bold mb-3 text-gray-900">Material Selection</h4>
+                <p className="text-gray-700">We help you choose the right materials—wood types, finishes, and hardware—that match your design vision and budget.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+                <h4 className="text-lg font-bold mb-3 text-gray-900">Expert Installation</h4>
+                <p className="text-gray-700">Our craftsmen install with precision, ensuring perfect measurements, clean joints, and flawless finishes that last for decades.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+                <h4 className="text-lg font-bold mb-3 text-gray-900">Quality Finishing</h4>
+                <p className="text-gray-700">We handle all finishing work—staining, painting, sealing—to ensure a professional appearance that enhances your entire space.</p>
+              </div>
+            </div>
+
             <h3 className="text-2xl font-bold mb-4 text-gray-900">What We Offer</h3>
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (

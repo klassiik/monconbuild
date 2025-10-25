@@ -127,6 +127,47 @@ const Services = () => {
           </div>
         </div>
       </section>
+      {/* Services Introduction Section */}
+      <section className="py-20 md:py-28 bg-gray-50">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">What We Offer</h2>
+            <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
+              <p>
+                Monument Construction provides comprehensive construction and finish carpentry services throughout Placer County, Nevada County, and the Colfax area. With over 25 years of experience, we handle everything from detailed finish carpentry work to complete residential construction projects.
+              </p>
+
+              <p>
+                Our services are designed to meet the diverse needs of homeowners looking to improve, expand, or completely renovate their properties. Whether you're interested in adding custom trim work to enhance your home's interior, expanding with a new addition, or undertaking a full remodeling project, we have the expertise and experience to deliver exceptional results.
+              </p>
+
+              <h3 className="text-2xl font-bold mt-10 mb-6 text-gray-900">Our Approach to Every Project</h3>
+              <p>
+                We believe in quality over quantity. That's why we're selective about which projects we take on and operate primarily through referrals from satisfied clients. Each project receives our full attention and commitment to excellence.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 my-10">
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                  <h4 className="text-lg font-bold mb-4 text-gray-900">Detailed Consultation</h4>
+                  <p className="text-sm">We work closely with you to understand your vision, budget, and timeline. Our consultations are thorough and transparent, so you know exactly what to expect.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                  <h4 className="text-lg font-bold mb-4 text-gray-900">Expert Execution</h4>
+                  <p className="text-sm">With decades of combined experience, our team executes projects with precision and attention to detail that's evident in every finished product.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+                  <h4 className="text-lg font-bold mb-4 text-gray-900">Professional Coordination</h4>
+                  <p className="text-sm">We handle all aspects of project coordination including permits, inspections, and compliance to ensure your project meets all building codes.</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+                  <h4 className="text-lg font-bold mb-4 text-gray-900">Quality Assurance</h4>
+                  <p className="text-sm">Every project is completed to the highest standards. We don't consider a project finished until you're completely satisfied.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Services Grid */}
       <section className="py-20 md:py-28 bg-white">
