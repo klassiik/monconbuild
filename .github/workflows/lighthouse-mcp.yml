@@ -1,9 +1,8 @@
 name: 'Lighthouse MCP Performance Audit'
 
 on:
-  # Temporarily disabled - uncomment to re-enable
-  # push:
-  #   branches: [ main, develop ]
+  push:
+    branches: [ main ]
   # pull_request:
   #   branches: [ main ]
   schedule:
