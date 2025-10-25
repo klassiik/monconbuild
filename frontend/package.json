@@ -71,7 +71,11 @@
     "optimize:images": "node ../optimize-images.js",
     "optimize:css": "tailwindcss -i ./src/index.css -o ./build/static/css/main.css --minify",
     "analyze:bundle": "npm run build && npx bundle-analyzer build/static/js/*.js",
-    "performance:ci": "node ../lighthouse-mcp-cli.js audit --ci"
+    "performance:ci": "node ../lighthouse-mcp-cli.js audit --ci",
+    "security:audit": "npm audit --audit-level=moderate",
+    "security:audit:fix": "npm audit fix",
+    "security:check": "npm run security:audit && npm outdated",
+    "security:update": "ncu -u && npm install"
   },
   "reactSnap": {
     "include": [
