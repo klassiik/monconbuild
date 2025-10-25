@@ -115,7 +115,7 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Professional Construction & Carpentry Services | Monument Construction</title>
+        <title>Construction Services | Colfax CA</title>
         <meta name="description" content="Expert finish carpentry, home additions, remodeling & custom woodwork for Colfax & Placer County. Quality craftsmanship." />
         <link rel="canonical" href="https://www.monconbuild.com/services" />
       </Helmet>

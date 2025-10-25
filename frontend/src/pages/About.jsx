@@ -13,7 +13,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>About Monument Construction | Expert Contractors in Colfax, CA</title>
+        <title>About Monument Construction</title>
         <meta name="description" content="Monument Construction: 25+ years trusted finish carpentry & construction services in Colfax & Placer County. Featured on DIY Network." />
         <link rel="canonical" href="https://www.monconbuild.com/about" />
       </Helmet>

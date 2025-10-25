@@ -26,7 +26,7 @@ const GeneralConstruction = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>General Contracting Services in Colfax, CA | Monument Construction</title>
+        <title>General Contracting | Colfax CA</title>
         <meta name="description" content="Full-service general construction in Placer County. New homes, remodels, additions & more. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/general-construction" />
       </Helmet>

@@ -26,7 +26,7 @@ const ResidentialProjects = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Residential Construction Projects in Colfax, CA | Monument Construction</title>
+        <title>Residential Construction Projects</title>
         <meta name="description" content="Complete residential construction & remodeling projects in Placer County. Quality craftsmanship from ground to finish." />
         <link rel="canonical" href="https://www.monconbuild.com/services/residential-projects" />
       </Helmet>

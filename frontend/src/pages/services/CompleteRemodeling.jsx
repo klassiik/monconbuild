@@ -26,7 +26,7 @@ const CompleteRemodeling = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Complete Home Remodeling in Colfax, CA | Monument Construction</title>
+        <title>Home Remodeling | Colfax CA</title>
         <meta name="description" content="Full-service home remodeling in Colfax & Placer County. Complete transformations with expert craftsmanship & attention." />
         <link rel="canonical" href="https://www.monconbuild.com/services/complete-remodeling" />
       </Helmet>

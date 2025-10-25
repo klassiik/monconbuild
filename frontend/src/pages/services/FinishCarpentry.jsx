@@ -68,7 +68,7 @@ const FinishCarpentry = () => {
     <div className="min-h-screen">
       {/* SEO Meta Tags and Schema */}
       <Helmet>
-        <title>Expert Finish Carpentry in Colfax, CA | Monument Construction</title>
+        <title>Finish Carpentry | Colfax CA</title>
         <meta name="description" content="Expert finish carpentry in Colfax, CA. Custom trim, molding, built-ins & woodwork. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/finish-carpentry" />
         <meta property="og:title" content="Expert Finish Carpentry in Colfax, CA | Monument Construction" />

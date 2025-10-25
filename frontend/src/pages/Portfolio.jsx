@@ -49,6 +49,11 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Portfolio | Construction Projects</title>
+        <meta name="description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer & Nevada County, CA." />
+        <link rel="canonical" href="https://www.monconbuild.com/portfolio" />
+      </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       

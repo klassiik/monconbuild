@@ -26,7 +26,7 @@ const CustomWoodwork = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Custom Woodwork & Cabinetry in Colfax, CA | Monument Construction</title>
+        <title>Custom Woodwork | Colfax CA</title>
         <meta name="description" content="Artisan custom cabinetry & woodwork in Colfax, CA. Hand-crafted furniture & built-ins. Featured on DIY Network." />
         <link rel="canonical" href="https://www.monconbuild.com/services/custom-woodwork" />
       </Helmet>

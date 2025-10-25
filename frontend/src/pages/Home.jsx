@@ -149,7 +149,7 @@ const Home = () => {
     <div className="min-h-screen">
       {/* SEO Meta Tags and Schema.org Structured Data */}
       <Helmet>
-        <title>Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA</title>
+        <title>Expert Carpentry & Construction | Colfax CA</title>
         <meta name="description" content="Professional finish carpentry & construction services in Colfax, CA. Licensed contractor #801602. Featured on DIY Network. (916) 607-1972." />
         <link rel="canonical" href="https://www.monconbuild.com/" />
         

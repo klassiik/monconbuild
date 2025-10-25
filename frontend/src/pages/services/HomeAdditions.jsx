@@ -26,7 +26,7 @@ const HomeAdditions = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Home Additions & Extensions in Colfax, CA | Monument Construction</title>
+        <title>Home Additions | Colfax CA</title>
         <meta name="description" content="Expert home additions & room expansions in Placer County. Second-story additions, ADUs & more. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/home-additions" />
       </Helmet>
