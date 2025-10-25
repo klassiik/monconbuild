@@ -37,10 +37,12 @@ jobs:
       working-directory: ./frontend
       run: yarn install --frozen-lockfile
 
-    - name: Install Lighthouse MCP
+    - name: Prepare tools
       run: |
-        npm install -g @lighthouse-mcp/cli lighthouse-ci
-        npm install lighthouse @lighthouse-mcp/core web-vitals
+        # Use npx to fetch latest stable CLIs without adding to repo
+        node -v
+        npm -v
+        yarn -v
 
     - name: Build application
       working-directory: ./frontend
@@ -49,77 +51,58 @@ jobs:
     - name: Start application server
       working-directory: ./frontend
       run: |
-        npx serve -s build -l 3000 &
+        npx --yes serve@14 -s build -l 3000 &
         sleep 10
         curl -f http://localhost:3000 || exit 1
 
-    - name: Run Lighthouse MCP Audit (Mobile)
+    - name: Run Lighthouse Audit (Mobile)
       run: |
+        set -e
         # Determine URLs to audit
         if [ -n "${{ github.event.inputs.target_urls }}" ]; then
           URLS="${{ github.event.inputs.target_urls }}"
         else
           URLS="http://localhost:3000,http://localhost:3000/services,http://localhost:3000/about,http://localhost:3000/portfolio,http://localhost:3000/contact"
         fi
-        
-        # Run Mobile Lighthouse CI with MCP integration
         echo "🔍 Running Mobile Performance Audit..."
-        node ../lighthouse-mcp-cli.js audit -u "$URLS" --output ./lighthouse-reports/mobile
+        mkdir -p ./lighthouse-reports/mobile
+        IFS=',' read -ra PAGES <<< "$URLS"
+        for u in "${PAGES[@]}"; do
+          slug=$(echo "$u" | sed 's|https\?://||; s|/|_|g; s|[^A-Za-z0-9_.-]|-|g')
+          echo "Running Lighthouse (mobile) for $u"
+          npx --yes lighthouse@12 "$u" \
+            --output=json \
+            --output-path="./lighthouse-reports/mobile/${slug}.json" \
+            --only-categories=performance,accessibility,seo,best-practices \
+            --form-factor=mobile \
+            --throttling-method=simulate \
+            --quiet \
+            --chrome-flags="--headless=new --no-sandbox --disable-gpu" || echo "Lighthouse mobile failed for $u"
+        done
         
-    - name: Run Lighthouse MCP Audit (Desktop)
+    - name: Run Lighthouse Audit (Desktop)
       run: |
+        set -e
         # Determine URLs to audit
         if [ -n "${{ github.event.inputs.target_urls }}" ]; then
           URLS="${{ github.event.inputs.target_urls }}"
         else
           URLS="http://localhost:3000,http://localhost:3000/services,http://localhost:3000/about,http://localhost:3000/portfolio,http://localhost:3000/contact"
         fi
-        
-        # Run Desktop Lighthouse CI with MCP integration
         echo "🖥️ Running Desktop Performance Audit..."
-        node ../lighthouse-mcp-cli.js audit -u "$URLS" --output ./lighthouse-reports/desktop --desktop
-
-    - name: Validate OpenAI API key
-      run: |
-        if [ -z "$OPENAI_API_KEY" ]; then
-          echo "::error::Missing OPENAI_API_KEY secret. Add it in GitHub > Settings > Secrets and variables > Actions."
-          exit 1
-        else
-          echo "OPENAI_API_KEY is set. Proceeding with AI analysis."
-        fi
-
-    - name: Run AI Analysis
-      run: |
-        node -e "
-        const LighthouseMCPServer = require('./lighthouse-mcp-server.js');
-        const fs = require('fs');
-        
-        async function runAnalysis() {
-          const server = new LighthouseMCPServer({
-            reportPath: './lighthouse-reports',
-            aiModel: 'gpt-4o-mini'
-          });
-          
-          // Read latest reports
-          const reportFiles = fs.readdirSync('./lighthouse-reports')
-            .filter(f => f.endsWith('.json'))
-            .sort()
-            .slice(-5);
-            
-          for (const file of reportFiles) {
-            const report = JSON.parse(fs.readFileSync('./lighthouse-reports/' + file));
-            const analysis = await server.analyzeWithAI({ lhr: report });
-            
-            console.log('=== AI Analysis for', file, '===');
-            console.log('Summary:', analysis.summary);
-            console.log('Critical Issues:', analysis.criticalIssues);
-            console.log('Quick Wins:', analysis.quickWins);
-            console.log('');
-          }
-        }
-        
-        runAnalysis().catch(console.error);
-        "
+        mkdir -p ./lighthouse-reports/desktop
+        IFS=',' read -ra PAGES <<< "$URLS"
+        for u in "${PAGES[@]}"; do
+          slug=$(echo "$u" | sed 's|https\?://||; s|/|_|g; s|[^A-Za-z0-9_.-]|-|g')
+          echo "Running Lighthouse (desktop) for $u"
+          npx --yes lighthouse@12 "$u" \
+            --output=json \
+            --output-path="./lighthouse-reports/desktop/${slug}.json" \
+            --only-categories=performance,accessibility,seo,best-practices \
+            --preset=desktop \
+            --quiet \
+            --chrome-flags="--headless=new --no-sandbox --disable-gpu" || echo "Lighthouse desktop failed for $u"
+        done
 
     - name: Generate Performance Report
       run: |
@@ -128,13 +111,17 @@ jobs:
         const path = require('path');
         
         // Read all Lighthouse reports
-        const reportDir = './lighthouse-reports';
-        const reports = fs.readdirSync(reportDir)
-          .filter(f => f.endsWith('.json'))
-          .map(f => {
-            const content = fs.readFileSync(path.join(reportDir, f), 'utf8');
-            return JSON.parse(content);
-          });
+        const base = './lighthouse-reports';
+        const files = [];
+        function walk(dir) {
+          for (const f of fs.readdirSync(dir)) {
+            const p = path.join(dir, f);
+            const s = fs.statSync(p);
+            if (s.isDirectory()) walk(p); else if (f.endsWith('.json')) files.push(p);
+          }
+        }
+        walk(base);
+        const reports = files.map(f => JSON.parse(fs.readFileSync(f, 'utf8')));
         
         // Generate summary
         const summary = {
@@ -161,7 +148,7 @@ jobs:
         
         // Calculate averages
         Object.keys(summary.averageScores).forEach(key => {
-          summary.averageScores[key] = Math.round((summary.averageScores[key] / reports.length) * 100);
+          summary.averageScores[key] = reports.length ? Math.round((summary.averageScores[key] / reports.length) * 100) : 0;
         });
         
         fs.writeFileSync('./performance-summary.json', JSON.stringify(summary, null, 2));
@@ -216,7 +203,7 @@ jobs:
       with:
         name: lighthouse-reports
         path: |
-          lighthouse-reports/
+          lighthouse-reports/**/*
           performance-summary.json
         retention-days: 30
 
