@@ -29,6 +29,7 @@ const HomeAdditions = () => {
         <title>Home Additions | Colfax CA</title>
         <meta name="description" content="Expert home additions & room expansions in Placer County. Second-story additions, ADUs & more. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/home-additions" />
+        <meta property="og:url" content="https://www.monconbuild.com/services/home-additions" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">

@@ -61,6 +61,7 @@ const ServiceAreas = () => {
         <title>Service Areas | Placer County CA</title>
         <meta name="description" content="Monument Construction serves Placer & Nevada Counties including Colfax, Auburn, Grass Valley, Nevada City & Truckee." />
         <link rel="canonical" href="https://www.monconbuild.com/service-areas" />
+        <meta property="og:url" content="https://www.monconbuild.com/service-areas" />
       </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />

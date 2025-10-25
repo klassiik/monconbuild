@@ -76,6 +76,7 @@ const Contact = () => {
         <title>Contact Monument Construction</title>
         <meta name="description" content="Contact Monument Construction for free quotes on finish carpentry, remodeling & construction in Colfax & Placer County." />
         <link rel="canonical" href="https://www.monconbuild.com/contact" />
+        <meta property="og:url" content="https://www.monconbuild.com/contact" />
       </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />

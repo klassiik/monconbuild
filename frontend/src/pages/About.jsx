@@ -16,6 +16,7 @@ const About = () => {
         <title>About Monument Construction</title>
         <meta name="description" content="Monument Construction: 25+ years trusted finish carpentry & construction services in Colfax & Placer County. Featured on DIY Network." />
         <link rel="canonical" href="https://www.monconbuild.com/about" />
+        <meta property="og:url" content="https://www.monconbuild.com/about" />
       </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
