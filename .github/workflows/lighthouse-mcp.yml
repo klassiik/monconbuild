@@ -28,9 +28,13 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
         cache: 'yarn'
         cache-dependency-path: frontend/yarn.lock
+
+    - name: Remove npm lockfile (avoid mixed PMs)
+      working-directory: ./frontend
+      run: rm -f package-lock.json
 
     - name: Install dependencies
       working-directory: ./frontend
@@ -178,7 +182,16 @@ jobs:
       run: |
         mkdir -p lighthouse-reports/mobile lighthouse-reports/desktop
         if [ ! -f performance-summary.json ]; then
-          echo '{"timestamp":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)'"","totalPages":0,"averageScores":{"performance":0,"accessibility":0,"bestPractices":0,"seo":0}}' > performance-summary.json
+          printf '%s\n' '{' \
+            '  "timestamp": "",' \
+            '  "totalPages": 0,' \
+            '  "averageScores": {' \
+            '    "performance": 0,' \
+            '    "accessibility": 0,' \
+            '    "bestPractices": 0,' \
+            '    "seo": 0' \
+            '  }' \
+            '}' > performance-summary.json
         fi
 
     - name: Comment PR with Results
