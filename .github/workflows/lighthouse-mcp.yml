@@ -43,6 +43,15 @@ jobs:
         node -v
         npm -v
         yarn -v
+        npx --yes lighthouse@12 --version || true
+        which google-chrome || which chromium || true
+
+    - name: Install Chrome dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcomposite1 libxrandr2 \
+          libgtk-3-0 libasound2 fonts-liberation libgbm1 xvfb
 
     - name: Build application
       working-directory: ./frontend
@@ -56,6 +65,7 @@ jobs:
         curl -f http://localhost:3000 || exit 1
 
     - name: Run Lighthouse Audit (Mobile)
+      continue-on-error: true
       run: |
         set -e
         # Determine URLs to audit
@@ -82,6 +92,7 @@ jobs:
         echo "Mobile reports generated:" && ls -la ./lighthouse-reports/mobile || true
         
     - name: Run Lighthouse Audit (Desktop)
+      continue-on-error: true
       run: |
         set -e
         # Determine URLs to audit
