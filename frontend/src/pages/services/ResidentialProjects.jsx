@@ -74,7 +74,7 @@ const ResidentialProjects = () => {
             <div className="bg-blue-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">Comprehensive Residential Project Management</h3>
               <p className="text-gray-700 mb-4">
-                Residential construction projects require careful planning, precise execution, and constant attention to detail. Our team brings 25+ years of experience managing projects of all sizes—from targeted renovations to complete home transformations—ensuring every project meets our high standards for quality, safety, and customer satisfaction.
+                Residential construction projects require careful planning, precise execution, and constant attention to detail. Our team brings 25+ years of experience managing projects of all sizes - from targeted renovations to complete home transformations - making sure every project meets our high standards for quality, safety, and customer satisfaction.
               </p>
               <p className="text-gray-700">
                 We handle the full scope of residential work: coordinating all trades, managing permits and inspections, sourcing quality materials, and maintaining clear communication with you throughout the project. Whether it's a kitchen remodel, bathroom renovation, room addition, or complete home remodel, we bring the same dedication and expertise to every project.
@@ -117,7 +117,7 @@ const ResidentialProjects = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Expert Construction</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  Our skilled team executes your project with precision and professionalism. We coordinate all trades—electrical, plumbing, HVAC, carpentry, and more—ensuring seamless integration and efficient workflow. Daily communication keeps you informed every step of the way.
+                  Our skilled team executes your project with precision and professionalism. We coordinate all trades - electrical, plumbing, HVAC, carpentry, and more - so everything works together smoothly and efficiently. We keep you in the loop throughout the whole project.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">

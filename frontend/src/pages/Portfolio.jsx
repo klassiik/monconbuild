@@ -80,7 +80,7 @@ const Portfolio = () => {
               </p>
 
               <p>
-                From custom finish carpentry details that transform a room's character to comprehensive home additions that expand living space, our work speaks to our dedication. We don't just complete projects—we create spaces that enhance our clients' lives and add lasting value to their homes.
+                From custom finish carpentry details that transform a room's character to comprehensive home additions that expand living space, our work speaks to our dedication. We don't just complete projects - we create spaces that enhance our clients' lives and add lasting value to their homes.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 my-10">
@@ -138,7 +138,7 @@ const Portfolio = () => {
                     <p className="text-gray-600 italic">
                       "Every project reflects our commitment to quality craftsmanship and attention to detail."
                     </p>
-                    <p className="text-slate-900 font-semibold mt-2">— William Rogers, Owner</p>
+                    <p className="text-slate-900 font-semibold mt-2">- William Rogers, Owner</p>
                   </div>
                 </div>
               </div>

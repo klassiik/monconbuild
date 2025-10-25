@@ -238,15 +238,15 @@ const Home = () => {
               </p>
               
               <p>
-                Our founder, William Rogers, is an accomplished master craftsman who has been featured on DIY Network television for his expert building and construction techniques. This national recognition reflects our commitment to delivering exceptional results on every project, from the smallest finish carpentry detail to complete home renovations.
+                Our founder, William Rogers, is an accomplished master craftsman who has been featured on DIY Network television for his expert building and construction techniques. This national recognition reflects our commitment to great results on every project, from the smallest finish carpentry detail to complete home renovations.
               </p>
               
               <p>
-                What sets Monument Construction apart is our approach to every project. We don't just build—we listen to our clients, understand their vision, and bring it to life with precision and care. Whether you're looking to add custom trim work, expand your home, or undertake a complete renovation, we bring the same level of craftsmanship and professionalism to every job.
+                What sets Monument Construction apart is our approach to every project. We don't just build - we listen to our clients, understand their vision, and bring it to life with precision and care. Whether you're looking to add custom trim work, expand your home, or undertake a complete renovation, we bring the same craftsmanship and professionalism to every job.
               </p>
 
               <p>
-                Operating primarily through referrals and word-of-mouth recommendations, our client base is a testament to the quality of our work. We're selective about the projects we take on, ensuring we can deliver the level of attention and craftsmanship each project deserves.
+                Operating primarily through referrals and word-of-mouth recommendations, our client base is a testament to the quality of our work. We're selective about the projects we take on, so we can bring the level of attention and craftsmanship each project needs.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">

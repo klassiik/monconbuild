@@ -77,7 +77,7 @@ const CustomWoodwork = () => {
                 Custom woodwork represents the pinnacle of interior craftsmanship. Unlike standard, mass-produced cabinetry and furniture, custom woodwork is specifically designed and hand-crafted for your space and style preferences. Every piece is unique, tailored to your exact measurements, aesthetic preferences, and functional needs.
               </p>
               <p className="text-gray-700">
-                From bespoke kitchen cabinetry that maximizes storage and functionality, to stunning library shelving that becomes a room's focal point, custom woodwork combines artistry with practicality. Our master woodworkers select premium materials, employ time-honored techniques, and apply meticulous attention to detail—resulting in pieces that will be treasured for generations.
+                From bespoke kitchen cabinetry that maximizes storage and functionality, to stunning library shelving that becomes a room's focal point, custom woodwork combines artistry with practicality. Our master woodworkers select premium materials, use time-honored techniques, and pay close attention to detail - creating pieces that get treasured for generations.
               </p>
             </div>
 
