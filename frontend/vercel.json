@@ -5,10 +5,20 @@
   "devCommand": "yarn start",
   "installCommand": "yarn install",
   "framework": "create-react-app",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/:path((?!.*\\.txt$).*)",
-      "destination": "/index.html"
+      "src": "/k83s5m7kdq214g8v7y5x2ue18nn79ycx.txt",
+      "dest": "/k83s5m7kdq214g8v7y5x2ue18nn79ycx.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "headers": [
