@@ -7,6 +7,76 @@ import { customWoodworkFAQs } from '../../data/faqs';
 import { CheckCircle2, Phone, Mail, Hammer, Award } from 'lucide-react';
 
 const CustomWoodwork = () => {
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Custom Woodwork",
+    "provider": {
+      "@type": "GeneralContractor",
+      "name": "Monument Construction",
+      "telephone": "(916) 607-1972",
+      "email": "monumentconstruction@comcast.net"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Colfax, CA" },
+      { "@type": "City", "name": "Auburn, CA" },
+      { "@type": "City", "name": "Grass Valley, CA" },
+      { "@type": "City", "name": "Nevada City, CA" },
+      { "@type": "City", "name": "Truckee, CA" }
+    ],
+    "description": "Master craftsmanship in custom woodwork, cabinetry, and artisan furniture pieces for Placer and Nevada County homes.",
+    "url": "https://www.monconbuild.com/services/custom-woodwork",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Custom Woodwork Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Cabinetry & Built-ins"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Handcrafted Furniture Pieces"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Decorative Mantels & Shelving"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Doors & Entry Features"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ornamental Trim & Moldings"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Specialty Woodworking Projects"
+          }
+        }
+      ]
+    }
+  };
+
   const features = [
     "Custom cabinetry and built-ins",
     "Handcrafted furniture pieces",
@@ -36,6 +106,11 @@ const CustomWoodwork = () => {
         <meta property="og:url" content="https://www.monconbuild.com/services/custom-woodwork" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        
+        {/* Service Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">

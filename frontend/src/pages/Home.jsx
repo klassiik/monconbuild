@@ -123,17 +123,20 @@ const Home = () => {
     {
       image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/6s7jphb3_Untitled.jpg",
       title: "Custom Library & Built-ins",
-      description: "Floor-to-ceiling custom carpentry"
+      description: "Floor-to-ceiling custom carpentry",
+      alt: "Custom library built-in bookcase with finish carpentry work in Placer County, CA home"
     },
     {
       image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/zdso40es_Untitled1.png",
       title: "Custom Home Office",
-      description: "Corner desk with integrated shelving"
+      description: "Corner desk with integrated shelving",
+      alt: "Custom home office built-in desk and shelving by Monument Construction in Colfax, CA"
     },
     {
       image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/gx2z9lsu_Untitled7.jpg",
       title: "Covered Entry Construction",
-      description: "Custom timber frame entrance"
+      description: "Custom timber frame entrance",
+      alt: "Custom timber frame covered entry construction in Auburn, CA by licensed contractor"
     }
   ];
 
@@ -336,7 +339,7 @@ const Home = () => {
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
-                    alt={project.title}
+                    alt={project.alt}
                     loading="lazy"
                     className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -412,7 +415,7 @@ const Home = () => {
             <div className="relative">
               <img 
                 src="https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/uvmny025_Untitled12.jpg" 
-                alt="Monument Construction quality work"
+                alt="Monument Construction quality finish carpentry and construction work in Colfax, Placer County, CA"
                 loading="lazy"
                 className="rounded-lg shadow-2xl"
               />

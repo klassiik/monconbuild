@@ -7,6 +7,76 @@ import { homeAdditionsFAQs } from '../../data/faqs';
 import { CheckCircle2, Phone, Mail, PlusCircle, Award } from 'lucide-react';
 
 const HomeAdditions = () => {
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Home Additions",
+    "provider": {
+      "@type": "GeneralContractor",
+      "name": "Monument Construction",
+      "telephone": "(916) 607-1972",
+      "email": "monumentconstruction@comcast.net"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Colfax, CA" },
+      { "@type": "City", "name": "Auburn, CA" },
+      { "@type": "City", "name": "Grass Valley, CA" },
+      { "@type": "City", "name": "Nevada City, CA" },
+      { "@type": "City", "name": "Truckee, CA" }
+    ],
+    "description": "Professional home additions and room expansions including second-story additions, ADUs, and garage conversions in Placer County.",
+    "url": "https://www.monconbuild.com/services/home-additions",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Home Addition Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Second Story Additions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Room Additions & Extensions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Garage Conversions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sunroom & Patio Enclosures"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "In-law Suites & ADUs"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bump-outs & Expansions"
+          }
+        }
+      ]
+    }
+  };
+
   const features = [
     "Second story additions",
     "Room additions and extensions",
@@ -36,6 +106,11 @@ const HomeAdditions = () => {
         <meta property="og:url" content="https://www.monconbuild.com/services/home-additions" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        
+        {/* Service Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">

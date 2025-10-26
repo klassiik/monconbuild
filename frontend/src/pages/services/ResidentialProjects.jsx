@@ -7,6 +7,76 @@ import { residentialProjectsFAQs } from '../../data/faqs';
 import { CheckCircle2, Phone, Mail, Home, Award } from 'lucide-react';
 
 const ResidentialProjects = () => {
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Residential Construction",
+    "provider": {
+      "@type": "GeneralContractor",
+      "name": "Monument Construction",
+      "telephone": "(916) 607-1972",
+      "email": "monumentconstruction@comcast.net"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Colfax, CA" },
+      { "@type": "City", "name": "Auburn, CA" },
+      { "@type": "City", "name": "Grass Valley, CA" },
+      { "@type": "City", "name": "Nevada City, CA" },
+      { "@type": "City", "name": "Truckee, CA" }
+    ],
+    "description": "Complete residential construction and remodeling services including new home construction, renovations, and home improvement projects in Placer County.",
+    "url": "https://www.monconbuild.com/services/residential-projects",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Residential Construction Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "New Home Construction"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Kitchen & Bathroom Renovations"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Room Additions & Expansions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Deck & Patio Construction"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Interior & Exterior Upgrades"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Whole-house Remodels"
+          }
+        }
+      ]
+    }
+  };
+
   const features = [
     "New home construction",
     "Kitchen and bathroom renovations",
@@ -36,6 +106,11 @@ const ResidentialProjects = () => {
         <meta property="og:url" content="https://www.monconbuild.com/services/residential-projects" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        
+        {/* Service Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">

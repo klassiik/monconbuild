@@ -7,6 +7,76 @@ import { generalConstructionFAQs } from '../../data/faqs';
 import { CheckCircle2, Phone, Mail, Building2, Award } from 'lucide-react';
 
 const GeneralConstruction = () => {
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "General Construction",
+    "provider": {
+      "@type": "GeneralContractor",
+      "name": "Monument Construction",
+      "telephone": "(916) 607-1972",
+      "email": "monumentconstruction@comcast.net"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Colfax, CA" },
+      { "@type": "City", "name": "Auburn, CA" },
+      { "@type": "City", "name": "Grass Valley, CA" },
+      { "@type": "City", "name": "Nevada City, CA" },
+      { "@type": "City", "name": "Truckee, CA" }
+    ],
+    "description": "Full-service general construction services including new construction, remodels, additions, and complete project management in Placer and Nevada Counties.",
+    "url": "https://www.monconbuild.com/services/general-construction",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "General Construction Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "New Construction Projects"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Foundation to Finish Builds"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Structural Framing & Repairs"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Site Preparation & Grading"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Concrete & Masonry Work"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Complete Project Management"
+          }
+        }
+      ]
+    }
+  };
+
   const features = [
     "New construction projects",
     "Foundation to finish builds",
@@ -36,6 +106,11 @@ const GeneralConstruction = () => {
         <meta property="og:url" content="https://www.monconbuild.com/services/general-construction" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        
+        {/* Service Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">

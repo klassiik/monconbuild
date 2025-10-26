@@ -7,6 +7,76 @@ import { completeRemodelingFAQs } from '../../data/faqs';
 import { CheckCircle2, Phone, Mail, Wrench, Award } from 'lucide-react';
 
 const CompleteRemodeling = () => {
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Complete Remodeling",
+    "provider": {
+      "@type": "GeneralContractor",
+      "name": "Monument Construction",
+      "telephone": "(916) 607-1972",
+      "email": "monumentconstruction@comcast.net"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Colfax, CA" },
+      { "@type": "City", "name": "Auburn, CA" },
+      { "@type": "City", "name": "Grass Valley, CA" },
+      { "@type": "City", "name": "Nevada City, CA" },
+      { "@type": "City", "name": "Truckee, CA" }
+    ],
+    "description": "Full-service home remodeling and renovation services including whole-house transformations, kitchen and bathroom remodels in Placer County.",
+    "url": "https://www.monconbuild.com/services/complete-remodeling",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Complete Remodeling Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Whole-house Renovations"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Kitchen & Bathroom Remodels"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Interior & Exterior Updates"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Structural Modifications"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Design & Planning Services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Turnkey Remodeling Solutions"
+          }
+        }
+      ]
+    }
+  };
+
   const features = [
     "Whole-house renovations",
     "Kitchen and bathroom remodels",
@@ -36,6 +106,11 @@ const CompleteRemodeling = () => {
         <meta property="og:url" content="https://www.monconbuild.com/services/complete-remodeling" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        
+        {/* Service Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">

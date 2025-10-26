@@ -45,7 +45,55 @@ const FinishCarpentry = () => {
       { "@type": "City", "name": "Truckee, CA" }
     ],
     "description": "Expert finish carpentry services including custom trim work, crown molding, built-ins, and decorative woodwork in Colfax and Placer County.",
-    "url": "https://www.monconbuild.com/services/finish-carpentry"
+    "url": "https://www.monconbuild.com/services/finish-carpentry",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Finish Carpentry Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Crown Molding & Baseboards"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Built-in Cabinets & Shelving"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Window & Door Trim Installation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wainscoting & Paneling"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Mantels & Fireplace Surrounds"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Coffered Ceilings & Decorative Beams"
+          }
+        }
+      ]
+    }
   };
 
   const features = [
