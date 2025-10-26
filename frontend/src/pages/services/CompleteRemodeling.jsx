@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../../components/ui/button';
+import FAQSection from '../../components/FAQSection';
+import { completeRemodelingFAQs } from '../../data/faqs';
 import { CheckCircle2, Phone, Mail, Wrench, Award } from 'lucide-react';
 
 const CompleteRemodeling = () => {
@@ -225,6 +227,37 @@ const CompleteRemodeling = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Remodel Your Home?</h2>
           <p className="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
             Contact Monument Construction for expert remodeling services in Colfax and throughout Placer County.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+                Request Free Consultation
+              </Button>
+            </a>
+            <a href="mailto:monumentconstruction@comcast.net">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-900 text-lg px-8 py-6">
+                <Mail className="mr-2 h-5 w-5" />
+                Email Us
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSection 
+        faqs={completeRemodelingFAQs} 
+        title="Frequently Asked Questions About Home Remodeling in Placer County"
+      />
+
+      {/* Final CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-green-700 to-green-900 text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Ready to Transform Your Home?
+          </h2>
+          <p className="text-xl mb-8">
+            Contact Monument Construction today for your free consultation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">

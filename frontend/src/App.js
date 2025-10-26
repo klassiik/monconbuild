@@ -3,6 +3,7 @@ import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import StickyCTA from "./components/StickyCTA";
 // Lazy-load Toaster to avoid pulling sonner/next-themes into the main bundle
 const LazyToaster = lazy(() =>
   import('./components/ui/sonner').then((m) => ({ default: m.Toaster }))
@@ -111,6 +112,7 @@ function App() {
           } />
         </Routes>
         <Footer />
+        <StickyCTA />
         {mountToaster && (
           <Suspense fallback={null}>
             <LazyToaster />

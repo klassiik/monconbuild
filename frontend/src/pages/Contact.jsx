@@ -22,6 +22,8 @@ const Contact = () => {
     phone: '',
     projectType: '',
     location: '',
+    city: '',
+    budget: '',
     message: '',
     timeline: ''
   });
@@ -65,6 +67,8 @@ const Contact = () => {
       phone: '',
       projectType: '',
       location: '',
+      city: '',
+      budget: '',
       message: '',
       timeline: ''
     });
@@ -228,8 +232,30 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="mt-2"
-                    placeholder="Colfax, CA"
+                    placeholder="Street address or general area"
                   />
+                </div>
+
+                <div>
+                  <Label htmlFor="city">Your City *</Label>
+                  <Select 
+                    name="city" 
+                    value={formData.city}
+                    onValueChange={(value) => handleSelectChange('city', value)}
+                  >
+                    <SelectTrigger className="mt-2">
+                      <SelectValue placeholder="Select your city" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="colfax">Colfax</SelectItem>
+                      <SelectItem value="auburn">Auburn</SelectItem>
+                      <SelectItem value="grass-valley">Grass Valley</SelectItem>
+                      <SelectItem value="nevada-city">Nevada City</SelectItem>
+                      <SelectItem value="truckee">Truckee</SelectItem>
+                      <SelectItem value="other-placer">Other (Placer County)</SelectItem>
+                      <SelectItem value="other-nevada">Other (Nevada County)</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div>
@@ -240,14 +266,35 @@ const Contact = () => {
                     onValueChange={(value) => handleSelectChange('timeline', value)}
                   >
                     <SelectTrigger className="mt-2">
-                      <SelectValue placeholder="Select timeline" />
+                      <SelectValue placeholder="When do you want to start?" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="asap">As soon as possible</SelectItem>
-                      <SelectItem value="1-3-months">1-3 months</SelectItem>
-                      <SelectItem value="3-6-months">3-6 months</SelectItem>
-                      <SelectItem value="6-plus-months">6+ months</SelectItem>
-                      <SelectItem value="flexible">Flexible</SelectItem>
+                      <SelectItem value="1-2months">1-2 months</SelectItem>
+                      <SelectItem value="3-6months">3-6 months</SelectItem>
+                      <SelectItem value="planning">Just planning / getting quotes</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="budget">Estimated Budget</Label>
+                  <Select 
+                    name="budget" 
+                    value={formData.budget}
+                    onValueChange={(value) => handleSelectChange('budget', value)}
+                  >
+                    <SelectTrigger className="mt-2">
+                      <SelectValue placeholder="Select budget range (optional)" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="under-5k">Under $5,000</SelectItem>
+                      <SelectItem value="5k-15k">$5,000 - $15,000</SelectItem>
+                      <SelectItem value="15k-30k">$15,000 - $30,000</SelectItem>
+                      <SelectItem value="30k-50k">$30,000 - $50,000</SelectItem>
+                      <SelectItem value="50k-100k">$50,000 - $100,000</SelectItem>
+                      <SelectItem value="over-100k">Over $100,000</SelectItem>
+                      <SelectItem value="unsure">Not sure yet</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
