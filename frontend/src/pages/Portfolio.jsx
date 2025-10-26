@@ -53,7 +53,11 @@ const Portfolio = () => {
         <title>Portfolio | Construction Projects</title>
         <meta name="description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer & Nevada County, CA." />
         <link rel="canonical" href="https://www.monconbuild.com/portfolio" />
+        <meta property="og:title" content="Portfolio | Construction Projects" />
+        <meta property="og:description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer & Nevada County, CA." />
         <meta property="og:url" content="https://www.monconbuild.com/portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />

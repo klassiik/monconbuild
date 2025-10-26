@@ -29,7 +29,11 @@ const ResidentialProjects = () => {
         <title>Residential Construction Projects</title>
         <meta name="description" content="Complete residential construction & remodeling projects in Placer County. Quality craftsmanship from ground to finish." />
         <link rel="canonical" href="https://www.monconbuild.com/services/residential-projects" />
+        <meta property="og:title" content="Residential Construction Projects" />
+        <meta property="og:description" content="Complete residential construction & remodeling projects in Placer County. Quality craftsmanship from ground to finish." />
         <meta property="og:url" content="https://www.monconbuild.com/services/residential-projects" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">

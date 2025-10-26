@@ -118,7 +118,11 @@ const Services = () => {
         <title>Construction Services | Colfax CA</title>
         <meta name="description" content="Expert finish carpentry, home additions, remodeling & custom woodwork for Colfax & Placer County. Quality craftsmanship." />
         <link rel="canonical" href="https://www.monconbuild.com/services" />
+        <meta property="og:title" content="Construction Services | Colfax CA" />
+        <meta property="og:description" content="Expert finish carpentry, home additions, remodeling & custom woodwork for Colfax & Placer County. Quality craftsmanship." />
         <meta property="og:url" content="https://www.monconbuild.com/services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />

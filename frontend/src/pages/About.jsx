@@ -16,7 +16,11 @@ const About = () => {
         <title>About Monument Construction</title>
         <meta name="description" content="Monument Construction: 25+ years trusted finish carpentry & construction services in Colfax & Placer County. Featured on DIY Network." />
         <link rel="canonical" href="https://www.monconbuild.com/about" />
+        <meta property="og:title" content="About Monument Construction" />
+        <meta property="og:description" content="Monument Construction: 25+ years trusted finish carpentry & construction services in Colfax & Placer County. Featured on DIY Network." />
         <meta property="og:url" content="https://www.monconbuild.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />

@@ -74,6 +74,8 @@ const FinishCarpentry = () => {
         <meta property="og:title" content="Expert Finish Carpentry in Colfax, CA | Monument Construction" />
         <meta property="og:description" content="Professional finish carpentry services in Colfax and Placer County. Custom trim, molding, and woodwork." />
         <meta property="og:url" content="https://www.monconbuild.com/services/finish-carpentry" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
         
         {/* Service Schema */}
         <script type="application/ld+json">

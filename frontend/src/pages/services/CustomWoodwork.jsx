@@ -29,7 +29,11 @@ const CustomWoodwork = () => {
         <title>Custom Woodwork | Colfax CA</title>
         <meta name="description" content="Artisan custom cabinetry & woodwork in Colfax, CA. Hand-crafted furniture & built-ins. Featured on DIY Network." />
         <link rel="canonical" href="https://www.monconbuild.com/services/custom-woodwork" />
+        <meta property="og:title" content="Custom Woodwork | Colfax CA" />
+        <meta property="og:description" content="Artisan custom cabinetry & woodwork in Colfax, CA. Hand-crafted furniture & built-ins. Featured on DIY Network." />
         <meta property="og:url" content="https://www.monconbuild.com/services/custom-woodwork" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">

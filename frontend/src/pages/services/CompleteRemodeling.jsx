@@ -29,7 +29,11 @@ const CompleteRemodeling = () => {
         <title>Home Remodeling | Colfax CA</title>
         <meta name="description" content="Full-service home remodeling in Colfax & Placer County. Complete transformations with expert craftsmanship & attention." />
         <link rel="canonical" href="https://www.monconbuild.com/services/complete-remodeling" />
+        <meta property="og:title" content="Home Remodeling | Colfax CA" />
+        <meta property="og:description" content="Full-service home remodeling in Colfax & Placer County. Complete transformations with expert craftsmanship & attention." />
         <meta property="og:url" content="https://www.monconbuild.com/services/complete-remodeling" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Helmet>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">

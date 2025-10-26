@@ -76,7 +76,11 @@ const Contact = () => {
         <title>Contact Monument Construction</title>
         <meta name="description" content="Contact Monument Construction for free quotes on finish carpentry, remodeling & construction in Colfax & Placer County." />
         <link rel="canonical" href="https://www.monconbuild.com/contact" />
+        <meta property="og:title" content="Contact Monument Construction" />
+        <meta property="og:description" content="Contact Monument Construction for free quotes on finish carpentry, remodeling & construction in Colfax & Placer County." />
         <meta property="og:url" content="https://www.monconbuild.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Helmet>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
