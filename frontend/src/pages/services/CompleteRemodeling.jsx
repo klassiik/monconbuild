@@ -124,7 +124,7 @@ const CompleteRemodeling = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+                <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                   Get Free Estimate
                 </Button>
               </a>
@@ -150,10 +150,10 @@ const CompleteRemodeling = () => {
             </p>
             <p className="text-lg text-gray-700 mb-8">
               From minor updates to complete renovations, we manage every phase of your remodeling project with 
-              professional expertise and meticulous attention to detail. California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a>.
+              professional expertise and meticulous attention to detail. California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">License #801602</a>.
             </p>
 
-            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+            <div className="bg-green-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">What is a Complete Home Remodel?</h3>
               <p className="text-gray-700 mb-4">
                 A complete home remodel goes beyond simple cosmetic updates. It's a comprehensive transformation that can involve structural changes, system upgrades (electrical, plumbing, HVAC), new layouts, and complete aesthetic redesigns. Whether your home is 20 or 50 years old, remodeling lets you modernize it completely - updating outdated systems, improving energy efficiency, and creating the home you've always wanted.
@@ -167,7 +167,7 @@ const CompleteRemodeling = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
+                  <CheckCircle2 className="w-6 h-6 text-green-700 mr-3 flex-shrink-0 mt-1" />
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
@@ -177,7 +177,7 @@ const CompleteRemodeling = () => {
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
                   <h4 className="text-lg font-semibold text-gray-900">Vision & Planning</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -195,7 +195,7 @@ const CompleteRemodeling = () => {
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
                   <h4 className="text-lg font-semibold text-gray-900">Skilled Execution</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -219,7 +219,7 @@ const CompleteRemodeling = () => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Your Remodeling Partner</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• Licensed California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">#801602</a></li>
+                    <li>• Licensed California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">#801602</a></li>
                     <li>• Featured on DIY Network TV</li>
                     <li>• 25+ years remodeling experience</li>
                     <li>• Complete project management</li>
@@ -253,42 +253,42 @@ const CompleteRemodeling = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Finish Carpentry</h3>
               <p className="text-gray-700 mb-4">Expert finish carpentry including custom trim, molding, and built-ins.</p>
-              <a href="/services/finish-carpentry" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/finish-carpentry" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">General Construction</h3>
               <p className="text-gray-700 mb-4">Complete residential construction services from groundwork to final touches.</p>
-              <a href="/services/general-construction" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/general-construction" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Home Additions</h3>
               <p className="text-gray-700 mb-4">Expert room additions and extensions to expand your living space.</p>
-              <a href="/services/home-additions" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/home-additions" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Custom Woodwork</h3>
               <p className="text-gray-700 mb-4">Bespoke woodwork and cabinetry tailored to your unique vision.</p>
-              <a href="/services/custom-woodwork" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/custom-woodwork" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Residential Projects</h3>
               <p className="text-gray-700 mb-4">Comprehensive residential project management and execution.</p>
-              <a href="/services/residential-projects" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential-projects" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">All Services</h3>
               <p className="text-gray-700 mb-4">View our complete range of construction and carpentry services.</p>
-              <a href="/services" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services" className="text-green-700 hover:text-blue-800 font-semibold">
                 View All Services →
               </a>
             </div>
@@ -305,7 +305,7 @@ const CompleteRemodeling = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                 Request Free Consultation
               </Button>
             </a>
@@ -336,7 +336,7 @@ const CompleteRemodeling = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                 Request Free Consultation
               </Button>
             </a>
@@ -354,3 +354,5 @@ const CompleteRemodeling = () => {
 };
 
 export default CompleteRemodeling;
+
+

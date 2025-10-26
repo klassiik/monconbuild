@@ -60,7 +60,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">William Rogers</h2>
-              <h3 className="text-xl md:text-2xl text-blue-600 font-semibold mb-6">Owner & Master Craftsman</h3>
+              <h3 className="text-xl md:text-2xl text-green-700 font-semibold mb-6">Owner & Master Craftsman</h3>
               
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
@@ -80,8 +80,8 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="mt-10 p-6 bg-blue-50 border-l-4 border-blue-600 rounded">
-                <p className="text-lg font-semibold text-slate-900 mb-2">California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a></p>
+              <div className="mt-10 p-6 bg-green-50 border-l-4 border-green-700 rounded">
+                <p className="text-lg font-semibold text-slate-900 mb-2">California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">License #801602</a></p>
                 <p className="text-gray-600">Licensed and bonded for your protection and peace of mind.</p>
               </div>
             </div>
@@ -99,37 +99,37 @@ const About = () => {
           {/* Key Features */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             <div className="p-8 bg-slate-50 rounded-lg">
-              <Award className="w-12 h-12 text-blue-600 mb-4" />
+              <Award className="w-12 h-12 text-green-700 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-slate-900">Licensed Professional</h3>
-              <p className="text-gray-600">California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a>. Fully licensed and bonded.</p>
+              <p className="text-gray-600">California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">License #801602</a>. Fully licensed and bonded.</p>
             </div>
 
             <div className="p-8 bg-slate-50 rounded-lg">
-              <Tv className="w-12 h-12 text-blue-600 mb-4" />
+              <Tv className="w-12 h-12 text-green-700 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-slate-900">Featured Expert</h3>
               <p className="text-gray-600">Multiple DIY Network TV appearances showcasing construction expertise.</p>
             </div>
 
             <div className="p-8 bg-slate-50 rounded-lg">
-              <Users className="w-12 h-12 text-blue-600 mb-4" />
+              <Users className="w-12 h-12 text-green-700 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-slate-900">Referral-Based</h3>
               <p className="text-gray-600">Built on satisfied customers and word-of-mouth recommendations.</p>
             </div>
 
             <div className="p-8 bg-slate-50 rounded-lg">
-              <Hammer className="w-12 h-12 text-blue-600 mb-4" />
+              <Hammer className="w-12 h-12 text-green-700 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-slate-900">Finish Carpentry Specialist</h3>
               <p className="text-gray-600">Master craftsman specializing in custom trim work and fine details.</p>
             </div>
 
             <div className="p-8 bg-slate-50 rounded-lg">
-              <CheckCircle2 className="w-12 h-12 text-blue-600 mb-4" />
+              <CheckCircle2 className="w-12 h-12 text-green-700 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-slate-900">Complete Services</h3>
               <p className="text-gray-600">From groundwork to final touches – comprehensive construction services.</p>
             </div>
 
             <div className="p-8 bg-slate-50 rounded-lg">
-              <Star className="w-12 h-12 text-blue-600 mb-4" />
+              <Star className="w-12 h-12 text-green-700 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-slate-900">Local Expertise</h3>
               <p className="text-gray-600">Deep knowledge of Placer and Nevada County building and communities.</p>
             </div>
@@ -190,7 +190,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-blue-600 text-white">
+      <section className="py-20 md:py-28 bg-green-700 text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Let's Build Something Great Together</h2>
           <p className="text-xl mb-10 text-blue-100 max-w-3xl mx-auto">
@@ -200,7 +200,7 @@ const About = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300"
+              className="bg-white text-green-700 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
               <a href="/contact">Request Free Quote</a>
@@ -208,7 +208,7 @@ const About = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
               <a href="tel:9166071972">Call (916) 607-1972</a>
@@ -225,21 +225,21 @@ const About = () => {
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Services</h3>
               <p className="text-gray-600 mb-6">Discover the complete range of construction and carpentry services we offer.</p>
-              <a href="/services" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/services" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-2 rounded transition-colors">
                 View Services
               </a>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Portfolio</h3>
               <p className="text-gray-600 mb-6">See examples of our completed projects and quality workmanship.</p>
-              <a href="/portfolio" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/portfolio" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-2 rounded transition-colors">
                 View Portfolio
               </a>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Service Areas</h3>
               <p className="text-gray-600 mb-6">Learn about the regions we serve in Northern California.</p>
-              <a href="/service-areas" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/service-areas" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-2 rounded transition-colors">
                 View Areas
               </a>
             </div>
@@ -248,7 +248,7 @@ const About = () => {
       </section>
 
       {/* Services Directory Section for SEO */}
-      <section className="py-16 md:py-20 bg-blue-50">
+      <section className="py-16 md:py-20 bg-green-50">
         <div className="container mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Our Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -256,23 +256,23 @@ const About = () => {
           </p>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Finish Carpentry</span>
+              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Finish Carpentry</span>
               </a>
-              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ General Construction</span>
+              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ General Construction</span>
               </a>
-              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Home Additions</span>
+              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Home Additions</span>
               </a>
-              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Residential Projects</span>
+              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Residential Projects</span>
               </a>
-              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Custom Woodwork</span>
+              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Custom Woodwork</span>
               </a>
-              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Complete Remodeling</span>
+              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Complete Remodeling</span>
               </a>
             </div>
           </div>

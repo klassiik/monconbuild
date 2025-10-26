@@ -148,7 +148,7 @@ const FinishCarpentry = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+                <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                   Get Free Quote
                 </Button>
               </a>
@@ -177,7 +177,7 @@ const FinishCarpentry = () => {
               attention to detail and superior craftsmanship on every project. Licensed contractor #801602.
             </p>
 
-            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+            <div className="bg-green-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">What is Finish Carpentry?</h3>
               <p className="text-gray-700 mb-4">
                 Finish carpentry is the art of adding the final touches to a space - the details that transform a room from basic to beautiful. Unlike rough carpentry (framing and structural work), finish carpentry focuses on the visible elements that define a room's character and elegance.
@@ -189,11 +189,11 @@ const FinishCarpentry = () => {
 
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Our Finish Carpentry Process</h3>
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                 <h4 className="text-lg font-bold mb-3 text-gray-900">Consultation & Design</h4>
                 <p className="text-gray-700">We meet with you to understand your vision, discuss design options, and provide recommendations based on your home's architecture and your personal style.</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                 <h4 className="text-lg font-bold mb-3 text-gray-900">Material Selection</h4>
                 <p className="text-gray-700">We help you choose the right materials - wood types, finishes, and hardware - that match your design vision and budget.</p>
               </div>
@@ -211,7 +211,7 @@ const FinishCarpentry = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
+                  <CheckCircle2 className="w-6 h-6 text-green-700 mr-3 flex-shrink-0 mt-1" />
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
@@ -223,7 +223,7 @@ const FinishCarpentry = () => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Why Choose Monument Construction?</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• Licensed California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">#801602</a></li>
+                    <li>• Licensed California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">#801602</a></li>
                     <li>• Featured on DIY Network TV</li>
                     <li>• 25+ years of finish carpentry experience</li>
                     <li>• Serving Placer & Nevada Counties</li>
@@ -257,42 +257,42 @@ const FinishCarpentry = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">General Construction</h3>
               <p className="text-gray-700 mb-4">Complete residential construction services from groundwork to final touches.</p>
-              <a href="/services/general-construction" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/general-construction" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Home Additions</h3>
               <p className="text-gray-700 mb-4">Expert room additions and extensions to expand your living space.</p>
-              <a href="/services/home-additions" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/home-additions" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Custom Woodwork</h3>
               <p className="text-gray-700 mb-4">Bespoke woodwork and cabinetry tailored to your unique vision.</p>
-              <a href="/services/custom-woodwork" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/custom-woodwork" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Residential Projects</h3>
               <p className="text-gray-700 mb-4">Comprehensive residential project management and execution.</p>
-              <a href="/services/residential-projects" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential-projects" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Complete Remodeling</h3>
               <p className="text-gray-700 mb-4">Full-scope remodeling projects transforming entire homes.</p>
-              <a href="/services/complete-remodeling" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/complete-remodeling" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">All Services</h3>
               <p className="text-gray-700 mb-4">View our complete range of construction and carpentry services.</p>
-              <a href="/services" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services" className="text-green-700 hover:text-blue-800 font-semibold">
                 View All Services →
               </a>
             </div>
@@ -309,7 +309,7 @@ const FinishCarpentry = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                 Request Free Quote
               </Button>
             </a>
@@ -340,7 +340,7 @@ const FinishCarpentry = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                 Request Free Quote
               </Button>
             </a>
@@ -358,3 +358,5 @@ const FinishCarpentry = () => {
 };
 
 export default FinishCarpentry;
+
+

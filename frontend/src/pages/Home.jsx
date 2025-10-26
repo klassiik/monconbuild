@@ -193,7 +193,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+                className="bg-green-700 hover:bg-green-800 text-white px-8 py-6 text-lg transition-all duration-300 hover:scale-105 shadow-lg"
                 asChild
               >
                 <a href="/contact">Get Free Quote</a>
@@ -252,7 +252,7 @@ const Home = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
-                <div className="bg-white p-6 rounded-lg border-l-4 border-blue-600">
+                <div className="bg-white p-6 rounded-lg border-l-4 border-green-700">
                   <h3 className="text-lg font-bold mb-3 text-gray-900">Our Expertise</h3>
                   <ul className="space-y-2 text-sm">
                     <li>✓ Finish carpentry and custom woodwork</li>
@@ -294,10 +294,10 @@ const Home = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="border-2 hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
+                className="border-2 hover:border-green-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
               >
                 <CardContent className="p-8">
-                  <div className="text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-green-700 mb-4 group-hover:scale-110 transition-transform duration-300">
                     {service.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-slate-900">{service.title}</h3>
@@ -311,7 +311,7 @@ const Home = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+              className="border-2 border-green-700 text-green-700 hover:bg-green-700 hover:text-white transition-all duration-300"
               asChild
             >
               <a href="/services">View All Services</a>
@@ -356,7 +356,7 @@ const Home = () => {
           <div className="text-center">
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
+              className="bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
               asChild
             >
               <a href="/portfolio">View Full Portfolio</a>
@@ -377,7 +377,7 @@ const Home = () => {
               
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <Award className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                  <Award className="w-8 h-8 text-green-700 flex-shrink-0" />
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-slate-900">Licensed & Experienced</h3>
                     <p className="text-gray-600">California Contractor License #801602 with extensive experience in residential projects.</p>
@@ -385,7 +385,7 @@ const Home = () => {
                 </div>
                 
                 <div className="flex gap-4">
-                  <CheckCircle2 className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                  <CheckCircle2 className="w-8 h-8 text-green-700 flex-shrink-0" />
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-slate-900">Finish Carpentry Specialist</h3>
                     <p className="text-gray-600">Master craftsman specializing in custom woodwork, built-ins, and fine finish details.</p>
@@ -393,7 +393,7 @@ const Home = () => {
                 </div>
                 
                 <div className="flex gap-4">
-                  <Building2 className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                  <Building2 className="w-8 h-8 text-green-700 flex-shrink-0" />
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-slate-900">Complete Construction Services</h3>
                     <p className="text-gray-600">From foundation to finish, we handle every aspect of your construction project.</p>
@@ -404,7 +404,7 @@ const Home = () => {
               <div className="mt-10">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
+                  className="bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
                   asChild
                 >
                   <a href="/about">Learn More About Us</a>
@@ -419,7 +419,7 @@ const Home = () => {
                 loading="lazy"
                 className="rounded-lg shadow-2xl"
               />
-              <div className="absolute -bottom-6 -left-6 bg-blue-600 text-white p-6 rounded-lg shadow-xl">
+              <div className="absolute -bottom-6 -left-6 bg-green-700 text-white p-6 rounded-lg shadow-xl">
                 <p className="text-4xl font-bold">25+</p>
                 <p className="text-sm">Years Experience</p>
               </div>
@@ -467,7 +467,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-blue-600 text-white">
+      <section className="py-20 md:py-28 bg-green-700 text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
           <p className="text-xl md:text-2xl mb-10 text-blue-100 max-w-3xl mx-auto">
@@ -477,7 +477,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-white text-green-700 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300 hover:scale-105 shadow-lg"
               asChild
             >
               <a href="/contact">Request Free Quote</a>
@@ -485,7 +485,7 @@ const Home = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
               <a href="tel:9166071972" aria-label="Call Monument Construction at (916) 607-1972">
@@ -516,21 +516,21 @@ const Home = () => {
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Services</h3>
               <p className="text-gray-600 mb-6">Explore our complete range of construction and carpentry services.</p>
-              <a href="/services" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/services" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-2 rounded transition-colors">
                 View All Services
               </a>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Portfolio</h3>
               <p className="text-gray-600 mb-6">See examples of our completed projects and quality workmanship.</p>
-              <a href="/portfolio" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/portfolio" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-2 rounded transition-colors">
                 View Portfolio
               </a>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">About Our Team</h3>
               <p className="text-gray-600 mb-6">Learn about Monument Construction and our experience.</p>
-              <a href="/about" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/about" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-2 rounded transition-colors">
                 About Us
               </a>
             </div>
@@ -539,7 +539,7 @@ const Home = () => {
       </section>
 
       {/* Services Directory Section for SEO */}
-      <section className="py-16 md:py-20 bg-blue-50">
+      <section className="py-16 md:py-20 bg-green-50">
         <div className="container mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Our Construction & Carpentry Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -547,23 +547,23 @@ const Home = () => {
           </p>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Finish Carpentry</span>
+              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Finish Carpentry</span>
               </a>
-              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ General Construction</span>
+              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ General Construction</span>
               </a>
-              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Home Additions</span>
+              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Home Additions</span>
               </a>
-              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Residential Projects</span>
+              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Residential Projects</span>
               </a>
-              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Custom Woodwork</span>
+              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Custom Woodwork</span>
               </a>
-              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Complete Remodeling</span>
+              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Complete Remodeling</span>
               </a>
             </div>
           </div>

@@ -158,11 +158,11 @@ const Services = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 my-10">
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                   <h4 className="text-lg font-bold mb-4 text-gray-900">Detailed Consultation</h4>
                   <p className="text-sm">We work closely with you to understand your vision, budget, and timeline. Our consultations are thorough and transparent, so you know exactly what to expect.</p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                   <h4 className="text-lg font-bold mb-4 text-gray-900">Expert Execution</h4>
                   <p className="text-sm">With decades of combined experience, our team executes projects with precision and attention to detail that's evident in every finished product.</p>
                 </div>
@@ -186,9 +186,9 @@ const Services = () => {
           <div className="grid md:grid-cols-2 gap-12">
             {services.map((service, index) => (
               <a key={index} href={service.link} className="no-underline">
-                <Card className="border-2 hover:border-blue-600 transition-all duration-300 hover:shadow-xl h-full cursor-pointer">
+                <Card className="border-2 hover:border-green-700 transition-all duration-300 hover:shadow-xl h-full cursor-pointer">
                   <CardHeader>
-                    <div className="text-blue-600 mb-4">
+                    <div className="text-green-700 mb-4">
                       {service.icon}
                     </div>
                     <CardTitle className="text-2xl md:text-3xl mb-4">{service.title}</CardTitle>
@@ -198,13 +198,13 @@ const Services = () => {
                     <ul className="space-y-3">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <span className="text-blue-600 mt-1">•</span>
+                          <span className="text-green-700 mt-1">•</span>
                           <span className="text-gray-700">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     <div className="mt-6 pt-6 border-t border-gray-200">
-                      <span className="text-blue-600 font-semibold hover:text-blue-800">Learn More →</span>
+                      <span className="text-green-700 font-semibold hover:text-blue-800">Learn More →</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -215,28 +215,28 @@ const Services = () => {
       </section>
 
       {/* All Services Directory Section */}
-      <section className="py-16 md:py-20 bg-blue-50">
+      <section className="py-16 md:py-20 bg-green-50">
         <div className="container mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gray-900">Explore All Services</h2>
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
-                <span className="text-lg font-semibold text-blue-600">Finish Carpentry</span>
+              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
+                <span className="text-lg font-semibold text-green-700">Finish Carpentry</span>
               </a>
-              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
-                <span className="text-lg font-semibold text-blue-600">General Construction</span>
+              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
+                <span className="text-lg font-semibold text-green-700">General Construction</span>
               </a>
-              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
-                <span className="text-lg font-semibold text-blue-600">Home Additions</span>
+              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
+                <span className="text-lg font-semibold text-green-700">Home Additions</span>
               </a>
-              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
-                <span className="text-lg font-semibold text-blue-600">Residential Projects</span>
+              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
+                <span className="text-lg font-semibold text-green-700">Residential Projects</span>
               </a>
-              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
-                <span className="text-lg font-semibold text-blue-600">Custom Woodwork</span>
+              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
+                <span className="text-lg font-semibold text-green-700">Custom Woodwork</span>
               </a>
-              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400">
-                <span className="text-lg font-semibold text-blue-600">Complete Remodeling</span>
+              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
+                <span className="text-lg font-semibold text-green-700">Complete Remodeling</span>
               </a>
             </div>
           </div>
@@ -270,7 +270,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-blue-600 text-white">
+      <section className="py-20 md:py-28 bg-green-700 text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Discuss Your Project?</h2>
           <p className="text-xl mb-10 text-blue-100 max-w-3xl mx-auto">
@@ -280,7 +280,7 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300"
+              className="bg-white text-green-700 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
               <a href="/contact">Get Free Quote</a>
@@ -288,7 +288,7 @@ const Services = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
               <a href="tel:9166071972">Call (916) 607-1972</a>

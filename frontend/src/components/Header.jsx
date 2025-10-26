@@ -37,8 +37,8 @@ const Header = () => {
               <a
                 key={item.path}
                 href={item.path}
-                className={`text-base font-medium transition-colors duration-300 hover:text-blue-600 ${
-                  isActive(item.path) ? 'text-blue-600 font-bold' : 'text-gray-700'
+                className={`text-base font-medium transition-colors duration-300 hover:text-green-700 ${
+                  isActive(item.path) ? 'text-green-700 font-bold' : 'text-gray-700'
                 }`}
               >
                 {item.name}
@@ -48,11 +48,11 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:9166071972" className="text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
+            <a href="tel:9166071972" className="text-green-700 font-semibold hover:text-blue-700 transition-colors duration-300">
               (916) 607-1972
             </a>
             <Button 
-              className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
+              className="bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
               asChild
             >
               <a href="/contact">Get Quote</a>
@@ -61,7 +61,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-gray-700 hover:text-blue-600 transition-colors duration-300"
+            className="lg:hidden text-gray-700 hover:text-green-700 transition-colors duration-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
@@ -76,8 +76,8 @@ const Header = () => {
                 <a
                   key={item.path}
                   href={item.path}
-                  className={`text-lg font-medium transition-colors duration-300 hover:text-blue-600 py-2 ${
-                    isActive(item.path) ? 'text-blue-600 font-bold' : 'text-gray-700'
+                  className={`text-lg font-medium transition-colors duration-300 hover:text-green-700 py-2 ${
+                    isActive(item.path) ? 'text-green-700 font-bold' : 'text-gray-700'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -86,13 +86,13 @@ const Header = () => {
               ))}
               <a 
                 href="tel:9166071972" 
-                className="flex items-center gap-2 text-lg font-semibold text-blue-600 py-2"
+                className="flex items-center gap-2 text-lg font-semibold text-green-700 py-2"
               >
                 <Phone className="w-5 h-5" />
                 (916) 607-1972
               </a>
               <Button 
-                className="bg-blue-600 hover:bg-blue-700 text-white w-full transition-all duration-300"
+                className="bg-green-700 hover:bg-green-800 text-white w-full transition-all duration-300"
                 asChild
               >
                 <a href="/contact" onClick={() => setIsMenuOpen(false)}>Get Free Quote</a>

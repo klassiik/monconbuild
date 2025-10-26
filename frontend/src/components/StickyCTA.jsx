@@ -36,7 +36,7 @@ const StickyCTA = () => {
         </p>
         <div className="flex gap-3">
           <a href="/contact">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold">
+            <Button className="bg-green-700 hover:bg-green-800 text-white font-semibold">
               Get Free Quote
             </Button>
           </a>
@@ -53,3 +53,4 @@ const StickyCTA = () => {
 };
 
 export default StickyCTA;
+

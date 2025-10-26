@@ -93,7 +93,7 @@ const PerformanceOptimizer = () => {
       case 'pending':
         return <Timer className="w-4 h-4 text-yellow-600" />;
       case 'in-progress':
-        return <RefreshCw className="w-4 h-4 text-blue-600 animate-spin" />;
+        return <RefreshCw className="w-4 h-4 text-green-700 animate-spin" />;
       default:
         return <AlertTriangle className="w-4 h-4 text-gray-600" />;
     }
@@ -202,7 +202,7 @@ const PerformanceOptimizer = () => {
                 <div className="text-sm text-gray-500">Pending</div>
               </div>
               <div>
-                <div className="text-lg font-bold text-blue-600">
+                <div className="text-lg font-bold text-green-700">
                   +{performanceScore >= 75 ? '15-20' : '25-30'}
                 </div>
                 <div className="text-sm text-gray-500">Score Improvement</div>

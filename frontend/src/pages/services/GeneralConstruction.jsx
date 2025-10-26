@@ -124,7 +124,7 @@ const GeneralConstruction = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+                <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                   Get Free Estimate
                 </Button>
               </a>
@@ -153,7 +153,7 @@ const GeneralConstruction = () => {
               expertise and attention to detail. California Contractor License #801602.
             </p>
 
-            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+            <div className="bg-green-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">Complete General Contracting Services</h3>
               <p className="text-gray-700 mb-4">
                 As a licensed general contractor, Monument Construction handles the full scope of residential construction projects. Whether you're building a new home, adding to an existing one, or completely remodeling, we manage every phase with expertise and attention to detail.
@@ -167,7 +167,7 @@ const GeneralConstruction = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
+                  <CheckCircle2 className="w-6 h-6 text-green-700 mr-3 flex-shrink-0 mt-1" />
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
@@ -179,7 +179,7 @@ const GeneralConstruction = () => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Licensed & Experienced Contractor</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a></li>
+                    <li>• California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">License #801602</a></li>
                     <li>• 25+ years construction experience</li>
                     <li>• Featured on DIY Network</li>
                     <li>• Fully insured and bonded</li>
@@ -213,42 +213,42 @@ const GeneralConstruction = () => {
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Finish Carpentry</h3>
               <p className="text-gray-700 mb-4">Expert finish carpentry including custom trim, molding, and built-ins.</p>
-              <a href="/services/finish-carpentry" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/finish-carpentry" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Home Additions</h3>
               <p className="text-gray-700 mb-4">Expert room additions and extensions to expand your living space.</p>
-              <a href="/services/home-additions" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/home-additions" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Custom Woodwork</h3>
               <p className="text-gray-700 mb-4">Bespoke woodwork and cabinetry tailored to your unique vision.</p>
-              <a href="/services/custom-woodwork" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/custom-woodwork" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Residential Projects</h3>
               <p className="text-gray-700 mb-4">Comprehensive residential project management and execution.</p>
-              <a href="/services/residential-projects" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/residential-projects" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">Complete Remodeling</h3>
               <p className="text-gray-700 mb-4">Full-scope remodeling projects transforming entire homes.</p>
-              <a href="/services/complete-remodeling" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services/complete-remodeling" className="text-green-700 hover:text-blue-800 font-semibold">
                 Learn More →
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">All Services</h3>
               <p className="text-gray-700 mb-4">View our complete range of construction and carpentry services.</p>
-              <a href="/services" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/services" className="text-green-700 hover:text-blue-800 font-semibold">
                 View All Services →
               </a>
             </div>
@@ -265,7 +265,7 @@ const GeneralConstruction = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                 Request Free Consultation
               </Button>
             </a>
@@ -296,7 +296,7 @@ const GeneralConstruction = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                 Request Free Consultation
               </Button>
             </a>
@@ -314,3 +314,5 @@ const GeneralConstruction = () => {
 };
 
 export default GeneralConstruction;
+
+

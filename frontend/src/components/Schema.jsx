@@ -147,3 +147,4 @@ export const FAQSchema = ({ faqs }) => {
 };
 
 export default Schema;
+

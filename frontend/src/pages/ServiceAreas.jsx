@@ -101,7 +101,7 @@ const ServiceAreas = () => {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 my-10">
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                   <h3 className="text-lg font-bold mb-3 text-gray-900">Primary Coverage Area</h3>
                   <ul className="space-y-2 text-sm">
                     <li>• Placer County (Colfax, Auburn, Loomis, Rocklin)</li>
@@ -129,7 +129,7 @@ const ServiceAreas = () => {
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <MapPin className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+            <MapPin className="w-16 h-16 text-green-700 mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Based in Colfax, California</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               Monument Construction is headquartered in Colfax, CA, in the heart of Placer County. From this central location, we serve communities throughout Placer and Nevada Counties, bringing quality craftsmanship to your doorstep.
@@ -137,25 +137,25 @@ const ServiceAreas = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-            <Card className="text-center border-2 hover:border-blue-600 transition-all duration-300">
+            <Card className="text-center border-2 hover:border-green-700 transition-all duration-300">
               <CardContent className="p-8">
-                <CheckCircle2 className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <CheckCircle2 className="w-12 h-12 text-green-700 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2 text-slate-900">Local Knowledge</h3>
                 <p className="text-gray-600">Deep understanding of local building codes and community needs.</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-2 hover:border-blue-600 transition-all duration-300">
+            <Card className="text-center border-2 hover:border-green-700 transition-all duration-300">
               <CardContent className="p-8">
-                <CheckCircle2 className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <CheckCircle2 className="w-12 h-12 text-green-700 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2 text-slate-900">Quick Response</h3>
                 <p className="text-gray-600">Serving nearby communities with fast response times.</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-2 hover:border-blue-600 transition-all duration-300">
+            <Card className="text-center border-2 hover:border-green-700 transition-all duration-300">
               <CardContent className="p-8">
-                <CheckCircle2 className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <CheckCircle2 className="w-12 h-12 text-green-700 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2 text-slate-900">Community Trust</h3>
                 <p className="text-gray-600">Built on referrals and relationships within our community.</p>
               </CardContent>
@@ -178,7 +178,7 @@ const ServiceAreas = () => {
             {counties.map((county, index) => (
               <Card key={index} className="border-2 hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-3xl text-blue-600">{county.name}</CardTitle>
+                  <CardTitle className="text-3xl text-green-700">{county.name}</CardTitle>
                   <p className="text-lg text-gray-600 mt-4">{county.description}</p>
                 </CardHeader>
                 <CardContent>
@@ -186,7 +186,7 @@ const ServiceAreas = () => {
                   <ul className="grid md:grid-cols-2 gap-3">
                     {county.cities.map((city, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-blue-600 mt-1">•</span>
+                        <span className="text-green-700 mt-1">•</span>
                         <span className="text-gray-700">{city}</span>
                       </li>
                     ))}
@@ -211,8 +211,8 @@ const ServiceAreas = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, index) => (
-                <div key={index} className="p-6 bg-slate-50 rounded-lg border-2 border-transparent hover:border-blue-600 transition-all duration-300">
-                  <CheckCircle2 className="w-6 h-6 text-blue-600 mb-3" />
+                <div key={index} className="p-6 bg-slate-50 rounded-lg border-2 border-transparent hover:border-green-700 transition-all duration-300">
+                  <CheckCircle2 className="w-6 h-6 text-green-700 mb-3" />
                   <h3 className="font-bold text-slate-900">{service}</h3>
                 </div>
               ))}
@@ -251,7 +251,7 @@ const ServiceAreas = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-blue-600 text-white">
+      <section className="py-20 md:py-28 bg-green-700 text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Serving Your Community</h2>
           <p className="text-xl mb-10 text-blue-100 max-w-3xl mx-auto">
@@ -261,7 +261,7 @@ const ServiceAreas = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <Button 
               size="lg" 
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300"
+              className="bg-white text-green-700 hover:bg-gray-100 px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
               <a href="/contact">Request Free Quote</a>
@@ -269,7 +269,7 @@ const ServiceAreas = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-6 text-lg transition-all duration-300"
               asChild
             >
               <a href="tel:9166071972">
@@ -293,21 +293,21 @@ const ServiceAreas = () => {
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Services</h3>
               <p className="text-gray-600 mb-6">Explore our complete range of construction and carpentry services.</p>
-              <a href="/services" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/services" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-2 rounded transition-colors">
                 View Services
               </a>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Our Portfolio</h3>
               <p className="text-gray-600 mb-6">See examples of our completed projects throughout our service areas.</p>
-              <a href="/portfolio" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/portfolio" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-2 rounded transition-colors">
                 View Portfolio
               </a>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">About Us</h3>
               <p className="text-gray-600 mb-6">Learn about our team and years of construction experience.</p>
-              <a href="/about" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition-colors">
+              <a href="/about" className="inline-block bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-2 rounded transition-colors">
                 About Us
               </a>
             </div>
@@ -316,7 +316,7 @@ const ServiceAreas = () => {
       </section>
 
       {/* Services Directory Section for SEO */}
-      <section className="py-16 md:py-20 bg-blue-50">
+      <section className="py-16 md:py-20 bg-green-50">
         <div className="container mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Our Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -324,23 +324,23 @@ const ServiceAreas = () => {
           </p>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Finish Carpentry</span>
+              <a href="/services/finish-carpentry" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Finish Carpentry</span>
               </a>
-              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ General Construction</span>
+              <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ General Construction</span>
               </a>
-              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Home Additions</span>
+              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Home Additions</span>
               </a>
-              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Residential Projects</span>
+              <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Residential Projects</span>
               </a>
-              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Custom Woodwork</span>
+              <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Custom Woodwork</span>
               </a>
-              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-blue-100 transition-colors border border-blue-200 hover:border-blue-400 group">
-                <span className="text-base font-semibold text-blue-600 group-hover:text-blue-800">→ Complete Remodeling</span>
+              <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700 group">
+                <span className="text-base font-semibold text-green-700 group-hover:text-blue-800">→ Complete Remodeling</span>
               </a>
             </div>
           </div>

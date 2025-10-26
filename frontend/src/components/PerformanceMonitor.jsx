@@ -151,7 +151,7 @@ const PerformanceMonitor = () => {
   if (!performanceData) {
     return (
       <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-700"></div>
         <span className="ml-2">Loading performance data...</span>
       </div>
     );
@@ -181,7 +181,7 @@ const PerformanceMonitor = () => {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Performance</CardTitle>
-            <Zap className="h-4 w-4 text-blue-600" />
+            <Zap className="h-4 w-4 text-green-700" />
           </CardHeader>
           <CardContent>
             <div className="flex items-center space-x-2">

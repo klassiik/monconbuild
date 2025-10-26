@@ -65,7 +65,7 @@ const Breadcrumb = ({ items }) => {
                   ) : (
                     <a 
                       href={item.url.replace('https://www.monconbuild.com', '')} 
-                      className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                      className="text-green-700 hover:text-blue-800 hover:underline transition-colors"
                       itemProp="item"
                     >
                       <span itemProp="name">
@@ -87,3 +87,4 @@ const Breadcrumb = ({ items }) => {
 };
 
 export default Breadcrumb;
+

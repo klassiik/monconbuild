@@ -112,28 +112,28 @@ const Contact = () => {
             
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               <div className="bg-white p-6 rounded-lg shadow text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-3">1</div>
+                <div className="text-3xl font-bold text-green-700 mb-3">1</div>
                 <h3 className="font-bold text-gray-900 mb-2">Contact Us</h3>
                 <p className="text-sm text-gray-600">Fill out our form or call with your project details</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-3">2</div>
+                <div className="text-3xl font-bold text-green-700 mb-3">2</div>
                 <h3 className="font-bold text-gray-900 mb-2">Initial Consultation</h3>
                 <p className="text-sm text-gray-600">We discuss your vision, timeline, and budget</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-3">3</div>
+                <div className="text-3xl font-bold text-green-700 mb-3">3</div>
                 <h3 className="font-bold text-gray-900 mb-2">Free Quote</h3>
                 <p className="text-sm text-gray-600">Receive a detailed estimate for your project</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-3">4</div>
+                <div className="text-3xl font-bold text-green-700 mb-3">4</div>
                 <h3 className="font-bold text-gray-900 mb-2">Project Starts</h3>
                 <p className="text-sm text-gray-600">We begin with professionalism and expertise</p>
               </div>
             </div>
 
-            <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded">
+            <div className="bg-green-50 border-l-4 border-green-700 p-6 rounded">
               <h3 className="font-bold text-gray-900 mb-2">Why Contact Monument Construction?</h3>
               <ul className="space-y-2 text-gray-700">
                 <li>✓ Licensed and insured contractor with 25+ years experience</li>
@@ -315,7 +315,7 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
+                  className="w-full bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
                 >
                   Request Free Quote
                 </Button>
@@ -334,13 +334,13 @@ const Contact = () => {
               </p>
 
               <div className="space-y-6 mb-12">
-                <Card className="border-2 hover:border-blue-600 transition-all duration-300">
+                <Card className="border-2 hover:border-green-700 transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Phone className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+                      <Phone className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Phone</h3>
-                        <a href="tel:9166071972" className="text-blue-600 hover:text-blue-700 text-xl font-semibold transition-colors duration-300">
+                        <a href="tel:9166071972" className="text-green-700 hover:text-blue-700 text-xl font-semibold transition-colors duration-300">
                           (916) 607-1972
                         </a>
                         <p className="text-gray-600 mt-2">Call us for immediate assistance</p>
@@ -349,13 +349,13 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-2 hover:border-blue-600 transition-all duration-300">
+                <Card className="border-2 hover:border-green-700 transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Mail className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+                      <Mail className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Email</h3>
-                        <a href="mailto:monumentconstruction@comcast.net" className="text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300 break-all">
+                        <a href="mailto:monumentconstruction@comcast.net" className="text-green-700 hover:text-blue-700 font-semibold transition-colors duration-300 break-all">
                           monumentconstruction@comcast.net
                         </a>
                         <p className="text-gray-600 mt-2">Send us a detailed message</p>
@@ -364,10 +364,10 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-2 hover:border-blue-600 transition-all duration-300">
+                <Card className="border-2 hover:border-green-700 transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <MapPin className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+                      <MapPin className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Service Area</h3>
                         <p className="text-gray-700 font-semibold">Colfax, CA</p>
@@ -377,10 +377,10 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-2 hover:border-blue-600 transition-all duration-300">
+                <Card className="border-2 hover:border-green-700 transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Clock className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+                      <Clock className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Response Time</h3>
                         <p className="text-gray-700 font-semibold">Within 24 hours</p>
@@ -392,10 +392,10 @@ const Contact = () => {
               </div>
 
               {/* License Info */}
-              <Card className="bg-blue-50 border-2 border-blue-200">
+              <Card className="bg-green-50 border-2 border-green-200">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
-                    <CheckCircle2 className="w-8 h-8 text-blue-600" />
+                    <CheckCircle2 className="w-8 h-8 text-green-700" />
                     <span>Licensed & Bonded</span>
                   </CardTitle>
                 </CardHeader>

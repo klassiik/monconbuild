@@ -124,7 +124,7 @@ const HomeAdditions = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+                <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                   Get Free Quote
                 </Button>
               </a>
@@ -150,10 +150,10 @@ const HomeAdditions = () => {
             </p>
             <p className="text-lg text-gray-700 mb-8">
               From second-story additions to accessory dwelling units (ADUs), we handle every aspect of your home expansion 
-              project with expert craftsmanship and attention to detail. California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">License #801602</a>.
+              project with expert craftsmanship and attention to detail. California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">License #801602</a>.
             </p>
 
-            <div className="bg-blue-50 p-8 rounded-lg mb-12">
+            <div className="bg-green-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">Why Add On vs. Moving?</h3>
               <p className="text-gray-700 mb-4">
                 A well-designed home addition is often the perfect solution for growing families or changing needs. Rather than the disruption and expense of selling and buying a new home, an addition lets you expand in place, maintain your community connections, and build equity in your existing property.
@@ -167,7 +167,7 @@ const HomeAdditions = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
+                  <CheckCircle2 className="w-6 h-6 text-green-700 mr-3 flex-shrink-0 mt-1" />
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
@@ -177,7 +177,7 @@ const HomeAdditions = () => {
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
                   <h4 className="text-lg font-semibold text-gray-900">Design & Planning</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -195,7 +195,7 @@ const HomeAdditions = () => {
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
                   <h4 className="text-lg font-semibold text-gray-900">Expert Construction</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -219,7 +219,7 @@ const HomeAdditions = () => {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Why Choose Us for Your Addition?</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• Licensed California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">#801602</a></li>
+                    <li>• Licensed California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">#801602</a></li>
                     <li>• 25+ years building experience</li>
                     <li>• Seamless integration with existing home</li>
                     <li>• Full permitting and inspection coordination</li>
@@ -254,7 +254,7 @@ const HomeAdditions = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                 Request Free Consultation
               </Button>
             </a>
@@ -285,7 +285,7 @@ const HomeAdditions = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <Button size="lg" className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6">
                 Request Free Consultation
               </Button>
             </a>
@@ -303,3 +303,5 @@ const HomeAdditions = () => {
 };
 
 export default HomeAdditions;
+
+
