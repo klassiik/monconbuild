@@ -1,25 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Button } from './ui/button';
 import { Phone } from 'lucide-react';
 
 const StickyCTA = () => {
   const [visible, setVisible] = useState(false);
+  const ticking = useRef(false);
   
-  useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > 600);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  const handleScroll = useCallback(() => {
+    const scrollY = window.scrollY;
+    setVisible(scrollY > 600);
   }, []);
   
+  useEffect(() => {
+    const throttledScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking.current = false;
+        });
+        ticking.current = true;
+      }
+    };
+    
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    return () => window.removeEventListener('scroll', throttledScroll);
+  }, [handleScroll]);
+  
   const handlePhoneClick = () => {
-    // Track conversion event if GTM is available
-    if (window.gtag) {
-      window.gtag('event', 'phone_call_click', {
-        'event_category': 'engagement',
-        'event_label': window.location.pathname
+    // Track conversion event via GTM dataLayer
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'phone_call_click',
+        eventCategory: 'engagement',
+        eventLabel: window.location.pathname
       });
     }
   };

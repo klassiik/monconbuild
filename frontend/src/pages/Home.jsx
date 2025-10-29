@@ -171,8 +171,8 @@ const Home = () => {
         </script>
       </Helmet>
 
-      {/* Hero Section - Semantic HTML with main landmark and LCP-friendly <img> */}
-      <section role="banner" aria-label="Hero section" className="relative text-white py-24 md:py-32 overflow-hidden">
+      {/* Hero Section - Semantic HTML with LCP-friendly <img> */}
+      <section aria-label="Hero section" className="relative text-white py-24 md:py-32 overflow-hidden">
         {/* Background image as real <img> for better LCP */}
         <HeroBackground />
         {/* Overlay for better text readability - darker on top, lighter on bottom */}

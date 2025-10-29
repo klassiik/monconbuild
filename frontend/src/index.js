@@ -10,11 +10,11 @@ import App from "@/App";
 if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
-      .then((registration) => {
-        console.warn('SW registered: ', registration);
+      .then(() => {
+        // Service worker registered successfully
       })
-      .catch((registrationError) => {
-        console.warn('SW registration failed: ', registrationError);
+      .catch(() => {
+        // Service worker registration failed
       });
   });
 }
@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
       mod.initializeWebVitals?.();
       mod.initializePerformanceObserver?.();
     } catch (e) {
-      console.warn('Perf scripts failed to load', e);
+      // Performance monitoring failed to load
     }
   });
 }

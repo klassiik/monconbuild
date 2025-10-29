@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StickyCTA from "./components/StickyCTA";
+import ErrorBoundary from "./components/ErrorBoundary";
 // Lazy-load Toaster to avoid pulling sonner/next-themes into the main bundle
 const LazyToaster = lazy(() =>
   import('./components/ui/sonner').then((m) => ({ default: m.Toaster }))
@@ -46,10 +47,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
+    <ErrorBoundary>
+      <div className="App">
+        <BrowserRouter>
+          <Header />
+          <Routes>
           <Route path="/" element={
             <Suspense fallback={<PageLoader />}>
               <Home />
@@ -117,9 +119,10 @@ function App() {
           <Suspense fallback={null}>
             <LazyToaster />
           </Suspense>
-        )}
-      </BrowserRouter>
-    </div>
+          )}
+        </BrowserRouter>
+      </div>
+    </ErrorBoundary>
   );
 }
 
