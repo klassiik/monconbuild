@@ -20,7 +20,7 @@ export default [
 
   // Base JS + React + a11y
   {
-    files: ["**/*.js", "**/*.jsx"],
+    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
