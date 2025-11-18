@@ -1,12 +1,19 @@
 import React from 'react';
 
 import { Helmet } from 'react-helmet-async';
+import Breadcrumb from '../../components/Breadcrumb';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
 import { homeAdditionsFAQs } from '../../data/faqs';
 import { CheckCircle2, Phone, Mail, PlusCircle, Award } from 'lucide-react';
 
 const HomeAdditions = () => {
+  // Breadcrumb data
+  const breadcrumbItems = [
+    { name: 'Services', url: 'https://www.monconbuild.com/services' },
+    { name: 'Home Additions', url: 'https://www.monconbuild.com/services/home-additions' }
+  ];
+
   // Service Schema
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -112,6 +119,10 @@ const HomeAdditions = () => {
           {JSON.stringify(serviceSchema)}
         </script>
       </Helmet>
+      
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={breadcrumbItems} />
+      
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">
@@ -128,7 +139,7 @@ const HomeAdditions = () => {
                   Get Free Quote
                 </Button>
               </a>
-              <a href="tel:9166071972">
+              <a href="tel:+19166071972">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-green-900">
                   <Phone className="mr-2 h-5 w-5" />
                   (916) 607-1972
@@ -303,5 +314,3 @@ const HomeAdditions = () => {
 };
 
 export default HomeAdditions;
-
-

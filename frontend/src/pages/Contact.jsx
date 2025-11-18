@@ -340,7 +340,7 @@ const Contact = () => {
                       <Phone className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Phone</h3>
-                        <a href="tel:9166071972" className="text-green-700 hover:text-blue-700 text-xl font-semibold transition-colors duration-300">
+                        <a href="tel:+19166071972" className="text-green-700 hover:text-blue-700 text-xl font-semibold transition-colors duration-300">
                           (916) 607-1972
                         </a>
                         <p className="text-gray-600 mt-2">Call us for immediate assistance</p>

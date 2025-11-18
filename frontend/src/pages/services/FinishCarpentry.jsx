@@ -152,7 +152,7 @@ const FinishCarpentry = () => {
                   Get Free Quote
                 </Button>
               </a>
-              <a href="tel:9166071972">
+              <a href="tel:+19166071972">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-green-900">
                   <Phone className="mr-2 h-5 w-5" />
                   (916) 607-1972
@@ -358,5 +358,3 @@ const FinishCarpentry = () => {
 };
 
 export default FinishCarpentry;
-
-
