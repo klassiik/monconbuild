@@ -44,6 +44,20 @@ const Portfolio = () => {
       category: "General Construction",
       location: "Nevada County, CA",
       description: "Custom mountain home featuring natural materials, expert framing, and quality construction throughout. Built to withstand Sierra Nevada weather conditions."
+    },
+    {
+      image: "/3.png",
+      title: "Custom Woodwork Project",
+      category: "Finish Carpentry",
+      location: "Placer County, CA",
+      description: "Expert custom woodwork showcasing precision craftsmanship and attention to detail. Quality finish carpentry that transforms spaces."
+    },
+    {
+      image: "/4.png",
+      title: "Construction Project",
+      category: "General Construction",
+      location: "Nevada County, CA",
+      description: "Quality construction work demonstrating our commitment to excellence in every phase of the project from foundation to finish."
     }
   ];
 

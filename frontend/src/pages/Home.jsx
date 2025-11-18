@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Phone, Mail, CheckCircle2, Award, Hammer, Home as HomeIcon, Building2, Wrench } from 'lucide-react';
+import Testimonials from '../components/Testimonials';
 
 // LCP-friendly background image component with blur-in effect
 const HeroBackground = () => {
@@ -137,6 +138,34 @@ const Home = () => {
       title: "Covered Entry Construction",
       description: "Custom timber frame entrance",
       alt: "Custom timber frame covered entry construction in Auburn, CA by licensed contractor"
+    },
+    {
+      image: "/3.png",
+      title: "Custom Woodwork Project",
+      description: "Expert craftsmanship details",
+      alt: "Custom woodwork and finish carpentry by Monument Construction"
+    },
+    {
+      image: "/4.png",
+      title: "Construction Project",
+      description: "Quality construction work",
+      alt: "Construction project by Monument Construction in Placer County, CA"
+    }
+  ];
+
+  const testimonials = [
+    {
+      text: "We had William build our formal library and asked him to model it after the library in the show Downton Abbey. As you can see from the pictures, he succeeded amazingly well. We then had him build a library in my home office and my wife's smaller home office in the same style. He also built custom shelves in the mudroom in a different style entirely. Everything this man builds is perfect. No flaws or mistakes anywhere. He is a master craftsman, an artist, if you will, and a pleasure to work with. We highly recommend William for any project you might have.",
+      name: "Richard Young",
+      location: "Sacramento, CA",
+      image: "/2.jpg",
+      service: "Custom Library & Built-ins"
+    },
+    {
+      text: "We've collaborated with William on numerous projects over the years, ranging from kitchen remodels to extensive exterior renovations. On every project, William consistently delivers exceptional results, surpassing our expectations. His superior craftsmanship is evident in every detail, as he approaches construction with a meticulous and perfectionist mindset. If you're seeking top-notch work and exceptional results, don't hesitate to contact William. Additionally, some of the projects we've entrusted to him required creative problem-solving and ingenuity. In each instance, William demonstrated his remarkable ability to find innovative solutions, resulting in outstanding outcomes.",
+      name: "Neal Mitchell",
+      location: "Nevada City, CA",
+      service: "Kitchen Remodeling & Exterior Renovations"
     }
   ];
 
@@ -198,9 +227,9 @@ const Home = () => {
               >
                 <a href="/contact">Get Free Quote</a>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-green-900 px-8 py-6 text-lg transition-all duration-300"
                 asChild
               >
@@ -228,6 +257,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials testimonials={testimonials} showImages={true} />
 
       {/* About Monument Construction Section */}
       <section className="py-20 md:py-28 bg-gradient-to-r from-gray-50 to-blue-50">

@@ -5,10 +5,27 @@ import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Hammer, Home, Building2, Wrench, DoorOpen, Drill, PaintBucket, Ruler } from 'lucide-react';
+import Testimonials from '../components/Testimonials';
 
 const Services = () => {
   const breadcrumbItems = [
     { name: 'Services', url: 'https://www.monconbuild.com/services' }
+  ];
+
+  const testimonials = [
+    {
+      text: "We had William build our formal library and asked him to model it after the library in the show Downton Abbey. As you can see from the pictures, he succeeded amazingly well. We then had him build a library in my home office and my wife's smaller home office in the same style. He also built custom shelves in the mudroom in a different style entirely. Everything this man builds is perfect. No flaws or mistakes anywhere. He is a master craftsman, an artist, if you will, and a pleasure to work with. We highly recommend William for any project you might have.",
+      name: "Richard Young",
+      location: "Sacramento, CA",
+      image: "/2.jpg",
+      service: "Custom Library & Built-ins"
+    },
+    {
+      text: "We've collaborated with William on numerous projects over the years, ranging from kitchen remodels to extensive exterior renovations. On every project, William consistently delivers exceptional results, surpassing our expectations. His superior craftsmanship is evident in every detail, as he approaches construction with a meticulous and perfectionist mindset. If you're seeking top-notch work and exceptional results, don't hesitate to contact William. Additionally, some of the projects we've entrusted to him required creative problem-solving and ingenuity. In each instance, William demonstrated his remarkable ability to find innovative solutions, resulting in outstanding outcomes.",
+      name: "Neal Mitchell",
+      location: "Nevada City, CA",
+      service: "Kitchen Remodeling & Exterior Renovations"
+    }
   ];
 
   const services = [
@@ -268,6 +285,9 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials testimonials={testimonials} showImages={true} />
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-green-700 text-white">
