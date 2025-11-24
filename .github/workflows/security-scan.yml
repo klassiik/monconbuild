@@ -42,7 +42,7 @@ jobs:
         continue-on-error: true
         
       - name: Upload npm audit report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: npm-audit-report
           path: frontend/npm-audit-report.json
@@ -91,7 +91,7 @@ jobs:
         continue-on-error: true
         
       - name: Upload Python security reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: python-security-reports
           path: |
@@ -203,7 +203,7 @@ jobs:
           fail_action: false
           
       - name: Upload ZAP scan results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: zap-scan-results
           path: |
