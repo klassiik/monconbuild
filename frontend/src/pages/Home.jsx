@@ -103,7 +103,7 @@ const Home = () => {
       "@id": "https://www.monconbuild.com/#webpage",
       "url": "https://www.monconbuild.com/",
       "name": "Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA",
-      "description": "Professional finish carpentry and general construction services in Colfax, Placer County, and Nevada County, CA. Licensed contractor #801602. Featured on DIY Network TV.",
+      "description": "Professional finish carpentry and general construction services serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California. Licensed contractor #801602. Featured on DIY Network TV.",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://www.monconbuild.com/#website"
@@ -256,12 +256,12 @@ const Home = () => {
           {/* SEO Meta Tags and Schema.org Structured Data */}
           <Helmet>
             <title>Expert Carpentry & Construction | Colfax CA</title>
-            <meta name="description" content="Professional finish carpentry & construction services in Colfax, CA. Licensed contractor #801602. Featured on DIY Network. (916) 607-1972." />
+            <meta name="description" content="Professional finish carpentry & construction services serving Northern California including Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Licensed contractor #801602. Featured on DIY Network. (916) 607-1972." />
             <link rel="canonical" href="https://www.monconbuild.com/" />
             
             {/* Open Graph Tags */}
             <meta property="og:title" content="Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA" />
-            <meta property="og:description" content="Licensed contractor serving Placer & Nevada Counties with quality finish carpentry and complete construction services." />
+            <meta property="og:description" content="Licensed contractor serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties with quality finish carpentry and complete construction services." />
             <meta property="og:url" content="https://www.monconbuild.com/" />
             <meta property="og:type" content="website" />
             <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
@@ -349,7 +349,7 @@ const Home = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Monument Construction</h2>
                 <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
                   <p>
-                    Monument Construction is a licensed general contractor (License #801602) specializing in expert finish carpentry and comprehensive residential construction services. With over 25 years of experience serving Placer County, Nevada County, and the greater Colfax area, we've built a reputation for quality craftsmanship, attention to detail, and customer satisfaction.
+                    Monument Construction is a licensed general contractor (License #801602) specializing in expert finish carpentry and comprehensive residential construction services. With over 25 years of experience serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California, we've built a reputation for quality craftsmanship, attention to detail, and customer satisfaction.
                   </p>
                   
                   <p>
@@ -533,7 +533,7 @@ const Home = () => {
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold mb-4">Serving Your Community</h2>
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Proudly serving Placer County and Nevada County with quality construction services.
+                  Proudly serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties with quality construction services.
                 </p>
               </div>
 
@@ -544,7 +544,15 @@ const Home = () => {
                   "Grass Valley, CA",
                   "Nevada City, CA",
                   "Truckee, CA",
-                  "All of Placer & Nevada Counties"
+                  "Sacramento, CA",
+                  "Elk Grove, CA",
+                  "Folsom, CA",
+                  "Davis, CA",
+                  "Woodland, CA",
+                  "El Dorado Hills, CA",
+                  "South Lake Tahoe, CA",
+                  "Placerville, CA",
+                  "All of Northern California"
                 ].map((area, index) => (
                   <div key={index} className="text-center p-6 bg-green-800 rounded-lg hover:bg-green-700 transition-colors duration-300">
                     <p className="text-lg font-semibold">{area}</p>

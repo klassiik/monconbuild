@@ -31,10 +31,10 @@ const About = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>About Monument Construction</title>
-        <meta name="description" content="Monument Construction: 25+ years trusted finish carpentry & construction services in Colfax & Placer County. Featured on DIY Network." />
+        <meta name="description" content="Monument Construction: 25+ years trusted finish carpentry & construction services serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Featured on DIY Network." />
         <link rel="canonical" href="https://www.monconbuild.com/about" />
         <meta property="og:title" content="About Monument Construction" />
-        <meta property="og:description" content="Monument Construction: 25+ years trusted finish carpentry & construction services in Colfax & Placer County. Featured on DIY Network." />
+        <meta property="og:description" content="Monument Construction: 25+ years trusted finish carpentry & construction services serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Featured on DIY Network." />
         <meta property="og:url" content="https://www.monconbuild.com/about" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
@@ -61,7 +61,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Our Story</h2>
             <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
               <p>
-                Monument Construction was founded on a simple principle: delivering exceptional craftsmanship with every project, regardless of size. For over 25 years, we've been the trusted choice for homeowners throughout Placer County, Nevada County, and the greater Colfax area who demand the highest quality in construction and finish carpentry services.
+                Monument Construction was founded on a simple principle: delivering exceptional craftsmanship with every project, regardless of size. For over 25 years, we've been the trusted choice for homeowners throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California who demand the highest quality in construction and finish carpentry services.
               </p>
 
               <p>
@@ -81,7 +81,7 @@ const About = () => {
               
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  William Rogers is a licensed general contractor specializing in finish carpentry with decades of experience serving the Colfax, Placer County, and Nevada County communities.
+                  William Rogers is a licensed general contractor specializing in finish carpentry with decades of experience serving communities throughout Northern California including Placer, Nevada, Sacramento, Yolo, and El Dorado Counties.
                 </p>
                 
                 <p>
@@ -204,7 +204,7 @@ const About = () => {
           </div>
           
           <p className="text-gray-600">
-            And all surrounding areas in Placer County and Nevada County
+            And all surrounding areas in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties
           </p>
         </div>
       </section>

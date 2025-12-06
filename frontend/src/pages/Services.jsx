@@ -133,10 +133,10 @@ const Services = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>Construction Services | Colfax CA</title>
-        <meta name="description" content="Expert finish carpentry, home additions, remodeling & custom woodwork for Colfax & Placer County. Quality craftsmanship." />
+        <meta name="description" content="Expert finish carpentry, home additions, remodeling & custom woodwork serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Quality craftsmanship." />
         <link rel="canonical" href="https://www.monconbuild.com/services" />
         <meta property="og:title" content="Construction Services | Colfax CA" />
-        <meta property="og:description" content="Expert finish carpentry, home additions, remodeling & custom woodwork for Colfax & Placer County. Quality craftsmanship." />
+        <meta property="og:description" content="Expert finish carpentry, home additions, remodeling & custom woodwork serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Quality craftsmanship." />
         <meta property="og:url" content="https://www.monconbuild.com/services" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
@@ -162,7 +162,7 @@ const Services = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">What We Offer</h2>
             <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
               <p>
-                Monument Construction provides comprehensive construction and finish carpentry services throughout Placer County, Nevada County, and the Colfax area. With over 25 years of experience, we handle everything from detailed finish carpentry work to complete residential construction projects.
+                Monument Construction provides comprehensive construction and finish carpentry services throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California. With over 25 years of experience, we handle everything from detailed finish carpentry work to complete residential construction projects.
               </p>
 
               <p>

@@ -40,15 +40,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// Preload critical resources
-if (typeof window !== 'undefined') {
-  const preloadCSS = document.createElement('link');
-  preloadCSS.rel = 'preload';
-  preloadCSS.href = '/static/css/main.css';
-  preloadCSS.as = 'style';
-  document.head.appendChild(preloadCSS);
-}
-
 const rootElement = document.getElementById("root");
 
 // Use hydrate if the HTML is pre-rendered (from react-snap)

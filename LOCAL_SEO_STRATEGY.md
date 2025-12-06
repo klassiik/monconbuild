@@ -1,7 +1,7 @@
 # Local SEO Strategy for Monument Construction
 ## Comprehensive Website-Only SEO Action Plan
 
-**Target Service Areas:** Colfax, Auburn, Grass Valley, Nevada City, Truckee, Placer County, Nevada County
+**Target Service Areas:** Colfax, Auburn, Grass Valley, Nevada City, Truckee, Sacramento, Elk Grove, Folsom, Davis, Woodland, El Dorado Hills, South Lake Tahoe, Placerville, plus Placer County, Nevada County, Sacramento County, Yolo County, El Dorado County
 **Core Services:** Finish Carpentry, General Construction, Home Additions, Custom Woodwork, Complete Remodeling, Residential Projects
 
 ---

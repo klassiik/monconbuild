@@ -78,10 +78,10 @@ const Contact = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>Contact Monument Construction</title>
-        <meta name="description" content="Contact Monument Construction for free quotes on finish carpentry, remodeling & construction in Colfax & Placer County." />
+        <meta name="description" content="Contact Monument Construction for free quotes on finish carpentry, remodeling & construction serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties." />
         <link rel="canonical" href="https://www.monconbuild.com/contact" />
         <meta property="og:title" content="Contact Monument Construction" />
-        <meta property="og:description" content="Contact Monument Construction for free quotes on finish carpentry, remodeling & construction in Colfax & Placer County." />
+        <meta property="og:description" content="Contact Monument Construction for free quotes on finish carpentry, remodeling & construction serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties." />
         <meta property="og:url" content="https://www.monconbuild.com/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
@@ -247,13 +247,44 @@ const Contact = () => {
                       <SelectValue placeholder="Select your city" />
                     </SelectTrigger>
                     <SelectContent>
+                      {/* Placer County */}
                       <SelectItem value="colfax">Colfax</SelectItem>
                       <SelectItem value="auburn">Auburn</SelectItem>
+                      <SelectItem value="roseville">Roseville</SelectItem>
+                      <SelectItem value="rocklin">Rocklin</SelectItem>
+                      <SelectItem value="lincoln">Lincoln</SelectItem>
+                      
+                      {/* Nevada County */}
                       <SelectItem value="grass-valley">Grass Valley</SelectItem>
                       <SelectItem value="nevada-city">Nevada City</SelectItem>
                       <SelectItem value="truckee">Truckee</SelectItem>
+                      
+                      {/* Sacramento County */}
+                      <SelectItem value="sacramento">Sacramento</SelectItem>
+                      <SelectItem value="elk-grove">Elk Grove</SelectItem>
+                      <SelectItem value="folsom">Folsom</SelectItem>
+                      <SelectItem value="citrus-heights">Citrus Heights</SelectItem>
+                      <SelectItem value="rancho-cordova">Rancho Cordova</SelectItem>
+                      <SelectItem value="carmichael">Carmichael</SelectItem>
+                      
+                      {/* Yolo County */}
+                      <SelectItem value="davis">Davis</SelectItem>
+                      <SelectItem value="woodland">Woodland</SelectItem>
+                      <SelectItem value="west-sacramento">West Sacramento</SelectItem>
+                      <SelectItem value="winters">Winters</SelectItem>
+                      
+                      {/* El Dorado County */}
+                      <SelectItem value="el-dorado-hills">El Dorado Hills</SelectItem>
+                      <SelectItem value="south-lake-tahoe">South Lake Tahoe</SelectItem>
+                      <SelectItem value="placerville">Placerville</SelectItem>
+                      <SelectItem value="cameron-park">Cameron Park</SelectItem>
+                      
+                      {/* Other Options */}
                       <SelectItem value="other-placer">Other (Placer County)</SelectItem>
                       <SelectItem value="other-nevada">Other (Nevada County)</SelectItem>
+                      <SelectItem value="other-sacramento">Other (Sacramento County)</SelectItem>
+                      <SelectItem value="other-yolo">Other (Yolo County)</SelectItem>
+                      <SelectItem value="other-el-dorado">Other (El Dorado County)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

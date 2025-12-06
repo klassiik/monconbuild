@@ -39,7 +39,7 @@ const Footer = () => {
                   <p className="text-sm text-gray-400">Expert Finish Carpentry & General Construction</p>
                 </div>
                 <p className="text-sm leading-relaxed mb-4">
-                  Professional construction and finish carpentry services serving Placer and Nevada Counties.
+                  Professional construction and finish carpentry services serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties.
                 </p>
                 <p className="text-sm font-semibold text-white">
                   <a 
@@ -94,7 +94,7 @@ const Footer = () => {
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-1" />
-                    <span>Colfax, CA<br />Serving Placer & Nevada Counties</span>
+                    <span>Colfax, CA<br />Serving Northern California</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />

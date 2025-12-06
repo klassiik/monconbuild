@@ -48,7 +48,7 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <div className="App">
+      <div className="App" style={{ minHeight: '100vh', backgroundColor: '#f0f0f0' }}>
         <BrowserRouter>
           <Header />
           <Routes>

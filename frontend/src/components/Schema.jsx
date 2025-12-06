@@ -57,26 +57,22 @@ export const ServiceSchema = ({ service }) => {
       }
     },
     "areaServed": [
-      {
-        "@type": "City",
-        "name": "Colfax, CA"
-      },
-      {
-        "@type": "City",
-        "name": "Auburn, CA"
-      },
-      {
-        "@type": "City",
-        "name": "Grass Valley, CA"
-      },
-      {
-        "@type": "City",
-        "name": "Nevada City, CA"
-      },
-      {
-        "@type": "City",
-        "name": "Truckee, CA"
-      }
+      { "@type": "City", "name": "Colfax, CA" },
+      { "@type": "City", "name": "Auburn, CA" },
+      { "@type": "City", "name": "Grass Valley, CA" },
+      { "@type": "City", "name": "Nevada City, CA" },
+      { "@type": "City", "name": "Truckee, CA" },
+      { "@type": "City", "name": "Sacramento, CA" },
+      { "@type": "City", "name": "Elk Grove, CA" },
+      { "@type": "City", "name": "Folsom, CA" },
+      { "@type": "City", "name": "Citrus Heights, CA" },
+      { "@type": "City", "name": "Rancho Cordova, CA" },
+      { "@type": "City", "name": "Davis, CA" },
+      { "@type": "City", "name": "Woodland, CA" },
+      { "@type": "City", "name": "West Sacramento, CA" },
+      { "@type": "City", "name": "El Dorado Hills, CA" },
+      { "@type": "City", "name": "South Lake Tahoe, CA" },
+      { "@type": "City", "name": "Placerville, CA" }
     ],
     "description": service.description,
     "offers": {

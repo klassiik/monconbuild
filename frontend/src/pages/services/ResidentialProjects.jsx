@@ -23,9 +23,20 @@ const ResidentialProjects = () => {
       { "@type": "City", "name": "Auburn, CA" },
       { "@type": "City", "name": "Grass Valley, CA" },
       { "@type": "City", "name": "Nevada City, CA" },
-      { "@type": "City", "name": "Truckee, CA" }
+      { "@type": "City", "name": "Truckee, CA" },
+      { "@type": "City", "name": "Sacramento, CA" },
+      { "@type": "City", "name": "Elk Grove, CA" },
+      { "@type": "City", "name": "Folsom, CA" },
+      { "@type": "City", "name": "Citrus Heights, CA" },
+      { "@type": "City", "name": "Rancho Cordova, CA" },
+      { "@type": "City", "name": "Davis, CA" },
+      { "@type": "City", "name": "Woodland, CA" },
+      { "@type": "City", "name": "West Sacramento, CA" },
+      { "@type": "City", "name": "El Dorado Hills, CA" },
+      { "@type": "City", "name": "South Lake Tahoe, CA" },
+      { "@type": "City", "name": "Placerville, CA" }
     ],
-    "description": "Complete residential construction and remodeling services including new home construction, renovations, and home improvement projects in Placer County.",
+    "description": "Complete residential construction and remodeling services including new home construction, renovations, and home improvement projects in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties.",
     "url": "https://www.monconbuild.com/services/residential-projects",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -92,7 +103,14 @@ const ResidentialProjects = () => {
     "Grass Valley, CA",
     "Nevada City, CA",
     "Truckee, CA",
-    "All of Placer & Nevada Counties"
+    "Sacramento, CA",
+    "Elk Grove, CA",
+    "Folsom, CA",
+    "Davis, CA",
+    "Woodland, CA",
+    "El Dorado Hills, CA",
+    "South Lake Tahoe, CA",
+    "All of Placer, Nevada, Sacramento, Yolo & El Dorado Counties"
   ];
 
   return (

@@ -43,6 +43,58 @@ const ServiceAreas = () => {
         "Chicago Park",
         "North San Juan"
       ]
+    },
+    {
+      name: "Sacramento County",
+      description: "Expanding our services throughout Sacramento County, bringing expert craftsmanship to the Greater Sacramento area.",
+      cities: [
+        "Sacramento",
+        "Elk Grove",
+        "Arden-Arcade",
+        "Folsom",
+        "Citrus Heights",
+        "Rancho Cordova",
+        "Carmichael",
+        "Florin",
+        "North Highlands",
+        "Antelope",
+        "Vineyard",
+        "Foothill Farms",
+        "Orangevale",
+        "Fair Oaks",
+        "Galt"
+      ]
+    },
+    {
+      name: "Yolo County",
+      description: "Delivering quality construction services across all Yolo County communities with dedicated craftsmanship.",
+      cities: [
+        "Davis",
+        "Woodland",
+        "West Sacramento",
+        "Winters"
+      ]
+    },
+    {
+      name: "El Dorado County",
+      description: "Bringing expert construction and finish carpentry to El Dorado County, from the foothills to the Sierra Nevada.",
+      cities: [
+        "El Dorado Hills",
+        "South Lake Tahoe",
+        "Cameron Park",
+        "Diamond Springs",
+        "Placerville",
+        "Pollock Pines",
+        "Shingle Springs",
+        "Auburn Lake Trails",
+        "Georgetown",
+        "Camino",
+        "Cool",
+        "Tahoma",
+        "Cold Springs",
+        "Coloma",
+        "Shingle Springs Rancheria"
+      ]
     }
   ];
 
@@ -58,11 +110,11 @@ const ServiceAreas = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Service Areas | Placer County CA</title>
-        <meta name="description" content="Monument Construction serves Placer & Nevada Counties including Colfax, Auburn, Grass Valley, Nevada City & Truckee." />
+        <title>Service Areas | Northern California</title>
+        <meta name="description" content="Monument Construction serves Placer, Nevada, Sacramento, Yolo & El Dorado Counties including Colfax, Auburn, Sacramento, El Dorado Hills, South Lake Tahoe & more." />
         <link rel="canonical" href="https://www.monconbuild.com/service-areas" />
-        <meta property="og:title" content="Service Areas | Placer County CA" />
-        <meta property="og:description" content="Monument Construction serves Placer & Nevada Counties including Colfax, Auburn, Grass Valley, Nevada City & Truckee." />
+        <meta property="og:title" content="Service Areas | Northern California" />
+        <meta property="og:description" content="Monument Construction serves Placer, Nevada, Sacramento, Yolo & El Dorado Counties including Colfax, Auburn, Sacramento, El Dorado Hills, South Lake Tahoe & more." />
         <meta property="og:url" content="https://www.monconbuild.com/service-areas" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
@@ -76,7 +128,7 @@ const ServiceAreas = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Service Areas</h1>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-              Proudly serving Placer County and Nevada County, California with quality construction and finish carpentry services.
+              Proudly serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California with quality construction and finish carpentry services.
             </p>
           </div>
         </div>
