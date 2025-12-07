@@ -288,7 +288,7 @@ const Home = () => {
             <div className="container mx-auto px-6 md:px-12 relative z-20">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                  Professional Construction & Finish Carpentry in <span className="text-blue-400">Colfax, CA</span>
+                  Professional Construction & Finish Carpentry in <span className="text-blue-400">Placer County</span>
                 </h1>
                 <p className="text-xl md:text-2xl mb-8 text-gray-300 leading-relaxed">
                   Expert craftsmanship from ground work to complete construction. Licensed, experienced, and trusted throughout Placer & Nevada Counties.
@@ -545,7 +545,8 @@ const Home = () => {
                   "Nevada City, CA",
                   "Truckee, CA",
                   "Sacramento, CA",
-                  "Elk Grove, CA",
+                  "Roseville, CA",
+                  "Rocklin, CA",
                   "Folsom, CA",
                   "Davis, CA",
                   "Woodland, CA",

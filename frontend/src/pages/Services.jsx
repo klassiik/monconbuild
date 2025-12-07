@@ -23,7 +23,7 @@ const Services = () => {
     {
       text: "We've collaborated with William on numerous projects over the years, ranging from kitchen remodels to extensive exterior renovations. On every project, William consistently delivers exceptional results, surpassing our expectations. His superior craftsmanship is evident in every detail, as he approaches construction with a meticulous and perfectionist mindset. If you're seeking top-notch work and exceptional results, don't hesitate to contact William. Additionally, some of the projects we've entrusted to him required creative problem-solving and ingenuity. In each instance, William demonstrated his remarkable ability to find innovative solutions, resulting in outstanding outcomes.",
       name: "Neal Mitchell",
-      location: "Nevada City, CA",
+      location: "Grass Valley",
       service: "Kitchen Remodeling & Exterior Renovations"
     }
   ];
