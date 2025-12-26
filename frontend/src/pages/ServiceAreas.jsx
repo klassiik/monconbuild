@@ -111,10 +111,10 @@ const ServiceAreas = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>Service Areas | Northern California</title>
-        <meta name="description" content="Monument Construction serves Placer, Nevada, Sacramento, Yolo & El Dorado Counties including Colfax, Auburn, Sacramento, El Dorado Hills, South Lake Tahoe & more." />
+        <meta name="description" content="Serving Placer, Nevada, Sacramento & El Dorado Counties: Colfax, Auburn, Roseville, Grass Valley, El Dorado Hills, South Lake Tahoe & more." />
         <link rel="canonical" href="https://www.monconbuild.com/service-areas" />
         <meta property="og:title" content="Service Areas | Northern California" />
-        <meta property="og:description" content="Monument Construction serves Placer, Nevada, Sacramento, Yolo & El Dorado Counties including Colfax, Auburn, Sacramento, El Dorado Hills, South Lake Tahoe & more." />
+        <meta property="og:description" content="Serving Placer, Nevada, Sacramento & El Dorado Counties: Colfax, Auburn, Roseville, Grass Valley, El Dorado Hills, South Lake Tahoe & more." />
         <meta property="og:url" content="https://www.monconbuild.com/service-areas" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />

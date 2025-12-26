@@ -256,7 +256,7 @@ const Home = () => {
           {/* SEO Meta Tags and Schema.org Structured Data */}
           <Helmet>
             <title>Expert Carpentry & Construction | Colfax CA</title>
-            <meta name="description" content="Professional finish carpentry & construction services serving Northern California including Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Licensed contractor #801602. Featured on DIY Network. (916) 607-1972." />
+            <meta name="description" content="Expert finish carpentry & construction in Northern CA. Licensed contractor #801602 serving Placer, Nevada, Sacramento & El Dorado Counties. (916) 607-1972" />
             <link rel="canonical" href="https://www.monconbuild.com/" />
             
             {/* Open Graph Tags */}

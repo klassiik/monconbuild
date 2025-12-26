@@ -31,10 +31,10 @@ const About = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>About Monument Construction</title>
-        <meta name="description" content="Monument Construction: 25+ years trusted finish carpentry & construction services serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Featured on DIY Network." />
+        <meta name="description" content="25+ years of trusted finish carpentry & construction in Northern CA. Licensed contractor serving Placer, Nevada, Sacramento & El Dorado Counties." />
         <link rel="canonical" href="https://www.monconbuild.com/about" />
         <meta property="og:title" content="About Monument Construction" />
-        <meta property="og:description" content="Monument Construction: 25+ years trusted finish carpentry & construction services serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Featured on DIY Network." />
+        <meta property="og:description" content="25+ years of trusted finish carpentry & construction in Northern CA. Licensed contractor serving Placer, Nevada, Sacramento & El Dorado Counties." />
         <meta property="og:url" content="https://www.monconbuild.com/about" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
