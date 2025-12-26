@@ -52,6 +52,17 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "monconbuild.com"
+        }
+      ],
+      "destination": "https://www.monconbuild.com/:path*",
+      "permanent": true
     }
   ],
   "rewrites": [

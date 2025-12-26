@@ -214,13 +214,13 @@ const Home = () => {
         alt: "Custom timber frame covered entry construction in Auburn, CA by licensed contractor"
       },
       {
-        image: "/3.png",
+        image: "/3.webp",
         title: "Custom Woodwork Project",
         description: "Expert craftsmanship details",
         alt: "Custom woodwork and finish carpentry by Monument Construction"
       },
       {
-        image: "/4.png",
+        image: "/4.webp",
         title: "Construction Project",
         description: "Quality construction work",
         alt: "Construction project by Monument Construction in Placer County, CA"
