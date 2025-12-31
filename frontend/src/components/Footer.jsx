@@ -36,7 +36,7 @@ const Footer = () => {
               <div>
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">Monument Construction</h3>
-                  <p className="text-sm text-gray-400">Expert Finish Carpentry & General Construction</p>
+                  <p className="text-sm text-gray-300">Expert Finish Carpentry & General Construction</p>
                 </div>
                 <p className="text-sm leading-relaxed mb-4">
                   Professional construction and finish carpentry services serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties.

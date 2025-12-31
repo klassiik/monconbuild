@@ -51,6 +51,7 @@ function App() {
       <div className="App" style={{ minHeight: '100vh', backgroundColor: '#f0f0f0' }}>
         <BrowserRouter>
           <Header />
+          <main id="main-content">
           <Routes>
           <Route path="/" element={
             <Suspense fallback={<PageLoader />}>
@@ -113,6 +114,7 @@ function App() {
             </Suspense>
           } />
         </Routes>
+          </main>
         <Footer />
         <StickyCTA />
         {mountToaster && (

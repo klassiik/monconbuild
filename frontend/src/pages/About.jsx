@@ -213,7 +213,7 @@ const About = () => {
       <section className="py-20 md:py-28 bg-green-700 text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Let's Build Something Great Together</h2>
-          <p className="text-xl mb-10 text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl mb-10 text-white/90 max-w-3xl mx-auto">
             Contact Monument Construction today to discuss your project and receive a free consultation.
           </p>
           
