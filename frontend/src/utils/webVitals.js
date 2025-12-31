@@ -11,7 +11,7 @@ function sendToAnalytics(metric) {
 
     // Send to your analytics service in production
     if (process.env.NODE_ENV === 'production') {
-      // Example: Send to Google Analytics 4
+      // Send to Google Analytics 4 if available
       if (window.gtag) {
         window.gtag('event', metric.name, {
           value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
@@ -22,27 +22,18 @@ function sendToAnalytics(metric) {
         });
       }
 
-      // Example: Send to your custom analytics endpoint with error handling
-      fetch('/api/analytics/web-vitals', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      // Log performance data for monitoring (no backend API needed for static sites)
+      // Web vitals are automatically collected by Vercel Analytics if enabled
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Production Web Vital:', {
           name: metric.name,
           value: metric.value,
           id: metric.id,
           delta: metric.delta,
           timestamp: Date.now(),
-          url: window.location.href,
-          userAgent: navigator.userAgent
-        })
-      }).catch((error) => {
-        handleError(error, 'ANALYTICS_SEND_ERROR', 'LOW', {
-          metric: metric.name,
-          endpoint: '/api/analytics/web-vitals'
+          url: window.location.href
         });
-      });
+      }
     }
   } catch (error) {
     handleError(error, 'WEB_VITALS_ANALYTICS_ERROR', 'MEDIUM', {
