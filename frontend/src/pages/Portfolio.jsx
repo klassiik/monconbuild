@@ -286,7 +286,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Helmet>
         <title>Portfolio | Construction Projects</title>
         <meta name="description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer & Nevada County, CA." />
