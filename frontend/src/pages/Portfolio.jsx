@@ -389,25 +389,25 @@ const Portfolio = () => {
             {filteredProjects.map((project, index) => (
               <div 
                 key={project.id} 
-                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+                className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
-                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} w-full max-w-full`}>
                   {/* Aspect ratio container to prevent CLS */}
                   <div 
-                    className="relative overflow-hidden rounded-lg shadow-2xl group cursor-pointer aspect-[910/500]"
+                    className="relative overflow-hidden rounded-lg shadow-2xl group cursor-pointer aspect-[4/3] md:aspect-[910/500] w-full"
                     onClick={() => openGallery(project, 0)}
                   >
                     <img 
                       src={getOptimizedImage(project.thumbnail, 'medium')} 
                       srcSet={`${getOptimizedImage(project.thumbnail, 'thumbnails')} 400w, ${getOptimizedImage(project.thumbnail, 'medium')} 1200w, ${project.thumbnail} 2400w`}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 910px"
+                      sizes="(max-width: 768px) calc(100vw - 48px), (max-width: 1200px) 50vw, 910px"
                       alt={`${project.title} - ${project.category} project in ${project.location} by Monument Construction`}
                       loading="lazy"
                       width="910"
                       height="500"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 left-4 bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                    <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-green-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-semibold">
                       {project.category}
                     </div>
                     {/* Image count badge */}
@@ -427,12 +427,12 @@ const Portfolio = () => {
                   
                   {/* Thumbnail strip for multi-image projects */}
                   {project.images.length > 1 && (
-                    <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+                    <div className="flex gap-2 mt-4 overflow-x-auto pb-2 max-w-full">
                       {project.images.slice(0, 5).map((img, imgIndex) => (
                         <button
                           key={imgIndex}
                           onClick={() => openGallery(project, imgIndex)}
-                          className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-green-700 transition-colors"
+                          className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-green-700 transition-colors"
                         >
                           <img 
                             src={getOptimizedImage(img, 'thumbnails')} 
@@ -447,7 +447,7 @@ const Portfolio = () => {
                       {project.images.length > 5 && (
                         <button
                           onClick={() => openGallery(project, 5)}
-                          className="flex-shrink-0 w-20 h-20 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 font-semibold hover:bg-green-100 transition-colors"
+                          className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 font-semibold hover:bg-green-100 transition-colors"
                         >
                           +{project.images.length - 5}
                         </button>
@@ -456,16 +456,16 @@ const Portfolio = () => {
                   )}
                 </div>
                 
-                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">{project.title}</h2>
-                  <p className="text-lg text-green-700 font-semibold mb-6">{project.location}</p>
-                  <p className="text-lg text-gray-700 leading-relaxed mb-8">{project.description}</p>
+                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} w-full max-w-full`}>
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-slate-900">{project.title}</h2>
+                  <p className="text-base md:text-lg text-green-700 font-semibold mb-4 md:mb-6">{project.location}</p>
+                  <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8">{project.description}</p>
                   
-                  <div className="border-l-4 border-green-700 pl-6">
-                    <p className="text-gray-600 italic">
+                  <div className="border-l-4 border-green-700 pl-4 md:pl-6">
+                    <p className="text-gray-600 italic text-sm md:text-base">
                       "{categoryQuotes[project.category]?.quote || 'Every project reflects our commitment to quality craftsmanship and attention to detail.'}"
                     </p>
-                    <p className="text-slate-900 font-semibold mt-2">- {categoryQuotes[project.category]?.author || 'William Rogers, Owner'}</p>
+                    <p className="text-slate-900 font-semibold mt-2 text-sm md:text-base">- {categoryQuotes[project.category]?.author || 'William Rogers, Owner'}</p>
                   </div>
                 </div>
               </div>
