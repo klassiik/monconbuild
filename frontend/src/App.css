@@ -2,11 +2,14 @@
 
 * {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
-/* Remove default center alignment */
+/* Prevent horizontal overflow */
 .App {
   text-align: left;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Typography Enhancement */

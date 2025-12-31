@@ -286,7 +286,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden w-full">
       <Helmet>
         <title>Portfolio | Construction Projects</title>
         <meta name="description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer & Nevada County, CA." />
@@ -394,17 +394,15 @@ const Portfolio = () => {
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} w-full max-w-full`}>
                   {/* Aspect ratio container to prevent CLS */}
                   <div 
-                    className="relative overflow-hidden rounded-lg shadow-2xl group cursor-pointer aspect-[4/3] md:aspect-[910/500] w-full"
+                    className="relative overflow-hidden rounded-lg shadow-2xl group cursor-pointer aspect-[4/3] md:aspect-[16/9] w-full"
                     onClick={() => openGallery(project, 0)}
                   >
                     <img 
                       src={getOptimizedImage(project.thumbnail, 'medium')} 
-                      srcSet={`${getOptimizedImage(project.thumbnail, 'thumbnails')} 400w, ${getOptimizedImage(project.thumbnail, 'medium')} 1200w, ${project.thumbnail} 2400w`}
-                      sizes="(max-width: 768px) calc(100vw - 48px), (max-width: 1200px) 50vw, 910px"
+                      srcSet={`${getOptimizedImage(project.thumbnail, 'thumbnails')} 400w, ${getOptimizedImage(project.thumbnail, 'medium')} 1200w`}
+                      sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) calc(100vw - 6rem), 50vw"
                       alt={`${project.title} - ${project.category} project in ${project.location} by Monument Construction`}
                       loading="lazy"
-                      width="910"
-                      height="500"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-green-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-semibold">
@@ -412,8 +410,8 @@ const Portfolio = () => {
                     </div>
                     {/* Image count badge */}
                     {project.images.length > 1 && (
-                      <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
-                        <Camera className="w-4 h-4" />
+                      <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 bg-black/70 text-white px-2 py-1.5 md:px-3 md:py-2 rounded-lg text-xs md:text-sm font-medium flex items-center gap-1.5 md:gap-2">
+                        <Camera className="w-3 h-3 md:w-4 md:h-4" />
                         {project.images.length} photos
                       </div>
                     )}
