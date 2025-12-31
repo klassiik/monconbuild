@@ -1,65 +1,243 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
+import ImageGallery from '../components/ImageGallery';
+import { Camera } from 'lucide-react';
 
 const Portfolio = () => {
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [currentProject, setCurrentProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const breadcrumbItems = [
     { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' }
   ];
 
+  // Category definitions for filtering
+  const categories = [
+    'All',
+    'Kitchens',
+    'Bathrooms',
+    'Library & Offices',
+    'Living Rooms',
+    'Framing',
+    'Outdoors',
+    'Finish Carpentry',
+    'General Construction'
+  ];
+
   const projects = [
+    // === KITCHEN PROJECTS ===
     {
-      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/6s7jphb3_Untitled.jpg",
+      id: 'kitchen-1',
+      title: "Modern Kitchen Remodel",
+      category: "Kitchens",
+      location: "Placer County, CA",
+      description: "Complete kitchen transformation featuring custom cabinetry, modern fixtures, and quality craftsmanship. This project showcases our attention to detail in every aspect of kitchen renovation.",
+      thumbnail: "/images/Kitchens/1/IMG_4755.JPG.webp",
+      images: [
+        "/images/Kitchens/1/IMG_4755.JPG.webp",
+        "/images/Kitchens/1/IMG_4756.webp",
+        "/images/Kitchens/1/IMG_4757.webp",
+        "/images/Kitchens/1/IMG_4758.webp",
+        "/images/Kitchens/1/IMG_4760.JPG.webp",
+        "/images/Kitchens/1/IMG_4761.webp"
+      ]
+    },
+    {
+      id: 'kitchen-2',
+      title: "Custom Kitchen Design",
+      category: "Kitchens",
+      location: "Nevada County, CA",
+      description: "Beautifully designed kitchen with custom storage solutions, premium finishes, and expert installation. A perfect blend of functionality and aesthetics for the heart of the home.",
+      thumbnail: "/images/Kitchens/2/IMG_0123.JPG.webp",
+      images: [
+        "/images/Kitchens/2/IMG_0123.JPG.webp",
+        "/images/Kitchens/2/IMG_0124.JPG.webp",
+        "/images/Kitchens/2/IMG_0282.JPG(1).webp",
+        "/images/Kitchens/2/IMG_0283.JPG.webp",
+        "/images/Kitchens/2/IMG_0284.JPG.webp",
+        "/images/Kitchens/2/IMG_4243.webp",
+        "/images/Kitchens/2/IMG_4244.webp",
+        "/images/Kitchens/2/IMG_4703.webp",
+        "/images/Kitchens/2/IMG_4705.webp"
+      ]
+    },
+    // === BATHROOM PROJECTS ===
+    {
+      id: 'bathroom-1',
+      title: "Luxury Bathroom Renovation",
+      category: "Bathrooms",
+      location: "Placer County, CA",
+      description: "Stunning bathroom remodel featuring premium tile work, custom vanity, and modern fixtures. Expert craftsmanship creating a spa-like retreat in your home.",
+      thumbnail: "/images/Bathrooms/IMG_2237.webp",
+      images: [
+        "/images/Bathrooms/IMG_2237.webp",
+        "/images/Bathrooms/IMG_2498.webp"
+      ]
+    },
+    // === LIBRARY & OFFICE PROJECTS ===
+    {
+      id: 'library-1',
+      title: "Custom Home Library",
+      category: "Library & Offices",
+      location: "Placer County, CA",
+      description: "Floor-to-ceiling custom built-in bookshelves featuring rich wood tones, crown molding, and integrated lighting. This project showcases expert finish carpentry with attention to every detail.",
+      thumbnail: "/images/Library-Offices/IMG_0484.jpg.webp",
+      images: [
+        "/images/Library-Offices/IMG_0484.jpg.webp",
+        "/images/Library-Offices/IMG_0487.jpg.webp",
+        "/images/Library-Offices/IMG_0489.jpg.webp",
+        "/images/Library-Offices/IMG_0705.webp",
+        "/images/Library-Offices/IMG_0834.jpg.webp",
+        "/images/Library-Offices/IMG_1093.jpg.webp",
+        "/images/Library-Offices/IMG_1094.jpg.webp",
+        "/images/Library-Offices/IMG_1095.jpg.webp",
+        "/images/Library-Offices/IMG_1100.jpg.webp",
+        "/images/Library-Offices/IMG_1102.jpg.webp",
+        "/images/Library-Offices/IMG_1130.jpg.webp",
+        "/images/Library-Offices/IMG_1131.jpg.webp",
+        "/images/Library-Offices/IMG_1133.jpg.webp",
+        "/images/Library-Offices/IMG_1158.jpg.webp",
+        "/images/Library-Offices/IMG_1174.jpg.webp",
+        "/images/Library-Offices/8D27F9ED-05A4-4B3D-BA20-A672A98431C6.webp",
+        "/images/Library-Offices/3C3A70BC-BC81-4FC1-806F-014C3C32142C.webp"
+      ]
+    },
+    // === LIVING ROOM PROJECTS ===
+    {
+      id: 'living-1',
+      title: "Living Room Transformation",
+      category: "Living Rooms",
+      location: "Nevada County, CA",
+      description: "Complete living room renovation with custom built-ins, premium finishes, and expert trim work. Creating comfortable and elegant living spaces for families to enjoy.",
+      thumbnail: "/images/LivingRooms/IMG_5606.jpg.webp",
+      images: [
+        "/images/LivingRooms/IMG_5606.jpg.webp"
+      ]
+    },
+    // === FRAMING PROJECTS ===
+    {
+      id: 'framing-1',
+      title: "Residential Framing Project",
+      category: "Framing",
+      location: "Placer County, CA",
+      description: "Expert structural framing demonstrating precision engineering and quality construction. Strong foundations and proper framing are essential for every successful build.",
+      thumbnail: "/images/Framing/IMG_9138.JPG.webp",
+      images: [
+        "/images/Framing/IMG_9138.JPG.webp",
+        "/images/Framing/IMG_9194.JPG.webp",
+        "/images/Framing/2310198C-6DB3-43AF-917E-D07307301CFB.webp",
+        "/images/Framing/B0BFCCD8-1737-4695-AEE5-2709D6A0C2BB.webp",
+        "/images/Framing/IMG_3797.webp",
+        "/images/Framing/IMG_3943.webp",
+        "/images/Framing/IMG_3966.webp",
+        "/images/Framing/IMG_4212.webp",
+        "/images/Framing/IMG_4275.heic(1).webp"
+      ]
+    },
+    // === OUTDOOR PROJECTS ===
+    {
+      id: 'outdoor-1',
+      title: "Outdoor Living Space",
+      category: "Outdoors",
+      location: "Nevada County, CA",
+      description: "Custom outdoor construction featuring quality materials and expert craftsmanship. Extending your living space to enjoy the beautiful Sierra Nevada surroundings.",
+      thumbnail: "/images/Outdoors/IMG_4418.webp",
+      images: [
+        "/images/Outdoors/IMG_4418.webp",
+        "/images/Outdoors/IMG_5128.webp",
+        "/images/Outdoors/IMG_5132.webp"
+      ]
+    },
+    // === EXISTING FEATURED PROJECTS ===
+    {
+      id: 'featured-1',
       title: "Custom Library & Built-ins",
       category: "Finish Carpentry",
       location: "Placer County, CA",
-      description: "Floor-to-ceiling custom built-in bookshelves featuring rich wood tones, crown molding, and integrated lighting. This project showcases expert finish carpentry with attention to every detail."
+      description: "Floor-to-ceiling custom built-in bookshelves featuring rich wood tones, crown molding, and integrated lighting. This project showcases expert finish carpentry with attention to every detail.",
+      thumbnail: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/6s7jphb3_Untitled.jpg",
+      images: ["https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/6s7jphb3_Untitled.jpg"]
     },
     {
-      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/zdso40es_Untitled1.png",
+      id: 'featured-2',
       title: "Custom Home Office",
       category: "Finish Carpentry",
       location: "Nevada County, CA",
-      description: "Custom-built corner office with wraparound desk, curved shelving, and integrated storage. Precision carpentry creating a functional and beautiful workspace."
+      description: "Custom-built corner office with wraparound desk, curved shelving, and integrated storage. Precision carpentry creating a functional and beautiful workspace.",
+      thumbnail: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/zdso40es_Untitled1.png",
+      images: ["https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/zdso40es_Untitled1.png"]
     },
     {
-      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/gx2z9lsu_Untitled7.jpg",
+      id: 'featured-3',
       title: "Covered Entry Construction",
       category: "General Construction",
       location: "Colfax, CA",
-      description: "Custom timber frame covered entrance featuring exposed beam construction, ambient lighting, and quality craftsmanship. Complete construction from foundation to finish."
+      description: "Custom timber frame covered entrance featuring exposed beam construction, ambient lighting, and quality craftsmanship. Complete construction from foundation to finish.",
+      thumbnail: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/gx2z9lsu_Untitled7.jpg",
+      images: ["https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/gx2z9lsu_Untitled7.jpg"]
     },
     {
-      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/uvmny025_Untitled12.jpg",
+      id: 'featured-4',
       title: "Sunroom Addition",
-      category: "Residential Construction",
+      category: "General Construction",
       location: "Placer County, CA",
-      description: "Beautiful sunroom addition with vaulted wood ceilings, floor-to-ceiling windows, and expert finish work. Seamless integration with existing structure."
+      description: "Beautiful sunroom addition with vaulted wood ceilings, floor-to-ceiling windows, and expert finish work. Seamless integration with existing structure.",
+      thumbnail: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/uvmny025_Untitled12.jpg",
+      images: ["https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/uvmny025_Untitled12.jpg"]
     },
     {
-      image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/pbh4alag_Untitled14.png",
+      id: 'featured-5',
       title: "Mountain Home Construction",
       category: "General Construction",
       location: "Nevada County, CA",
-      description: "Custom mountain home featuring natural materials, expert framing, and quality construction throughout. Built to withstand Sierra Nevada weather conditions."
+      description: "Custom mountain home featuring natural materials, expert framing, and quality construction throughout. Built to withstand Sierra Nevada weather conditions.",
+      thumbnail: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/pbh4alag_Untitled14.png",
+      images: ["https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/pbh4alag_Untitled14.png"]
     },
     {
-      image: "/3.webp",
+      id: 'featured-6',
       title: "Custom Woodwork Project",
       category: "Finish Carpentry",
       location: "Placer County, CA",
-      description: "Expert custom woodwork showcasing precision craftsmanship and attention to detail. Quality finish carpentry that transforms spaces."
+      description: "Expert custom woodwork showcasing precision craftsmanship and attention to detail. Quality finish carpentry that transforms spaces.",
+      thumbnail: "/3.webp",
+      images: ["/3.webp"]
     },
     {
-      image: "/4.webp",
+      id: 'featured-7',
       title: "Construction Project",
       category: "General Construction",
       location: "Nevada County, CA",
-      description: "Quality construction work demonstrating our commitment to excellence in every phase of the project from foundation to finish."
+      description: "Quality construction work demonstrating our commitment to excellence in every phase of the project from foundation to finish.",
+      thumbnail: "/4.webp",
+      images: ["/4.webp"]
     }
   ];
+
+  // Filter projects based on active category
+  const filteredProjects = useMemo(() => {
+    if (activeCategory === 'All') return projects;
+    return projects.filter(project => project.category === activeCategory);
+  }, [activeCategory]);
+
+  // Open gallery for a project
+  const openGallery = (project, imageIndex = 0) => {
+    setCurrentProject(project);
+    setCurrentImageIndex(imageIndex);
+    setGalleryOpen(true);
+  };
+
+  // Close gallery
+  const closeGallery = () => {
+    setGalleryOpen(false);
+    setCurrentProject(null);
+    setCurrentImageIndex(0);
+  };
 
   return (
     <div className="min-h-screen">
@@ -128,16 +306,43 @@ const Portfolio = () => {
       {/* Portfolio Grid */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-6 md:px-12">
+          {/* Category Filter Tabs */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-center mb-6 text-gray-900">Filter by Category</h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-5 py-2.5 rounded-full font-medium transition-all duration-300 ${
+                    activeCategory === category
+                      ? 'bg-green-700 text-white shadow-lg scale-105'
+                      : 'bg-gray-100 text-gray-700 hover:bg-green-100 hover:text-green-800'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+            <p className="text-center text-gray-500 mt-4">
+              Showing {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''}
+            </p>
+          </div>
+
+          {/* Projects Grid */}
           <div className="grid gap-16">
-            {projects.map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <div 
-                key={index} 
+                key={project.id} 
                 className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="relative overflow-hidden rounded-lg shadow-2xl group">
+                  <div 
+                    className="relative overflow-hidden rounded-lg shadow-2xl group cursor-pointer"
+                    onClick={() => openGallery(project, 0)}
+                  >
                     <img 
-                      src={project.image} 
+                      src={project.thumbnail} 
                       alt={project.title}
                       loading="lazy"
                       className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-500"
@@ -145,7 +350,47 @@ const Portfolio = () => {
                     <div className="absolute top-4 left-4 bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">
                       {project.category}
                     </div>
+                    {/* Image count badge */}
+                    {project.images.length > 1 && (
+                      <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
+                        <Camera className="w-4 h-4" />
+                        {project.images.length} photos
+                      </div>
+                    )}
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white text-lg font-semibold bg-green-700 px-6 py-3 rounded-lg">
+                        View Gallery
+                      </span>
+                    </div>
                   </div>
+                  
+                  {/* Thumbnail strip for multi-image projects */}
+                  {project.images.length > 1 && (
+                    <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+                      {project.images.slice(0, 5).map((img, imgIndex) => (
+                        <button
+                          key={imgIndex}
+                          onClick={() => openGallery(project, imgIndex)}
+                          className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-green-700 transition-colors"
+                        >
+                          <img 
+                            src={img} 
+                            alt={`${project.title} - Image ${imgIndex + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
+                      {project.images.length > 5 && (
+                        <button
+                          onClick={() => openGallery(project, 5)}
+                          className="flex-shrink-0 w-20 h-20 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 font-semibold hover:bg-green-100 transition-colors"
+                        >
+                          +{project.images.length - 5}
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
                 
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
@@ -165,6 +410,15 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Gallery Lightbox */}
+      <ImageGallery
+        images={currentProject?.images || []}
+        isOpen={galleryOpen}
+        onClose={closeGallery}
+        initialIndex={currentImageIndex}
+        title={currentProject?.title}
+      />
 
       {/* Process Section */}
       <section className="py-20 md:py-28 bg-slate-50">
