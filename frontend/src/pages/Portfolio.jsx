@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import ImageGallery from '../components/ImageGallery';
+import { PortfolioPageSchema, CreativeWorkSchema } from '../components/Schema';
 import { Camera } from 'lucide-react';
 
 const Portfolio = () => {
@@ -36,6 +37,42 @@ const Portfolio = () => {
     
     // Replace /images/ with /images/{size}/
     return imagePath.replace('/images/', `/images/${size}/`);
+  };
+
+  // Category-specific quotes for portfolio projects
+  const categoryQuotes = {
+    "Kitchens": {
+      quote: "The kitchen is the heart of the home, and every detail matters. We create spaces where families gather and memories are made.",
+      author: "William Rogers, Owner"
+    },
+    "Bathrooms": {
+      quote: "A well-designed bathroom combines luxury with functionality. We transform these essential spaces into personal retreats.",
+      author: "William Rogers, Owner"
+    },
+    "Library & Offices": {
+      quote: "Custom built-ins and library spaces require precision and artistry. Each shelf, each molding tells a story of craftsmanship.",
+      author: "William Rogers, Owner"
+    },
+    "Living Rooms": {
+      quote: "Living spaces should reflect your lifestyle. We create environments that are both beautiful and perfectly suited to how you live.",
+      author: "William Rogers, Owner"
+    },
+    "Framing": {
+      quote: "Strong foundations and precise framing are invisible once complete, but they define the integrity of everything built upon them.",
+      author: "William Rogers, Owner"
+    },
+    "Outdoors": {
+      quote: "Outdoor living extends your home into nature. We build spaces that withstand the elements while inviting you to enjoy them.",
+      author: "William Rogers, Owner"
+    },
+    "Finish Carpentry": {
+      quote: "Finish carpentry is where construction becomes art. The final details transform a house into something truly exceptional.",
+      author: "William Rogers, Owner"
+    },
+    "General Construction": {
+      quote: "From groundwork to final walkthrough, we bring the same dedication to quality at every phase of construction.",
+      author: "William Rogers, Owner"
+    }
   };
 
   const projects = [
@@ -168,7 +205,7 @@ const Portfolio = () => {
       title: "Custom Library & Built-ins",
       category: "Finish Carpentry",
       location: "Placer County, CA",
-      description: "Floor-to-ceiling custom built-in bookshelves featuring rich wood tones, crown molding, and integrated lighting. This project showcases expert finish carpentry with attention to every detail.",
+      description: "Elegant Downton Abbey-inspired library featuring handcrafted bookshelves, detailed wainscoting, and traditional architectural elements. A masterpiece of classic design and modern functionality.",
       thumbnail: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/6s7jphb3_Untitled.jpg",
       images: ["https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/6s7jphb3_Untitled.jpg"]
     },
@@ -260,6 +297,15 @@ const Portfolio = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Helmet>
+      
+      {/* Portfolio Page Schema for SEO */}
+      <PortfolioPageSchema projects={projects} />
+      
+      {/* Individual Project Schemas */}
+      {projects.map(project => (
+        <CreativeWorkSchema key={`schema-${project.id}`} project={project} />
+      ))}
+      
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       
@@ -354,7 +400,7 @@ const Portfolio = () => {
                       src={getOptimizedImage(project.thumbnail, 'medium')} 
                       srcSet={`${getOptimizedImage(project.thumbnail, 'thumbnails')} 400w, ${getOptimizedImage(project.thumbnail, 'medium')} 1200w, ${project.thumbnail} 2400w`}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 910px"
-                      alt={project.title}
+                      alt={`${project.title} - ${project.category} project in ${project.location} by Monument Construction`}
                       loading="lazy"
                       width="910"
                       height="500"
@@ -389,7 +435,7 @@ const Portfolio = () => {
                         >
                           <img 
                             src={getOptimizedImage(img, 'thumbnails')} 
-                            alt={`${project.title} - Image ${imgIndex + 1}`}
+                            alt={`${project.title} ${project.category} - Photo ${imgIndex + 1} - ${project.location}`}
                             loading="lazy"
                             width="80"
                             height="80"
@@ -416,9 +462,9 @@ const Portfolio = () => {
                   
                   <div className="border-l-4 border-green-700 pl-6">
                     <p className="text-gray-600 italic">
-                      "Every project reflects our commitment to quality craftsmanship and attention to detail."
+                      "{categoryQuotes[project.category]?.quote || 'Every project reflects our commitment to quality craftsmanship and attention to detail.'}"
                     </p>
-                    <p className="text-slate-900 font-semibold mt-2">- William Rogers, Owner</p>
+                    <p className="text-slate-900 font-semibold mt-2">- {categoryQuotes[project.category]?.author || 'William Rogers, Owner'}</p>
                   </div>
                 </div>
               </div>

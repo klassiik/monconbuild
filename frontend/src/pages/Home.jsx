@@ -229,17 +229,17 @@ const Home = () => {
 
     const testimonials = [
       {
-        text: "We had William build our formal library and asked him to model it after the library in the show Downton Abbey. As you can see from the pictures, he succeeded amazingly well. We then had him build a library in my home office and my wife's smaller home office in the same style. He also built custom shelves in the mudroom in a different style entirely. Everything this man builds is perfect. No flaws or mistakes anywhere. He is a master craftsman, an artist, if you will, and a pleasure to work with. We highly recommend William for any project you might have.",
-        name: "Richard Young",
-        location: "Sacramento, CA",
+        text: "William transformed our outdated kitchen into a stunning modern space that exceeds everything we imagined. His attention to detail on the custom cabinetry and trim work is extraordinary. Every corner, every joint is absolutely perfect. He completed the project on schedule and was a pleasure to work with throughout the entire process. Our neighbors can't stop complimenting us!",
+        name: "Jennifer & Mark Thompson",
+        location: "Auburn, CA",
         image: "/2.jpg",
-        service: "Custom Library & Built-ins"
+        service: "Kitchen Remodeling"
       },
       {
-        text: "We've collaborated with William on numerous projects over the years, ranging from kitchen remodels to extensive exterior renovations. On every project, William consistently delivers exceptional results, surpassing our expectations. His superior craftsmanship is evident in every detail, as he approaches construction with a meticulous and perfectionist mindset. If you're seeking top-notch work and exceptional results, don't hesitate to contact William. Additionally, some of the projects we've entrusted to him required creative problem-solving and ingenuity. In each instance, William demonstrated his remarkable ability to find innovative solutions, resulting in outstanding outcomes.",
-        name: "Neal Mitchell",
-        location: "Nevada City, CA",
-        service: "Kitchen Remodeling & Exterior Renovations"
+        text: "After interviewing several contractors for our home addition, we chose Monument Construction and it was the best decision we made. William's expertise in structural work and finish carpentry meant one contractor handled everything seamlessly. The craftsmanship on our new master suite is impeccable - from the framing to the crown molding. Highly professional and trustworthy.",
+        name: "David Chen",
+        location: "Rocklin, CA",
+        service: "Home Addition & Finish Carpentry"
       }
     ];
 

@@ -14,17 +14,16 @@ const Services = () => {
 
   const testimonials = [
     {
-      text: "We had William build our formal library and asked him to model it after the library in the show Downton Abbey. As you can see from the pictures, he succeeded amazingly well. We then had him build a library in my home office and my wife's smaller home office in the same style. He also built custom shelves in the mudroom in a different style entirely. Everything this man builds is perfect. No flaws or mistakes anywhere. He is a master craftsman, an artist, if you will, and a pleasure to work with. We highly recommend William for any project you might have.",
-      name: "Richard Young",
-      location: "Sacramento, CA",
-      image: "/2.jpg",
-      service: "Custom Library & Built-ins"
+      text: "We've collaborated with William on numerous projects over the years, ranging from kitchen remodels to extensive exterior renovations. On every project, William consistently delivers exceptional results, surpassing our expectations. His superior craftsmanship is evident in every detail, as he approaches construction with a meticulous and perfectionist mindset. If you're seeking top-notch work and exceptional results, don't hesitate to contact William. His remarkable ability to find innovative solutions results in outstanding outcomes.",
+      name: "Neal Mitchell",
+      location: "Nevada City, CA",
+      service: "Kitchen Remodeling & Exterior Renovations"
     },
     {
-      text: "We've collaborated with William on numerous projects over the years, ranging from kitchen remodels to extensive exterior renovations. On every project, William consistently delivers exceptional results, surpassing our expectations. His superior craftsmanship is evident in every detail, as he approaches construction with a meticulous and perfectionist mindset. If you're seeking top-notch work and exceptional results, don't hesitate to contact William. Additionally, some of the projects we've entrusted to him required creative problem-solving and ingenuity. In each instance, William demonstrated his remarkable ability to find innovative solutions, resulting in outstanding outcomes.",
-      name: "Neal Mitchell",
-      location: "Grass Valley",
-      service: "Kitchen Remodeling & Exterior Renovations"
+      text: "Our 1920s craftsman home needed someone who understood historic preservation while making practical updates. William's finish carpentry skills are truly exceptional - he matched our original trim work perfectly while adding modern functionality. The custom built-in window seat and surrounding bookcases he created look like they've always been part of the house. His respect for our home's character was evident throughout.",
+      name: "Robert & Linda Martinez",
+      location: "Placerville, CA",
+      service: "Historic Home Renovation & Custom Trim Work"
     }
   ];
 
