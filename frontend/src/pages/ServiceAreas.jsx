@@ -306,7 +306,7 @@ const ServiceAreas = () => {
       <section className="py-20 md:py-28 bg-green-700 text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Serving Your Community</h2>
-          <p className="text-xl mb-10 text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl mb-10 text-white max-w-3xl mx-auto">
             Contact Monument Construction today to discuss your project, regardless of where you're located in Placer or Nevada County.
           </p>
           
@@ -331,7 +331,7 @@ const ServiceAreas = () => {
             </Button>
           </div>
 
-          <p className="text-white/90">
+          <p className="text-white">
             Monument Construction • Colfax, CA • License #801602
           </p>
         </div>

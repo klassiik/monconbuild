@@ -29,6 +29,15 @@ const Portfolio = () => {
     'General Construction'
   ];
 
+  // Helper function to get optimized image paths
+  const getOptimizedImage = (imagePath, size = 'medium') => {
+    // For external images, return as-is
+    if (imagePath.startsWith('http')) return imagePath;
+    
+    // Replace /images/ with /images/{size}/
+    return imagePath.replace('/images/', `/images/${size}/`);
+  };
+
   const projects = [
     // === KITCHEN PROJECTS ===
     {
@@ -342,9 +351,13 @@ const Portfolio = () => {
                     onClick={() => openGallery(project, 0)}
                   >
                     <img 
-                      src={project.thumbnail} 
+                      src={getOptimizedImage(project.thumbnail, 'medium')} 
+                      srcSet={`${getOptimizedImage(project.thumbnail, 'thumbnails')} 400w, ${getOptimizedImage(project.thumbnail, 'medium')} 1200w, ${project.thumbnail} 2400w`}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 910px"
                       alt={project.title}
                       loading="lazy"
+                      width="910"
+                      height="500"
                       className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">
@@ -375,8 +388,11 @@ const Portfolio = () => {
                           className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-green-700 transition-colors"
                         >
                           <img 
-                            src={img} 
+                            src={getOptimizedImage(img, 'thumbnails')} 
                             alt={`${project.title} - Image ${imgIndex + 1}`}
+                            loading="lazy"
+                            width="80"
+                            height="80"
                             className="w-full h-full object-cover"
                           />
                         </button>
@@ -470,7 +486,7 @@ const Portfolio = () => {
       <section className="py-20 md:py-28 bg-green-700 text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
-          <p className="text-xl mb-10 text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl mb-10 text-white max-w-3xl mx-auto">
             Let's create something beautiful together. Contact us today for a free consultation.
           </p>
           

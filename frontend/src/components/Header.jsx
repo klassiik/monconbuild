@@ -33,6 +33,8 @@ const Header = () => {
                   src="/logo.svg" 
                   alt="Monument Construction - Licensed Contractor Colfax CA" 
                   className="h-16 md:h-20 w-auto"
+                  width="200"
+                  height="80"
                   onError={(e) => {
                     handleError(new Error('Failed to load logo image'), 'IMAGE_LOAD_ERROR', 'LOW', {
                       component: 'Header',
@@ -139,6 +141,8 @@ const Header = () => {
                 src="/logo.svg" 
                 alt="Monument Construction - Licensed Contractor Colfax CA" 
                 className="h-16 md:h-20 w-auto"
+                width="200"
+                height="80"
               />
             </Link>
             <div className="flex items-center gap-4">

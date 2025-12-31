@@ -116,6 +116,8 @@ function App() {
         </Routes>
           </main>
         <Footer />
+        {/* Spacer for StickyCTA to prevent content being hidden */}
+        <div className="h-20 sm:h-16" aria-hidden="true" />
         <StickyCTA />
         {mountToaster && (
           <Suspense fallback={null}>

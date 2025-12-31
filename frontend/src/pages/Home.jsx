@@ -578,7 +578,7 @@ const Home = () => {
           <section className="py-20 md:py-28 bg-green-700 text-white">
             <div className="container mx-auto px-6 md:px-12 text-center">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
-              <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl mb-10 text-white max-w-3xl mx-auto">
                 Get in touch today for a free consultation and quote. Let's bring your vision to life.
               </p>
               
@@ -603,7 +603,7 @@ const Home = () => {
                 </Button>
               </div>
 
-              <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center items-center text-white/90">
+              <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center items-center text-white">
                 <div className="flex items-center gap-2">
                   <Phone className="w-5 h-5" />
                   <span>{CONTACT_INFO.FORMATTED_PHONE}</span>
