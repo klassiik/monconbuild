@@ -37,14 +37,14 @@ const Portfolio = () => {
       category: "Kitchens",
       location: "Placer County, CA",
       description: "Complete kitchen transformation featuring custom cabinetry, modern fixtures, and quality craftsmanship. This project showcases our attention to detail in every aspect of kitchen renovation.",
-      thumbnail: "/images/Kitchens/1/IMG_4755.JPG.webp",
+      thumbnail: "/images/Kitchens/1/modern-kitchen-remodel-1.webp",
       images: [
-        "/images/Kitchens/1/IMG_4755.JPG.webp",
-        "/images/Kitchens/1/IMG_4756.webp",
-        "/images/Kitchens/1/IMG_4757.webp",
-        "/images/Kitchens/1/IMG_4758.webp",
-        "/images/Kitchens/1/IMG_4760.JPG.webp",
-        "/images/Kitchens/1/IMG_4761.webp"
+        "/images/Kitchens/1/modern-kitchen-remodel-1.webp",
+        "/images/Kitchens/1/modern-kitchen-remodel-2.webp",
+        "/images/Kitchens/1/modern-kitchen-remodel-3.webp",
+        "/images/Kitchens/1/modern-kitchen-remodel-4.webp",
+        "/images/Kitchens/1/modern-kitchen-remodel-5.webp",
+        "/images/Kitchens/1/modern-kitchen-remodel-6.webp"
       ]
     },
     {
@@ -53,17 +53,17 @@ const Portfolio = () => {
       category: "Kitchens",
       location: "Nevada County, CA",
       description: "Beautifully designed kitchen with custom storage solutions, premium finishes, and expert installation. A perfect blend of functionality and aesthetics for the heart of the home.",
-      thumbnail: "/images/Kitchens/2/IMG_0123.JPG.webp",
+      thumbnail: "/images/Kitchens/2/custom-kitchen-design-1.webp",
       images: [
-        "/images/Kitchens/2/IMG_0123.JPG.webp",
-        "/images/Kitchens/2/IMG_0124.JPG.webp",
-        "/images/Kitchens/2/IMG_0282.JPG(1).webp",
-        "/images/Kitchens/2/IMG_0283.JPG.webp",
-        "/images/Kitchens/2/IMG_0284.JPG.webp",
-        "/images/Kitchens/2/IMG_4243.webp",
-        "/images/Kitchens/2/IMG_4244.webp",
-        "/images/Kitchens/2/IMG_4703.webp",
-        "/images/Kitchens/2/IMG_4705.webp"
+        "/images/Kitchens/2/custom-kitchen-design-1.webp",
+        "/images/Kitchens/2/custom-kitchen-design-2.webp",
+        "/images/Kitchens/2/custom-kitchen-design-3.webp",
+        "/images/Kitchens/2/custom-kitchen-design-4.webp",
+        "/images/Kitchens/2/custom-kitchen-design-5.webp",
+        "/images/Kitchens/2/custom-kitchen-design-6.webp",
+        "/images/Kitchens/2/custom-kitchen-design-7.webp",
+        "/images/Kitchens/2/custom-kitchen-design-8.webp",
+        "/images/Kitchens/2/custom-kitchen-design-9.webp"
       ]
     },
     // === BATHROOM PROJECTS ===
@@ -73,10 +73,10 @@ const Portfolio = () => {
       category: "Bathrooms",
       location: "Placer County, CA",
       description: "Stunning bathroom remodel featuring premium tile work, custom vanity, and modern fixtures. Expert craftsmanship creating a spa-like retreat in your home.",
-      thumbnail: "/images/Bathrooms/IMG_2237.webp",
+      thumbnail: "/images/Bathrooms/luxury-bathroom-renovation-1.webp",
       images: [
-        "/images/Bathrooms/IMG_2237.webp",
-        "/images/Bathrooms/IMG_2498.webp"
+        "/images/Bathrooms/luxury-bathroom-renovation-1.webp",
+        "/images/Bathrooms/luxury-bathroom-renovation-2.webp"
       ]
     },
     // === LIBRARY & OFFICE PROJECTS ===
@@ -86,25 +86,25 @@ const Portfolio = () => {
       category: "Library & Offices",
       location: "Placer County, CA",
       description: "Floor-to-ceiling custom built-in bookshelves featuring rich wood tones, crown molding, and integrated lighting. This project showcases expert finish carpentry with attention to every detail.",
-      thumbnail: "/images/Library-Offices/IMG_0484.jpg.webp",
+      thumbnail: "/images/Library-Offices/custom-home-library-1.webp",
       images: [
-        "/images/Library-Offices/IMG_0484.jpg.webp",
-        "/images/Library-Offices/IMG_0487.jpg.webp",
-        "/images/Library-Offices/IMG_0489.jpg.webp",
-        "/images/Library-Offices/IMG_0705.webp",
-        "/images/Library-Offices/IMG_0834.jpg.webp",
-        "/images/Library-Offices/IMG_1093.jpg.webp",
-        "/images/Library-Offices/IMG_1094.jpg.webp",
-        "/images/Library-Offices/IMG_1095.jpg.webp",
-        "/images/Library-Offices/IMG_1100.jpg.webp",
-        "/images/Library-Offices/IMG_1102.jpg.webp",
-        "/images/Library-Offices/IMG_1130.jpg.webp",
-        "/images/Library-Offices/IMG_1131.jpg.webp",
-        "/images/Library-Offices/IMG_1133.jpg.webp",
-        "/images/Library-Offices/IMG_1158.jpg.webp",
-        "/images/Library-Offices/IMG_1174.jpg.webp",
-        "/images/Library-Offices/8D27F9ED-05A4-4B3D-BA20-A672A98431C6.webp",
-        "/images/Library-Offices/3C3A70BC-BC81-4FC1-806F-014C3C32142C.webp"
+        "/images/Library-Offices/custom-home-library-1.webp",
+        "/images/Library-Offices/custom-home-library-2.webp",
+        "/images/Library-Offices/custom-home-library-3.webp",
+        "/images/Library-Offices/custom-home-library-4.webp",
+        "/images/Library-Offices/custom-home-library-5.webp",
+        "/images/Library-Offices/custom-home-library-6.webp",
+        "/images/Library-Offices/custom-home-library-7.webp",
+        "/images/Library-Offices/custom-home-library-8.webp",
+        "/images/Library-Offices/custom-home-library-9.webp",
+        "/images/Library-Offices/custom-home-library-10.webp",
+        "/images/Library-Offices/custom-home-library-11.webp",
+        "/images/Library-Offices/custom-home-library-12.webp",
+        "/images/Library-Offices/custom-home-library-13.webp",
+        "/images/Library-Offices/custom-home-library-14.webp",
+        "/images/Library-Offices/custom-home-library-15.webp",
+        "/images/Library-Offices/custom-home-library-16.webp",
+        "/images/Library-Offices/custom-home-library-17.webp"
       ]
     },
     // === LIVING ROOM PROJECTS ===
@@ -114,9 +114,9 @@ const Portfolio = () => {
       category: "Living Rooms",
       location: "Nevada County, CA",
       description: "Complete living room renovation with custom built-ins, premium finishes, and expert trim work. Creating comfortable and elegant living spaces for families to enjoy.",
-      thumbnail: "/images/LivingRooms/IMG_5606.jpg.webp",
+      thumbnail: "/images/LivingRooms/living-room-transformation-1.webp",
       images: [
-        "/images/LivingRooms/IMG_5606.jpg.webp"
+        "/images/LivingRooms/living-room-transformation-1.webp"
       ]
     },
     // === FRAMING PROJECTS ===
@@ -126,17 +126,17 @@ const Portfolio = () => {
       category: "Framing",
       location: "Placer County, CA",
       description: "Expert structural framing demonstrating precision engineering and quality construction. Strong foundations and proper framing are essential for every successful build.",
-      thumbnail: "/images/Framing/IMG_9138.JPG.webp",
+      thumbnail: "/images/Framing/residential-framing-project-1.webp",
       images: [
-        "/images/Framing/IMG_9138.JPG.webp",
-        "/images/Framing/IMG_9194.JPG.webp",
-        "/images/Framing/2310198C-6DB3-43AF-917E-D07307301CFB.webp",
-        "/images/Framing/B0BFCCD8-1737-4695-AEE5-2709D6A0C2BB.webp",
-        "/images/Framing/IMG_3797.webp",
-        "/images/Framing/IMG_3943.webp",
-        "/images/Framing/IMG_3966.webp",
-        "/images/Framing/IMG_4212.webp",
-        "/images/Framing/IMG_4275.heic(1).webp"
+        "/images/Framing/residential-framing-project-1.webp",
+        "/images/Framing/residential-framing-project-2.webp",
+        "/images/Framing/residential-framing-project-3.webp",
+        "/images/Framing/residential-framing-project-4.webp",
+        "/images/Framing/residential-framing-project-5.webp",
+        "/images/Framing/residential-framing-project-6.webp",
+        "/images/Framing/residential-framing-project-7.webp",
+        "/images/Framing/residential-framing-project-8.webp",
+        "/images/Framing/residential-framing-project-9.webp"
       ]
     },
     // === OUTDOOR PROJECTS ===
@@ -146,11 +146,11 @@ const Portfolio = () => {
       category: "Outdoors",
       location: "Nevada County, CA",
       description: "Custom outdoor construction featuring quality materials and expert craftsmanship. Extending your living space to enjoy the beautiful Sierra Nevada surroundings.",
-      thumbnail: "/images/Outdoors/IMG_4418.webp",
+      thumbnail: "/images/Outdoors/outdoor-living-space-1.webp",
       images: [
-        "/images/Outdoors/IMG_4418.webp",
-        "/images/Outdoors/IMG_5128.webp",
-        "/images/Outdoors/IMG_5132.webp"
+        "/images/Outdoors/outdoor-living-space-1.webp",
+        "/images/Outdoors/outdoor-living-space-2.webp",
+        "/images/Outdoors/outdoor-living-space-3.webp"
       ]
     },
     // === EXISTING FEATURED PROJECTS ===
