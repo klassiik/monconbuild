@@ -52,11 +52,13 @@ const StickyCTA = () => {
     return (
       <ErrorBoundary>
         <div 
-          className={`fixed bottom-0 left-0 right-0 bg-green-900 text-white py-4 shadow-2xl z-50 transition-transform duration-300 ${
-            visible ? 'translate-y-0' : 'translate-y-full'
+          className={`fixed bottom-0 left-0 right-0 bg-green-900 text-white py-4 shadow-2xl z-50 transition-all duration-300 will-change-transform ${
+            visible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'
           }`}
+          style={{ contain: 'layout style paint' }}
           role="region"
           aria-label="Contact call-to-action"
+          aria-hidden={!visible}
         >
           <div className="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="font-semibold text-lg text-center sm:text-left">
@@ -97,7 +99,10 @@ const StickyCTA = () => {
     
     // Fallback minimal sticky CTA
     return (
-      <div className="fixed bottom-0 left-0 right-0 bg-green-900 text-white py-4 shadow-2xl z-50">
+      <div 
+        className="fixed bottom-0 left-0 right-0 bg-green-900 text-white py-4 shadow-2xl z-50 will-change-transform"
+        style={{ contain: 'layout style paint' }}
+      >
         <div className="container mx-auto px-6 flex items-center justify-center gap-4">
           <a href={`tel:${CONTACT_INFO.PHONE}`}>
             <Button className="bg-green-700 hover:bg-green-800 text-white font-semibold">

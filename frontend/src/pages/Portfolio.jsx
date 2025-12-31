@@ -392,8 +392,9 @@ const Portfolio = () => {
                 className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  {/* Aspect ratio container to prevent CLS */}
                   <div 
-                    className="relative overflow-hidden rounded-lg shadow-2xl group cursor-pointer"
+                    className="relative overflow-hidden rounded-lg shadow-2xl group cursor-pointer aspect-[910/500]"
                     onClick={() => openGallery(project, 0)}
                   >
                     <img 
@@ -404,7 +405,7 @@ const Portfolio = () => {
                       loading="lazy"
                       width="910"
                       height="500"
-                      className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">
                       {project.category}
