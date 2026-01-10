@@ -220,10 +220,10 @@ const Home = () => {
         alt: "Custom woodwork and finish carpentry by Monument Construction"
       },
       {
-        image: "/4.webp",
-        title: "Construction Project",
-        description: "Quality construction work",
-        alt: "Construction project by Monument Construction in Placer County, CA"
+        image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/pbh4alag_Untitled14.png",
+        title: "Mountain Home Construction",
+        description: "Expert framing and quality construction",
+        alt: "Mountain home construction by Monument Construction in Nevada County, CA"
       }
     ];
 

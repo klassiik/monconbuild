@@ -253,15 +253,6 @@ const Portfolio = () => {
       description: "Expert custom woodwork showcasing precision craftsmanship and attention to detail. Quality finish carpentry that transforms spaces.",
       thumbnail: "/3.webp",
       images: ["/3.webp"]
-    },
-    {
-      id: 'featured-7',
-      title: "Construction Project",
-      category: "General Construction",
-      location: "Nevada County, CA",
-      description: "Quality construction work demonstrating our commitment to excellence in every phase of the project from foundation to finish.",
-      thumbnail: "/4.webp",
-      images: ["/4.webp"]
     }
   ];
 
