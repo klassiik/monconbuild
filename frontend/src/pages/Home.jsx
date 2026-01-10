@@ -437,10 +437,35 @@ const Home = () => {
           <section className="py-20 md:py-28 bg-slate-50">
             <div className="container mx-auto px-6 md:px-12">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Recent Projects</h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  See the quality and craftsmanship that defines Monument Construction.
-                </p>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Our Work</h2>
+                <div className="prose prose-lg max-w-3xl mx-auto space-y-6 text-gray-700">
+                  <p>
+                    Monument Construction has been trusted with hundreds of residential construction and finish carpentry projects throughout Placer County and Nevada County. Our portfolio reflects our commitment to quality, attention to detail, and customer satisfaction. Each project showcased here represents the craftsmanship and expertise we bring to every job.
+                  </p>
+
+                  <p>
+                    From custom finish carpentry details that transform a room's character to comprehensive home additions that expand living space, our work speaks to our dedication. We don't just complete projects - we create spaces that enhance our clients' lives and add lasting value to their homes.
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-6 my-10">
+                    <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
+                      <h3 className="text-lg font-bold mb-3 text-gray-900">Finish Carpentry Excellence</h3>
+                      <p className="text-sm">Custom trim work, built-in cabinetry, decorative mantels, and architectural details that define the character of a home.</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
+                      <h3 className="text-lg font-bold mb-3 text-gray-900">Complete Renovations</h3>
+                      <p className="text-sm">Full home renovations and remodels that transform spaces while maintaining quality construction standards.</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+                      <h3 className="text-lg font-bold mb-3 text-gray-900">Home Additions</h3>
+                      <p className="text-sm">Room additions, second stories, and home expansions that seamlessly integrate with existing structures.</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
+                      <h3 className="text-lg font-bold mb-3 text-gray-900">Residential Construction</h3>
+                      <p className="text-sm">New construction and residential projects handled with the same craftsmanship standards we apply to every undertaking.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="grid md:grid-cols-3 gap-8 mb-12">
