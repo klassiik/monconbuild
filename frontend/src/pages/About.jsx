@@ -3,7 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
-import { Award, CheckCircle2, Tv, Users, Hammer, Star } from 'lucide-react';
+import { Award, CheckCircle2, Tv, Users, Hammer, Star, Instagram } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
 
 const About = () => {
@@ -234,6 +234,19 @@ const About = () => {
             >
               <a href="tel:9166071972">Call (916) 607-1972</a>
             </Button>
+          </div>
+          
+          <div className="mt-8 flex justify-center">
+            <a 
+              href="https://www.instagram.com/monumentconstruction/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white hover:text-gray-200 transition-colors text-lg"
+              aria-label="Follow us on Instagram"
+            >
+              <Instagram className="w-6 h-6" />
+              <span>Follow us on Instagram</span>
+            </a>
           </div>
         </div>
       </section>

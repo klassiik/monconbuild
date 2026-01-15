@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CONTACT_INFO } from '../utils/constants';
 import ErrorBoundary from './ErrorBoundary';
@@ -114,6 +114,18 @@ const Footer = () => {
                       aria-label={`Email ${CONTACT_INFO.EMAIL}`}
                     >
                       {CONTACT_INFO.EMAIL}
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Instagram className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                    <a 
+                      href="https://www.instagram.com/monumentconstruction/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-blue-400 transition-colors duration-300"
+                      aria-label="Follow us on Instagram"
+                    >
+                      @monumentconstruction
                     </a>
                   </li>
                 </ul>
