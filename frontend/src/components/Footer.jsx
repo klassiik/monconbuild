@@ -119,13 +119,13 @@ const Footer = () => {
                   <li className="flex items-center gap-3">
                     <Instagram className="w-5 h-5 text-blue-400 flex-shrink-0" />
                     <a 
-                      href="https://www.instagram.com/monumentconstruction/" 
+                      href="https://www.instagram.com/wrconstruct7/" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-blue-400 transition-colors duration-300"
                       aria-label="Follow us on Instagram"
                     >
-                      @monumentconstruction
+                      @wrconstruct7
                     </a>
                   </li>
                 </ul>

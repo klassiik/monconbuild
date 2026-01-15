@@ -238,7 +238,7 @@ const About = () => {
           
           <div className="mt-8 flex justify-center">
             <a 
-              href="https://www.instagram.com/monumentconstruction/"
+              href="https://www.instagram.com/wrconstruct7/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-white hover:text-gray-200 transition-colors text-lg"
