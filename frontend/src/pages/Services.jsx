@@ -23,6 +23,7 @@ const Services = () => {
       text: "We had William build our formal library and asked him to model it after the library in the show Downton Abbey. As you can see from the pictures, he succeeded amazingly well. We then had him build a library in my home office and my wife's smaller home office in the same style. He also built custom shelves in the mudroom in a different style entirely. Everything this man builds is perfect. No flaws or mistakes anywhere. He is a master craftsman, an artist, if you will, and a pleasure to work with. We highly recommend William for any project you might have.",
       name: "Richard Young",
       location: "Sacramento, CA",
+      image: "/2.jpg",
       service: "Custom Shelving & Library"
     }
   ];
