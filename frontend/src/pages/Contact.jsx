@@ -27,6 +27,7 @@ const Contact = () => {
     message: '',
     timeline: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -42,36 +43,65 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Store in localStorage (frontend only)
-    const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-    const newSubmission = {
-      ...formData,
-      id: Date.now(),
-      submittedAt: new Date().toISOString()
-    };
-    submissions.push(newSubmission);
-    localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+    setIsSubmitting(true);
 
-    toast({
-      title: "Quote Request Received!",
-      description: "We'll contact you within 24 hours to discuss your project.",
-    });
+    try {
+      // Prepare form data for Web3Forms
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', '8258ed0b-b558-4850-b25c-8ca4015dba82');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('subject', `New Quote Request - ${formData.projectType} in ${formData.city}`);
+      
+      // Add all form fields
+      formDataToSend.append('Project Type', formData.projectType);
+      formDataToSend.append('Location', formData.location);
+      formDataToSend.append('City', formData.city);
+      formDataToSend.append('Timeline', formData.timeline);
+      formDataToSend.append('Budget', formData.budget);
+      formDataToSend.append('message', formData.message);
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      projectType: '',
-      location: '',
-      city: '',
-      budget: '',
-      message: '',
-      timeline: ''
-    });
+      // Send to Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Quote Request Received!",
+          description: "We'll contact you within 24 hours to discuss your project.",
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          projectType: '',
+          location: '',
+          city: '',
+          budget: '',
+          message: '',
+          timeline: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Submission Error",
+        description: "There was a problem submitting your request. Please try calling us directly at (916) 607-1972.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -347,8 +377,9 @@ const Contact = () => {
                   type="submit" 
                   size="lg" 
                   className="w-full bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
+                  disabled={isSubmitting}
                 >
-                  Request Free Quote
+                  {isSubmitting ? 'Sending...' : 'Request Free Quote'}
                 </Button>
 
                 <p className="text-sm text-gray-500 text-center">
