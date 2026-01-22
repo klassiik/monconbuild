@@ -48,34 +48,30 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare form data for Web3Forms (using JSON format)
-      const submitData = {
-        access_key: '8258ed0b-b558-4850-b25c-8ca4015dba82',
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        subject: `New Quote Request - ${formData.projectType} in ${formData.city}`,
-        'Project Type': formData.projectType,
-        'Location': formData.location,
-        'City': formData.city,
-        'Timeline': formData.timeline,
-        'Budget': formData.budget,
-        'message': formData.message
-      };
+      const formDataToSend = new FormData();
+      
+      // Add all form fields
+      formDataToSend.append('access_key', '8258ed0b-b558-4850-b25c-8ca4015dba82');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('subject', `New Quote Request - ${formData.projectType} in ${formData.city}`);
+      formDataToSend.append('from_name', 'Monument Construction');
+      formDataToSend.append('Project Type', formData.projectType);
+      formDataToSend.append('Location', formData.location);
+      formDataToSend.append('City', formData.city);
+      formDataToSend.append('Timeline', formData.timeline);
+      formDataToSend.append('Budget', formData.budget);
+      formDataToSend.append('message', formData.message);
 
-      // Send to Web3Forms
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(submitData)
+        body: formDataToSend
       });
 
       const data = await response.json();
 
-      if (response.status === 200) {
+      if (data.success) {
         toast({
           title: "Quote Request Received!",
           description: "We'll contact you within 24 hours to discuss your project.",
@@ -101,6 +97,7 @@ const Contact = () => {
         });
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       toast({
         title: "Error",
         description: "Something went wrong. Please try again or call us at (916) 607-1972.",
