@@ -43,6 +43,11 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
+  // Only handle same-origin GET requests; let cross-origin or non-GET requests pass through
+  if (request.method !== 'GET' || url.origin !== self.location.origin) {
+    return;
+  }
+
   // Handle different types of requests with appropriate caching strategies
   if (request.destination === 'image') {
     // Cache-first strategy for images
