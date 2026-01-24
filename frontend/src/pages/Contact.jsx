@@ -46,16 +46,33 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    console.log('Form submit triggered, formData:', formData);
 
     try {
       // Require Formspree form ID via Vite env
       const formId = import.meta.env.VITE_FORMSPREE_FORM_ID;
+      console.log('Form ID from env:', formId);
+      
       if (!formId) {
+        console.error('Missing VITE_FORMSPREE_FORM_ID');
         toast({
           title: "Configuration Required",
           description: "Missing Formspree form ID. Please set VITE_FORMSPREE_FORM_ID.",
           variant: "destructive"
         });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Validate required fields
+      if (!formData.name || !formData.email || !formData.phone || !formData.projectType || !formData.location || !formData.city || !formData.message) {
+        console.warn('Missing required fields:', { name: !formData.name, email: !formData.email, phone: !formData.phone, projectType: !formData.projectType, location: !formData.location, city: !formData.city, message: !formData.message });
+        toast({
+          title: "Missing Information",
+          description: "Please fill in all required fields (marked with *).",
+          variant: "destructive"
+        });
+        setIsSubmitting(false);
         return;
       }
 
@@ -75,6 +92,8 @@ const Contact = () => {
       formDataToSend.append('_replyto', formData.email);
 
       const endpoint = `https://formspree.io/f/${formId}`;
+      console.log('Sending to endpoint:', endpoint);
+
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
@@ -83,7 +102,9 @@ const Contact = () => {
         body: formDataToSend
       });
 
+      console.log('Response status:', response.status, 'ok:', response.ok);
       const data = await response.json();
+      console.log('Response data:', data);
 
       if (response.ok) {
         toast({
