@@ -44,7 +44,12 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
 
   // Only handle same-origin GET requests; let cross-origin or non-GET requests pass through
-  if (request.method !== 'GET' || url.origin !== self.location.origin) {
+  if (request.method !== 'GET') {
+    return;
+  }
+
+  // Exclude external cross-origin requests (Cloudflare, Google Analytics, etc.)
+  if (url.origin !== self.location.origin) {
     return;
   }
 
