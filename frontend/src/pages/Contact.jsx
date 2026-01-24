@@ -48,30 +48,44 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      // Require Formspree form ID via Vite env
+      const formId = import.meta.env.VITE_FORMSPREE_FORM_ID;
+      if (!formId) {
+        toast({
+          title: "Configuration Required",
+          description: "Missing Formspree form ID. Please set VITE_FORMSPREE_FORM_ID.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      // Build Formspree payload
       const formDataToSend = new FormData();
-      
-      // Add all form fields
-      formDataToSend.append('access_key', '8258ed0b-b558-4850-b25c-8ca4015dba82');
       formDataToSend.append('name', formData.name);
       formDataToSend.append('email', formData.email);
       formDataToSend.append('phone', formData.phone);
-      formDataToSend.append('subject', `New Quote Request - ${formData.projectType} in ${formData.city}`);
-      formDataToSend.append('from_name', 'Monument Construction');
-      formDataToSend.append('Project Type', formData.projectType);
-      formDataToSend.append('Location', formData.location);
-      formDataToSend.append('City', formData.city);
-      formDataToSend.append('Timeline', formData.timeline);
-      formDataToSend.append('Budget', formData.budget);
+      formDataToSend.append('projectType', formData.projectType);
+      formDataToSend.append('location', formData.location);
+      formDataToSend.append('city', formData.city);
+      formDataToSend.append('timeline', formData.timeline);
+      formDataToSend.append('budget', formData.budget);
       formDataToSend.append('message', formData.message);
+      // Formspree helpers
+      formDataToSend.append('_subject', `New Quote Request - ${formData.projectType} in ${formData.city}`);
+      formDataToSend.append('_replyto', formData.email);
 
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const endpoint = `https://formspree.io/f/${formId}`;
+      const response = await fetch(endpoint, {
         method: 'POST',
+        headers: {
+          Accept: 'application/json'
+        },
         body: formDataToSend
       });
 
       const data = await response.json();
 
-      if (data.success) {
+      if (response.ok) {
         toast({
           title: "Quote Request Received!",
           description: "We'll contact you within 24 hours to discuss your project.",
@@ -92,7 +106,7 @@ const Contact = () => {
       } else {
         toast({
           title: "Submission Error",
-          description: data.message || "There was a problem submitting your request.",
+          description: (data && data.message) || "There was a problem submitting your request.",
           variant: "destructive"
         });
       }
