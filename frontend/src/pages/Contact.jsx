@@ -28,6 +28,7 @@ const Contact = () => {
     timeline: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState('idle');
 
   const handleChange = (e) => {
     setFormData({
@@ -107,6 +108,7 @@ const Contact = () => {
       console.log('Response data:', data);
 
       if (response.ok) {
+        setSubmissionStatus('success');
         toast({
           title: "Quote Request Received!",
           description: "We'll contact you within 24 hours to discuss your project.",
@@ -125,6 +127,7 @@ const Contact = () => {
           timeline: ''
         });
       } else {
+        setSubmissionStatus('error');
         toast({
           title: "Submission Error",
           description: (data && data.message) || "There was a problem submitting your request.",
@@ -133,6 +136,7 @@ const Contact = () => {
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      setSubmissionStatus('error');
       toast({
         title: "Error",
         description: "Something went wrong. Please try again or call us at (916) 607-1972.",
@@ -411,6 +415,18 @@ const Contact = () => {
                     placeholder="Please describe your project, including scope, budget considerations, and any specific requirements..."
                   />
                 </div>
+
+                {submissionStatus === 'success' && (
+                  <div className="rounded border border-green-600 bg-green-50 px-4 py-3 text-green-800">
+                    Thanks! We received your request. We will follow up within 24 hours.
+                  </div>
+                )}
+
+                {submissionStatus === 'error' && (
+                  <div className="rounded border border-red-600 bg-red-50 px-4 py-3 text-red-800">
+                    We could not send your request. Please try again or call (916) 607-1972.
+                  </div>
+                )}
 
                 <Button 
                   type="submit" 
