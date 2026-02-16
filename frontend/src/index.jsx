@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HelmetProvider } from 'react-helmet-async';
-import { clarity } from 'microsoft-clarity';
 import "@/index.css";
 import App from "@/App";
 // Defer performance scripts to reduce main bundle size and JS execution on load
@@ -41,8 +40,9 @@ if (process.env.NODE_ENV === 'production') {
   });
 
   // Initialize Microsoft Clarity
-  runAfterIdle(() => {
+  runAfterIdle(async () => {
     try {
+      const { clarity } = await import('microsoft-clarity');
       clarity.init('trqrzo6kg0');
     } catch (e) {
       // Clarity failed to initialize
