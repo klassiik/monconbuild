@@ -17,6 +17,7 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     rollupOptions: {
+      external: ['microsoft-clarity'],
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
