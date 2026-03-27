@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StickyCTA from "./components/StickyCTA";
@@ -125,6 +126,7 @@ function App() {
           </Suspense>
           )}
         </BrowserRouter>
+        <Analytics />
       </div>
     </ErrorBoundary>
   );
