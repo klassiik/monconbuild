@@ -5,7 +5,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Phone, Mail, Hammer, Home as HomeIcon, Building2, Wrench } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
-import { CONTACT_INFO } from '../utils/constants';
+import { CONTACT_INFO, COMPANY_INFO } from '../utils/constants';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { handleError } from '../utils/errorHandler';
 
@@ -23,9 +23,10 @@ const HeroBackground = () => {
   return (
     <img
       src="/hero.webp"
-      alt="Sierra Nevada mountains in Colfax, California"
+      alt="Two-story home exterior with deck and staircase built by Monument Construction in Colfax, CA"
       decoding="async"
-      fetchPriority="high"
+      // eslint-disable-next-line react/no-unknown-property -- installed React 18.3 doesn't map camelCase fetchPriority; browser needs lowercase fetchpriority
+      fetchpriority="high"
       className={`absolute inset-0 z-0 w-full h-full object-cover transform transition-all duration-700 ${loaded ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-sm scale-105'}`}
       onLoad={() => setLoaded(true)}
       onError={handleImageError}
@@ -115,7 +116,7 @@ const Home = () => {
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://www.monconbuild.com/hero.webp",
-        "description": "Sierra Nevada mountains in Colfax, California"
+        "description": "Two-story home exterior with deck and staircase built by Monument Construction in Colfax, CA"
       }
     };
 
@@ -273,7 +274,7 @@ const Home = () => {
             <HeroBackground />
 
             {/* Subtle bottom scrim for text legibility */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent z-10" aria-hidden="true"></div>
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" aria-hidden="true"></div>
 
             {/* Optional: Add a subtle pattern overlay */}
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20 z-10" aria-hidden="true"></div>
@@ -281,10 +282,10 @@ const Home = () => {
             <div className="container mx-auto px-6 md:px-12 relative z-20 pb-12 md:pb-16">
               <div className="max-w-2xl">
                 <h1 className="text-3xl md:text-4xl font-semibold mb-4 leading-snug">
-                  Professional Construction & Finish Carpentry Serving Placer, Nevada, & Sacramento Counties
+                  Professional Construction & Finish Carpentry
                 </h1>
                 <p className="text-base md:text-lg mb-6 text-gray-200 leading-relaxed">
-                  Expert craftsmanship from ground work to complete construction. Licensed, experienced, and trusted throughout Placer & Nevada Counties.
+                  Serving Placer, Nevada & Sacramento Counties. Licensed, experienced, and trusted craftsmanship from ground work to complete construction.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -296,7 +297,7 @@ const Home = () => {
                   </Button>
                   <Button
                     variant="outline"
-                    className="border border-white/70 text-white hover:bg-white hover:text-green-900 transition-colors duration-300"
+                    className="border border-white/40 text-white hover:border-white hover:bg-white/10 transition-colors duration-300"
                     asChild
                   >
                     <a href={`tel:${CONTACT_INFO.PHONE}`} aria-label={`Call Monument Construction at ${CONTACT_INFO.FORMATTED_PHONE}`}>
@@ -305,12 +306,13 @@ const Home = () => {
                     </a>
                   </Button>
                 </div>
+
+                <p className="mt-4 text-sm text-gray-300">
+                  Licensed &amp; Insured — {COMPANY_INFO.FULL_LICENSE}
+                </p>
               </div>
             </div>
           </section>
-
-          {/* Testimonials Section */}
-          <Testimonials testimonials={testimonials} showImages={true} />
 
           {/* Services Section */}
           <section className="py-20 md:py-28 bg-white">
@@ -324,8 +326,8 @@ const Home = () => {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {services.map((service, index) => (
-                  <Card 
-                    key={index} 
+                  <Card
+                    key={index}
                     className="border-2 hover:border-green-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
                   >
                     <CardContent className="p-8">
@@ -340,9 +342,9 @@ const Home = () => {
               </div>
 
               <div className="text-center mt-12">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="border-2 border-green-700 text-green-700 hover:bg-green-700 hover:text-white transition-all duration-300"
                   asChild
                 >
@@ -351,6 +353,9 @@ const Home = () => {
               </div>
             </div>
           </section>
+
+          {/* Testimonials Section */}
+          <Testimonials testimonials={testimonials} showImages={true} />
 
           {/* Portfolio Preview */}
           <section className="py-20 md:py-28 bg-slate-50">

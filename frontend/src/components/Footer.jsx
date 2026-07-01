@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { CONTACT_INFO } from '../utils/constants';
+import { CONTACT_INFO, COMPANY_INFO } from '../utils/constants';
 import ErrorBoundary from './ErrorBoundary';
 import { handleError } from '../utils/errorHandler';
 
@@ -49,7 +49,7 @@ const Footer = () => {
                     className="hover:text-blue-400 transition-colors"
                     aria-label="View California Contractor License #801602"
                   >
-                    License #801602
+                    {COMPANY_INFO.FULL_LICENSE}
                   </a>
                 </p>
               </div>
@@ -138,7 +138,7 @@ const Footer = () => {
                   © {currentYear} Monument Construction. All rights reserved.
                 </p>
                 <p className="text-sm">
-                  Licensed General Contractor #801602 | Colfax, California
+                  Licensed General Contractor #{COMPANY_INFO.LICENSE} | Colfax, California
                 </p>
               </div>
             </div>
