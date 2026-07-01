@@ -3,7 +3,6 @@ import React, { lazy, Suspense, useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import StickyCTA from "./components/StickyCTA";
 import ErrorBoundary from "./components/ErrorBoundary";
 // Lazy-load Toaster to avoid pulling sonner/next-themes into the main bundle
 const LazyToaster = lazy(() =>
@@ -116,9 +115,6 @@ function App() {
         </Routes>
           </main>
         <Footer />
-        {/* Spacer for StickyCTA to prevent content being hidden */}
-        <div className="h-20 sm:h-16" aria-hidden="true" />
-        <StickyCTA />
         {mountToaster && (
           <Suspense fallback={null}>
             <LazyToaster />

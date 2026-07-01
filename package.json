@@ -23,9 +23,10 @@
   "dependencies": {
     "chrome-launcher": "^1.2.1",
     "commander": "^14.0.1",
-    "lighthouse": "^13.0.0"
+    "lighthouse": "^12.6.1"
   },
   "devDependencies": {
+    "baseline-browser-mapping": "^2.10.38",
     "sharp": "^0.34.5"
   }
 }
