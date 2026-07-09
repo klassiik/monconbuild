@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import Breadcrumb from '../../components/Breadcrumb';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
@@ -122,7 +122,7 @@ const HomeAdditions = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>Home Additions | Colfax CA</title>
         <meta name="description" content="Expert home additions & room expansions in Placer County. Second-story additions, ADUs & more. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/home-additions" />
@@ -136,7 +136,7 @@ const HomeAdditions = () => {
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
-      </Helmet>
+      </Head>
       
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />

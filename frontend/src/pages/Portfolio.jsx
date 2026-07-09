@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import ImageGallery from '../components/ImageGallery';
@@ -278,7 +278,7 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
-      <Helmet>
+      <Head>
         <title>Portfolio | Construction Projects</title>
         <meta name="description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer & Nevada County, CA." />
         <link rel="canonical" href="https://www.monconbuild.com/portfolio" />
@@ -287,7 +287,7 @@ const Portfolio = () => {
         <meta property="og:url" content="https://www.monconbuild.com/portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
-      </Helmet>
+      </Head>
       
       {/* Portfolio Page Schema for SEO */}
       <PortfolioPageSchema projects={projects} />

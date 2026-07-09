@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
@@ -131,7 +131,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>Construction Services | Colfax CA</title>
         <meta name="description" content="Expert finish carpentry, home additions, remodeling & custom woodwork serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Quality craftsmanship." />
         <link rel="canonical" href="https://www.monconbuild.com/services" />
@@ -140,7 +140,7 @@ const Services = () => {
         <meta property="og:url" content="https://www.monconbuild.com/services" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
-      </Helmet>
+      </Head>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       

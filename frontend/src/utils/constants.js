@@ -117,14 +117,11 @@ export const SCHEMA_CONFIG = {
       { "@type": "City", "name": "Placerville", "containedInPlace": { "@type": "AdministrativeArea", "name": "El Dorado County", "containedInPlace": { "@type": "State", "name": "California" } } },
       { "@type": "City", "name": "Cameron Park", "containedInPlace": { "@type": "AdministrativeArea", "name": "El Dorado County", "containedInPlace": { "@type": "State", "name": "California" } } },
       { "@type": "City", "name": "Diamond Springs", "containedInPlace": { "@type": "AdministrativeArea", "name": "El Dorado County", "containedInPlace": { "@type": "State", "name": "California" } } }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "50",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
+    ]
+    // NOTE: aggregateRating intentionally omitted. Do not add hardcoded rating/review
+    // counts here — Google's structured-data policy requires ratings to be sourced from
+    // genuine, on-page-visible reviews. Wire this to a real review platform (e.g. Google
+    // Business Profile) before re-adding.
   }
 };
 

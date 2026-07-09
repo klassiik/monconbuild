@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
 import { completeRemodelingFAQs } from '../../data/faqs';
@@ -115,7 +115,7 @@ const CompleteRemodeling = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>Home Remodeling | Colfax CA</title>
         <meta name="description" content="Full-service home remodeling in Colfax & Placer County. Complete transformations with expert craftsmanship & attention." />
         <link rel="canonical" href="https://www.monconbuild.com/services/complete-remodeling" />
@@ -129,7 +129,7 @@ const CompleteRemodeling = () => {
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
-      </Helmet>
+      </Head>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">

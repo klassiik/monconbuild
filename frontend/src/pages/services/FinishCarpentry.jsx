@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import Breadcrumb from '../../components/Breadcrumb';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
@@ -135,7 +135,7 @@ const FinishCarpentry = () => {
   return (
     <div className="min-h-screen">
       {/* SEO Meta Tags and Schema */}
-      <Helmet>
+      <Head>
         <title>Finish Carpentry | Colfax CA</title>
         <meta name="description" content="Expert finish carpentry in Colfax, CA. Custom trim, molding, built-ins & woodwork. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/finish-carpentry" />
@@ -149,7 +149,7 @@ const FinishCarpentry = () => {
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
-      </Helmet>
+      </Head>
 
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
 import { residentialProjectsFAQs } from '../../data/faqs';
@@ -115,7 +115,7 @@ const ResidentialProjects = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>Residential Construction Projects</title>
         <meta name="description" content="Complete residential construction & remodeling projects in Placer County. Quality craftsmanship from ground to finish." />
         <link rel="canonical" href="https://www.monconbuild.com/services/residential-projects" />
@@ -129,7 +129,7 @@ const ResidentialProjects = () => {
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
-      </Helmet>
+      </Head>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">

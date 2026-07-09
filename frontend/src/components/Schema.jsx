@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 
 /**
  * Schema Component - Injects JSON-LD structured data into page head
@@ -7,11 +7,11 @@ import { Helmet } from 'react-helmet-async';
  */
 export const Schema = ({ schema }) => {
   return (
-    <Helmet>
+    <Head>
       <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
-    </Helmet>
+    </Head>
   );
 };
 

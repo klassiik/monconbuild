@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import { Award, CheckCircle2, Tv, Users, Hammer, Star, Instagram } from 'lucide-react';
@@ -29,7 +29,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>About Monument Construction</title>
         <meta name="description" content="25+ years of trusted finish carpentry & construction in Northern CA. Licensed contractor serving Placer, Nevada, Sacramento & El Dorado Counties." />
         <link rel="canonical" href="https://www.monconbuild.com/about" />
@@ -38,7 +38,7 @@ const About = () => {
         <meta property="og:url" content="https://www.monconbuild.com/about" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
-      </Helmet>
+      </Head>
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       

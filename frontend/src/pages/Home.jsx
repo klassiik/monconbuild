@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
@@ -247,7 +247,7 @@ const Home = () => {
       <ErrorBoundary>
         <div className="min-h-screen">
           {/* SEO Meta Tags and Schema.org Structured Data */}
-          <Helmet>
+          <Head>
             <title>Expert Carpentry & Construction | Colfax CA</title>
             <meta name="description" content="Expert finish carpentry & construction in Northern CA. Licensed contractor #801602 serving Placer, Nevada, Sacramento & El Dorado Counties. (916) 607-1972" />
             <link rel="canonical" href="https://www.monconbuild.com/" />
@@ -266,7 +266,7 @@ const Home = () => {
             <script type="application/ld+json">
               {JSON.stringify(servicesListSchema)}
             </script>
-          </Helmet>
+          </Head>
 
           {/* Hero Section - Semantic HTML with LCP-friendly <img> */}
           <section aria-label="Hero section" className="relative text-white overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-end">

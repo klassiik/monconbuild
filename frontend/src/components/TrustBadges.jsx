@@ -16,14 +16,9 @@ const TrustBadges = () => {
         "name": "California Contractors State License Board"
       },
       "identifier": "801602"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "50",
-      "bestRating": "5",
-      "worstRating": "1"
     }
+    // NOTE: aggregateRating intentionally omitted — see constants.js. Do not hardcode
+    // rating/review counts; source them from a real review platform first.
   };
 
   const badges = [
