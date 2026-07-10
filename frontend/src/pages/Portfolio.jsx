@@ -280,10 +280,10 @@ const Portfolio = () => {
     <div className="min-h-screen overflow-x-hidden w-full">
       <Head>
         <title>Portfolio | Construction Projects</title>
-        <meta name="description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer & Nevada County, CA." />
+        <meta name="description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer, Nevada, Sacramento, Yolo & El Dorado Counties, CA." />
         <link rel="canonical" href="https://www.monconbuild.com/portfolio" />
         <meta property="og:title" content="Portfolio | Construction Projects" />
-        <meta property="og:description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer & Nevada County, CA." />
+        <meta property="og:description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer, Nevada, Sacramento, Yolo & El Dorado Counties, CA." />
         <meta property="og:url" content="https://www.monconbuild.com/portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
@@ -319,7 +319,7 @@ const Portfolio = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Our Work</h2>
             <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
               <p>
-                Monument Construction has been trusted with hundreds of residential construction and finish carpentry projects throughout Placer County and Nevada County. Our portfolio reflects our commitment to quality, attention to detail, and customer satisfaction. Each project showcased here represents the craftsmanship and expertise we bring to every job.
+                Monument Construction has been trusted with hundreds of residential construction and finish carpentry projects throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Our portfolio reflects our commitment to quality, attention to detail, and customer satisfaction. Each project showcased here represents the craftsmanship and expertise we bring to every job.
               </p>
 
               <p>
@@ -581,7 +581,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">View Our Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Explore the complete range of construction and carpentry services we offer to homeowners in Placer and Nevada Counties.
+            Explore the complete range of construction and carpentry services we offer to homeowners in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties.
           </p>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

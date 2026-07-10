@@ -9,10 +9,9 @@ import { CONTACT_INFO, COMPANY_INFO } from '../utils/constants';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { handleError } from '../utils/errorHandler';
 
-// LCP-friendly background image component with blur-in effect
+// LCP-friendly background image: no fade/blur gate — the image is preloaded in
+// index.html, so it must paint the moment it decodes to keep LCP fast.
 const HeroBackground = () => {
-  const [loaded, setLoaded] = useState(false);
-  
   const handleImageError = () => {
     handleError(new Error('Failed to load hero background image'), 'IMAGE_LOAD_ERROR', 'LOW', {
       imageSource: '/hero.webp',
@@ -27,8 +26,7 @@ const HeroBackground = () => {
       decoding="async"
       // eslint-disable-next-line react/no-unknown-property -- installed React 18.3 doesn't map camelCase fetchPriority; browser needs lowercase fetchpriority
       fetchpriority="high"
-      className={`absolute inset-0 z-0 w-full h-full object-cover transform transition-all duration-700 ${loaded ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-sm scale-105'}`}
-      onLoad={() => setLoaded(true)}
+      className="absolute inset-0 z-0 w-full h-full object-cover"
       onError={handleImageError}
     />
   );
@@ -109,10 +107,7 @@ const Home = () => {
         "@type": "WebSite",
         "@id": "https://www.monconbuild.com/#website"
       },
-      "about": {
-        "@type": "GeneralContractor",
-        "name": "Monument Construction"
-      },
+      "about": { "@id": "https://www.monconbuild.com/#organization" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://www.monconbuild.com/hero.webp",
@@ -285,7 +280,7 @@ const Home = () => {
                   Professional Construction & Finish Carpentry
                 </h1>
                 <p className="text-base md:text-lg mb-6 text-gray-200 leading-relaxed">
-                  Serving Placer, Nevada & Sacramento Counties. Licensed, experienced, and trusted craftsmanship from ground work to complete construction.
+                  Serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Licensed, experienced, and trusted craftsmanship from ground work to complete construction.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -364,7 +359,7 @@ const Home = () => {
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Our Work</h2>
                 <div className="prose prose-lg max-w-3xl mx-auto space-y-6 text-gray-700">
                   <p>
-                    Monument Construction has been trusted with hundreds of residential construction and finish carpentry projects throughout Placer County and Nevada County. Our portfolio reflects our commitment to quality, attention to detail, and customer satisfaction. Each project showcased here represents the craftsmanship and expertise we bring to every job.
+                    Monument Construction has been trusted with hundreds of residential construction and finish carpentry projects throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Our portfolio reflects our commitment to quality, attention to detail, and customer satisfaction. Each project showcased here represents the craftsmanship and expertise we bring to every job.
                   </p>
 
                   <p>

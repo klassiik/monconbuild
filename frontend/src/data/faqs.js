@@ -7,7 +7,7 @@ export const finishCarpentryFAQs = [
   },
   {
     question: "What's the difference between rough carpentry and finish carpentry?",
-    answer: "Rough carpentry involves the structural framework (studs, joists, rafters), while finish carpentry is the visible, decorative woodwork you see every day - trim, molding, doors, built-ins, and cabinetry. Finish carpentry requires precision and attention to detail, as every joint and seam is visible. At Monument Construction, we specialize in high-end finish carpentry throughout Placer and Nevada Counties."
+    answer: "Rough carpentry involves the structural framework (studs, joists, rafters), while finish carpentry is the visible, decorative woodwork you see every day - trim, molding, doors, built-ins, and cabinetry. Finish carpentry requires precision and attention to detail, as every joint and seam is visible. At Monument Construction, we specialize in high-end finish carpentry throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties."
   },
   {
     question: "How long does a finish carpentry project take?",
@@ -23,7 +23,7 @@ export const finishCarpentryFAQs = [
   },
   {
     question: "Can you match existing trim in an older home?",
-    answer: "Absolutely! We specialize in historic home remodeling in Colfax and surrounding areas. We can match existing profiles by either custom-milling trim to match or sourcing period-appropriate moldings. Our 25+ years of experience includes many historic renovation projects throughout Placer and Nevada Counties, including homes dating back to the Gold Rush era."
+    answer: "Absolutely! We specialize in historic home remodeling in Colfax and surrounding areas. We can match existing profiles by either custom-milling trim to match or sourcing period-appropriate moldings. Our 25+ years of experience includes many historic renovation projects throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties, including homes dating back to the Gold Rush era."
   }
 ];
 
@@ -34,7 +34,7 @@ export const homeAdditionsFAQs = [
   },
   {
     question: "Do I need permits for a home addition in California?",
-    answer: "Yes, home additions in California require building permits from your local building department. This includes structural, electrical, and plumbing permits. As a licensed general contractor (#801602), Monument Construction handles all permit applications, plan submissions, and inspections for your project in Placer and Nevada Counties."
+    answer: "Yes, home additions in California require building permits from your local building department. This includes structural, electrical, and plumbing permits. As a licensed general contractor (#801602), Monument Construction handles all permit applications, plan submissions, and inspections for your project in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties."
   },
   {
     question: "How long does it take to build a home addition?",
@@ -46,7 +46,7 @@ export const homeAdditionsFAQs = [
   },
   {
     question: "Can you build ADUs (Accessory Dwelling Units) in Placer County?",
-    answer: "Yes! We design and build ADUs throughout Placer and Nevada Counties. California's ADU laws make it easier than ever to add rental income or multi-generational living space. We navigate local zoning requirements, handle permits, and ensure your ADU meets all state and county regulations including setbacks, utility connections, and building codes."
+    answer: "Yes! We design and build ADUs throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. California's ADU laws make it easier than ever to add rental income or multi-generational living space. We navigate local zoning requirements, handle permits, and ensure your ADU meets all state and county regulations including setbacks, utility connections, and building codes."
   }
 ];
 
@@ -61,7 +61,7 @@ export const generalConstructionFAQs = [
   },
   {
     question: "Do you provide free estimates in Colfax and Auburn?",
-    answer: "Yes! We offer free, no-obligation estimates for all construction projects in Colfax, Auburn, Grass Valley, Nevada City, Truckee, and throughout Placer and Nevada Counties. We'll visit your property, discuss your vision, take measurements, and provide a detailed written proposal typically within 2-3 business days."
+    answer: "Yes! We offer free, no-obligation estimates for all construction projects in Colfax, Auburn, Grass Valley, Nevada City, Truckee, and throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. We'll visit your property, discuss your vision, take measurements, and provide a detailed written proposal typically within 2-3 business days."
   },
   {
     question: "What's included in your construction services?",
@@ -69,7 +69,7 @@ export const generalConstructionFAQs = [
   },
   {
     question: "How do you handle permits and inspections?",
-    answer: "We manage all permitting and inspections for projects in Placer and Nevada Counties. This includes submitting plans to local building departments, scheduling required inspections (foundation, framing, final), and ensuring all work passes inspection. Our experience with local building departments ensures smooth approval processes."
+    answer: "We manage all permitting and inspections for projects in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. This includes submitting plans to local building departments, scheduling required inspections (foundation, framing, final), and ensuring all work passes inspection. Our experience with local building departments ensures smooth approval processes."
   }
 ];
 
@@ -122,7 +122,7 @@ export const completeRemodelingFAQs = [
 export const residentialProjectsFAQs = [
   {
     question: "What types of residential projects do you handle?",
-    answer: "We handle all residential construction including new home builds, room additions, kitchen and bathroom remodels, deck and patio construction, garage conversions, basement finishing, siding and roofing, structural repairs, and whole-house renovations. Our team manages projects from initial planning through final walkthrough in Placer and Nevada Counties."
+    answer: "We handle all residential construction including new home builds, room additions, kitchen and bathroom remodels, deck and patio construction, garage conversions, basement finishing, siding and roofing, structural repairs, and whole-house renovations. Our team manages projects from initial planning through final walkthrough in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties."
   },
   {
     question: "Do you work on older homes in Colfax and Auburn?",

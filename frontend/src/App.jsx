@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './Layout';
+import { cityStaticPaths } from './data/cities';
 
 // Route table consumed by vite-react-ssg (react-router data routes). Each leaf
 // uses `lazy` for code-splitting; vite-react-ssg awaits these during static
@@ -17,6 +18,12 @@ export const routes = [
       { path: 'about', lazy: lazyRoute(() => import('./pages/About')) },
       { path: 'portfolio', lazy: lazyRoute(() => import('./pages/Portfolio')) },
       { path: 'service-areas', lazy: lazyRoute(() => import('./pages/ServiceAreas')) },
+      // Per-city landing pages, pre-rendered from the cities data file.
+      {
+        path: 'service-areas/:city',
+        lazy: lazyRoute(() => import('./pages/CityLanding')),
+        getStaticPaths: cityStaticPaths,
+      },
       { path: 'contact', lazy: lazyRoute(() => import('./pages/Contact')) },
       { path: 'services/finish-carpentry', lazy: lazyRoute(() => import('./pages/services/FinishCarpentry')) },
       { path: 'services/general-construction', lazy: lazyRoute(() => import('./pages/services/GeneralConstruction')) },

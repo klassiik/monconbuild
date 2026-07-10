@@ -61,7 +61,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite-react-ssg build",
+    "build": "tsc && node scripts/generate-sitemap.mjs && vite-react-ssg build",
     "preview:ssg": "vite preview",
     "build:analyze": "npm run build && npx vite-bundle-analyzer dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

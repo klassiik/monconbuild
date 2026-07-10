@@ -4,6 +4,7 @@ import { Head } from 'vite-react-ssg';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
 import { customWoodworkFAQs } from '../../data/faqs';
+import ServiceAreasBlock from '../../components/ServiceAreasBlock';
 import { CheckCircle2, Phone, Mail, Hammer, Award } from 'lucide-react';
 
 const CustomWoodwork = () => {
@@ -12,12 +13,7 @@ const CustomWoodwork = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Custom Woodwork",
-    "provider": {
-      "@type": "GeneralContractor",
-      "name": "Monument Construction",
-      "telephone": "(916) 607-1972",
-      "email": "monumentconstruction@comcast.net"
-    },
+    "provider": { "@id": "https://www.monconbuild.com/#organization" },
     "areaServed": [
       { "@type": "City", "name": "Colfax, CA" },
       { "@type": "City", "name": "Auburn, CA" },
@@ -97,22 +93,6 @@ const CustomWoodwork = () => {
     "Specialty woodworking projects"
   ];
 
-  const serviceAreas = [
-    "Colfax, CA",
-    "Auburn, CA",
-    "Grass Valley, CA",
-    "Nevada City, CA",
-    "Truckee, CA",
-    "Sacramento, CA",
-    "Elk Grove, CA",
-    "Folsom, CA",
-    "Davis, CA",
-    "Woodland, CA",
-    "El Dorado Hills, CA",
-    "South Lake Tahoe, CA",
-    "All of Placer, Nevada, Sacramento, Yolo & El Dorado Counties"
-  ];
-
   return (
     <div className="min-h-screen">
       <Head>
@@ -138,7 +118,7 @@ const CustomWoodwork = () => {
               Custom Woodwork & Cabinetry in Colfax, CA
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              Master craftsmanship in custom wood design for Placer & Nevada County homes
+              Master craftsmanship in custom wood design for homes across Placer, Nevada, Sacramento, Yolo & El Dorado Counties
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact">
@@ -241,24 +221,13 @@ const CustomWoodwork = () => {
                     <li>• Featured on DIY Network TV</li>
                     <li>• 25+ years woodworking experience</li>
                     <li>• Custom designs and consultation</li>
-                    <li>• Serving Placer & Nevada Counties</li>
+                    <li>• Serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">Service Areas</h3>
-            <p className="text-lg text-gray-700 mb-4">
-              Custom woodwork services throughout Northern California:
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 mb-12">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="flex items-center text-gray-700">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2" />
-                  {area}
-                </div>
-              ))}
-            </div>
+            <ServiceAreasBlock intro="Custom woodwork services throughout Northern California:" />
           </div>
         </div>
       </section>

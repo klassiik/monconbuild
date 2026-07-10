@@ -9,11 +9,26 @@ import { Label } from '../components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
+import { Schema } from '../components/Schema';
 
 const Contact = () => {
   const breadcrumbItems = [
     { name: 'Contact', url: 'https://www.monconbuild.com/contact' }
   ];
+
+  // ContactPage schema; telephone/address/openingHours live on the #organization
+  // node baked into index.html, so this page only references it by @id.
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://www.monconbuild.com/contact#webpage",
+    "url": "https://www.monconbuild.com/contact",
+    "name": "Contact Monument Construction",
+    "description": "Contact Monument Construction for free quotes on finish carpentry, remodeling & construction serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties.",
+    "isPartOf": { "@id": "https://www.monconbuild.com/#website" },
+    "about": { "@id": "https://www.monconbuild.com/#organization" },
+    "mainEntity": { "@id": "https://www.monconbuild.com/#organization" }
+  };
 
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -159,6 +174,7 @@ const Contact = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Head>
+      <Schema schema={contactPageSchema} />
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       
@@ -488,7 +504,7 @@ const Contact = () => {
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Service Area</h3>
                         <p className="text-gray-700 font-semibold">Colfax, CA</p>
-                        <p className="text-gray-600 mt-2">Serving all of Placer & Nevada Counties</p>
+                        <p className="text-gray-600 mt-2">Serving all of Placer, Nevada, Sacramento, Yolo & El Dorado Counties</p>
                       </div>
                     </div>
                   </CardContent>
@@ -567,7 +583,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">
-                    We serve all of Placer County and Nevada County, including Colfax, Auburn, Grass Valley, Nevada City, Truckee, and surrounding communities.
+                    We serve all of Placer, Nevada, Sacramento, Yolo, and El Dorado Counties, including Colfax, Auburn, Grass Valley, Nevada City, Truckee, and surrounding communities.
                   </p>
                 </CardContent>
               </Card>

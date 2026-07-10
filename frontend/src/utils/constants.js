@@ -82,7 +82,7 @@ export const SCHEMA_CONFIG = {
     "url": COMPANY_INFO.FULL_URL,
     "logo": `${COMPANY_INFO.FULL_URL}/android-chrome-512x512.png`,
     "image": "https://customer-assets.emergentagent.com/job_finish-woodwork/artifacts/rdyxjzid_Untitled%283%29.png",
-    "description": "Professional finish carpentry and general construction services serving Placer, Nevada, Sacramento, and Yolo Counties in Northern California. Featured on DIY Network TV. Licensed contractor #801602.",
+    "description": "Professional finish carpentry and general construction services serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California. Featured on DIY Network TV. Licensed contractor #801602.",
     "telephone": `(${CONTACT_INFO.PHONE.slice(0, 3)}) ${CONTACT_INFO.PHONE.slice(3, 6)}-${CONTACT_INFO.PHONE.slice(6)}`,
     "email": CONTACT_INFO.EMAIL,
     "priceRange": "$$",

@@ -6,11 +6,75 @@ import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Hammer, Home, Building2, Wrench, DoorOpen, Drill, PaintBucket, Ruler } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
+import { Schema } from '../components/Schema';
 
 const Services = () => {
   const breadcrumbItems = [
     { name: 'Services', url: 'https://www.monconbuild.com/services' }
   ];
+
+  // CollectionPage schema with an ItemList of the six service pages (mirrors the
+  // homepage servicesListSchema); organization referenced by @id, not redeclared.
+  const servicesPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://www.monconbuild.com/services#webpage",
+    "url": "https://www.monconbuild.com/services",
+    "name": "Construction Services | Monument Construction",
+    "description": "Expert finish carpentry, home additions, remodeling & custom woodwork serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties.",
+    "isPartOf": { "@id": "https://www.monconbuild.com/#website" },
+    "about": { "@id": "https://www.monconbuild.com/#organization" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Construction Services",
+      "description": "Professional construction and finish carpentry services offered by Monument Construction",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://www.monconbuild.com/services/finish-carpentry",
+          "name": "Finish Carpentry",
+          "description": "Expert custom woodwork, trim, moldings, and built-ins"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://www.monconbuild.com/services/general-construction",
+          "name": "General Construction",
+          "description": "Complete construction services from foundation to finish"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://www.monconbuild.com/services/residential-projects",
+          "name": "Residential Projects",
+          "description": "Complete residential construction and renovation projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://www.monconbuild.com/services/home-additions",
+          "name": "Home Additions",
+          "description": "Room additions and home expansions"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://www.monconbuild.com/services/custom-woodwork",
+          "name": "Custom Woodwork",
+          "description": "Custom cabinetry and artisan woodwork"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://www.monconbuild.com/services/complete-remodeling",
+          "name": "Complete Remodeling",
+          "description": "Whole-house renovations and remodeling"
+        }
+      ]
+    }
+  };
 
   const testimonials = [
     {
@@ -141,6 +205,7 @@ const Services = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
       </Head>
+      <Schema schema={servicesPageSchema} />
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       
@@ -192,6 +257,22 @@ const Services = () => {
                   <p className="text-sm">Every project is completed to the highest standards. We don't consider a project finished until you're completely satisfied.</p>
                 </div>
               </div>
+
+              <h3 className="text-2xl font-bold mt-10 mb-6 text-gray-900">Which Service Do You Need?</h3>
+              <p>
+                Most homeowners don't think in contractor categories, and you don't have to. If your project is about the details you see and touch every day — trim, molding, built-in cabinetry, a mantel, a library wall — start with our finish carpentry and custom woodwork services. If it's about space, start with home additions when you need more of it, or complete remodeling when the space you have needs to work differently. And when a project touches structure, site work, or multiple trades at once, our general construction service puts one licensed contractor in charge of the whole thing.
+              </p>
+              <p>
+                In practice, the lines blur — and that's our advantage. A kitchen remodel needs structural know-how to open a wall and finish-carpentry precision to make the cabinetry look built with the house. An addition isn't done when it's framed; it's done when the trim inside matches the rest of your home so well that guests can't tell where the original house ends. Because we self-perform the carpentry and manage the construction, you don't have to coordinate between a builder and a finish crew. Bring us the goal, and we'll scope the right combination of services in the consultation.
+              </p>
+
+              <h3 className="text-2xl font-bold mt-10 mb-6 text-gray-900">Built for Northern California Homes</h3>
+              <p>
+                Our five-county service area covers a remarkable range of homes and conditions: Gold Rush-era Victorians in Grass Valley and Placerville, Craftsman bungalows in Sacramento's established neighborhoods, newer custom homes in El Dorado Hills, foothill properties around Colfax and Auburn, and alpine cabins at Truckee and South Lake Tahoe. Every one of our services is delivered with that local context in mind — period-matched millwork on historic homes, Wildland-Urban Interface fire-hardening on wooded foothill lots, snow-load engineering at elevation, and heat- and soil-aware construction on the valley floor.
+              </p>
+              <p>
+                That regional experience also shows in the logistics: we know the permitting offices, inspectors, and suppliers across Placer, Nevada, Sacramento, Yolo, and El Dorado Counties, which keeps projects moving no matter which community you call home.
+              </p>
             </div>
           </div>
         </div>

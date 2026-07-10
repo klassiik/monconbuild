@@ -7,7 +7,7 @@ const TrustBadges = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Monument Construction",
-    "description": "Licensed general contractor and finish carpentry specialist serving Placer County and Nevada County, California.",
+    "description": "Licensed general contractor and finish carpentry specialist serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties, California.",
     "hasCredential": {
       "@type": "EducationalOccupationalCredential",
       "credentialCategory": "license",
@@ -93,7 +93,7 @@ const TrustBadges = () => {
                   </div>
                   <div>
                     <p className="font-semibold mb-2">Service Areas</p>
-                    <p className="text-sm">Placer County & Nevada County, California</p>
+                    <p className="text-sm">Placer, Nevada, Sacramento, Yolo & El Dorado Counties, California</p>
                   </div>
                   <div>
                     <p className="font-semibold mb-2">Professional Affiliations</p>
