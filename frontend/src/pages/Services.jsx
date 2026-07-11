@@ -4,7 +4,7 @@ import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Hammer, Home, Building2, Wrench, DoorOpen, Drill, PaintBucket, Ruler } from 'lucide-react';
+import { Hammer, Home, Building2, Drill, PaintBucket, Ruler } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
 import { Schema } from '../components/Schema';
 
@@ -92,6 +92,8 @@ const Services = () => {
     }
   ];
 
+  // These six cards mirror the six real service pages exactly (titles, order, and
+  // URLs match the nav, footer, "Explore All Services" directory, and page schema).
   const services = [
     {
       icon: <Hammer className="w-12 h-12" />,
@@ -100,32 +102,18 @@ const Services = () => {
       description: "Our specialty and passion. Expert finish carpentry including custom trim work, crown molding, baseboards, door and window casings, wainscoting, and decorative millwork. Every detail is crafted with precision and care.",
       features: [
         "Custom trim and molding installation",
-        "Built-in cabinets and shelving",
+        "Crown molding and baseboards",
+        "Door and window casings",
+        "Wainscoting and paneling",
         "Custom mantels and fireplace surrounds",
-        "Coffered and tray ceilings",
-        "Window seats and built-ins",
-        "Custom woodwork and cabinetry"
+        "Coffered and tray ceilings"
       ]
     },
     {
-      icon: <Home className="w-12 h-12" />,
-      title: "Residential Construction",
+      icon: <Building2 className="w-12 h-12" />,
+      title: "General Construction",
       link: "/services/general-construction",
-      description: "Complete residential construction services from ground work to final touches. We handle every phase of your home project with the same level of craftsmanship and attention to detail.",
-      features: [
-        "New home construction",
-        "Room additions and extensions",
-        "Whole home remodeling",
-        "Kitchen and bathroom renovations",
-        "Deck and patio construction",
-        "Foundation to finish services"
-      ]
-    },
-    {
-      icon: <Wrench className="w-12 h-12" />,
-      title: "Complete Construction Services",
-      link: "/services/general-construction",
-      description: "From groundbreaking to final walkthrough, we provide comprehensive construction services. Our experience allows us to manage every aspect of your project seamlessly.",
+      description: "From groundbreaking to final walkthrough, we provide comprehensive construction services. Our experience allows us to manage every phase and every trade of your project seamlessly.",
       features: [
         "Site preparation and groundwork",
         "Framing and structural work",
@@ -136,59 +124,59 @@ const Services = () => {
       ]
     },
     {
-      icon: <DoorOpen className="w-12 h-12" />,
-      title: "Custom Doors & Windows",
-      link: "/services/finish-carpentry",
-      description: "Expert installation of doors and windows with precise finish carpentry. We ensure proper fit, function, and beautiful trim work for every opening.",
+      icon: <Ruler className="w-12 h-12" />,
+      title: "Residential Projects",
+      link: "/services/residential-projects",
+      description: "Complete residential construction services from ground work to final touches. We handle every phase of your home project with the same level of craftsmanship and attention to detail.",
       features: [
-        "Interior and exterior door installation",
-        "Window installation and replacement",
-        "Custom door and window trim",
-        "Weather sealing and insulation",
-        "Hardware selection and installation",
-        "Specialty and custom openings"
+        "New home construction",
+        "Whole-home renovations",
+        "Kitchen and bathroom remodels",
+        "Deck and patio construction",
+        "Foundation to finish services",
+        "Project management and coordination"
+      ]
+    },
+    {
+      icon: <Home className="w-12 h-12" />,
+      title: "Home Additions",
+      link: "/services/home-additions",
+      description: "Expand your living space with a seamless home addition. From room additions to second stories, we build additions that integrate with your existing home so well you can't tell where the original ends.",
+      features: [
+        "Room additions and extensions",
+        "Second-story additions",
+        "In-law and accessory dwelling units",
+        "Sunrooms and enclosures",
+        "Foundation and framing",
+        "Trim and finish matched to your home"
       ]
     },
     {
       icon: <Drill className="w-12 h-12" />,
-      title: "Remodeling & Renovations",
-      link: "/services/complete-remodeling",
-      description: "Transform your existing space with our expert remodeling services. We bring new life to homes and businesses with quality craftsmanship.",
+      title: "Custom Woodwork",
+      link: "/services/custom-woodwork",
+      description: "Bespoke woodwork and cabinetry tailored to your space. Built-in furniture, custom cabinets, and artisan millwork crafted to your exact vision and your home's character.",
       features: [
-        "Kitchen remodeling",
-        "Bathroom renovations",
-        "Basement finishing",
-        "Historic home restoration",
-        "Interior and exterior updates",
-        "Accessibility modifications"
+        "Built-in cabinets and shelving",
+        "Custom furniture and desks",
+        "Entertainment centers",
+        "Closet systems and organizers",
+        "Custom mantels and surrounds",
+        "Decorative millwork and beams"
       ]
     },
     {
       icon: <PaintBucket className="w-12 h-12" />,
-      title: "Interior Finishing",
-      link: "/services/custom-woodwork",
-      description: "Complete interior finishing services that showcase attention to detail. We create beautiful, functional spaces with quality materials and expert workmanship.",
+      title: "Complete Remodeling",
+      link: "/services/complete-remodeling",
+      description: "Transform your existing space with our expert remodeling services. We bring new life to homes with quality craftsmanship, from a single room to a whole-house renovation.",
       features: [
-        "Hardwood flooring installation",
-        "Tile and stone work",
-        "Custom built-in furniture",
-        "Closet systems and organizers",
-        "Home office installations",
-        "Entertainment centers"
-      ]
-    },
-    {
-      icon: <Ruler className="w-12 h-12" />,
-      title: "Design & Consultation",
-      link: "/contact",
-      description: "Expert guidance from initial concept through completion. We work with you to design solutions that meet your needs, budget, and timeline.",
-      features: [
-        "Project planning and design",
-        "Material selection assistance",
-        "Budget development",
-        "Timeline scheduling",
-        "Code compliance guidance",
-        "Permit coordination"
+        "Kitchen remodeling",
+        "Bathroom renovations",
+        "Whole-house remodels",
+        "Basement finishing",
+        "Historic home restoration",
+        "Interior and exterior updates"
       ]
     }
   ];
@@ -324,11 +312,11 @@ const Services = () => {
               <a href="/services/general-construction" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
                 <span className="text-lg font-semibold text-green-700">General Construction</span>
               </a>
-              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
-                <span className="text-lg font-semibold text-green-700">Home Additions</span>
-              </a>
               <a href="/services/residential-projects" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
                 <span className="text-lg font-semibold text-green-700">Residential Projects</span>
+              </a>
+              <a href="/services/home-additions" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
+                <span className="text-lg font-semibold text-green-700">Home Additions</span>
               </a>
               <a href="/services/custom-woodwork" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
                 <span className="text-lg font-semibold text-green-700">Custom Woodwork</span>
