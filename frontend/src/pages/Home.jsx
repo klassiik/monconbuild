@@ -279,7 +279,7 @@ const Home = () => {
                 <h1 className="text-3xl md:text-4xl font-semibold mb-4 leading-snug">
                   Professional Construction & Finish Carpentry
                 </h1>
-                <p className="text-base md:text-lg mb-6 text-gray-200 leading-relaxed">
+                <p className="text-base md:text-lg mb-6 text-white leading-relaxed">
                   Serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Licensed, experienced, and trusted craftsmanship from ground work to complete construction.
                 </p>
 
@@ -302,7 +302,7 @@ const Home = () => {
                   </Button>
                 </div>
 
-                <p className="mt-4 text-sm text-gray-300">
+                <p className="mt-4 text-sm text-white/90">
                   Licensed &amp; Insured — {COMPANY_INFO.FULL_LICENSE}
                 </p>
               </div>

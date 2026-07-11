@@ -179,7 +179,7 @@ export default function CityLanding() {
                   to={`/services/${s}`}
                   className="group flex items-center justify-between bg-white border border-gray-200 rounded-lg px-5 py-4 hover:border-green-700 hover:shadow-md transition-all"
                 >
-                  <span className="font-semibold text-gray-900">{SERVICE_LABELS[s]}</span>
+                  <span className="font-semibold text-gray-900">{SERVICE_LABELS[s] ?? s}</span>
                   <ArrowRight className="w-4 h-4 text-green-700 group-hover:translate-x-1 transition-transform" />
                 </Link>
               ))}

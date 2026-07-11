@@ -21,7 +21,8 @@ export default function Layout() {
   useEffect(() => {
     const onIdle = () => setMountToaster(true);
     if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(onIdle, { timeout: 3000 });
+      const handle = window.requestIdleCallback(onIdle, { timeout: 3000 });
+      return () => window.cancelIdleCallback(handle);
     } else {
       const t = setTimeout(onIdle, 1500);
       return () => clearTimeout(t);

@@ -42,12 +42,12 @@ const Footer = () => {
                   Professional construction and finish carpentry services serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties.
                 </p>
                 <p className="text-sm font-semibold text-white">
-                  <a 
-                    href="https://www.cslb.ca.gov/801602" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={`https://www.cslb.ca.gov/${COMPANY_INFO.LICENSE}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-blue-400 transition-colors"
-                    aria-label="View California Contractor License #801602"
+                    aria-label={`View California Contractor License #${COMPANY_INFO.LICENSE}`}
                   >
                     {COMPANY_INFO.FULL_LICENSE}
                   </a>

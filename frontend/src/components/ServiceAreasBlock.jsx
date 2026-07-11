@@ -13,10 +13,14 @@ const SERVICE_AREA_CITIES = [
   'Sacramento, CA',
   'Elk Grove, CA',
   'Folsom, CA',
+  'Citrus Heights, CA',
+  'Rancho Cordova, CA',
   'Davis, CA',
   'Woodland, CA',
+  'West Sacramento, CA',
   'El Dorado Hills, CA',
   'South Lake Tahoe, CA',
+  'Placerville, CA',
   'All of Placer, Nevada, Sacramento, Yolo & El Dorado Counties',
 ];
 
