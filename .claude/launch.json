@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "preview:ssg", "--prefix", "frontend", "--", "--port", "4173", "--strictPort"],
       "port": 4173
+    },
+    {
+      "name": "monconbuild-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "frontend", "--", "--port", "5173", "--strictPort"],
+      "port": 5173
     }
   ]
 }
