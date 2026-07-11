@@ -10,14 +10,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  optimizeDeps: {
-    exclude: ['microsoft-clarity'],
-  },
   build: {
     outDir: 'dist',
     sourcemap: false,
     rollupOptions: {
-      external: ['microsoft-clarity'],
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
