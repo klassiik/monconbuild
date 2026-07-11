@@ -10,14 +10,10 @@ export default defineConfig(({ isSsrBuild }) => ({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  optimizeDeps: {
-    exclude: ['microsoft-clarity'],
-  },
   build: {
     outDir: 'dist',
     sourcemap: false,
     rollupOptions: {
-      external: ['microsoft-clarity'],
       // manualChunks only applies to the client build. During the SSR pass
       // (vite-react-ssg), react/react-dom are externalized, so forcing them into
       // a manual vendor chunk throws EXTERNAL_MODULES_CANNOT_BE_INCLUDED_IN_MANUAL_CHUNKS.

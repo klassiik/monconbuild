@@ -42,8 +42,8 @@ export const createRoot = ViteReactSSG(
       // Microsoft Clarity
       runAfterIdle(async () => {
         try {
-          const { clarity } = await import('microsoft-clarity');
-          clarity.init('trqrzo6kg0');
+          const { default: Clarity } = await import('@microsoft/clarity');
+          Clarity.init('trqrzo6kg0');
         } catch (e) {
           // Clarity failed to initialize
         }

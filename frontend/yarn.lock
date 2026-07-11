@@ -403,6 +403,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@microsoft/clarity@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@microsoft/clarity/-/clarity-1.0.2.tgz"
+  integrity sha512-9EZYROFpJxEGmQpHvUFqvD3ZJ7QQSqnibYSWmS+1xusoZfG1QQ1/Al9yVBBc11DWMbJrs1pe1hLT273it/skJg==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -3363,11 +3368,6 @@ micromatch@^4.0.8:
   dependencies:
     braces "^3.0.3"
     picomatch "^2.3.1"
-
-microsoft-clarity@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/microsoft-clarity/-/microsoft-clarity-1.0.0.tgz"
-  integrity sha512-pKgILvxvFN9l/G0CMynPmejFQWm3eOgZriKHF4AZud5gYlxRh8HIjwHbGTJDMcAKK1d5DaaUti1XVRBYZJKfvw==
 
 mime-db@1.52.0:
   version "1.52.0"
