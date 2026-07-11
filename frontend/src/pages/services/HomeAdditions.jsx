@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import Breadcrumb from '../../components/Breadcrumb';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
 import { homeAdditionsFAQs } from '../../data/faqs';
+import ServiceAreasBlock from '../../components/ServiceAreasBlock';
 import { CheckCircle2, Phone, Mail, PlusCircle, Award } from 'lucide-react';
 
 const HomeAdditions = () => {
@@ -19,12 +20,7 @@ const HomeAdditions = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Home Additions",
-    "provider": {
-      "@type": "GeneralContractor",
-      "name": "Monument Construction",
-      "telephone": "(916) 607-1972",
-      "email": "monumentconstruction@comcast.net"
-    },
+    "provider": { "@id": "https://www.monconbuild.com/#organization" },
     "areaServed": [
       { "@type": "City", "name": "Colfax, CA" },
       { "@type": "City", "name": "Auburn, CA" },
@@ -104,25 +100,9 @@ const HomeAdditions = () => {
     "Bump-outs and expansions"
   ];
 
-  const serviceAreas = [
-    "Colfax, CA",
-    "Auburn, CA",
-    "Grass Valley, CA",
-    "Nevada City, CA",
-    "Truckee, CA",
-    "Sacramento, CA",
-    "Elk Grove, CA",
-    "Folsom, CA",
-    "Davis, CA",
-    "Woodland, CA",
-    "El Dorado Hills, CA",
-    "South Lake Tahoe, CA",
-    "All of Placer, Nevada, Sacramento, Yolo & El Dorado Counties"
-  ];
-
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>Home Additions | Colfax CA</title>
         <meta name="description" content="Expert home additions & room expansions in Placer County. Second-story additions, ADUs & more. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/home-additions" />
@@ -136,7 +116,7 @@ const HomeAdditions = () => {
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
-      </Helmet>
+      </Head>
       
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
@@ -149,7 +129,7 @@ const HomeAdditions = () => {
               Home Additions & Extensions in Colfax, CA
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              Expert room additions and home expansions for Placer & Nevada County homes
+              Expert room additions and home expansions for homes across Placer, Nevada, Sacramento, Yolo & El Dorado Counties
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact">
@@ -252,24 +232,13 @@ const HomeAdditions = () => {
                     <li>• 25+ years building experience</li>
                     <li>• Seamless integration with existing home</li>
                     <li>• Full permitting and inspection coordination</li>
-                    <li>• Serving Colfax, Placer & Nevada Counties</li>
+                    <li>• Serving Colfax, Placer, Nevada, Sacramento, Yolo & El Dorado Counties</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">Service Areas</h3>
-            <p className="text-lg text-gray-700 mb-4">
-              Home addition services throughout Northern California:
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 mb-12">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="flex items-center text-gray-700">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2" />
-                  {area}
-                </div>
-              ))}
-            </div>
+            <ServiceAreasBlock intro="Home addition services throughout Northern California:" />
           </div>
         </div>
       </section>

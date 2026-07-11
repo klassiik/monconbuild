@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
 import { completeRemodelingFAQs } from '../../data/faqs';
+import ServiceAreasBlock from '../../components/ServiceAreasBlock';
 import { CheckCircle2, Phone, Mail, Wrench, Award } from 'lucide-react';
 
 const CompleteRemodeling = () => {
@@ -12,12 +13,7 @@ const CompleteRemodeling = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Complete Remodeling",
-    "provider": {
-      "@type": "GeneralContractor",
-      "name": "Monument Construction",
-      "telephone": "(916) 607-1972",
-      "email": "monumentconstruction@comcast.net"
-    },
+    "provider": { "@id": "https://www.monconbuild.com/#organization" },
     "areaServed": [
       { "@type": "City", "name": "Colfax, CA" },
       { "@type": "City", "name": "Auburn, CA" },
@@ -97,25 +93,9 @@ const CompleteRemodeling = () => {
     "Turnkey remodeling solutions"
   ];
 
-  const serviceAreas = [
-    "Colfax, CA",
-    "Auburn, CA",
-    "Grass Valley, CA",
-    "Nevada City, CA",
-    "Truckee, CA",
-    "Sacramento, CA",
-    "Elk Grove, CA",
-    "Folsom, CA",
-    "Davis, CA",
-    "Woodland, CA",
-    "El Dorado Hills, CA",
-    "South Lake Tahoe, CA",
-    "All of Placer, Nevada, Sacramento, Yolo & El Dorado Counties"
-  ];
-
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>Home Remodeling | Colfax CA</title>
         <meta name="description" content="Full-service home remodeling in Colfax & Placer County. Complete transformations with expert craftsmanship & attention." />
         <link rel="canonical" href="https://www.monconbuild.com/services/complete-remodeling" />
@@ -129,7 +109,7 @@ const CompleteRemodeling = () => {
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
-      </Helmet>
+      </Head>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">
@@ -138,7 +118,7 @@ const CompleteRemodeling = () => {
               Complete Home Remodeling in Colfax, California
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              Full-service remodeling and renovation for Placer & Nevada County homeowners
+              Full-service remodeling and renovation for homeowners across Placer, Nevada, Sacramento, Yolo & El Dorado Counties
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact">
@@ -241,24 +221,13 @@ const CompleteRemodeling = () => {
                     <li>• Featured on DIY Network TV</li>
                     <li>• 25+ years remodeling experience</li>
                     <li>• Complete project management</li>
-                    <li>• Serving Colfax, Placer & Nevada Counties</li>
+                    <li>• Serving Colfax, Placer, Nevada, Sacramento, Yolo & El Dorado Counties</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">Service Areas</h3>
-            <p className="text-lg text-gray-700 mb-4">
-              Complete remodeling services throughout Northern California:
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 mb-12">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="flex items-center text-gray-700">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2" />
-                  {area}
-                </div>
-              ))}
-            </div>
+            <ServiceAreasBlock intro="Complete remodeling services throughout Northern California:" />
           </div>
         </div>
       </section>

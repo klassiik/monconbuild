@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronRight, Home } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 
 /**
  * Breadcrumb Component with Schema.org Structured Data
@@ -27,11 +27,11 @@ const Breadcrumb = ({ items }) => {
   return (
     <>
       {/* Inject Breadcrumb Schema */}
-      <Helmet>
+      <Head>
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
         </script>
-      </Helmet>
+      </Head>
 
       {/* Visual Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200">

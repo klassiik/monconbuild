@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
 import { generalConstructionFAQs } from '../../data/faqs';
+import ServiceAreasBlock from '../../components/ServiceAreasBlock';
 import { CheckCircle2, Phone, Mail, Building2, Award } from 'lucide-react';
 
 const GeneralConstruction = () => {
@@ -12,12 +13,7 @@ const GeneralConstruction = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "General Construction",
-    "provider": {
-      "@type": "GeneralContractor",
-      "name": "Monument Construction",
-      "telephone": "(916) 607-1972",
-      "email": "monumentconstruction@comcast.net"
-    },
+    "provider": { "@id": "https://www.monconbuild.com/#organization" },
     "areaServed": [
       { "@type": "City", "name": "Colfax, CA" },
       { "@type": "City", "name": "Auburn, CA" },
@@ -97,25 +93,9 @@ const GeneralConstruction = () => {
     "Complete project management"
   ];
 
-  const serviceAreas = [
-    "Colfax, CA",
-    "Auburn, CA", 
-    "Grass Valley, CA",
-    "Nevada City, CA",
-    "Truckee, CA",
-    "Sacramento, CA",
-    "Elk Grove, CA",
-    "Folsom, CA",
-    "Davis, CA",
-    "Woodland, CA",
-    "El Dorado Hills, CA",
-    "South Lake Tahoe, CA",
-    "All of Placer, Nevada, Sacramento, Yolo & El Dorado Counties"
-  ];
-
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>General Contracting | Colfax CA</title>
         <meta name="description" content="Full-service general construction in Placer County. New homes, remodels, additions & more. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/general-construction" />
@@ -129,7 +109,7 @@ const GeneralConstruction = () => {
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
-      </Helmet>
+      </Head>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">
@@ -138,7 +118,7 @@ const GeneralConstruction = () => {
               General Construction Services in Colfax, California
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              Licensed general contractor providing complete construction solutions in Placer & Nevada Counties
+              Licensed general contractor providing complete construction solutions in Placer, Nevada, Sacramento, Yolo & El Dorado Counties
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact">
@@ -191,6 +171,57 @@ const GeneralConstruction = () => {
               ))}
             </div>
 
+            <h3 className="text-2xl font-bold mb-6 text-gray-900">How a Project Runs With Us</h3>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Site Evaluation & Planning</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Every project starts on the property, not on paper. We walk the site with you, assess existing conditions — soil, slope, access, utilities — and talk honestly about scope, budget, and timeline before anything is drawn. On older homes we look for the structural surprises that tend to surface once walls open up, so they're planned for rather than discovered.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">2</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Permits & Engineering</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  We prepare and submit plans, coordinate structural engineering where it's required, and manage plan check with whichever authority has jurisdiction — city building departments or the county offices of Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. You don't chase paperwork; we do.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Construction & Trade Coordination</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  From site preparation and foundation work through framing, roofing, and siding, we self-perform the carpentry and schedule the specialized trades — electrical, plumbing, HVAC — around a single coherent timeline. Inspections are booked at each phase so the job never stalls waiting on a sign-off.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                <div className="flex items-start mb-3">
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">4</div>
+                  <h4 className="text-lg font-semibold text-gray-900">Finish Work & Final Walkthrough</h4>
+                </div>
+                <p className="text-gray-700 text-sm">
+                  This is where our finish-carpentry background shows. Drywall, flooring, cabinetry, doors, and trim are completed to the standard of a company that built its name on the details, and we close out with a punch list, final inspection, and a walkthrough of everything we built.
+                </p>
+              </div>
+            </div>
+
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">Building From the Valley Floor to the High Sierra</h3>
+            <p className="text-lg text-gray-700 mb-6">
+              Our five-county service area spans an unusual range of building conditions — from Sacramento Valley neighborhoods near sea level to foothill towns like Colfax and Grass Valley, and on up to Truckee and South Lake Tahoe above 6,000 feet. General construction here isn't one-size-fits-all, and our estimates and plans reflect the site you actually have.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              In the foothills, that means engineering foundations and decks for sloped, wooded lots, managing drainage on hillsides, and building to Wildland-Urban Interface fire standards — enclosed eaves, ember-resistant vents, and non-combustible exterior details where the code requires them. At elevation, roofs and structures are designed for real snow loads and a short building season. Down in the valley, hot-summer climates and expansive clay soils drive material choices and foundation planning, especially on older homes.
+            </p>
+            <p className="text-lg text-gray-700 mb-8">
+              Hiring us as your general contractor means one point of responsibility for all of it: scheduling, materials procurement, subcontractor management, code compliance, and quality control from the first day of groundwork to the last coat of paint. That single-point accountability — backed by 25+ years in these specific communities — is what keeps projects on budget and out of dispute.
+            </p>
+
             <div className="bg-green-50 p-8 rounded-lg mb-12">
               <div className="flex items-start mb-4">
                 <Award className="w-8 h-8 text-green-800 mr-4 flex-shrink-0" />
@@ -201,24 +232,16 @@ const GeneralConstruction = () => {
                     <li>• 25+ years construction experience</li>
                     <li>• Featured on DIY Network</li>
                     <li>• Fully insured and bonded</li>
-                    <li>• Serving Placer & Nevada Counties</li>
+                    <li>• Serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">Areas We Serve</h3>
-            <p className="text-lg text-gray-700 mb-4">
-              Professional general construction services throughout Northern California:
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 mb-12">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="flex items-center text-gray-700">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mr-2" />
-                  {area}
-                </div>
-              ))}
-            </div>
+            <ServiceAreasBlock
+              heading="Areas We Serve"
+              intro="Professional general construction services throughout Northern California:"
+            />
           </div>
         </div>
       </section>

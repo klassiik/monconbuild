@@ -82,7 +82,7 @@ export const SCHEMA_CONFIG = {
     "url": COMPANY_INFO.FULL_URL,
     "logo": `${COMPANY_INFO.FULL_URL}/android-chrome-512x512.png`,
     "image": "https://customer-assets.emergentagent.com/job_finish-woodwork/artifacts/rdyxjzid_Untitled%283%29.png",
-    "description": "Professional finish carpentry and general construction services serving Placer, Nevada, Sacramento, and Yolo Counties in Northern California. Featured on DIY Network TV. Licensed contractor #801602.",
+    "description": "Professional finish carpentry and general construction services serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California. Featured on DIY Network TV. Licensed contractor #801602.",
     "telephone": `(${CONTACT_INFO.PHONE.slice(0, 3)}) ${CONTACT_INFO.PHONE.slice(3, 6)}-${CONTACT_INFO.PHONE.slice(6)}`,
     "email": CONTACT_INFO.EMAIL,
     "priceRange": "$$",
@@ -117,14 +117,11 @@ export const SCHEMA_CONFIG = {
       { "@type": "City", "name": "Placerville", "containedInPlace": { "@type": "AdministrativeArea", "name": "El Dorado County", "containedInPlace": { "@type": "State", "name": "California" } } },
       { "@type": "City", "name": "Cameron Park", "containedInPlace": { "@type": "AdministrativeArea", "name": "El Dorado County", "containedInPlace": { "@type": "State", "name": "California" } } },
       { "@type": "City", "name": "Diamond Springs", "containedInPlace": { "@type": "AdministrativeArea", "name": "El Dorado County", "containedInPlace": { "@type": "State", "name": "California" } } }
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "50",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
+    ]
+    // NOTE: aggregateRating intentionally omitted. Do not add hardcoded rating/review
+    // counts here — Google's structured-data policy requires ratings to be sourced from
+    // genuine, on-page-visible reviews. Wire this to a real review platform (e.g. Google
+    // Business Profile) before re-adding.
   }
 };
 

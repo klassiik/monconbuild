@@ -1,15 +1,52 @@
 import React from 'react';
-
-import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { MapPin, Phone, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, CheckCircle2, ArrowRight } from 'lucide-react';
+import { CITIES } from '../data/cities';
+import { Schema } from '../components/Schema';
 
 const ServiceAreas = () => {
   const breadcrumbItems = [
     { name: 'Service Areas', url: 'https://www.monconbuild.com/service-areas' }
   ];
+
+  // CollectionPage schema: lists the served counties as AdministrativeAreas and
+  // the per-city landing pages; organization referenced by @id, not redeclared.
+  const serviceAreasPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://www.monconbuild.com/service-areas#webpage",
+    "url": "https://www.monconbuild.com/service-areas",
+    "name": "Service Areas | Monument Construction",
+    "description": "Construction and finish carpentry service areas across Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California.",
+    "isPartOf": { "@id": "https://www.monconbuild.com/#website" },
+    "about": { "@id": "https://www.monconbuild.com/#organization" },
+    "spatialCoverage": [
+      "Placer County",
+      "Nevada County",
+      "Sacramento County",
+      "Yolo County",
+      "El Dorado County"
+    ].map((name) => ({
+      "@type": "AdministrativeArea",
+      "name": name,
+      "containedInPlace": { "@type": "State", "name": "California" }
+    })),
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "City Service Pages",
+      "numberOfItems": CITIES.length,
+      "itemListElement": CITIES.map((c, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "url": `https://www.monconbuild.com/service-areas/${c.slug}`,
+        "name": `${c.name}, CA`
+      }))
+    }
+  };
 
   const counties = [
     {
@@ -109,16 +146,17 @@ const ServiceAreas = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>Service Areas | Northern California</title>
-        <meta name="description" content="Serving Placer, Nevada, Sacramento & El Dorado Counties: Colfax, Auburn, Roseville, Grass Valley, El Dorado Hills, South Lake Tahoe & more." />
+        <meta name="description" content="Serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties: Colfax, Auburn, Grass Valley, El Dorado Hills, Placerville, South Lake Tahoe, Sacramento & more." />
         <link rel="canonical" href="https://www.monconbuild.com/service-areas" />
         <meta property="og:title" content="Service Areas | Northern California" />
-        <meta property="og:description" content="Serving Placer, Nevada, Sacramento & El Dorado Counties: Colfax, Auburn, Roseville, Grass Valley, El Dorado Hills, South Lake Tahoe & more." />
+        <meta property="og:description" content="Serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties: Colfax, Auburn, Grass Valley, El Dorado Hills, Placerville, South Lake Tahoe, Sacramento & more." />
         <meta property="og:url" content="https://www.monconbuild.com/service-areas" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
-      </Helmet>
+      </Head>
+      <Schema schema={serviceAreasPageSchema} />
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       
@@ -134,6 +172,39 @@ const ServiceAreas = () => {
         </div>
       </section>
 
+      {/* Featured Cities (hub -> spoke links to city landing pages) */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 text-center">
+              Explore Our Work by City
+            </h2>
+            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+              Local building knowledge for the communities we serve most — from foothill fire zones to Tahoe's TRPA requirements.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {CITIES.map((c) => (
+                <Link
+                  key={c.slug}
+                  to={`/service-areas/${c.slug}`}
+                  className="group bg-white border border-gray-200 rounded-lg p-6 hover:border-green-700 hover:shadow-md transition-all"
+                >
+                  <div className="flex items-center gap-2 text-green-700 mb-2">
+                    <MapPin className="w-5 h-5" />
+                    <span className="font-bold text-lg text-gray-900">{c.name}</span>
+                  </div>
+                  <p className="text-sm text-gray-500 mb-3">{c.county} &middot; {c.region}</p>
+                  <span className="inline-flex items-center gap-1 text-green-700 font-semibold text-sm">
+                    {c.name} services
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Service Areas Introduction */}
       <section className="py-20 md:py-28 bg-gray-50">
         <div className="container mx-auto px-6 md:px-12">
@@ -141,11 +212,11 @@ const ServiceAreas = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Where We Serve</h2>
             <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
               <p>
-                Monument Construction serves a wide geographic area throughout Northern California, with a primary focus on Placer County and Nevada County. Since our founding, we've been the trusted construction and finish carpentry partner for homeowners in Colfax and the surrounding communities.
+                Monument Construction serves a wide geographic area throughout Northern California, with a primary focus on Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Since our founding, we've been the trusted construction and finish carpentry partner for homeowners in Colfax and the surrounding communities.
               </p>
 
               <p>
-                Our service area includes Colfax, Auburn, Grass Valley, Nevada City, Truckee, and all surrounding communities in Placer and Nevada Counties. Whether you're located in a rural mountain community or a more developed suburban area, we bring the same level of professionalism, craftsmanship, and customer service to every project.
+                Our service area includes Colfax, Auburn, Grass Valley, Nevada City, Truckee, and all surrounding communities in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Whether you're located in a rural mountain community or a more developed suburban area, we bring the same level of professionalism, craftsmanship, and customer service to every project.
               </p>
 
               <p>
@@ -184,7 +255,7 @@ const ServiceAreas = () => {
             <MapPin className="w-16 h-16 text-green-700 mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Based in Colfax, California</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Monument Construction is headquartered in Colfax, CA, in the heart of Placer County. From this central location, we serve communities throughout Placer and Nevada Counties, bringing quality craftsmanship to your doorstep.
+              Monument Construction is headquartered in Colfax, CA, in the heart of Placer County. From this central location, we serve communities throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties, bringing quality craftsmanship to your doorstep.
             </p>
           </div>
 
@@ -295,7 +366,7 @@ const ServiceAreas = () => {
               </p>
               
               <p>
-                If you're located outside our primary service area but still in Placer or Nevada County, please don't hesitate to reach out. We're often able to accommodate projects in surrounding areas.
+                If you're located outside our core communities but still within our five-county Northern California service area, please don't hesitate to reach out. We're often able to accommodate projects in surrounding areas.
               </p>
             </div>
           </div>
@@ -307,7 +378,7 @@ const ServiceAreas = () => {
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Serving Your Community</h2>
           <p className="text-xl mb-10 text-white max-w-3xl mx-auto">
-            Contact Monument Construction today to discuss your project, regardless of where you're located in Placer or Nevada County.
+            Contact Monument Construction today to discuss your project, no matter where you're located across our five-county Northern California service area.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
@@ -372,7 +443,7 @@ const ServiceAreas = () => {
         <div className="container mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Our Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Monument Construction provides expert construction and carpentry services throughout Placer and Nevada Counties, California.
+            Monument Construction provides expert construction and carpentry services throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties, California.
           </p>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -1,15 +1,55 @@
 import React from 'react';
 
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import { Award, CheckCircle2, Tv, Users, Hammer, Star, Instagram } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
+import { Schema } from '../components/Schema';
 
 const About = () => {
   const breadcrumbItems = [
     { name: 'About', url: 'https://www.monconbuild.com/about' }
   ];
+
+  // AboutPage + owner Person schema; the organization itself is declared once in
+  // index.html (#organization) and only referenced here by @id.
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://www.monconbuild.com/about#webpage",
+        "url": "https://www.monconbuild.com/about",
+        "name": "About Monument Construction",
+        "description": "25+ years of trusted finish carpentry & construction in Northern CA. Licensed contractor serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties.",
+        "isPartOf": { "@id": "https://www.monconbuild.com/#website" },
+        "about": { "@id": "https://www.monconbuild.com/#organization" },
+        "mainEntity": { "@id": "https://www.monconbuild.com/#organization" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.monconbuild.com/about#william-rogers",
+        "name": "William Rogers",
+        "jobTitle": "Owner & Master Craftsman",
+        "worksFor": { "@id": "https://www.monconbuild.com/#organization" },
+        "description": "Licensed general contractor and finish carpenter with over 25 years of experience serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Featured in multiple episodes on DIY Network television.",
+        "knowsAbout": [
+          "Finish carpentry",
+          "Residential construction",
+          "Home additions",
+          "Custom woodwork",
+          "Home remodeling"
+        ],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "license",
+          "name": "California Contractor License #801602",
+          "url": "https://www.cslb.ca.gov/801602"
+        }
+      }
+    ]
+  };
 
   const testimonials = [
     {
@@ -29,7 +69,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>About Monument Construction</title>
         <meta name="description" content="25+ years of trusted finish carpentry & construction in Northern CA. Licensed contractor serving Placer, Nevada, Sacramento & El Dorado Counties." />
         <link rel="canonical" href="https://www.monconbuild.com/about" />
@@ -38,7 +78,8 @@ const About = () => {
         <meta property="og:url" content="https://www.monconbuild.com/about" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
-      </Helmet>
+      </Head>
+      <Schema schema={aboutPageSchema} />
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
       
@@ -48,7 +89,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">About Monument Construction</h1>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-              Quality craftsmanship and trusted service in Placer and Nevada Counties since day one.
+              Quality craftsmanship and trusted service in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties since day one.
             </p>
           </div>
         </div>
@@ -148,7 +189,7 @@ const About = () => {
             <div className="p-8 bg-slate-50 rounded-lg">
               <Star className="w-12 h-12 text-green-700 mb-4" />
               <h3 className="text-xl font-bold mb-3 text-slate-900">Local Expertise</h3>
-              <p className="text-gray-600">Deep knowledge of Placer and Nevada County building and communities.</p>
+              <p className="text-gray-600">Deep knowledge of building codes and communities across Placer, Nevada, Sacramento, Yolo &amp; El Dorado Counties.</p>
             </div>
           </div>
 
@@ -185,7 +226,7 @@ const About = () => {
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Serving Your Community</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Proudly serving Colfax and surrounding areas in Placer and Nevada Counties.
+            Proudly serving Colfax and surrounding areas in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties.
           </p>
           
           <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto mb-12">
@@ -285,7 +326,7 @@ const About = () => {
         <div className="container mx-auto px-6 md:px-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Our Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            We specialize in a wide range of construction and finish carpentry services throughout Placer and Nevada Counties, California.
+            We specialize in a wide range of construction and finish carpentry services throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties, California.
           </p>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

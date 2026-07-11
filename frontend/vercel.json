@@ -4,10 +4,15 @@
   "outputDirectory": "dist",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "rewrites": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
     {
-      "source": "/:path((?!.*\\.txt$).*)",
-      "destination": "/index.html"
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "monconbuild.com" }],
+      "destination": "https://www.monconbuild.com/:path*",
+      "permanent": true
     }
   ],
   "headers": [

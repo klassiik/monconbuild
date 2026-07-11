@@ -395,14 +395,10 @@ Allow: /js/
 }
 ```
 
-### 3. **Add HowTo Schema** (Portfolio pages)
-```json
-{
-  "@type": "HowTo",
-  "name": "How to Install Crown Molding",
-  "step": [...]
-}
-```
+### 3. ~~Add HowTo Schema~~ (DO NOT IMPLEMENT)
+> **Deprecated:** Google removed HowTo rich results from search (desktop and
+> mobile) in 2023. HowTo markup no longer produces any rich result — do not add
+> it.
 
 ### 4. **Add Video Schema** (Future)
 If adding project videos to portfolio

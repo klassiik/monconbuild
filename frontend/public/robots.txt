@@ -1,18 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
 Sitemap: https://www.monconbuild.com/sitemap.xml
-
-# Crawl delay
-Crawl-delay: 1
-
-# Disallow admin pages (if any)
-Disallow: /admin/
-Disallow: /_next/
-Disallow: /api/
-
-# Allow important resources
-Allow: /images/
-Allow: /css/
-Allow: /js/

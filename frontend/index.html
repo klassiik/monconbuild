@@ -2,9 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monconbuild - Professional Construction Services</title>
+    <meta name="theme-color" content="#1e40af" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- title + description are set per route via vite-react-ssg <Head> (react-helmet);
+         kept out of the static template to avoid duplicate tags in the prerendered HTML. -->
+    <meta name="author" content="Monument Construction" />
+    <meta
+      name="keywords"
+      content="general contractor Colfax CA, finish carpenter Placer County, construction company Nevada County CA, home remodeling Colfax California, Monument Construction, licensed contractor 801602"
+    />
+
+    <!-- Performance: resource hints -->
+    <link rel="preconnect" href="https://customer-assets.emergentagent.com" crossorigin />
+    <link rel="dns-prefetch" href="https://customer-assets.emergentagent.com" />
+    <!-- Preload hero image for faster LCP -->
+    <link rel="preload" href="/hero.webp" as="image" fetchpriority="high" />
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJ484TJRM6"></script>
     <script>
@@ -28,8 +49,86 @@
         y.parentNode.insertBefore(t, y);
       })(window, document, "clarity", "script", "trqrzo6kg0");
     </script>
+
+    <!-- Organization / GeneralContractor schema (baked into raw HTML so it ships without JS) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "@id": "https://www.monconbuild.com/#organization",
+      "name": "Monument Construction",
+      "alternateName": "Monument Construction Colfax",
+      "url": "https://www.monconbuild.com",
+      "logo": "https://www.monconbuild.com/android-chrome-512x512.png",
+      "image": "https://www.monconbuild.com/hero.webp",
+      "description": "Professional finish carpentry and general construction services in Colfax, CA serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Featured on DIY Network TV. Licensed contractor #801602.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Colfax",
+        "addressRegion": "CA",
+        "postalCode": "95713",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.1007",
+        "longitude": "-120.9535"
+      },
+      "telephone": "(916) 607-1972",
+      "email": "monumentconstruction@comcast.net",
+      "priceRange": "$$",
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Placer County", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "AdministrativeArea", "name": "Nevada County", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "AdministrativeArea", "name": "Sacramento County", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "AdministrativeArea", "name": "Yolo County", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "AdministrativeArea", "name": "El Dorado County", "containedInPlace": { "@type": "State", "name": "California" } },
+        { "@type": "City", "name": "Colfax" },
+        { "@type": "City", "name": "Auburn" },
+        { "@type": "City", "name": "Grass Valley" },
+        { "@type": "City", "name": "Sacramento" },
+        { "@type": "City", "name": "El Dorado Hills" },
+        { "@type": "City", "name": "Placerville" },
+        { "@type": "City", "name": "South Lake Tahoe" }
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "license",
+        "name": "California Contractor License #801602"
+      },
+      "sameAs": [
+        "https://www.instagram.com/wrconstruct7/"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "(916) 607-1972",
+        "contactType": "customer service",
+        "areaServed": ["US"],
+        "availableLanguage": ["English"]
+      }
+    }
+    </script>
+
+    <!-- WebSite schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.monconbuild.com/#website",
+      "name": "Monument Construction",
+      "url": "https://www.monconbuild.com",
+      "publisher": { "@id": "https://www.monconbuild.com/#organization" }
+    }
+    </script>
   </head>
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
   </body>

@@ -1,75 +1,53 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { HelmetProvider } from 'react-helmet-async';
+import { ViteReactSSG } from 'vite-react-ssg';
+import { routes } from '@/App';
 import "@/index.css";
-import App from "@/App";
-// Defer performance scripts to reduce main bundle size and JS execution on load
-// We'll dynamically import web vitals after the page is idle in production
 
-// Register service worker for aggressive caching
-if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(() => {
-        // Service worker registered successfully
-      })
-      .catch(() => {
-        // Service worker registration failed
+// vite-react-ssg drives rendering/hydration and provides the Head (react-helmet)
+// context, so no manual createRoot/hydrateRoot or HelmetProvider is needed here.
+export const createRoot = ViteReactSSG(
+  { routes },
+  ({ isClient }) => {
+    // Client-only side effects (skipped during static generation)
+    if (!isClient) return;
+
+    // Register service worker for aggressive caching
+    if ('serviceWorker' in navigator && import.meta.env.PROD) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {
+          // Service worker registration failed
+        });
       });
-  });
-}
-
-// Initialize performance monitoring (deferred and production-only)
-if (process.env.NODE_ENV === 'production') {
-  const runAfterIdle = (cb) => {
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(cb, { timeout: 3000 });
-    } else {
-      setTimeout(cb, 1500);
     }
-  };
 
-  runAfterIdle(async () => {
-    try {
-      const mod = await import('./utils/webVitals');
-      mod.initializeWebVitals?.();
-      mod.initializePerformanceObserver?.();
-    } catch (e) {
-      // Performance monitoring failed to load
+    if (import.meta.env.PROD) {
+      const runAfterIdle = (cb) => {
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(cb, { timeout: 3000 });
+        } else {
+          setTimeout(cb, 1500);
+        }
+      };
+
+      // Deferred performance monitoring
+      runAfterIdle(async () => {
+        try {
+          const mod = await import('./utils/webVitals');
+          mod.initializeWebVitals?.();
+          mod.initializePerformanceObserver?.();
+        } catch (e) {
+          // Performance monitoring failed to load
+        }
+      });
+
+      // Microsoft Clarity
+      runAfterIdle(async () => {
+        try {
+          const { default: Clarity } = await import('@microsoft/clarity');
+          Clarity.init('trqrzo6kg0');
+        } catch (e) {
+          // Clarity failed to initialize
+        }
+      });
     }
-  });
-
-  // Initialize Microsoft Clarity
-  runAfterIdle(async () => {
-    try {
-      const { default: Clarity } = await import('@microsoft/clarity');
-      Clarity.init('trqrzo6kg0');
-    } catch (e) {
-      // Clarity failed to initialize
-    }
-  });
-}
-
-const rootElement = document.getElementById("root");
-
-// Use hydrate if the HTML is pre-rendered (from react-snap)
-// Otherwise use render for development
-if (rootElement.hasChildNodes()) {
-  ReactDOM.hydrateRoot(
-    rootElement,
-    <React.StrictMode>
-      <HelmetProvider>
-        <App />
-      </HelmetProvider>
-    </React.StrictMode>
-  );
-} else {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
-    <React.StrictMode>
-      <HelmetProvider>
-        <App />
-      </HelmetProvider>
-    </React.StrictMode>
-  );
-}
+  },
+);

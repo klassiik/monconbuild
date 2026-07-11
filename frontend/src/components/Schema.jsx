@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 
 /**
  * Schema Component - Injects JSON-LD structured data into page head
@@ -7,11 +7,11 @@ import { Helmet } from 'react-helmet-async';
  */
 export const Schema = ({ schema }) => {
   return (
-    <Helmet>
+    <Head>
       <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
-    </Helmet>
+    </Head>
   );
 };
 
@@ -43,19 +43,7 @@ export const ServiceSchema = ({ service }) => {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": service.name,
-    "provider": {
-      "@type": "GeneralContractor",
-      "name": "Monument Construction",
-      "telephone": "(916) 607-1972",
-      "email": "monumentconstruction@comcast.net",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Colfax",
-        "addressRegion": "CA",
-        "postalCode": "95713",
-        "addressCountry": "US"
-      }
-    },
+    "provider": { "@id": "https://www.monconbuild.com/#organization" },
     "areaServed": [
       { "@type": "City", "name": "Colfax, CA" },
       { "@type": "City", "name": "Auburn, CA" },
@@ -102,18 +90,8 @@ export const PageSchema = ({ page }) => {
     "name": page.title,
     "description": page.description,
     "url": page.url,
-    "mainEntity": {
-      "@type": "GeneralContractor",
-      "name": "Monument Construction"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Monument Construction",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.monconbuild.com/android-chrome-512x512.png"
-      }
-    },
+    "mainEntity": { "@id": "https://www.monconbuild.com/#organization" },
+    "publisher": { "@id": "https://www.monconbuild.com/#organization" },
     "datePublished": page.datePublished || "2024-01-01",
     "dateModified": page.dateModified || new Date().toISOString().split('T')[0]
   };
@@ -160,19 +138,8 @@ export const ImageGallerySchema = ({ gallery }) => {
       "caption": img.caption || img.name,
       "contentLocation": img.location || "Northern California"
     })),
-    "creator": {
-      "@type": "GeneralContractor",
-      "name": "Monument Construction",
-      "@id": "https://www.monconbuild.com/#organization"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Monument Construction",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.monconbuild.com/android-chrome-512x512.png"
-      }
-    }
+    "creator": { "@id": "https://www.monconbuild.com/#organization" },
+    "publisher": { "@id": "https://www.monconbuild.com/#organization" }
   };
 
   return <Schema schema={schema} />;
@@ -193,12 +160,7 @@ export const CreativeWorkSchema = ({ project }) => {
     "image": project.images.map(img => 
       img.startsWith('http') ? img : `https://www.monconbuild.com${img}`
     ),
-    "creator": {
-      "@type": "GeneralContractor",
-      "name": "Monument Construction",
-      "@id": "https://www.monconbuild.com/#organization",
-      "telephone": "(916) 607-1972"
-    },
+    "creator": { "@id": "https://www.monconbuild.com/#organization" },
     "locationCreated": {
       "@type": "Place",
       "name": project.location,
@@ -248,14 +210,7 @@ export const PortfolioPageSchema = ({ projects }) => {
         { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.monconbuild.com/portfolio" }
       ]
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Monument Construction",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.monconbuild.com/android-chrome-512x512.png"
-      }
-    }
+    "publisher": { "@id": "https://www.monconbuild.com/#organization" }
   };
 
   return <Schema schema={schema} />;
