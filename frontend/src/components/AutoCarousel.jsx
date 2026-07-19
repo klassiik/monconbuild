@@ -27,10 +27,40 @@ const AutoCarousel = ({
   // never reports; the observer is only used to PAUSE while scrolled off-screen.
   const [inView, setInView] = useState(true);
   const containerRef = useRef(null);
+  const touchRef = useRef(null); // gesture start point
+  const swipedRef = useRef(false); // suppress the click that follows a swipe
 
   const count = slides.length;
   const next = useCallback(() => setIndex((i) => (i + 1) % count), [count]);
   const prev = useCallback(() => setIndex((i) => (i - 1 + count) % count), [count]);
+
+  const handleTouchStart = (e) => {
+    touchRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    setPaused(true);
+  };
+
+  const handleTouchEnd = (e) => {
+    const start = touchRef.current;
+    touchRef.current = null;
+    setPaused(false);
+    if (!start) return;
+    const dx = e.changedTouches[0].clientX - start.x;
+    const dy = e.changedTouches[0].clientY - start.y;
+    // Horizontal intent only, so vertical page scrolling is left alone.
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      swipedRef.current = true;
+      if (dx < 0) next();
+      else prev();
+    }
+  };
+
+  const handleSlideClick = () => {
+    if (swipedRef.current) {
+      swipedRef.current = false;
+      return;
+    }
+    onSlideClick?.(index);
+  };
 
   // Respect the user's reduced-motion preference.
   useEffect(() => {
@@ -76,14 +106,18 @@ const AutoCarousel = ({
       aria-roledescription="carousel"
       aria-label="Featured projects slideshow"
     >
-      <div className={`relative ${aspectClass} w-full overflow-hidden rounded-xl shadow-2xl bg-slate-200`}>
+      <div
+        className={`relative ${aspectClass} w-full overflow-hidden rounded-xl shadow-2xl bg-slate-200 touch-pan-y`}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {slides.map((slide, i) => (
           <button
             key={slide.src}
             type="button"
             tabIndex={i === index ? 0 : -1}
             aria-hidden={i === index ? undefined : true}
-            onClick={() => onSlideClick?.(index)}
+            onClick={handleSlideClick}
             className={`absolute inset-0 h-full w-full cursor-pointer transition-opacity duration-700 ease-in-out ${
               i === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
             }`}
