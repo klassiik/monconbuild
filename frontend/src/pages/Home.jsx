@@ -321,8 +321,51 @@ const Home = () => {
             </div>
           </section>
 
+          {/* Portfolio Preview */}
+          <section className="py-20 md:py-28 bg-slate-50">
+            <div className="container mx-auto px-6 md:px-12">
+              <div className="text-center mb-10 md:mb-12">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Our Work</h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  Quality craftsmanship across Placer, Nevada, Sacramento, Yolo &amp; El Dorado Counties.
+                </p>
+              </div>
+
+              {/* Featured auto-slideshow */}
+              <div className="max-w-4xl mx-auto mb-12 md:mb-16">
+                <AutoCarousel
+                  slides={featuredSlides}
+                  aspectClass="aspect-[4/3]"
+                  onSlideClick={(i) => {
+                    setGalleryIndex(i);
+                    setGalleryOpen(true);
+                  }}
+                />
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {portfolio.map((project, index) => (
+                  <PortfolioImage key={index} project={project} index={index} />
+                ))}
+              </div>
+
+              <div className="text-center">
+                <Button
+                  size="lg"
+                  className="bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
+                  asChild
+                >
+                  <Link to="/portfolio">View Full Portfolio</Link>
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Testimonials Section */}
+          <Testimonials testimonials={testimonials} showImages={true} />
+
           {/* Services Section */}
-          <section className="py-20 md:py-28 bg-white">
+          <section className="py-20 md:py-28 bg-slate-50">
             <div className="container mx-auto px-6 md:px-12">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Our Services</h2>
@@ -356,49 +399,6 @@ const Home = () => {
                   asChild
                 >
                   <Link to="/services">View All Services</Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* Testimonials Section */}
-          <Testimonials testimonials={testimonials} showImages={true} />
-
-          {/* Portfolio Preview */}
-          <section className="py-20 md:py-28 bg-slate-50">
-            <div className="container mx-auto px-6 md:px-12">
-              <div className="text-center mb-10 md:mb-12">
-                <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Our Work</h2>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  Quality craftsmanship across Placer, Nevada, Sacramento, Yolo &amp; El Dorado Counties.
-                </p>
-              </div>
-
-              {/* Featured auto-slideshow */}
-              <div className="max-w-4xl mx-auto mb-12 md:mb-16">
-                <AutoCarousel
-                  slides={featuredSlides}
-                  aspectClass="aspect-[4/3]"
-                  onSlideClick={(i) => {
-                    setGalleryIndex(i);
-                    setGalleryOpen(true);
-                  }}
-                />
-              </div>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                {portfolio.map((project, index) => (
-                  <PortfolioImage key={index} project={project} index={index} />
-                ))}
-              </div>
-
-              <div className="text-center">
-                <Button 
-                  size="lg" 
-                  className="bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
-                  asChild
-                >
-                  <Link to="/portfolio">View Full Portfolio</Link>
                 </Button>
               </div>
             </div>
