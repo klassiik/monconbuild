@@ -88,6 +88,9 @@ const MANIFEST = [
   [ORIG, 'IMG_8949.jpg', 'FinishCarpentry', 'builtins'],
   [OLD, '14.jpg', 'FinishCarpentry', 'builtins'],
 
+  // === About page: William Rogers on a framing job ===
+  [ORIG, 'IMG_3901.jpg', 'About', 'william-rogers'],
+
   // === Additions & Sunrooms ===
   [ORIG, 'IMG_9017.JPG', 'Additions', 'addition'],
   [ORIG, 'IMG_9018.JPG', 'Additions', 'addition'],
