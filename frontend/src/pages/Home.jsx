@@ -198,10 +198,10 @@ const Home = () => {
 
     const portfolio = [
       {
-        image: "/images/medium/Library-Offices/library-1.webp",
-        title: "Custom Library & Built-Ins",
-        description: "Floor-to-ceiling custom carpentry",
-        alt: "Custom library built-in bookcase with finish carpentry work in Placer County, CA home"
+        image: "/images/medium/Additions/addition-1.webp",
+        title: "Sunroom Addition",
+        description: "Light-filled space that blends right in",
+        alt: "Sunroom addition with vaulted wood ceiling by Monument Construction in Placer County, CA"
       },
       {
         image: "/images/medium/Kitchens/kitchen-1.webp",
@@ -222,10 +222,10 @@ const Home = () => {
         alt: "Timber-frame outdoor pavilion by Monument Construction in Nevada County, CA"
       },
       {
-        image: "/images/medium/Additions/addition-1.webp",
-        title: "Sunroom Addition",
-        description: "Light-filled space that blends right in",
-        alt: "Sunroom addition with vaulted wood ceiling by Monument Construction in Placer County, CA"
+        image: "/images/medium/Library-Offices/library-1.webp",
+        title: "Custom Library & Built-Ins",
+        description: "Floor-to-ceiling custom carpentry",
+        alt: "Custom library built-in bookcase with finish carpentry work in Placer County, CA home"
       },
       {
         image: "/images/medium/Framing/framing-1.webp",
