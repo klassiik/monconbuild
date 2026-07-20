@@ -5,6 +5,9 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Phone, Mail, Hammer, Home as HomeIcon, Building2, Wrench } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
+import AutoCarousel from '../components/AutoCarousel';
+import ImageGallery from '../components/ImageGallery';
+import { featuredSlides } from '../data/portfolio';
 import { CONTACT_INFO, COMPANY_INFO } from '../utils/constants';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { handleError } from '../utils/errorHandler';
@@ -94,6 +97,9 @@ const PortfolioImage = ({ project, index }) => {
 
 // Hero section with hero.webp mountain background image for visual appeal
 const Home = () => {
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(0);
+
   try {
     // Homepage Schema.org structured data for rich results
     const homepageSchema = {
@@ -192,34 +198,40 @@ const Home = () => {
 
     const portfolio = [
       {
-        image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/6s7jphb3_Untitled.jpg",
-        title: "Custom Library & Built-ins",
+        image: "/images/medium/Additions/addition-1.webp",
+        title: "Sunroom Addition",
+        description: "Light-filled space that blends right in",
+        alt: "Sunroom addition with vaulted wood ceiling by Monument Construction in Placer County, CA"
+      },
+      {
+        image: "/images/medium/Kitchens/kitchen-1.webp",
+        title: "Modern Kitchen Remodel",
+        description: "Custom cabinetry and quartz counters",
+        alt: "Modern kitchen remodel with custom cabinetry by Monument Construction in Placer County, CA"
+      },
+      {
+        image: "/images/medium/Fireplaces/fireplace-1.webp",
+        title: "Stone Fireplace & Mantel",
+        description: "Stacked stone with a reclaimed-timber mantel",
+        alt: "Stacked stone fireplace with reclaimed timber mantel by Monument Construction in Nevada County, CA"
+      },
+      {
+        image: "/images/medium/Outdoors/outdoor-1.webp",
+        title: "Timber-Frame Pavilion",
+        description: "Outdoor living, built to last",
+        alt: "Timber-frame outdoor pavilion by Monument Construction in Nevada County, CA"
+      },
+      {
+        image: "/images/medium/Library-Offices/library-1.webp",
+        title: "Custom Library & Built-Ins",
         description: "Floor-to-ceiling custom carpentry",
         alt: "Custom library built-in bookcase with finish carpentry work in Placer County, CA home"
       },
       {
-        image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/zdso40es_Untitled1.png",
-        title: "Custom Home Office",
-        description: "Corner desk with integrated shelving",
-        alt: "Custom home office built-in desk and shelving by Monument Construction in Colfax, CA"
-      },
-      {
-        image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/gx2z9lsu_Untitled7.jpg",
-        title: "Covered Entry Construction",
-        description: "Custom timber frame entrance",
-        alt: "Custom timber frame covered entry construction in Auburn, CA by licensed contractor"
-      },
-      {
-        image: "/3.webp",
-        title: "Custom Woodwork Project",
-        description: "Expert craftsmanship details",
-        alt: "Custom woodwork and finish carpentry by Monument Construction"
-      },
-      {
-        image: "https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/pbh4alag_Untitled14.png",
-        title: "Mountain Home Construction",
-        description: "Expert framing and quality construction",
-        alt: "Mountain home construction by Monument Construction in Nevada County, CA"
+        image: "/images/medium/Framing/framing-1.webp",
+        title: "New Home Framing",
+        description: "Foundations to rooflines, built strong",
+        alt: "Residential framing project by Monument Construction in Placer County, CA"
       }
     ];
 
@@ -309,8 +321,51 @@ const Home = () => {
             </div>
           </section>
 
+          {/* Portfolio Preview */}
+          <section className="py-20 md:py-28 bg-slate-50">
+            <div className="container mx-auto px-6 md:px-12">
+              <div className="text-center mb-10 md:mb-12">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Our Work</h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  Quality craftsmanship across Placer, Nevada, Sacramento, Yolo &amp; El Dorado Counties.
+                </p>
+              </div>
+
+              {/* Featured auto-slideshow */}
+              <div className="max-w-4xl mx-auto mb-12 md:mb-16">
+                <AutoCarousel
+                  slides={featuredSlides}
+                  aspectClass="aspect-[4/3]"
+                  onSlideClick={(i) => {
+                    setGalleryIndex(i);
+                    setGalleryOpen(true);
+                  }}
+                />
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {portfolio.map((project, index) => (
+                  <PortfolioImage key={index} project={project} index={index} />
+                ))}
+              </div>
+
+              <div className="text-center">
+                <Button
+                  size="lg"
+                  className="bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
+                  asChild
+                >
+                  <Link to="/portfolio">View Full Portfolio</Link>
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Testimonials Section */}
+          <Testimonials testimonials={testimonials} showImages={true} />
+
           {/* Services Section */}
-          <section className="py-20 md:py-28 bg-white">
+          <section className="py-20 md:py-28 bg-slate-50">
             <div className="container mx-auto px-6 md:px-12">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Our Services</h2>
@@ -349,61 +404,14 @@ const Home = () => {
             </div>
           </section>
 
-          {/* Testimonials Section */}
-          <Testimonials testimonials={testimonials} showImages={true} />
-
-          {/* Portfolio Preview */}
-          <section className="py-20 md:py-28 bg-slate-50">
-            <div className="container mx-auto px-6 md:px-12">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Our Work</h2>
-                <div className="prose prose-lg max-w-3xl mx-auto space-y-6 text-gray-700">
-                  <p>
-                    Monument Construction has been trusted with hundreds of residential construction and finish carpentry projects throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Our portfolio reflects our commitment to quality, attention to detail, and customer satisfaction. Each project showcased here represents the craftsmanship and expertise we bring to every job.
-                  </p>
-
-                  <p>
-                    From custom finish carpentry details that transform a room's character to comprehensive home additions that expand living space, our work speaks to our dedication. We don't just complete projects - we create spaces that enhance our clients' lives and add lasting value to their homes.
-                  </p>
-
-                  <div className="grid md:grid-cols-2 gap-6 my-10">
-                    <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
-                      <h3 className="text-lg font-bold mb-3 text-gray-900">Finish Carpentry Excellence</h3>
-                      <p className="text-sm">Custom trim work, built-in cabinetry, decorative mantels, and architectural details that define the character of a home.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
-                      <h3 className="text-lg font-bold mb-3 text-gray-900">Complete Renovations</h3>
-                      <p className="text-sm">Full home renovations and remodels that transform spaces while maintaining quality construction standards.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
-                      <h3 className="text-lg font-bold mb-3 text-gray-900">Home Additions</h3>
-                      <p className="text-sm">Room additions, second stories, and home expansions that seamlessly integrate with existing structures.</p>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
-                      <h3 className="text-lg font-bold mb-3 text-gray-900">Residential Construction</h3>
-                      <p className="text-sm">New construction and residential projects handled with the same craftsmanship standards we apply to every undertaking.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
-                {portfolio.map((project, index) => (
-                  <PortfolioImage key={index} project={project} index={index} />
-                ))}
-              </div>
-
-              <div className="text-center">
-                <Button 
-                  size="lg" 
-                  className="bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
-                  asChild
-                >
-                  <Link to="/portfolio">View Full Portfolio</Link>
-                </Button>
-              </div>
-            </div>
-          </section>
+          {/* Featured slideshow lightbox */}
+          <ImageGallery
+            images={featuredSlides.map((s) => s.src)}
+            isOpen={galleryOpen}
+            onClose={() => setGalleryOpen(false)}
+            initialIndex={galleryIndex}
+            title="Featured Projects"
+          />
 
           {/* CTA Section */}
           <section className="py-20 md:py-28 bg-green-700 text-white">

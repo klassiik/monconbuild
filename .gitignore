@@ -118,3 +118,7 @@ frontend/node_modules/puppeteer/.local-chromium/linux-686378/chrome-linux/chrome
 # Environment files
 *.env
 *.env.*
+
+# Raw client photo sources (local only; see frontend/scripts/import-images.mjs)
+/images/
+/img/

@@ -2,6 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "monconbuild-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "frontend", "--", "--port", "5173", "--strictPort"],
+      "port": 5173
+    },
+    {
       "name": "monconbuild-preview",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "preview:ssg", "--prefix", "frontend", "--", "--port", "4173", "--strictPort"],

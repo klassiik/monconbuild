@@ -32,6 +32,7 @@ const About = () => {
         "@id": "https://www.monconbuild.com/about#william-rogers",
         "name": "William Rogers",
         "jobTitle": "Owner & Master Craftsman",
+        "image": "https://www.monconbuild.com/images/About/william-rogers-1.webp",
         "worksFor": { "@id": "https://www.monconbuild.com/#organization" },
         "description": "Licensed general contractor and finish carpenter with over 25 years of experience serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Featured in multiple episodes on DIY Network television.",
         "knowsAbout": [
@@ -145,11 +146,15 @@ const About = () => {
             </div>
 
             <div>
-              <img 
-                src="https://customer-assets.emergentagent.com/job_99d86ab4-e27f-41c7-9c4d-305324a0277f/artifacts/uvmny025_Untitled12.jpg" 
-                alt="Monument Construction - Quality Workmanship"
+              <img
+                src="/images/medium/About/william-rogers-1.webp"
+                srcSet="/images/thumbnails/About/william-rogers-1.webp 400w, /images/medium/About/william-rogers-1.webp 1200w"
+                sizes="(max-width: 1024px) calc(100vw - 3rem), 50vw"
+                alt="William Rogers, owner of Monument Construction, on a framing job site"
                 loading="lazy"
-                className="rounded-lg shadow-2xl"
+                width="1200"
+                height="1600"
+                className="rounded-lg shadow-2xl w-full h-auto"
               />
             </div>
           </div>
