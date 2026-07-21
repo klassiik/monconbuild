@@ -78,7 +78,8 @@ const About = () => {
         <meta property="og:description" content="25+ years of trusted finish carpentry & construction in Northern CA. Licensed contractor serving Placer, Nevada, Sacramento & El Dorado Counties." />
         <meta property="og:url" content="https://www.monconbuild.com/about" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        <meta property="og:image" content="https://www.monconbuild.com/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Schema schema={aboutPageSchema} />
       {/* Breadcrumb Navigation */}

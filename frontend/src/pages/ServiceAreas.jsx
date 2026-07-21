@@ -154,7 +154,8 @@ const ServiceAreas = () => {
         <meta property="og:description" content="Serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties: Colfax, Auburn, Grass Valley, El Dorado Hills, Placerville, South Lake Tahoe, Sacramento & more." />
         <meta property="og:url" content="https://www.monconbuild.com/service-areas" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        <meta property="og:image" content="https://www.monconbuild.com/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Schema schema={serviceAreasPageSchema} />
       {/* Breadcrumb Navigation */}

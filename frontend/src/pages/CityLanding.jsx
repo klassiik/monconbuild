@@ -46,7 +46,9 @@ export default function CityLanding() {
 
   const url = `${BASE}/service-areas/${city.slug}`;
   const title = `${city.name} General Contractor & Remodeling | Monument Construction`;
-  const description = `Licensed general contractor (#801602) serving ${city.name}, ${city.county}. Remodeling, home additions & finish carpentry across the ${city.region}. Call ${CONTACT_INFO.FORMATTED_PHONE}.`;
+  // Keep under ~155 chars for the longest city/county combo so SERPs don't
+  // truncate the phone number.
+  const description = `Licensed contractor #801602 serving ${city.name}, ${city.county}. Remodeling, home additions & finish carpentry. Call ${CONTACT_INFO.FORMATTED_PHONE}.`;
 
   const breadcrumbItems = [
     { name: 'Service Areas', url: `${BASE}/service-areas` },
@@ -90,7 +92,8 @@ export default function CityLanding() {
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${BASE}/hero.webp`} />
+        <meta property="og:image" content={`${BASE}/og-default.jpg`} />
+        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Head>

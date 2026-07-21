@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Head } from 'vite-react-ssg';
+import Breadcrumb from '../../components/Breadcrumb';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
 import { residentialProjectsFAQs } from '../../data/faqs';
@@ -8,6 +9,12 @@ import ServiceAreasBlock from '../../components/ServiceAreasBlock';
 import { CheckCircle2, Phone, Mail, Home, Award } from 'lucide-react';
 
 const ResidentialProjects = () => {
+  // Breadcrumb data
+  const breadcrumbItems = [
+    { name: 'Services', url: 'https://www.monconbuild.com/services' },
+    { name: 'Residential Projects', url: 'https://www.monconbuild.com/services/residential-projects' }
+  ];
+
   // Service Schema
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -96,20 +103,25 @@ const ResidentialProjects = () => {
   return (
     <div className="min-h-screen">
       <Head>
-        <title>Residential Construction Projects</title>
+        <title>Residential Construction | Colfax & Placer County CA</title>
         <meta name="description" content="Complete residential construction & remodeling projects in Placer County. Quality craftsmanship from ground to finish." />
         <link rel="canonical" href="https://www.monconbuild.com/services/residential-projects" />
-        <meta property="og:title" content="Residential Construction Projects" />
+        <meta property="og:title" content="Residential Construction | Colfax & Placer County CA" />
         <meta property="og:description" content="Complete residential construction & remodeling projects in Placer County. Quality craftsmanship from ground to finish." />
         <meta property="og:url" content="https://www.monconbuild.com/services/residential-projects" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        <meta property="og:image" content="https://www.monconbuild.com/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
         
         {/* Service Schema */}
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
       </Head>
+
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={breadcrumbItems} />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">
