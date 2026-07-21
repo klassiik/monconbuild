@@ -29,10 +29,10 @@ const Header = () => {
             <div className="flex items-center justify-between py-4">
               {/* Logo */}
               <Link to="/" className="flex items-center" aria-label="Monument Construction Home">
-                <img 
-                  src="/logo.svg" 
-                  alt="Monument Construction - Licensed Contractor Colfax CA" 
-                  className="h-16 md:h-20 w-auto"
+                <img
+                  src="/logo.svg"
+                  alt="Monument Construction - Licensed Contractor Colfax CA"
+                  className="h-16 md:h-20 w-auto origin-left motion-safe:animate-logo-balloon"
                   width="200"
                   height="80"
                   onError={(e) => {
