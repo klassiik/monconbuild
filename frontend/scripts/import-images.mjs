@@ -11,6 +11,7 @@ import { join, dirname } from 'path';
 // only for shots that never arrived at full resolution.
 const ORIG = 'C:/Users/klass/OneDrive/Documents/GitHub/monconbuild/img';
 const OLD = 'C:/Users/klass/OneDrive/Documents/GitHub/monconbuild/images';
+const BATCH2 = 'C:/Users/klass/OneDrive/Documents/GitHub/monconbuild/img/batch2';
 const PUB = 'C:/Users/klass/OneDrive/Documents/GitHub/monconbuild/frontend/public/images';
 
 const SIZES = { full: 1920, medium: 1200, thumbnails: 400 };
@@ -97,21 +98,73 @@ const MANIFEST = [
   [ORIG, 'IMG_8642.JPG', 'Additions', 'addition'],
   [ORIG, 'IMG_8655.JPG', 'Additions', 'addition'],
   [ORIG, 'IMG_8671.JPG', 'Additions', 'addition'],
+
+  // ============ BATCH 2 (img/batch2, pre-sorted by the client) ============
+  // Bathrooms: appended after batch-1 entries (numbering continues at 7)
+  [BATCH2, 'bathroom/IMG_9636.jpg', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_9639.jpg', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_0462.JPG', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_0466.JPG', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_1093.JPEG', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_0800.JPG', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_2235.jpg', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_2236.jpg', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_2080.jpg', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_2082.jpg', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_4441.JPG', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_7842.JPG', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_7633.JPG', 'Bathrooms', 'bathroom'],
+  [BATCH2, 'bathroom/IMG_1724.jpg', 'Bathrooms', 'bathroom'],
+
+  // Outdoor Living: deck append (numbering continues at 9)
+  [BATCH2, 'deck/BED4C1BC-1B5C-4841-8F24-CD1DCB0E158D.JPG', 'Outdoors', 'outdoor'],
+
+  // Pergolas & Patio Covers (new category; source folder had exact dupes of
+  // 67034D7A and of the 5C7FBD66/E42A9C89 action shot -- one copy each)
+  [BATCH2, 'pergola/67034D7A-8B2C-4BC7-87F2-EC54D8B6DD8E.JPG', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/DD7F297D-FC2E-47D0-9381-29523B1B2919.JPG', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/IMG_2402.jpg', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/IMG_2397.JPG', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/IMG_2409.JPG', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/B744A760-7B66-41DD-8B24-A72230CCE343.JPG', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/8023B7AC-932F-497F-94E4-8B18331803B8.JPG', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/BD097186-5308-4E04-85D7-FA7F84703F79.JPG', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/60B9A7D9-49A1-4D8B-8B09-7CC4CDB58ABB.JPG', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/IMG_0089.JPG', 'Pergolas', 'pergola'],
+  [BATCH2, 'pergola/5C7FBD66-1924-457C-B9E8-FD707F0912F3.JPG', 'Pergolas', 'pergola'],
+
+  // Entertainment Centers (shown under Custom Built-Ins on the site)
+  [BATCH2, 'entertainment center/C9DE5B14-BA8D-4A8F-AF2B-E78D19AE31F8.JPG', 'EntertainmentCenters', 'entertainment-center'],
+  [BATCH2, 'entertainment center/E092B284-175F-43C6-B96E-E5CF02085670.JPG', 'EntertainmentCenters', 'entertainment-center'],
+  [BATCH2, 'entertainment center/EA4CD22B-8BA9-4BCC-8B99-4CF4F135E026.JPG', 'EntertainmentCenters', 'entertainment-center'],
+  [BATCH2, 'entertainment center/7FE6E5FB-C00E-4DAF-ACF7-64E92DE1CE0C.JPG', 'EntertainmentCenters', 'entertainment-center'],
+
+  // Laundry Rooms (new category)
+  [BATCH2, 'laundry/IMG_4365.JPG', 'Laundry', 'laundry'],
+  [BATCH2, 'laundry/IMG_4368.JPG', 'Laundry', 'laundry'],
+  [BATCH2, 'laundry/IMG_4369.JPG', 'Laundry', 'laundry'],
 ];
 
 async function main() {
   const counters = {};
   const produced = {};
   let ok = 0,
-    fail = 0;
+    fail = 0,
+    skipped = 0;
 
   for (const [dir, src, cat, base] of MANIFEST) {
     const key = `${cat}/${base}`;
     counters[key] = (counters[key] || 0) + 1;
     const rel = `${cat}/${base}-${counters[key]}.webp`;
+    const input = join(dir, src);
+    // Raw source folders may be offline (they are gitignored and the optimized
+    // outputs are committed). Skip quietly -- the counter increment above still
+    // reserves this entry's number so later entries keep stable filenames.
+    if (!existsSync(input)) {
+      skipped++;
+      continue;
+    }
     try {
-      const input = join(dir, src);
-      if (!existsSync(input)) throw new Error('missing source');
       // Effective (post-EXIF-rotation) source width, to decide on upscaling.
       const meta = await sharp(input).metadata();
       const srcW = meta.orientation >= 5 ? meta.height : meta.width;
@@ -141,7 +194,7 @@ async function main() {
     }
   }
 
-  console.log(`\nDONE: ${ok} imported, ${fail} failed\n`);
+  console.log(`\nDONE: ${ok} imported, ${fail} failed, ${skipped} skipped (source offline)\n`);
   console.log(JSON.stringify(produced, null, 2));
 }
 

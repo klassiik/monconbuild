@@ -34,19 +34,34 @@ export const portfolioCategories = [
     id: 'bathrooms',
     name: 'Bathrooms',
     blurb: 'Tile showers, custom vanities, spa-like retreats.',
-    images: seq('Bathrooms', 'bathroom', 6),
+    images: seq('Bathrooms', 'bathroom', 20),
+  },
+  {
+    id: 'laundry',
+    name: 'Laundry Rooms',
+    blurb: 'Hardworking spaces with custom counters and storage.',
+    images: seq('Laundry', 'laundry', 3),
   },
   {
     id: 'outdoors',
     name: 'Outdoor Living',
     blurb: 'Decks, staircases, and timber-frame pavilions.',
-    images: seq('Outdoors', 'outdoor', 8),
+    images: seq('Outdoors', 'outdoor', 9),
+  },
+  {
+    id: 'pergolas',
+    name: 'Pergolas & Patio Covers',
+    blurb: 'Handcrafted timber shade structures and arbors.',
+    images: seq('Pergolas', 'pergola', 11),
   },
   {
     id: 'built-ins',
     name: 'Custom Built-Ins',
-    blurb: 'Media walls, bars, and fine finish carpentry.',
-    images: seq('FinishCarpentry', 'builtins', 4),
+    blurb: 'Entertainment centers, media walls, and fine finish carpentry.',
+    images: [
+      ...seq('FinishCarpentry', 'builtins', 4),
+      ...seq('EntertainmentCenters', 'entertainment-center', 4),
+    ],
   },
   {
     id: 'additions',
