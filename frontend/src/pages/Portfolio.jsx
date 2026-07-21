@@ -45,7 +45,8 @@ const Portfolio = () => {
         <meta property="og:description" content="View our portfolio of finish carpentry, home additions & construction projects in Placer, Nevada, Sacramento, Yolo & El Dorado Counties, CA." />
         <meta property="og:url" content="https://www.monconbuild.com/portfolio" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        <meta property="og:image" content="https://www.monconbuild.com/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       {/* Portfolio Page Schema for SEO */}

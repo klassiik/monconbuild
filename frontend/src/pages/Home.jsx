@@ -257,7 +257,7 @@ const Home = () => {
         <div className="min-h-screen">
           {/* SEO Meta Tags and Schema.org Structured Data */}
           <Head>
-            <title>Expert Carpentry & Construction | Colfax CA</title>
+            <title>Monument Construction | Carpentry & Construction Colfax CA</title>
             <meta name="description" content="Expert finish carpentry & construction in Northern CA. Licensed contractor #801602 serving Placer, Nevada, Sacramento & El Dorado Counties. (916) 607-1972" />
             <link rel="canonical" href="https://www.monconbuild.com/" />
             {/* Hero (LCP) preload lives here, not index.html, so only the homepage
@@ -273,7 +273,8 @@ const Home = () => {
             <meta property="og:description" content="Licensed contractor serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties with quality finish carpentry and complete construction services." />
             <meta property="og:url" content="https://www.monconbuild.com/" />
             <meta property="og:type" content="website" />
-            <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+            <meta property="og:image" content="https://www.monconbuild.com/og-default.jpg" />
+            <meta name="twitter:card" content="summary_large_image" />
             
             {/* Schema.org JSON-LD */}
             <script type="application/ld+json">

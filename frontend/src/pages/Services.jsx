@@ -191,7 +191,8 @@ const Services = () => {
         <meta property="og:description" content="Expert finish carpentry, home additions, remodeling & custom woodwork serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Quality craftsmanship." />
         <meta property="og:url" content="https://www.monconbuild.com/services" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        <meta property="og:image" content="https://www.monconbuild.com/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Schema schema={servicesPageSchema} />
       {/* Breadcrumb Navigation */}

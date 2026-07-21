@@ -27,11 +27,21 @@ const Footer = () => {
       { name: 'Complete Remodeling', path: '/services/complete-remodeling' }
     ];
 
+    const serviceAreaLinks = [
+      { name: 'Auburn', path: '/service-areas/auburn' },
+      { name: 'Grass Valley', path: '/service-areas/grass-valley' },
+      { name: 'El Dorado Hills', path: '/service-areas/el-dorado-hills' },
+      { name: 'Placerville', path: '/service-areas/placerville' },
+      { name: 'South Lake Tahoe', path: '/service-areas/south-lake-tahoe' },
+      { name: 'Sacramento', path: '/service-areas/sacramento' },
+      { name: 'Davis', path: '/service-areas/davis' }
+    ];
+
     return (
       <ErrorBoundary>
         <footer className="bg-green-900 text-gray-300">
           <div className="container mx-auto px-6 md:px-12 py-16">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
               {/* Company Info */}
               <div>
                 <div className="mb-6">
@@ -79,6 +89,24 @@ const Footer = () => {
                     <li key={link.path}>
                       <Link 
                         to={link.path} 
+                        className="hover:text-blue-400 transition-colors duration-300"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Service Areas — every city page linked sitewide so none is
+                  starved of internal links */}
+              <div>
+                <h3 className="text-white font-bold text-lg mb-6">Service Areas</h3>
+                <ul className="space-y-3">
+                  {serviceAreaLinks.map((link) => (
+                    <li key={link.path}>
+                      <Link
+                        to={link.path}
                         className="hover:text-blue-400 transition-colors duration-300"
                       >
                         {link.name}

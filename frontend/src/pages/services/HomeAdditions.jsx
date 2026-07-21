@@ -103,14 +103,15 @@ const HomeAdditions = () => {
   return (
     <div className="min-h-screen">
       <Head>
-        <title>Home Additions | Colfax CA</title>
+        <title>Home Additions & ADUs | Colfax & Placer County CA</title>
         <meta name="description" content="Expert home additions & room expansions in Placer County. Second-story additions, ADUs & more. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/home-additions" />
-        <meta property="og:title" content="Home Additions | Colfax CA" />
+        <meta property="og:title" content="Home Additions & ADUs | Colfax & Placer County CA" />
         <meta property="og:description" content="Expert home additions & room expansions in Placer County. Second-story additions, ADUs & more. Licensed contractor #801602." />
         <meta property="og:url" content="https://www.monconbuild.com/services/home-additions" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        <meta property="og:image" content="https://www.monconbuild.com/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
         
         {/* Service Schema */}
         <script type="application/ld+json">

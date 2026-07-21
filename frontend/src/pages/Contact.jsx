@@ -172,7 +172,8 @@ const Contact = () => {
         <meta property="og:description" content="Contact Monument Construction for free quotes on finish carpentry, remodeling & construction serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties." />
         <meta property="og:url" content="https://www.monconbuild.com/contact" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.monconbuild.com/hero.webp" />
+        <meta property="og:image" content="https://www.monconbuild.com/og-default.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Schema schema={contactPageSchema} />
       {/* Breadcrumb Navigation */}
