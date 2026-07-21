@@ -20,11 +20,8 @@
       content="general contractor Colfax CA, finish carpenter Placer County, construction company Nevada County CA, home remodeling Colfax California, Monument Construction, licensed contractor 801602"
     />
 
-    <!-- Performance: resource hints -->
-    <link rel="preconnect" href="https://customer-assets.emergentagent.com" crossorigin />
-    <link rel="dns-prefetch" href="https://customer-assets.emergentagent.com" />
-    <!-- Preload hero image for faster LCP -->
-    <link rel="preload" href="/hero.webp" as="image" fetchpriority="high" />
+    <!-- Hero preload intentionally NOT here: it would ship on every route.
+         The homepage emits its own responsive preload via <Head> in Home.jsx. -->
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJ484TJRM6"></script>

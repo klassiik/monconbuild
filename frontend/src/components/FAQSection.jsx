@@ -29,11 +29,12 @@ const FAQSection = ({ faqs, title = "Frequently Asked Questions" }) => {
           className="py-16 bg-gray-50"
           aria-label="Frequently asked questions"
         >
+          {/* dangerouslySetInnerHTML is required: a JSX text child gets HTML-entity-escaped
+              by SSG serialization, producing invalid JSON-LD (&quot; instead of ") */}
           <script
             type="application/ld+json"
-          >
-            {JSON.stringify(faqSchema)}
-          </script>
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
           
           <div className="container mx-auto px-6 max-w-4xl">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">{title}</h2>
