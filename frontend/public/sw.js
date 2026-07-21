@@ -6,12 +6,14 @@ const CACHE_NAME = 'monument-construction-v1';
 const STATIC_CACHE = 'static-assets-v1';
 const API_CACHE = 'api-cache-v1';
 
-// Assets to cache immediately
+// Assets to cache immediately.
+// NOTE: every entry must exist in the deployed build — cache.addAll() rejects
+// on any 404, which silently aborts the whole service worker install. The
+// previous CRA-era /static/* and /manifest.json paths did exactly that.
 const PRECACHE_ASSETS = [
   '/',
-  '/static/css/main.css',
-  '/static/js/main.js',
-  '/manifest.json'
+  '/site.webmanifest',
+  '/logo.svg'
 ];
 
 // Install event - cache critical resources

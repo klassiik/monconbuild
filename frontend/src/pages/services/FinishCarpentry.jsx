@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Head } from 'vite-react-ssg';
+import { Link } from 'react-router-dom';
 import Breadcrumb from '../../components/Breadcrumb';
 import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
@@ -299,9 +300,25 @@ const FinishCarpentry = () => {
         </div>
       </section>
 
+      {/* Cost guide cross-link */}
+      <section className="py-10 bg-green-50">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-lg text-gray-800">
+            Budgeting a project? Read our{' '}
+            <Link
+              to="/guides/finish-carpentry-cost-placer-county"
+              className="text-green-800 font-semibold underline hover:text-green-900"
+            >
+              finish carpentry cost guide for Placer County
+            </Link>{' '}
+            for typical rates, price ranges, and timelines.
+          </p>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <FAQSection 
-        faqs={finishCarpentryFAQs} 
+      <FAQSection
+        faqs={finishCarpentryFAQs}
         title="Frequently Asked Questions About Finish Carpentry in Colfax, CA"
       />
 
