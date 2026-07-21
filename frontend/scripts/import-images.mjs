@@ -133,7 +133,7 @@ const MANIFEST = [
   [BATCH2, 'pergola/IMG_0089.JPG', 'Pergolas', 'pergola'],
   [BATCH2, 'pergola/5C7FBD66-1924-457C-B9E8-FD707F0912F3.JPG', 'Pergolas', 'pergola'],
 
-  // Entertainment Centers (new category)
+  // Entertainment Centers (shown under Custom Built-Ins on the site)
   [BATCH2, 'entertainment center/C9DE5B14-BA8D-4A8F-AF2B-E78D19AE31F8.JPG', 'EntertainmentCenters', 'entertainment-center'],
   [BATCH2, 'entertainment center/E092B284-175F-43C6-B96E-E5CF02085670.JPG', 'EntertainmentCenters', 'entertainment-center'],
   [BATCH2, 'entertainment center/EA4CD22B-8BA9-4BCC-8B99-4CF4F135E026.JPG', 'EntertainmentCenters', 'entertainment-center'],

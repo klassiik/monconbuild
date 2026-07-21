@@ -57,14 +57,11 @@ export const portfolioCategories = [
   {
     id: 'built-ins',
     name: 'Custom Built-Ins',
-    blurb: 'Media walls, bars, and fine finish carpentry.',
-    images: seq('FinishCarpentry', 'builtins', 4),
-  },
-  {
-    id: 'entertainment-centers',
-    name: 'Entertainment Centers',
-    blurb: 'Media walls with stone accents and custom cabinetry.',
-    images: seq('EntertainmentCenters', 'entertainment-center', 4),
+    blurb: 'Entertainment centers, media walls, and fine finish carpentry.',
+    images: [
+      ...seq('FinishCarpentry', 'builtins', 4),
+      ...seq('EntertainmentCenters', 'entertainment-center', 4),
+    ],
   },
   {
     id: 'additions',
