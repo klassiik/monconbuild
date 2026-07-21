@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "url": "https://www.monconbuild.com",
+    "date": "2026-07-20",
+    "pages_crawled": 19,
+    "method": "Inline full audit: live crawl of all sitemap URLs + source-code cross-reference, Lighthouse 12.6.1 mobile lab run, header/redirect testing, citation search. No PSI/CrUX field data (quota), no Google/Moz API credentials, no drift baseline."
+  },
+  "summary": {
+    "health_score": 78,
+    "business_type": "Local Service — service-area general contractor (Monument Construction, Colfax CA; Placer, Nevada, Sacramento, Yolo & El Dorado Counties)",
+    "top_findings": [
+      "FAQPage JSON-LD is HTML-entity-encoded (invalid) on all 6 service pages — FAQSection.jsx renders schema as escaped JSX text child",
+      "Mobile lab LCP 14.9s — hero.webp is 753 KB / 1920x1440 with no srcset",
+      "hero.webp is preloaded on all 19 pages via static index.html template — 753 KB wasted on 18 pages",
+      "No Google Business Profile linkage detected on-site; citations limited to BuildZoom",
+      "Apex→www redirect returns 307 Temporary (Vercel dashboard overrides vercel.json permanent rule)"
+    ],
+    "quick_wins": [
+      "dangerouslySetInnerHTML fix in FAQSection.jsx",
+      "Remove sitewide hero preload + stale emergentagent preconnect from index.html",
+      "Compress hero + add srcset (expect Lighthouse mobile 63 → ~90)",
+      "Set 308 apex redirect in Vercel dashboard",
+      "Footer links to all 7 city pages (Davis has 1 internal in-link today)"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "weight": 0.22,
+      "score": 88,
+      "what_works": [
+        "HSTS preload + CSP + full security header set",
+        "Clean robots.txt with sitemap reference; valid 19-URL sitemap, all 200/canonical-consistent",
+        "Real 404 status codes; self-referencing canonicals on all pages; clean URLs",
+        "Full SSG prerendering (content without JS); TTFB ~50ms; IndexNow key deployed"
+      ],
+      "findings": [
+        {"title": "Apex→www redirect is 307 Temporary", "severity": "Medium", "description": "https://monconbuild.com returns 307 to www despite vercel.json declaring permanent:true; dashboard domain redirect overrides it.", "recommendation": "Set 308 Permanent in Vercel dashboard domain settings (or remove dashboard redirect)."},
+        {"title": "Dead link /cdn-cgi/l/email-protection on all 19 pages", "severity": "Medium", "description": "Cloudflare Email Address Obfuscation rewrites mailto links; non-JS crawlers see a 404ing link sitewide and '[email protected]' as visible text.", "recommendation": "Disable Scrape Shield → Email Address Obfuscation; email is already public in JSON-LD."},
+        {"title": "Stale preconnect to customer-assets.emergentagent.com", "severity": "Low", "description": "Resource hints remain in index.html but no assets load from that host.", "recommendation": "Delete preconnect + dns-prefetch."},
+        {"title": "2-hop redirect chain from insecure apex", "severity": "Low", "description": "http://monconbuild.com → https apex (301) → www (307).", "recommendation": "Optional Cloudflare rule: http apex → https www in one hop."},
+        {"title": "Local sitemap.xml uncommitted and older than deployed", "severity": "Info", "description": "Working-copy lastmod dates trail the deployed sitemap; build regenerates it.", "recommendation": "Commit or discard the local diff."}
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "weight": 0.23,
+      "score": 87,
+      "what_works": [
+        "Strong E-E-A-T: named owner with Person schema, CSLB license deep link, DIY Network TV credits, 25+ years",
+        "City pages contain genuinely local content (conservation districts, Title 24, permit jurisdictions) — not doorway pages",
+        "Substantive FAQ accordions with prices/timelines on every service page",
+        "No thin pages (445–1,332 words); zero duplicate titles/descriptions"
+      ],
+      "findings": [
+        {"title": "No fresh-content surface (blog/guides)", "severity": "Medium", "description": "No mechanism for topical authority or AI-citation coverage beyond service pages.", "recommendation": "Expand existing FAQ answers into monthly cost/permit guides interlinked with service + city pages."},
+        {"title": "On-page testimonials exist (corrected); third-party reviews absent", "severity": "Low", "description": "Correction: the homepage renders named testimonials in the SSG HTML (Neal Mitchell — Grass Valley, Richard Young — Sacramento). No GBP/Yelp/Houzz reviews surface.", "recommendation": "Start collecting GBP reviews; optionally add Review schema for the attributed testimonials."},
+        {"title": "Homepage is thinnest main page (586 words)", "severity": "Low", "description": "Structurally fine as a hub but light on first-party evidence.", "recommendation": "Add recent-projects or testimonial strip."},
+        {"title": "Dead component TrustBadges.jsx", "severity": "Info", "description": "Unused component containing the same broken ld+json pattern.", "recommendation": "Delete or fix and mount."}
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "weight": 0.20,
+      "score": 80,
+      "what_works": [
+        "Unique titles + meta descriptions on all 19 pages; one H1 each; logical heading hierarchy",
+        "100% image alt coverage with descriptive, localized gallery alts",
+        "Clean keyword-sensible URL structure; phone number in city-page descriptions"
+      ],
+      "findings": [
+        {"title": "Homepage title omits brand name", "severity": "Medium", "description": "'Expert Carpentry & Construction | Colfax CA' — no 'Monument Construction'.", "recommendation": "Include brand, e.g. 'Monument Construction | Finish Carpentry & Contractor, Colfax CA'."},
+        {"title": "Service-page titles underuse geography (26–33 chars)", "severity": "Medium", "description": "County-level search terms absent; Google observed rewriting one weak title.", "recommendation": "Add county/city qualifiers, keep ≤60 chars."},
+        {"title": "City pages internally under-linked (1–6 in-links vs 19 for nav pages)", "severity": "Medium", "description": "Only reachable via /service-areas hub and neighbor cross-links; Davis has 1 in-link.", "recommendation": "Sitewide footer 'Service Areas' column with all 7 cities."},
+        {"title": "6 city meta descriptions exceed 160 chars (162–177)", "severity": "Low", "description": "Phone number gets truncated in SERPs.", "recommendation": "Trim to ≤155 chars."},
+        {"title": "No twitter:card; single generic og:image sitewide", "severity": "Medium", "description": "All 19 pages share hero.webp (1920x1440 WebP) as og:image; no Twitter tags at all.", "recommendation": "Add summary_large_image cards + branded 1200×630 JPG/PNG default, per-service images ideally."}
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "weight": 0.10,
+      "score": 62,
+      "what_works": [
+        "GeneralContractor org schema on every page: NAP, geo, areaServed (5 counties + 7 cities), hours, email",
+        "Person schema for owner; Service+WebPage+BreadcrumbList valid on all 7 city pages; CreativeWork portfolio items",
+        "No fabricated aggregateRating (correct)"
+      ],
+      "findings": [
+        {"title": "FAQPage JSON-LD invalid on all 6 service pages", "severity": "High", "description": "Schema ships HTML-entity-encoded (&quot;) because FAQSection.jsx renders JSON.stringify as a JSX text child in the body; SSG escapes it. Google drops the block.", "recommendation": "Use dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} in FAQSection.jsx:32."},
+        {"title": "BreadcrumbList missing on 4 of 6 service pages", "severity": "Medium", "description": "Present on finish-carpentry and home-additions only.", "recommendation": "Mount the existing Breadcrumb component on the other four."},
+        {"title": "sameAs contains only Instagram", "severity": "Medium", "description": "Weak entity reconciliation.", "recommendation": "Add GBP, BuildZoom, CSLB, LinkedIn/Facebook once verified."},
+        {"title": "No license credential in schema", "severity": "Low", "description": "CSLB #801602 is a differentiator shown on-page but not in schema.", "recommendation": "Add identifier/hasCredential referencing CSLB license."}
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "weight": 0.10,
+      "score": 55,
+      "what_works": [
+        "CLS = 0; TTFB 50ms (edge cache HIT); TBT 220ms",
+        "Immutable 1-year caching on /assets; gallery images use medium variants + lazy loading"
+      ],
+      "findings": [
+        {"title": "Mobile lab LCP 14.9s — hero.webp is the LCP element", "severity": "High", "description": "753 KB, 1920×1440, no srcset anywhere on the homepage; Lighthouse mobile performance 63.", "recommendation": "Recompress + responsive srcset (640/1024/1440/1920w); preload with imagesrcset. Expect perf ~90."},
+        {"title": "hero.webp preloaded on all 19 pages", "severity": "High", "description": "Preload lives in the static index.html template; 18 non-home pages download 753 KB they never render.", "recommendation": "Move preload to the Home route's Head."},
+        {"title": "Other oversized statics", "severity": "Medium", "description": "sierra.webp 624 KB (4032px), 3.webp 578 KB, 4.webp 262 KB.", "recommendation": "Resize to rendered dimensions, recompress."},
+        {"title": "Tap target + label a11y flags (Lighthouse a11y 96)", "severity": "Low", "description": "Nav 'Get Free Quote' CTA is 36px tall; one label/content-name mismatch.", "recommendation": "Increase CTA to ≥44px; align accessible names with visible text."}
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "weight": 0.10,
+      "score": 70,
+      "what_works": [
+        "robots.txt allows all AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)",
+        "Full SSG content without JS — ideal for AI ingestion; FAQ answers with concrete prices/timelines are highly citable",
+        "Clear entity data (org schema everywhere)"
+      ],
+      "findings": [
+        {"title": "No llms.txt", "severity": "Low", "description": "/llms.txt returns 404.", "recommendation": "Publish business summary + key URLs (template in ACTION-PLAN.md)."},
+        {"title": "FAQ schema invalid where content is most citable", "severity": "High", "description": "Same root cause as schema finding #1.", "recommendation": "Fix FAQSection.jsx serialization."},
+        {"title": "Email hidden from non-JS crawlers", "severity": "Low", "description": "Cloudflare obfuscation; JSON-LD copy intact.", "recommendation": "Disable obfuscation."}
+      ]
+    },
+    {
+      "name": "Images",
+      "weight": 0.05,
+      "score": 75,
+      "what_works": [
+        "100% alt coverage, descriptive localized alts",
+        "WebP format throughout; gallery medium-size variants; lazy loading with eager first card"
+      ],
+      "findings": [
+        {"title": "No responsive srcset anywhere", "severity": "High", "description": "Fixed-size images served to all viewports; hero worst case.", "recommendation": "Add srcset/sizes at least for hero and top-of-page images."},
+        {"title": "OG image not spec-shaped", "severity": "Low", "description": "1920×1440 WebP instead of 1200×630 JPG/PNG.", "recommendation": "Create branded 1200×630 default."}
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {"name": "Phase 1: Critical Fixes", "timeframe": "Week 1", "items": [
+        "Fix FAQSection.jsx schema serialization (dangerouslySetInnerHTML)",
+        "Remove sitewide hero preload + stale preconnects from index.html",
+        "Responsive compressed hero with srcset; re-run Lighthouse",
+        "Set 308 apex redirect in Vercel dashboard",
+        "Verify/claim Google Business Profile; link site ↔ GBP"
+      ]},
+      {"name": "Phase 2: High-Impact Improvements", "timeframe": "Weeks 2-3", "items": [
+        "Footer Service Areas column (7 city links sitewide)",
+        "Breadcrumbs on 4 remaining service pages",
+        "Title upgrades (brand on homepage; geography on service pages)",
+        "Trim 6 city meta descriptions ≤155 chars",
+        "twitter:card + 1200×630 OG image",
+        "Disable Cloudflare email obfuscation",
+        "Expand schema sameAs (GBP, BuildZoom, CSLB, LinkedIn)"
+      ]},
+      {"name": "Phase 3: Content & Authority", "timeframe": "Month 2", "items": [
+        "Build 5-10 citations with identical NAP (Yelp, Houzz, Angi, BBB, Facebook, Nextdoor)",
+        "Publish real testimonials; start GBP review collection",
+        "Monthly cost/permit guide expanding existing FAQ answers",
+        "Publish llms.txt",
+        "Cleanup: delete TrustBadges.jsx, resolve sitemap diff, drop meta keywords"
+      ]},
+      {"name": "Phase 4: Monitoring & Iteration", "timeframe": "Ongoing", "items": [
+        "Google Search Console: submit sitemap, watch FAQ enhancement report post-fix",
+        "Re-run Lighthouse after Phase 1 (target mobile perf 85-95)",
+        "Quarterly re-audit; track Map Pack rankings for 7 cities once GBP live"
+      ]}
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/",
+    "crawl_data": "crawl.json",
+    "lighthouse": "lighthouse_home_mobile.json",
+    "notes": "Screenshots unavailable — browser pane capture timed out this session; visual checks done via DOM measurement (H1/CTA above fold on desktop 1280 and mobile 375, no horizontal scroll)."
+  }
+}
