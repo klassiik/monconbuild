@@ -10,7 +10,12 @@ export const portfolioCategories = [
     id: 'kitchens',
     name: 'Kitchens',
     blurb: 'Custom cabinetry, quartz counters, and full remodels.',
-    images: seq('Kitchens', 'kitchen', 8),
+    images: [
+      ...seq('Kitchens', 'kitchen', 7),
+      // Antiqued-mirror bar backsplash (same project as the bar shot above it)
+      '/images/FinishCarpentry/builtins-4.webp',
+      '/images/Kitchens/kitchen-8.webp',
+    ],
   },
   {
     id: 'library-offices',
@@ -22,7 +27,11 @@ export const portfolioCategories = [
     id: 'framing',
     name: 'Framing',
     blurb: 'Foundations to rooflines, built straight and strong.',
-    images: seq('Framing', 'framing', 9),
+    images: [
+      // Cover: the finished home at sunset -- framed strong, finished beautiful
+      '/images/Framing/framing-sunset-1.webp',
+      ...seq('Framing', 'framing', 9),
+    ],
   },
   {
     id: 'fireplaces',
@@ -59,7 +68,8 @@ export const portfolioCategories = [
     name: 'Custom Built-Ins',
     blurb: 'Entertainment centers, media walls, and fine finish carpentry.',
     images: [
-      ...seq('FinishCarpentry', 'builtins', 4),
+      // builtins-4 (mirror bar backsplash) moved to Kitchens
+      ...seq('FinishCarpentry', 'builtins', 3),
       ...seq('EntertainmentCenters', 'entertainment-center', 4),
     ],
   },

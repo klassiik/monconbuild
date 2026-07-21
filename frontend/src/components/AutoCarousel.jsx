@@ -72,25 +72,45 @@ const AutoCarousel = ({
     return () => mq.removeEventListener?.('change', update);
   }, []);
 
-  // Pause auto-play while the carousel is scrolled out of view (optimization only).
+  // A quick first advance right when the visitor reaches the carousel -- early
+  // motion catches the eye. Fires once per mount, skipped for reduced motion.
+  const kickedRef = useRef(false);
+  const kickTimerRef = useRef(null);
+  const kick = useCallback(() => {
+    if (kickedRef.current || count <= 1) return;
+    kickedRef.current = true;
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+    kickTimerRef.current = setTimeout(() => setIndex((i) => (i + 1) % count), 1500);
+  }, [count]);
+  useEffect(() => () => clearTimeout(kickTimerRef.current), []);
+
+  // Pause auto-play while the carousel is scrolled out of view, and kickstart
+  // the first time it becomes visible.
   useEffect(() => {
-    if (typeof IntersectionObserver === 'undefined') return undefined;
+    if (typeof IntersectionObserver === 'undefined') {
+      kick();
+      return undefined;
+    }
     const el = containerRef.current;
     if (!el) return undefined;
     const io = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+        if (entry.isIntersecting) kick();
+      },
       { threshold: 0.2 }
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [kick]);
 
-  // The auto-advance timer.
+  // The auto-advance timer. `index` in the deps restarts the countdown after
+  // every advance (auto, kick, arrows, or swipe) so the cadence stays even.
   useEffect(() => {
     if (paused || reduced || !inView || count <= 1) return undefined;
     const id = setInterval(next, interval);
     return () => clearInterval(id);
-  }, [paused, reduced, inView, count, interval, next]);
+  }, [paused, reduced, inView, count, interval, next, index]);
 
   if (count === 0) return null;
 

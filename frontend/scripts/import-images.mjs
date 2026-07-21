@@ -50,6 +50,9 @@ const MANIFEST = [
   [ORIG, 'IMG_8028.jpg', 'Library-Progress', 'library-progress-final'],
 
   // === Framing ===
+  // Cover: the client's finished home at sunset (recovered from the old site's
+  // asset host; 600px is the only surviving copy)
+  [ORIG, 'home-sunset.png', 'Framing', 'framing-sunset'],
   [ORIG, 'IMG_4211.jpg', 'Framing', 'framing'],
   [ORIG, 'IMG_4275.jpg', 'Framing', 'framing'],
   [ORIG, 'IMG_4335.jpg', 'Framing', 'framing'],

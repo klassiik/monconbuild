@@ -4,8 +4,9 @@
     {
       "name": "monconbuild-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "frontend", "--", "--port", "5173", "--strictPort"],
-      "port": 5173
+      "runtimeArgs": ["run", "dev", "--prefix", "frontend"],
+      "port": 5173,
+      "autoPort": true
     },
     {
       "name": "monconbuild-preview",
