@@ -228,10 +228,10 @@ const Home = () => {
         alt: "Custom library built-in bookcase with finish carpentry work in Placer County, CA home"
       },
       {
-        image: "/images/medium/Framing/framing-1.webp",
+        image: "/images/medium/Framing/framing-sunset-1.webp",
         title: "New Home Framing",
-        description: "Foundations to rooflines, built strong",
-        alt: "Residential framing project by Monument Construction in Placer County, CA"
+        description: "Framed strong, finished beautiful",
+        alt: "Completed new home at sunset, framed and built by Monument Construction in Colfax, CA"
       }
     ];
 
