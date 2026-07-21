@@ -12,8 +12,8 @@ import { CONTACT_INFO, COMPANY_INFO } from '../utils/constants';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { handleError } from '../utils/errorHandler';
 
-// LCP-friendly background image: no fade/blur gate — the image is preloaded in
-// index.html, so it must paint the moment it decodes to keep LCP fast.
+// LCP-friendly background image: no fade/blur gate — the image is preloaded via the
+// route <Head> below, so it must paint the moment it decodes to keep LCP fast.
 const HeroBackground = () => {
   const handleImageError = () => {
     handleError(new Error('Failed to load hero background image'), 'IMAGE_LOAD_ERROR', 'LOW', {
@@ -25,6 +25,8 @@ const HeroBackground = () => {
   return (
     <img
       src="/hero.webp"
+      srcSet="/hero-640.webp 640w, /hero-1024.webp 1024w, /hero-1440.webp 1440w, /hero.webp 1920w"
+      sizes="100vw"
       alt="Two-story home exterior with deck and staircase built by Monument Construction in Colfax, CA"
       decoding="async"
       // eslint-disable-next-line react/no-unknown-property -- installed React 18.3 doesn't map camelCase fetchPriority; browser needs lowercase fetchpriority
@@ -258,6 +260,13 @@ const Home = () => {
             <title>Expert Carpentry & Construction | Colfax CA</title>
             <meta name="description" content="Expert finish carpentry & construction in Northern CA. Licensed contractor #801602 serving Placer, Nevada, Sacramento & El Dorado Counties. (916) 607-1972" />
             <link rel="canonical" href="https://www.monconbuild.com/" />
+            {/* Hero (LCP) preload lives here, not index.html, so only the homepage
+                downloads it; imagesrcset keeps it matched to the <img srcset> pick.
+                Lowercase attrs: React 18.3 doesn't map the camelCase variants. */}
+            {/* No hero <link rel="preload"> on purpose: the hero <img> is in the first
+                bytes of the SSG HTML with fetchpriority="high", so the preload scanner
+                discovers it immediately; a preload link can double-fetch when its
+                imagesrcset pick is evaluated against a different viewport than the img. */}
             
             {/* Open Graph Tags */}
             <meta property="og:title" content="Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA" />
