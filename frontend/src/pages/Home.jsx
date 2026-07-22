@@ -262,6 +262,23 @@ const Home = () => {
       }
     ];
 
+    // Review schema mirrors the attributed five-star testimonials rendered on
+    // this page (the Testimonials component displays a 5/5 star rating for
+    // each). Intentionally no aggregateRating — only add one when ratings come
+    // from a real review platform.
+    const reviewsSchema = testimonials.map((t) => ({
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "GeneralContractor",
+        "@id": "https://www.monconbuild.com/#organization",
+        "name": "Monument Construction"
+      },
+      "author": { "@type": "Person", "name": t.name },
+      "reviewBody": t.text,
+      "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }
+    }));
+
     return (
       <ErrorBoundary>
         <div className="min-h-screen">
@@ -292,6 +309,9 @@ const Home = () => {
             </script>
             <script type="application/ld+json">
               {JSON.stringify(servicesListSchema)}
+            </script>
+            <script type="application/ld+json">
+              {JSON.stringify(reviewsSchema)}
             </script>
           </Head>
 
