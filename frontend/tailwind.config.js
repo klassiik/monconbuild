@@ -84,14 +84,26 @@ export default {
   					transform: 'scale(1)'
   				},
   				'40%': {
-  					transform: 'scale(1.3)'
+  					transform: 'scale(1.8)'
+  				},
+  				'75%': {
+  					transform: 'scale(0.96)'
+  				}
+  			},
+  			'title-balloon': {
+  				'0%, 100%': {
+  					transform: 'scale(1)'
+  				},
+  				'45%': {
+  					transform: 'scale(1.07)'
   				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-  			'logo-balloon': 'logo-balloon 1s ease-in-out 1.5s 1 both'
+  			'logo-balloon': 'logo-balloon 1s ease-in-out 1.5s 1 both',
+  			'title-balloon': 'title-balloon 0.9s ease-in-out 2.6s 1 both'
   		}
   	}
   },

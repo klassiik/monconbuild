@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Head } from 'vite-react-ssg';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -97,10 +97,20 @@ const PortfolioImage = ({ project, index }) => {
   );
 };
 
+// The hero title balloons once per full page load, sequenced after the header
+// logo animation (which ends at 2.5s); this module flag prevents a replay when
+// navigating back to Home, since the logo animation doesn't replay either.
+let heroTitleAnimated = false;
+
 // Hero section with hero.webp mountain background image for visual appeal
 const Home = () => {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
+  const [animateTitle] = useState(() => !heroTitleAnimated);
+
+  useEffect(() => {
+    heroTitleAnimated = true;
+  }, []);
 
   try {
     // Homepage Schema.org structured data for rich results
@@ -298,7 +308,7 @@ const Home = () => {
 
             <div className="container mx-auto px-6 md:px-12 relative z-20 pb-12 md:pb-16">
               <div className="max-w-2xl">
-                <h1 className="text-3xl md:text-4xl font-semibold mb-4 leading-snug">
+                <h1 className={`text-3xl md:text-4xl font-semibold mb-4 leading-snug${animateTitle ? ' origin-left motion-safe:animate-title-balloon' : ''}`}>
                   Professional Construction & Finish Carpentry
                 </h1>
                 <p className="text-base md:text-lg mb-6 text-gray-200 leading-relaxed">

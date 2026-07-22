@@ -32,7 +32,7 @@ const Header = () => {
                 <img
                   src="/logo.svg"
                   alt="Monument Construction - Licensed Contractor Colfax CA"
-                  className="h-16 md:h-20 w-auto origin-left motion-safe:animate-logo-balloon"
+                  className="h-16 md:h-20 w-auto origin-top-left motion-safe:animate-logo-balloon"
                   width="200"
                   height="80"
                   onError={(e) => {
