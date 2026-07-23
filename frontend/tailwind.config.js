@@ -84,10 +84,7 @@ export default {
   					transform: 'scale(1)'
   				},
   				'40%': {
-  					transform: 'scale(1.8)'
-  				},
-  				'75%': {
-  					transform: 'scale(0.96)'
+  					transform: 'scale(1.4)'
   				}
   			},
   			'title-balloon': {
