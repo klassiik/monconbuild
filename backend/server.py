@@ -1,9 +1,10 @@
 from fastapi import FastAPI, APIRouter, HTTPException, Depends, Request
+from fastapi.responses import JSONResponse
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorClientOptions
+from motor.motor_asyncio import AsyncIOMotorClient
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.middleware.base import Request, Response
 import os
@@ -107,7 +108,7 @@ async def rate_limit_middleware(request: Request, call_next):
     
     if RateLimiter.is_rate_limited(identifier):
         logger.warning(f"Rate limit exceeded for {identifier}")
-        raise HTTPException(status_code=429, detail="Rate limit exceeded")
+        return JSONResponse(status_code=429, content={"detail": "Rate limit exceeded"})
     
     start_time = time.time()
     response = await call_next(request)
@@ -133,17 +134,19 @@ async def lifespan(app: FastAPI):
         logger.info("Initializing MongoDB connection...")
         
         # Configure SSL/TLS options
-        ssl_options = None
+        ssl_options = {}
         if MONGO_TLS:
-            ssl_options = AsyncIOMotorClientOptions(
-                ssl=True,
-                ssl_cert_reqs=ssl.CERT_NONE if MONGO_TLS_INSECURE else ssl.CERT_REQUIRED,
-                ssl_ca_file=MONGO_CA_FILE if MONGO_CA_FILE else None,
-                ssl_certfile=MONGO_CERT_FILE if MONGO_CERT_FILE else None,
-                ssl_keyfile=MONGO_KEY_FILE if MONGO_KEY_FILE else None,
-            )
+            ssl_options = {
+                "ssl": True,
+                "ssl_cert_reqs": ssl.CERT_NONE if MONGO_TLS_INSECURE else ssl.CERT_REQUIRED,
+                "ssl_ca_file": MONGO_CA_FILE if MONGO_CA_FILE else None,
+                "ssl_certfile": MONGO_CERT_FILE if MONGO_CERT_FILE else None,
+                "ssl_keyfile": MONGO_KEY_FILE if MONGO_KEY_FILE else None,
+            }
+            # Remove None values
+            ssl_options = {k: v for k, v in ssl_options.items() if v is not None}
         
-        client = AsyncIOMotorClient(MONGO_URL, **ssl_options.__dict__ if ssl_options else {})
+        client = AsyncIOMotorClient(MONGO_URL, **ssl_options)
         
         # Test connection
         await client.admin.command('ping')
@@ -330,12 +333,12 @@ async def get_status_checks(
 # Error handlers
 @app.exception_handler(404)
 async def not_found_handler(request: Request, exc: HTTPException):
-    return {"error": "Not Found", "detail": "The requested resource was not found"}
+    return JSONResponse(status_code=404, content={"error": "Not Found", "detail": "The requested resource was not found"})
 
 @app.exception_handler(500)
 async def internal_error_handler(request: Request, exc: Exception):
     logger.error(f"Internal server error: {exc}")
-    return {"error": "Internal Server Error", "detail": "An internal error occurred"}
+    return JSONResponse(status_code=500, content={"error": "Internal Server Error", "detail": "An internal error occurred"})
 
 # Include router
 app.include_router(api_router)
