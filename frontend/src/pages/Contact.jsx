@@ -7,7 +7,7 @@ import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
-import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 import { Schema } from '../components/Schema';
 
@@ -434,14 +434,24 @@ const Contact = () => {
                 </div>
 
                 {submissionStatus === 'success' && (
-                  <div className="rounded border border-green-600 bg-green-50 px-4 py-3 text-green-800">
-                    Thanks! We received your request. We will follow up within 24 hours.
+                  <div
+                    role="status"
+                    aria-live="polite"
+                    className="rounded border border-green-600 bg-green-50 px-4 py-3 text-green-800 flex items-center gap-2"
+                  >
+                    <CheckCircle2 className="h-5 w-5" />
+                    <span>Thanks! We received your request. We will follow up within 24 hours.</span>
                   </div>
                 )}
 
                 {submissionStatus === 'error' && (
-                  <div className="rounded border border-red-600 bg-red-50 px-4 py-3 text-red-800">
-                    We could not send your request. Please try again or call (916) 607-1972.
+                  <div
+                    role="alert"
+                    aria-live="assertive"
+                    className="rounded border border-red-600 bg-red-50 px-4 py-3 text-red-800 flex items-center gap-2"
+                  >
+                    <AlertCircle className="h-5 w-5" />
+                    <span>We could not send your request. Please try again or call (916) 607-1972.</span>
                   </div>
                 )}
 
@@ -451,7 +461,14 @@ const Contact = () => {
                   className="w-full bg-green-700 hover:bg-green-800 text-white transition-all duration-300"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Request Free Quote'}
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin inline" />
+                      Sending...
+                    </>
+                  ) : (
+                    'Request Free Quote'
+                  )}
                 </Button>
 
                 <p className="text-sm text-gray-500 text-center">
