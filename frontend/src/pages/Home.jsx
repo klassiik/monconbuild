@@ -38,7 +38,10 @@ const HeroBackground = () => {
 };
 
 // Enhanced portfolio image component with lazy loading and error handling
-const PortfolioImage = ({ project, index }) => {
+// ⚡ Bolt: Wrapped in React.memo() to prevent unnecessary re-renders when
+// the parent Home component's state (like galleryOpen/Index) changes.
+// Expect ~100% reduction in re-renders for these image tiles when opening the lightbox.
+const PortfolioImage = React.memo(({ project, index }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -95,12 +98,182 @@ const PortfolioImage = ({ project, index }) => {
       </div>
     </div>
   );
-};
+});
 
 // The hero title balloons once per full page load, sequenced after the header
 // logo animation (which ends at 2.5s); this module flag prevents a replay when
 // navigating back to Home, since the logo animation doesn't replay either.
 let heroTitleAnimated = false;
+
+// ⚡ Bolt: Moved static schemas, services, portfolio, and testimonials outside
+// the Home component to prevent creating new object references on every render.
+// This allows React.memo on child components to work properly.
+
+// Homepage Schema.org structured data for rich results
+const homepageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.monconbuild.com/#webpage",
+  "url": "https://www.monconbuild.com/",
+  "name": "Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA",
+  "description": "Professional finish carpentry and general construction services serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California. Licensed contractor #801602. Featured on DIY Network TV.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://www.monconbuild.com/#website"
+  },
+  "about": { "@id": "https://www.monconbuild.com/#organization" },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://www.monconbuild.com/hero.webp",
+    "description": "Two-story home exterior with deck and staircase built by Monument Construction in Colfax, CA"
+  }
+};
+
+// ItemList Schema for Services (enables rich site links)
+const servicesListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Construction Services",
+  "description": "Professional construction and finish carpentry services offered by Monument Construction",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://www.monconbuild.com/services/finish-carpentry",
+      "name": "Finish Carpentry",
+      "description": "Expert custom woodwork, trim, moldings, and built-ins"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://www.monconbuild.com/services/general-construction",
+      "name": "General Construction",
+      "description": "Complete construction services from foundation to finish"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://www.monconbuild.com/services/residential-projects",
+      "name": "Residential Projects",
+      "description": "Complete residential construction and renovation projects"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://www.monconbuild.com/services/home-additions",
+      "name": "Home Additions",
+      "description": "Room additions and home expansions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "url": "https://www.monconbuild.com/services/custom-woodwork",
+      "name": "Custom Woodwork",
+      "description": "Custom cabinetry and artisan woodwork"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "url": "https://www.monconbuild.com/services/complete-remodeling",
+      "name": "Complete Remodeling",
+      "description": "Whole-house renovations and remodeling"
+    }
+  ]
+};
+
+const services = [
+  {
+    icon: <Hammer className="w-8 h-8" />,
+    title: "Finish Carpentry",
+    description: "Expert custom woodwork, trim, moldings, and built-ins that showcase true craftsmanship."
+  },
+  {
+    icon: <HomeIcon className="w-8 h-8" />,
+    title: "Residential Construction",
+    description: "Complete residential projects from ground work to final touches with attention to detail."
+  },
+  {
+    icon: <Wrench className="w-8 h-8" />,
+    title: "Remodeling & Renovations",
+    description: "Transform your existing space with quality craftsmanship and attention to detail."
+  },
+  {
+    icon: <Building2 className="w-8 h-8" />,
+    title: "Complete Construction",
+    description: "Full-service construction from foundation to finish, bringing your vision to life."
+  }
+];
+
+const portfolio = [
+  {
+    image: "/images/medium/Additions/addition-1.webp",
+    title: "Sunroom Addition",
+    description: "Light-filled space that blends right in",
+    alt: "Sunroom addition with vaulted wood ceiling by Monument Construction in Placer County, CA"
+  },
+  {
+    image: "/images/medium/Kitchens/kitchen-1.webp",
+    title: "Modern Kitchen Remodel",
+    description: "Custom cabinetry and quartz counters",
+    alt: "Modern kitchen remodel with custom cabinetry by Monument Construction in Placer County, CA"
+  },
+  {
+    image: "/images/medium/Fireplaces/fireplace-1.webp",
+    title: "Stone Fireplace & Mantel",
+    description: "Stacked stone with a reclaimed-timber mantel",
+    alt: "Stacked stone fireplace with reclaimed timber mantel by Monument Construction in Nevada County, CA"
+  },
+  {
+    image: "/images/medium/Outdoors/outdoor-1.webp",
+    title: "Timber-Frame Pavilion",
+    description: "Outdoor living, built to last",
+    alt: "Timber-frame outdoor pavilion by Monument Construction in Nevada County, CA"
+  },
+  {
+    image: "/images/medium/Library-Offices/library-1.webp",
+    title: "Custom Library & Built-Ins",
+    description: "Floor-to-ceiling custom carpentry",
+    alt: "Custom library built-in bookcase with finish carpentry work in Placer County, CA home"
+  },
+  {
+    image: "/images/medium/Framing/framing-sunset-1.webp",
+    title: "New Home Framing",
+    description: "Framed strong, finished beautiful",
+    alt: "Completed new home at sunset, framed and built by Monument Construction in Colfax, CA"
+  }
+];
+
+const testimonials = [
+  {
+    text: "We've collaborated with William on numerous projects over the years, ranging from kitchen remodels to extensive exterior renovations. On every project, William consistently delivers exceptional results, surpassing our expectations. His superior craftsmanship is evident in every detail, as he approaches construction with a meticulous and perfectionist mindset. If you're seeking top-notch work and exceptional results, don't hesitate to contact William. Additionally, some of the projects we've entrusted to him required creative problem-solving and ingenuity. In each instance, William demonstrated his remarkable ability to find innovative solutions, resulting in outstanding outcomes.",
+    name: "Neal Mitchell",
+    location: "Grass Valley, CA",
+    service: "Kitchen Remodeling & Exterior Renovations"
+  },
+  {
+    text: "We had William build our formal library and asked him to model it after the library in the show Downton Abbey. As you can see from the pictures, he succeeded amazingly well. We then had him build a library in my home office and my wife's smaller home office in the same style. He also built custom shelves in the mudroom in a different style entirely. Everything this man builds is perfect. No flaws or mistakes anywhere. He is a master craftsman, an artist, if you will, and a pleasure to work with. We highly recommend William for any project you might have.",
+    name: "Richard Young",
+    location: "Sacramento, CA",
+    service: "Custom Shelving & Library"
+  }
+];
+
+// Review schema mirrors the attributed five-star testimonials rendered on
+// this page (the Testimonials component displays a 5/5 star rating for
+// each). Intentionally no aggregateRating — only add one when ratings come
+// from a real review platform.
+const reviewsSchema = testimonials.map((t) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "GeneralContractor",
+    "@id": "https://www.monconbuild.com/#organization",
+    "name": "Monument Construction"
+  },
+  "author": { "@type": "Person", "name": t.name },
+  "reviewBody": t.text,
+  "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }
+}));
 
 // Hero section with hero.webp mountain background image for visual appeal
 const Home = () => {
@@ -113,172 +286,6 @@ const Home = () => {
   }, []);
 
   try {
-    // Homepage Schema.org structured data for rich results
-    const homepageSchema = {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "@id": "https://www.monconbuild.com/#webpage",
-      "url": "https://www.monconbuild.com/",
-      "name": "Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA",
-      "description": "Professional finish carpentry and general construction services serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California. Licensed contractor #801602. Featured on DIY Network TV.",
-      "isPartOf": {
-        "@type": "WebSite",
-        "@id": "https://www.monconbuild.com/#website"
-      },
-      "about": { "@id": "https://www.monconbuild.com/#organization" },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://www.monconbuild.com/hero.webp",
-        "description": "Two-story home exterior with deck and staircase built by Monument Construction in Colfax, CA"
-      }
-    };
-
-    // ItemList Schema for Services (enables rich site links)
-    const servicesListSchema = {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Construction Services",
-      "description": "Professional construction and finish carpentry services offered by Monument Construction",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "url": "https://www.monconbuild.com/services/finish-carpentry",
-          "name": "Finish Carpentry",
-          "description": "Expert custom woodwork, trim, moldings, and built-ins"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "url": "https://www.monconbuild.com/services/general-construction",
-          "name": "General Construction",
-          "description": "Complete construction services from foundation to finish"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "url": "https://www.monconbuild.com/services/residential-projects",
-          "name": "Residential Projects",
-          "description": "Complete residential construction and renovation projects"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "url": "https://www.monconbuild.com/services/home-additions",
-          "name": "Home Additions",
-          "description": "Room additions and home expansions"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "url": "https://www.monconbuild.com/services/custom-woodwork",
-          "name": "Custom Woodwork",
-          "description": "Custom cabinetry and artisan woodwork"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "url": "https://www.monconbuild.com/services/complete-remodeling",
-          "name": "Complete Remodeling",
-          "description": "Whole-house renovations and remodeling"
-        }
-      ]
-    };
-
-    const services = [
-      {
-        icon: <Hammer className="w-8 h-8" />,
-        title: "Finish Carpentry",
-        description: "Expert custom woodwork, trim, moldings, and built-ins that showcase true craftsmanship."
-      },
-      {
-        icon: <HomeIcon className="w-8 h-8" />,
-        title: "Residential Construction",
-        description: "Complete residential projects from ground work to final touches with attention to detail."
-      },
-      {
-        icon: <Wrench className="w-8 h-8" />,
-        title: "Remodeling & Renovations",
-        description: "Transform your existing space with quality craftsmanship and attention to detail."
-      },
-      {
-        icon: <Building2 className="w-8 h-8" />,
-        title: "Complete Construction",
-        description: "Full-service construction from foundation to finish, bringing your vision to life."
-      }
-    ];
-
-    const portfolio = [
-      {
-        image: "/images/medium/Additions/addition-1.webp",
-        title: "Sunroom Addition",
-        description: "Light-filled space that blends right in",
-        alt: "Sunroom addition with vaulted wood ceiling by Monument Construction in Placer County, CA"
-      },
-      {
-        image: "/images/medium/Kitchens/kitchen-1.webp",
-        title: "Modern Kitchen Remodel",
-        description: "Custom cabinetry and quartz counters",
-        alt: "Modern kitchen remodel with custom cabinetry by Monument Construction in Placer County, CA"
-      },
-      {
-        image: "/images/medium/Fireplaces/fireplace-1.webp",
-        title: "Stone Fireplace & Mantel",
-        description: "Stacked stone with a reclaimed-timber mantel",
-        alt: "Stacked stone fireplace with reclaimed timber mantel by Monument Construction in Nevada County, CA"
-      },
-      {
-        image: "/images/medium/Outdoors/outdoor-1.webp",
-        title: "Timber-Frame Pavilion",
-        description: "Outdoor living, built to last",
-        alt: "Timber-frame outdoor pavilion by Monument Construction in Nevada County, CA"
-      },
-      {
-        image: "/images/medium/Library-Offices/library-1.webp",
-        title: "Custom Library & Built-Ins",
-        description: "Floor-to-ceiling custom carpentry",
-        alt: "Custom library built-in bookcase with finish carpentry work in Placer County, CA home"
-      },
-      {
-        image: "/images/medium/Framing/framing-sunset-1.webp",
-        title: "New Home Framing",
-        description: "Framed strong, finished beautiful",
-        alt: "Completed new home at sunset, framed and built by Monument Construction in Colfax, CA"
-      }
-    ];
-
-    const testimonials = [
-      {
-        text: "We've collaborated with William on numerous projects over the years, ranging from kitchen remodels to extensive exterior renovations. On every project, William consistently delivers exceptional results, surpassing our expectations. His superior craftsmanship is evident in every detail, as he approaches construction with a meticulous and perfectionist mindset. If you're seeking top-notch work and exceptional results, don't hesitate to contact William. Additionally, some of the projects we've entrusted to him required creative problem-solving and ingenuity. In each instance, William demonstrated his remarkable ability to find innovative solutions, resulting in outstanding outcomes.",
-        name: "Neal Mitchell",
-        location: "Grass Valley, CA",
-        service: "Kitchen Remodeling & Exterior Renovations"
-      },
-      {
-        text: "We had William build our formal library and asked him to model it after the library in the show Downton Abbey. As you can see from the pictures, he succeeded amazingly well. We then had him build a library in my home office and my wife's smaller home office in the same style. He also built custom shelves in the mudroom in a different style entirely. Everything this man builds is perfect. No flaws or mistakes anywhere. He is a master craftsman, an artist, if you will, and a pleasure to work with. We highly recommend William for any project you might have.",
-        name: "Richard Young",
-        location: "Sacramento, CA",
-        service: "Custom Shelving & Library"
-      }
-    ];
-
-    // Review schema mirrors the attributed five-star testimonials rendered on
-    // this page (the Testimonials component displays a 5/5 star rating for
-    // each). Intentionally no aggregateRating — only add one when ratings come
-    // from a real review platform.
-    const reviewsSchema = testimonials.map((t) => ({
-      "@context": "https://schema.org",
-      "@type": "Review",
-      "itemReviewed": {
-        "@type": "GeneralContractor",
-        "@id": "https://www.monconbuild.com/#organization",
-        "name": "Monument Construction"
-      },
-      "author": { "@type": "Person", "name": t.name },
-      "reviewBody": t.text,
-      "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }
-    }));
-
     return (
       <ErrorBoundary>
         <div className="min-h-screen">
