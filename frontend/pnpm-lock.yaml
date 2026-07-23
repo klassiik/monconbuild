@@ -214,7 +214,7 @@ importers:
         specifier: ^16.0.0
         version: 16.5.0
       postcss:
-        specifier: ^8.5.1
+        specifier: ^8.5.22
         version: 8.5.22
       sharp:
         specifier: ^0.34.5
