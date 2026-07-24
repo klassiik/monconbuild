@@ -59,18 +59,15 @@ const ImageOptimizer = () => {
   const handleOptimizeImages = () => {
     setIsProcessing(true);
     
-    // Simulate optimization process
-    setTimeout(() => {
-      setOptimizationResults({
-        totalImages: currentImages.length,
-        totalSavings: `${totalSavings}%`,
-        sizeBefore: `${totalCurrentSize.toFixed(1)} MB`,
-        sizeAfter: `${totalOptimizedSize.toFixed(1)} MB`,
-        lcpImprovement: '3.2s',
-        performanceGain: '+18 points'
-      });
-      setIsProcessing(false);
-    }, 3000);
+    setOptimizationResults({
+      totalImages: currentImages.length,
+      totalSavings: `${totalSavings}%`,
+      sizeBefore: `${totalCurrentSize.toFixed(1)} MB`,
+      sizeAfter: `${totalOptimizedSize.toFixed(1)} MB`,
+      lcpImprovement: '3.2s',
+      performanceGain: '+18 points'
+    });
+    setIsProcessing(false);
   };
 
   const downloadOptimizedImages = () => {
