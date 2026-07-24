@@ -104,7 +104,8 @@ async def rate_limit_middleware(request: Request, call_next):
     # Get client identifier (IP + User Agent)
     client_ip = request.client.host if request.client else "unknown"
     user_agent = request.headers.get("User-Agent", "unknown")
-    identifier = f"{client_ip}:{hashlib.md5(user_agent.encode()).hexdigest()[:8]}"
+    # SECURITY FIX: Using SHA-256 instead of MD5 to prevent weak hash vulnerability
+    identifier = f"{client_ip}:{hashlib.sha256(user_agent.encode()).hexdigest()[:8]}"
     
     if RateLimiter.is_rate_limited(identifier):
         logger.warning(f"Rate limit exceeded for {identifier}")
