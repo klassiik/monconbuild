@@ -156,8 +156,6 @@ export function initializeWebVitals() {
     onFCP(sendToAnalyticsWithInsights);
     onLCP(sendToAnalyticsWithInsights);
     onTTFB(sendToAnalyticsWithInsights);
-    
-    console.log('Web Vitals tracking initialized');
   } catch (error) {
     handleError(error, 'WEB_VITALS_INIT_ERROR', 'HIGH', {
       browserSupport: {
