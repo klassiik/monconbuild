@@ -16,6 +16,16 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [touchStart, setTouchStart] = useState(null);
 
+  const goToPrevious = useCallback(() => {
+    setIsLoading(true);
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  }, [images.length]);
+
+  const goToNext = useCallback(() => {
+    setIsLoading(true);
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  }, [images.length]);
+
   // Reset index when gallery opens with new initial index
   useEffect(() => {
     if (isOpen) {
@@ -52,17 +62,10 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, currentIndex]);
-
-  const goToPrevious = useCallback(() => {
-    setIsLoading(true);
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  }, [images.length]);
-
-  const goToNext = useCallback(() => {
-    setIsLoading(true);
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  }, [images.length]);
+  // ⚡ Bolt: Removed currentIndex from useEffect dependencies and added memoized functions.
+  // This prevents unnecessary DOM thrashing (toggling document.body.style.overflow) and
+  // removing/re-adding window event listeners on every single image transition.
+  }, [isOpen, goToPrevious, goToNext, onClose]);
 
   // Touch handlers for swipe navigation
   const handleTouchStart = (e) => {
