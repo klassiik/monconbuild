@@ -120,11 +120,11 @@ frontend/
 │   │   ├── Contact.jsx             # Contact page
 │   │   └── services/
 │   │       ├── FinishCarpentry.jsx        # ✅ Schema + Breadcrumb
-│   │       ├── GeneralConstruction.jsx    # TODO: Add schema
-│   │       ├── ResidentialProjects.jsx    # TODO: Add schema
-│   │       ├── HomeAdditions.jsx          # TODO: Add schema
-│   │       ├── CustomWoodwork.jsx         # TODO: Add schema
-│   │       └── CompleteRemodeling.jsx     # TODO: Add schema
+│   │       ├── GeneralConstruction.jsx    # ✅ Schema + Breadcrumb
+│   │       ├── ResidentialProjects.jsx    # ✅ Schema + Breadcrumb
+│   │       ├── HomeAdditions.jsx          # ✅ Schema + Breadcrumb
+│   │       ├── CustomWoodwork.jsx         # ✅ Schema + Breadcrumb
+│   │       └── CompleteRemodeling.jsx     # ✅ Schema + Breadcrumb
 ```
 
 ---
