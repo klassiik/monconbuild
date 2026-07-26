@@ -31,8 +31,14 @@ export default function Layout() {
   return (
     <ErrorBoundary>
       <div className="App" style={{ minHeight: '100vh', backgroundColor: '#f0f0f0' }}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-white focus:text-green-700 focus:font-bold focus:shadow-md top-0 left-0"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main id="main-content">
+        <main id="main-content" tabIndex={-1} className="focus:outline-none">
           <Outlet />
         </main>
         <Footer />
