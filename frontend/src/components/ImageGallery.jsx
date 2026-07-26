@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Helper to use lightweight thumbnails instead of full-size images for the filmstrip.
+const toThumbnail = (src) =>
+  src && src.startsWith('/images/') ? src.replace('/images/', '/images/thumbnails/') : src;
+
 /**
  * ImageGallery - A lightbox component for viewing multiple images
  * 
@@ -192,9 +196,13 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
                   : 'border-transparent opacity-60 hover:opacity-100'
               }`}
             >
+              {/* ⚡ Bolt: Load optimized thumbnail versions instead of full-size images
+                  for the bottom strip, and add lazy loading to save bandwidth. */}
               <img
-                src={img}
+                src={toThumbnail(img)}
                 alt={`Thumbnail ${idx + 1}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </button>
