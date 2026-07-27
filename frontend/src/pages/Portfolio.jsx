@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
@@ -24,8 +24,9 @@ const Portfolio = () => {
     { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' },
   ];
 
+  // ⚡ Bolt: Memoized schemaProjects to prevent unnecessary recreation of the array and its objects on every render (e.g. when gallery state changes).
   // Build schema-friendly project entries from the category data.
-  const schemaProjects = portfolioCategories.map((cat) => ({
+  const schemaProjects = useMemo(() => portfolioCategories.map((cat) => ({
     id: cat.id,
     title: cat.name,
     category: cat.name,
@@ -33,7 +34,7 @@ const Portfolio = () => {
     location: 'Placer & Nevada Counties, CA',
     thumbnail: cat.images[0],
     images: cat.images,
-  }));
+  })), []);
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
