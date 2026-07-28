@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
@@ -13,27 +13,69 @@ import { portfolioCategories, libraryProgress, featuredSlides } from '../data/po
 const optimized = (src, size) =>
   src && src.startsWith('/images/') ? src.replace('/images/', `/images/${size}/`) : src;
 
+const breadcrumbItems = [
+  { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' },
+];
+
+// Build schema-friendly project entries from the category data.
+const schemaProjects = portfolioCategories.map((cat) => ({
+  id: cat.id,
+  title: cat.name,
+  category: cat.name,
+  description: cat.blurb,
+  location: 'Placer & Nevada Counties, CA',
+  thumbnail: cat.images[0],
+  images: cat.images,
+}));
+
+const CategoryTile = React.memo(function CategoryTile({ cat, onOpenGallery }) {
+  return (
+  <button
+    type="button"
+    onClick={() => onOpenGallery(cat.images, cat.name, 0)}
+    className="group text-left rounded-xl overflow-hidden shadow-lg hover:shadow-2xl bg-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-700"
+  >
+    <div className="relative aspect-[4/3] overflow-hidden">
+      <img
+        src={optimized(cat.images[0], 'medium')}
+        srcSet={`${optimized(cat.images[0], 'thumbnails')} 400w, ${optimized(cat.images[0], 'medium')} 1200w`}
+        sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) calc(50vw - 3rem), 33vw"
+        alt={`${cat.name} project by Monument Construction`}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+      <div className="absolute bottom-3 right-3 bg-black/70 text-white px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium flex items-center gap-1.5">
+        <Camera className="w-3.5 h-3.5 md:w-4 md:h-4" />
+        {cat.images.length} photo{cat.images.length !== 1 ? 's' : ''}
+      </div>
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+        <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-semibold bg-green-700 px-5 py-2.5 rounded-lg">
+          View Gallery
+        </span>
+      </div>
+    </div>
+    <div className="p-5">
+      <h3 className="text-xl font-bold text-slate-900 mb-1">{cat.name}</h3>
+      <p className="text-gray-600 text-sm">{cat.blurb}</p>
+    </div>
+  </button>
+  );
+});
+
 const Portfolio = () => {
   const [gallery, setGallery] = useState({ open: false, images: [], title: '', index: 0 });
 
-  const openGallery = (images, title, index = 0) =>
-    setGallery({ open: true, images, title, index });
-  const closeGallery = () => setGallery((g) => ({ ...g, open: false }));
+  const openGallery = useCallback((images, title, index = 0) =>
+    setGallery({ open: true, images, title, index }), []);
 
-  const breadcrumbItems = [
-    { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' },
-  ];
+  const closeGallery = useCallback(() =>
+    setGallery((g) => ({ ...g, open: false })), []);
 
-  // Build schema-friendly project entries from the category data.
-  const schemaProjects = portfolioCategories.map((cat) => ({
-    id: cat.id,
-    title: cat.name,
-    category: cat.name,
-    description: cat.blurb,
-    location: 'Placer & Nevada Counties, CA',
-    thumbnail: cat.images[0],
-    images: cat.images,
-  }));
+  const handleFeaturedClick = useCallback((i) =>
+    openGallery(featuredSlides.map((s) => s.src), 'Featured Projects', i), [openGallery]);
+
+  const handleLibraryClick = useCallback((i) =>
+    openGallery(libraryProgress.map((s) => s.src), 'Library Build — Start to Finish', i), [openGallery]);
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
@@ -77,9 +119,7 @@ const Portfolio = () => {
             <AutoCarousel
               slides={featuredSlides}
               aspectClass="aspect-[4/3]"
-              onSlideClick={(i) =>
-                openGallery(featuredSlides.map((s) => s.src), 'Featured Projects', i)
-              }
+              onSlideClick={handleFeaturedClick}
             />
           </div>
         </div>
@@ -97,36 +137,7 @@ const Portfolio = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {portfolioCategories.map((cat) => (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => openGallery(cat.images, cat.name, 0)}
-                className="group text-left rounded-xl overflow-hidden shadow-lg hover:shadow-2xl bg-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-700"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={optimized(cat.images[0], 'medium')}
-                    srcSet={`${optimized(cat.images[0], 'thumbnails')} 400w, ${optimized(cat.images[0], 'medium')} 1200w`}
-                    sizes="(max-width: 640px) calc(100vw - 3rem), (max-width: 1024px) calc(50vw - 3rem), 33vw"
-                    alt={`${cat.name} project by Monument Construction`}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute bottom-3 right-3 bg-black/70 text-white px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium flex items-center gap-1.5">
-                    <Camera className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                    {cat.images.length} photo{cat.images.length !== 1 ? 's' : ''}
-                  </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-semibold bg-green-700 px-5 py-2.5 rounded-lg">
-                      View Gallery
-                    </span>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold text-slate-900 mb-1">{cat.name}</h3>
-                  <p className="text-gray-600 text-sm">{cat.blurb}</p>
-                </div>
-              </button>
+              <CategoryTile key={cat.id} cat={cat} onOpenGallery={openGallery} />
             ))}
           </div>
         </div>
@@ -146,9 +157,7 @@ const Portfolio = () => {
               slides={libraryProgress}
               interval={3500}
               aspectClass="aspect-[4/3]"
-              onSlideClick={(i) =>
-                openGallery(libraryProgress.map((s) => s.src), 'Library Build — Start to Finish', i)
-              }
+              onSlideClick={handleLibraryClick}
             />
           </div>
         </div>

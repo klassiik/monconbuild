@@ -203,4 +203,4 @@ const AutoCarousel = ({
   );
 };
 
-export default AutoCarousel;
+export default React.memo(AutoCarousel);
