@@ -6,20 +6,21 @@ import { CONTACT_INFO } from '../utils/constants';
 import ErrorBoundary from './ErrorBoundary';
 import { handleError } from '../utils/errorHandler';
 
+// ⚡ Bolt: Moved static navItems outside the component to prevent recreating the array on every render.
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'About', path: '/about' },
+  { name: 'Portfolio', path: '/portfolio' },
+  { name: 'Service Areas', path: '/service-areas' },
+  { name: 'Contact', path: '/contact' }
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   try {
-    const navItems = [
-      { name: 'Home', path: '/' },
-      { name: 'Services', path: '/services' },
-      { name: 'About', path: '/about' },
-      { name: 'Portfolio', path: '/portfolio' },
-      { name: 'Service Areas', path: '/service-areas' },
-      { name: 'Contact', path: '/contact' }
-    ];
-
     const isActive = (path) => location.pathname === path;
 
     return (
