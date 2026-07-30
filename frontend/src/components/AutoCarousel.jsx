@@ -138,7 +138,7 @@ const AutoCarousel = ({
             tabIndex={i === index ? 0 : -1}
             aria-hidden={i === index ? undefined : true}
             onClick={handleSlideClick}
-            className={`absolute inset-0 h-full w-full cursor-pointer transition-opacity duration-700 ease-in-out ${
+            className={`absolute inset-0 h-full w-full cursor-pointer transition-opacity duration-700 ease-in-out focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-inset ${
               i === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
@@ -169,7 +169,7 @@ const AutoCarousel = ({
             type="button"
             onClick={prev}
             aria-label="Previous slide"
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <ChevronLeft className="w-5 h-5 md:w-7 md:h-7" />
           </button>
@@ -177,7 +177,7 @@ const AutoCarousel = ({
             type="button"
             onClick={next}
             aria-label="Next slide"
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <ChevronRight className="w-5 h-5 md:w-7 md:h-7" />
           </button>
@@ -191,7 +191,7 @@ const AutoCarousel = ({
                 onClick={() => setIndex(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === index ? 'true' : undefined}
-                className={`h-2.5 rounded-full transition-all ${
+                className={`h-2.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 ${
                   i === index ? 'w-6 bg-white' : 'w-2.5 bg-white/50 hover:bg-white/80'
                 }`}
               />
