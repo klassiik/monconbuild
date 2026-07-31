@@ -31,9 +31,13 @@ const FAQSection = ({ faqs, title = "Frequently Asked Questions" }) => {
         >
           {/* dangerouslySetInnerHTML is required: a JSX text child gets HTML-entity-escaped
               by SSG serialization, producing invalid JSON-LD (&quot; instead of ") */}
+          {/* SECURITY: Escape '<' characters to prevent XSS when injecting JSON-LD strings.
+              Since we are using dangerouslySetInnerHTML, an unescaped '<' inside user data
+              (e.g. faq.answer containing '</script><script>alert(1)</script>') could break
+              out of the script tag and execute arbitrary code. */}
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c') }}
           />
           
           <div className="container mx-auto px-6 max-w-4xl">
