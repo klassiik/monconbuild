@@ -41,7 +41,7 @@ const HeroBackground = () => {
 // ⚡ Bolt: Wrapped in React.memo() to prevent unnecessary re-renders when
 // the parent Home component's state (like galleryOpen/Index) changes.
 // Expect ~100% reduction in re-renders for these image tiles when opening the lightbox.
-const PortfolioImage = React.memo(({ project, index }) => {
+const PortfolioImage = React.memo(function PortfolioImage({ project, index }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 

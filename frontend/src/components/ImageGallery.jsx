@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// ⚡ Bolt: Helper to load optimized thumbnail variants instead of full-size images
+// for the thumbnail strip. This significantly reduces data transfer and unblocks the main thread
+// when rendering a large gallery, as thumbnails are typically ~5-10KB vs full size ~1-3MB.
+const toThumbnail = (src) =>
+  src && src.startsWith('/images/') ? src.replace('/images/', '/images/thumbnails/') : src;
+
 /**
  * ImageGallery - A lightbox component for viewing multiple images
  * 
@@ -193,8 +199,9 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
               }`}
             >
               <img
-                src={img}
+                src={toThumbnail(img)}
                 alt={`Thumbnail ${idx + 1}`}
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </button>
