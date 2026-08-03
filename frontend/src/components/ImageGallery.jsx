@@ -38,6 +38,29 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
     }
   }, [isOpen, initialIndex]);
 
+  // ⚡ Bolt: Preload adjacent images for faster sequential navigation.
+  // Preloading the next and previous images significantly reduces perceived
+  // load time when users swipe or click through the gallery, masking the
+  // network delay of fetching the next high-res image.
+  useEffect(() => {
+    if (!isOpen || !images || images.length <= 1) return;
+
+    const nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+    const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+
+    // Preload next image
+    const imgNext = new Image();
+    imgNext.fetchPriority = 'low';
+    imgNext.src = images[nextIndex];
+
+    // Preload previous image
+    const imgPrev = new Image();
+    imgPrev.fetchPriority = 'low';
+    imgPrev.src = images[prevIndex];
+  // `images` is intentionally omitted: Home passes `featuredSlides.map(...)`, a new
+  // array every render, so including it would re-run this effect continuously.
+  }, [isOpen, currentIndex]);
+
   // Handle keyboard navigation
   useEffect(() => {
     if (!isOpen) return;
