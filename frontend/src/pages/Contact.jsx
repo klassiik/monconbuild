@@ -8,6 +8,10 @@ import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+// Toasts are reserved for the two failures that render no inline banner (missing
+// form ID, failed validation). Success and submit-error already show an aria-live
+// banner beside the submit button, so toasting those too would announce the same
+// message twice to screen readers.
 import { toast } from 'sonner';
 import { Schema } from '../components/Schema';
 
@@ -119,9 +123,6 @@ const Contact = () => {
 
       if (response.ok) {
         setSubmissionStatus('success');
-        toast.success("Quote Request Received!", {
-          description: "We'll contact you within 24 hours to discuss your project."
-        });
 
         // Reset form
         setFormData({
@@ -137,16 +138,10 @@ const Contact = () => {
         });
       } else {
         setSubmissionStatus('error');
-        toast.error("Submission Error", {
-          description: (data && data.message) || "There was a problem submitting your request."
-        });
       }
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmissionStatus('error');
-      toast.error("Error", {
-        description: "Something went wrong. Please try again or call us at (916) 607-1972."
-      });
     } finally {
       setIsSubmitting(false);
     }
