@@ -46,12 +46,15 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
 
     // Preload next image
     const imgNext = new Image();
+    imgNext.fetchPriority = 'low';
     imgNext.src = images[nextIndex];
 
     // Preload previous image
     const imgPrev = new Image();
+    imgPrev.fetchPriority = 'low';
     imgPrev.src = images[prevIndex];
-  }, [isOpen, currentIndex, images]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen, currentIndex]);
 
   // Handle keyboard navigation
   useEffect(() => {
