@@ -8,7 +8,7 @@ import { Textarea } from '../components/ui/textarea';
 import { Label } from '../components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
-import { useToast } from '../hooks/use-toast';
+import { toast } from 'sonner';
 import { Schema } from '../components/Schema';
 
 const Contact = () => {
@@ -30,7 +30,6 @@ const Contact = () => {
     "mainEntity": { "@id": "https://www.monconbuild.com/#organization" }
   };
 
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -71,10 +70,8 @@ const Contact = () => {
       
       if (!formId) {
         console.error('Missing VITE_FORMSPREE_FORM_ID');
-        toast({
-          title: "Configuration Required",
-          description: "Missing Formspree form ID. Please set VITE_FORMSPREE_FORM_ID.",
-          variant: "destructive"
+        toast.error("Configuration Required", {
+          description: "Missing Formspree form ID. Please set VITE_FORMSPREE_FORM_ID."
         });
         setIsSubmitting(false);
         return;
@@ -83,10 +80,8 @@ const Contact = () => {
       // Validate required fields
       if (!formData.name || !formData.email || !formData.phone || !formData.projectType || !formData.location || !formData.city || !formData.message) {
         console.warn('Missing required fields:', { name: !formData.name, email: !formData.email, phone: !formData.phone, projectType: !formData.projectType, location: !formData.location, city: !formData.city, message: !formData.message });
-        toast({
-          title: "Missing Information",
-          description: "Please fill in all required fields (marked with *).",
-          variant: "destructive"
+        toast.error("Missing Information", {
+          description: "Please fill in all required fields (marked with *)."
         });
         setIsSubmitting(false);
         return;
@@ -124,9 +119,8 @@ const Contact = () => {
 
       if (response.ok) {
         setSubmissionStatus('success');
-        toast({
-          title: "Quote Request Received!",
-          description: "We'll contact you within 24 hours to discuss your project.",
+        toast.success("Quote Request Received!", {
+          description: "We'll contact you within 24 hours to discuss your project."
         });
 
         // Reset form
@@ -143,19 +137,15 @@ const Contact = () => {
         });
       } else {
         setSubmissionStatus('error');
-        toast({
-          title: "Submission Error",
-          description: (data && data.message) || "There was a problem submitting your request.",
-          variant: "destructive"
+        toast.error("Submission Error", {
+          description: (data && data.message) || "There was a problem submitting your request."
         });
       }
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmissionStatus('error');
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again or call us at (916) 607-1972.",
-        variant: "destructive"
+      toast.error("Error", {
+        description: "Something went wrong. Please try again or call us at (916) 607-1972."
       });
     } finally {
       setIsSubmitting(false);
