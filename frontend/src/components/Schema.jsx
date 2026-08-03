@@ -8,10 +8,9 @@ import { Head } from 'vite-react-ssg';
 export const Schema = ({ schema }) => {
   return (
     <Head>
-      <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
-        />
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
     </Head>
   );
 };
