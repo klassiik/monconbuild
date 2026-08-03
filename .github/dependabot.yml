@@ -26,26 +26,18 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-dom"
         update-types: ["version-update:semver-major"]
+      # Tailwind v4 is a rewrite, not an upgrade: it needs @tailwindcss/postcss,
+      # `@import "tailwindcss"` in place of the @tailwind directives, and the
+      # theme colors behind `@apply border-border` moved into a CSS @theme block.
+      # v3 patch/minor updates still come through. See #149.
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
 
-  # Backend dependencies (pip)
-  - package-ecosystem: "pip"
-    directory: "/backend"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 10
-    assignees:
-      - "klassiik"
-    labels:
-      - "dependencies"
-      - "security"
-      - "backend"
-    commit-message:
-      prefix: "chore(deps)"
-      include: "scope"
-    allow:
-      - dependency-type: "all"
+  # Backend (pip) is intentionally not watched. backend/server.py is a FastAPI app
+  # with no deployment path: Vercel builds only frontend/ (static, no functions or
+  # Python rewrites), and POST /api/analytics/errors returns 404 in production --
+  # server.py doesn't define that route either. Every pip PR patched code that
+  # never runs. Restore this block if the backend is ever actually deployed.
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
