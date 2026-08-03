@@ -116,9 +116,10 @@ const FinishCarpentry = () => {
         <meta name="twitter:card" content="summary_large_image" />
         
         {/* Service Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, '\\u003c') }}
+        />
       </Head>
 
       {/* Breadcrumb Navigation */}

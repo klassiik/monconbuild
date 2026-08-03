@@ -58,7 +58,10 @@ const FinishCarpentryCosts = () => {
         <meta property="og:type" content="article" />
         <meta property="og:image" content="https://www.monconbuild.com/og-default.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }}
+        />
       </Head>
 
       <Breadcrumb items={breadcrumbItems} />
