@@ -53,7 +53,8 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
     const imgPrev = new Image();
     imgPrev.fetchPriority = 'low';
     imgPrev.src = images[prevIndex];
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // `images` is intentionally omitted: Home passes `featuredSlides.map(...)`, a new
+  // array every render, so including it would re-run this effect continuously.
   }, [isOpen, currentIndex]);
 
   // Handle keyboard navigation
