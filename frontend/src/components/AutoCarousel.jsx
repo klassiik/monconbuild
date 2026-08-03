@@ -138,7 +138,7 @@ const AutoCarousel = ({
             tabIndex={i === index ? 0 : -1}
             aria-hidden={i === index ? undefined : true}
             onClick={handleSlideClick}
-            className={`absolute inset-0 h-full w-full cursor-pointer transition-opacity duration-700 ease-in-out focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-inset ${
+            className={`absolute inset-0 h-full w-full cursor-pointer transition-opacity duration-700 ease-in-out focus-visible:outline-2 focus-visible:outline-white focus-visible:-outline-offset-4 ${
               i === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
