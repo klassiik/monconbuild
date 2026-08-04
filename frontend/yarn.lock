@@ -123,9 +123,9 @@
     "@babel/traverse" "^7.29.7"
 
 "@babel/helper-plugin-utils@^7.27.1":
-  version "7.27.1"
-  resolved "https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.27.1.tgz"
-  integrity sha512-1gn1Up5YXka3YYAHGKpbideQ5Yjf1tDa9qYcgysz+cNCXukyLl6DjPXhD3VRwSb8c0J9tA4b2+rHEZtc6R0tlw==
+  version "7.29.7"
+  resolved "https://registry.yarnpkg.com/@babel/helper-plugin-utils/-/helper-plugin-utils-7.29.7.tgz#c0a0766f1a13617d8a17407d7ab8f9d486225ea4"
+  integrity sha512-G7sHYigPY17oO5SYWnfD/0MTBwVR781S/JI643e/JhUYgVgWE/61SoW3NH9KWUKyKq5LVh3npif99Wkt6j86Jw==
 
 "@babel/helper-string-parser@^7.29.7":
   version "7.29.7"
