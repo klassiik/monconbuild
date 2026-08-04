@@ -166,10 +166,10 @@ const CompleteRemodeling = () => {
             <div className="bg-green-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">What is a Complete Home Remodel?</h3>
               <p className="text-gray-700 mb-4">
-                A complete home remodel goes beyond simple cosmetic updates. It's a comprehensive transformation that can involve structural changes, system upgrades (electrical, plumbing, HVAC), new layouts, and complete aesthetic redesigns. Whether your home is 20 or 50 years old, remodeling lets you modernize it completely - updating outdated systems, improving energy efficiency, and creating the home you've always wanted.
+                A complete home remodel goes beyond simple cosmetic updates. It&apos;s a comprehensive transformation that can involve structural changes, system upgrades (electrical, plumbing, HVAC), new layouts, and complete aesthetic redesigns. Whether your home is 20 or 50 years old, remodeling lets you modernize it completely - updating outdated systems, improving energy efficiency, and creating the home you&apos;ve always wanted.
               </p>
               <p className="text-gray-700">
-                Complete remodeling projects can include kitchen and bathroom renovations, flooring replacement, interior redesigns, exterior updates, and more. The result is a home that's not only more beautiful and functional but also more valuable and efficient. With our 25+ years of experience, we make the entire remodeling process smooth and stress-free.
+                Complete remodeling projects can include kitchen and bathroom renovations, flooring replacement, interior redesigns, exterior updates, and more. The result is a home that&apos;s not only more beautiful and functional but also more valuable and efficient. With our 25+ years of experience, we make the entire remodeling process smooth and stress-free.
               </p>
             </div>
 
@@ -209,7 +209,7 @@ const CompleteRemodeling = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Skilled Execution</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  Our team coordinates all trades - demolition, framing, electrical, plumbing, HVAC, tile work, cabinetry, and more. We keep work sites clean and organized and minimize disruption to your household. We'll keep you updated throughout the entire process.
+                  Our team coordinates all trades - demolition, framing, electrical, plumbing, HVAC, tile work, cabinetry, and more. We keep work sites clean and organized and minimize disruption to your household. We&apos;ll keep you updated throughout the entire process.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">

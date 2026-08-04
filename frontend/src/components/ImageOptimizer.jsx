@@ -232,7 +232,7 @@ const ImageOptimizer = () => {
                     <div className="font-medium text-blue-900">Pro Tips:</div>
                     <ul className="mt-1 space-y-1 text-blue-700">
                       <li>• Use WebP for 80% smaller files</li>
-                      <li>• Add loading="lazy" for images below fold</li>
+                      <li>• Add loading=&quot;lazy&quot; for images below fold</li>
                       <li>• Resize images to actual display size</li>
                       <li>• Use srcset for responsive images</li>
                     </ul>
@@ -300,7 +300,7 @@ const ImageOptimizer = () => {
           <div className="prose prose-sm max-w-none">
             <h4>Step 1: Download & Convert Images</h4>
             <ol>
-              <li>Click "Start Optimization" to process all images</li>
+              <li>Click &quot;Start Optimization&quot; to process all images</li>
               <li>Download the optimized image pack</li>
               <li>Extract to <code>/public/images/</code> folder</li>
             </ol>

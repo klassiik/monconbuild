@@ -34,7 +34,7 @@ export default function CityLanding() {
           <meta name="robots" content="noindex, follow" />
         </Head>
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">We don't have a page for that area yet</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">We don&apos;t have a page for that area yet</h1>
           <p className="text-gray-600 mb-8">See every community we serve on our service areas page.</p>
           <Link to="/service-areas" className="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg font-semibold">
             View Service Areas

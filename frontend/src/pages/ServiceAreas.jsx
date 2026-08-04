@@ -181,7 +181,7 @@ const ServiceAreas = () => {
               Explore Our Work by City
             </h2>
             <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
-              Local building knowledge for the communities we serve most — from foothill fire zones to Tahoe's TRPA requirements.
+              Local building knowledge for the communities we serve most — from foothill fire zones to Tahoe&apos;s TRPA requirements.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {CITIES.map((c) => (
@@ -213,11 +213,11 @@ const ServiceAreas = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Where We Serve</h2>
             <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
               <p>
-                Monument Construction serves a wide geographic area throughout Northern California, with a primary focus on Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Since our founding, we've been the trusted construction and finish carpentry partner for homeowners in Colfax and the surrounding communities.
+                Monument Construction serves a wide geographic area throughout Northern California, with a primary focus on Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Since our founding, we&apos;ve been the trusted construction and finish carpentry partner for homeowners in Colfax and the surrounding communities.
               </p>
 
               <p>
-                Our service area includes Colfax, Auburn, Grass Valley, Nevada City, Truckee, and all surrounding communities in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Whether you're located in a rural mountain community or a more developed suburban area, we bring the same level of professionalism, craftsmanship, and customer service to every project.
+                Our service area includes Colfax, Auburn, Grass Valley, Nevada City, Truckee, and all surrounding communities in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. Whether you&apos;re located in a rural mountain community or a more developed suburban area, we bring the same level of professionalism, craftsmanship, and customer service to every project.
               </p>
 
               <p>
@@ -294,7 +294,7 @@ const ServiceAreas = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">Areas We Serve</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Quality construction and finish carpentry services throughout Northern California's Gold Country.
+              Quality construction and finish carpentry services throughout Northern California&apos;s Gold Country.
             </p>
           </div>
 
@@ -359,15 +359,15 @@ const ServiceAreas = () => {
               </p>
               
               <p>
-                Our service area covers both valley communities and mountain locations. We're familiar with the construction considerations for each – from the warmer valley climates to the snow loads and weather conditions of higher elevations.
+                Our service area covers both valley communities and mountain locations. We&apos;re familiar with the construction considerations for each – from the warmer valley climates to the snow loads and weather conditions of higher elevations.
               </p>
               
               <p>
-                Being local also means we've built relationships with suppliers, inspectors, and other trades throughout the region. This network helps us complete projects efficiently and handle any challenges that arise.
+                Being local also means we&apos;ve built relationships with suppliers, inspectors, and other trades throughout the region. This network helps us complete projects efficiently and handle any challenges that arise.
               </p>
               
               <p>
-                If you're located outside our core communities but still within our five-county Northern California service area, please don't hesitate to reach out. We're often able to accommodate projects in surrounding areas.
+                If you&apos;re located outside our core communities but still within our five-county Northern California service area, please don&apos;t hesitate to reach out. We&apos;re often able to accommodate projects in surrounding areas.
               </p>
             </div>
           </div>
@@ -379,7 +379,7 @@ const ServiceAreas = () => {
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Serving Your Community</h2>
           <p className="text-xl mb-10 text-white max-w-3xl mx-auto">
-            Contact Monument Construction today to discuss your project, no matter where you're located across our five-county Northern California service area.
+            Contact Monument Construction today to discuss your project, no matter where you&apos;re located across our five-county Northern California service area.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">

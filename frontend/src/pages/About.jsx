@@ -104,15 +104,15 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Our Story</h2>
             <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
               <p>
-                Monument Construction was founded on a simple principle: delivering exceptional craftsmanship with every project, regardless of size. For over 25 years, we've been the trusted choice for homeowners throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California who demand the highest quality in construction and finish carpentry services.
+                Monument Construction was founded on a simple principle: delivering exceptional craftsmanship with every project, regardless of size. For over 25 years, we&apos;ve been the trusted choice for homeowners throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California who demand the highest quality in construction and finish carpentry services.
               </p>
 
               <p>
-                Our reputation is built on the foundation of personal referrals and word-of-mouth recommendations. We don't advertise broadly because we're selective about the projects we undertake. This allows us to maintain the quality standards and personal attention that have made us successful and trusted in our communities.
+                Our reputation is built on the foundation of personal referrals and word-of-mouth recommendations. We don&apos;t advertise broadly because we&apos;re selective about the projects we undertake. This allows us to maintain the quality standards and personal attention that have made us successful and trusted in our communities.
               </p>
 
               <p>
-                What began as a passion for fine finish carpentry has evolved into a full-service construction company that handles everything from detailed interior trim work to complete residential renovations. Throughout our growth, we've never compromised on the craftsmanship and attention to detail that define our work.
+                What began as a passion for fine finish carpentry has evolved into a full-service construction company that handles everything from detailed interior trim work to complete residential renovations. Throughout our growth, we&apos;ve never compromised on the craftsmanship and attention to detail that define our work.
               </p>
             </div>
           </div>
@@ -132,11 +132,11 @@ const About = () => {
                 </p>
                 
                 <p>
-                  William's expertise has been recognized beyond the local community. He has been featured in multiple episodes on DIY Network television, showcasing his building and construction techniques to a national audience.
+                  William&apos;s expertise has been recognized beyond the local community. He has been featured in multiple episodes on DIY Network television, showcasing his building and construction techniques to a national audience.
                 </p>
                 
                 <p>
-                  Monument Construction operates primarily through referrals – a testament to the quality of work and customer satisfaction that defines every project. When you work with William and his team, you're getting the same level of care and craftsmanship that has built a strong reputation throughout the region.
+                  Monument Construction operates primarily through referrals – a testament to the quality of work and customer satisfaction that defines every project. When you work with William and his team, you&apos;re getting the same level of care and craftsmanship that has built a strong reputation throughout the region.
                 </p>
               </div>
 
@@ -209,7 +209,7 @@ const About = () => {
               </p>
               
               <p>
-                Our finish carpentry background means we approach every project with an eye for detail. Whether we're framing a new structure or installing crown molding, the same level of precision and care goes into every aspect of the work.
+                Our finish carpentry background means we approach every project with an eye for detail. Whether we&apos;re framing a new structure or installing crown molding, the same level of precision and care goes into every aspect of the work.
               </p>
               
               <p>
@@ -217,7 +217,7 @@ const About = () => {
               </p>
               
               <p>
-                As a referral-based business, we understand that our reputation depends on your satisfaction. That's why we treat every project – large or small – with the same commitment to quality and customer service.
+                As a referral-based business, we understand that our reputation depends on your satisfaction. That&apos;s why we treat every project – large or small – with the same commitment to quality and customer service.
               </p>
             </div>
           </div>
@@ -259,7 +259,7 @@ const About = () => {
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-green-700 text-white">
         <div className="container mx-auto px-6 md:px-12 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Let's Build Something Great Together</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Let&apos;s Build Something Great Together</h2>
           <p className="text-xl mb-10 text-white max-w-3xl mx-auto">
             Contact Monument Construction today to discuss your project and receive a free consultation.
           </p>

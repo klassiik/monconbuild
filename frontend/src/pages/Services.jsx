@@ -220,12 +220,12 @@ const Services = () => {
               </p>
 
               <p>
-                Our services are designed to meet the diverse needs of homeowners looking to improve, expand, or completely renovate their properties. Whether you're interested in adding custom trim work to enhance your home's interior, expanding with a new addition, or undertaking a full remodeling project, we have the expertise and experience to deliver exceptional results.
+                Our services are designed to meet the diverse needs of homeowners looking to improve, expand, or completely renovate their properties. Whether you&apos;re interested in adding custom trim work to enhance your home&apos;s interior, expanding with a new addition, or undertaking a full remodeling project, we have the expertise and experience to deliver exceptional results.
               </p>
 
               <h3 className="text-2xl font-bold mt-10 mb-6 text-gray-900">Our Approach to Every Project</h3>
               <p>
-                We believe in quality over quantity. That's why we're selective about which projects we take on and operate primarily through referrals from satisfied clients. Each project receives our full attention and commitment to excellence.
+                We believe in quality over quantity. That&apos;s why we&apos;re selective about which projects we take on and operate primarily through referrals from satisfied clients. Each project receives our full attention and commitment to excellence.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 my-10">
@@ -235,7 +235,7 @@ const Services = () => {
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                   <h4 className="text-lg font-bold mb-4 text-gray-900">Expert Execution</h4>
-                  <p className="text-sm">With decades of combined experience, our team executes projects with precision and attention to detail that's evident in every finished product.</p>
+                  <p className="text-sm">With decades of combined experience, our team executes projects with precision and attention to detail that&apos;s evident in every finished product.</p>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
                   <h4 className="text-lg font-bold mb-4 text-gray-900">Professional Coordination</h4>
@@ -243,21 +243,21 @@ const Services = () => {
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
                   <h4 className="text-lg font-bold mb-4 text-gray-900">Quality Assurance</h4>
-                  <p className="text-sm">Every project is completed to the highest standards. We don't consider a project finished until you're completely satisfied.</p>
+                  <p className="text-sm">Every project is completed to the highest standards. We don&apos;t consider a project finished until you&apos;re completely satisfied.</p>
                 </div>
               </div>
 
               <h3 className="text-2xl font-bold mt-10 mb-6 text-gray-900">Which Service Do You Need?</h3>
               <p>
-                Most homeowners don't think in contractor categories, and you don't have to. If your project is about the details you see and touch every day — trim, molding, built-in cabinetry, a mantel, a library wall — start with our finish carpentry and custom woodwork services. If it's about space, start with home additions when you need more of it, or complete remodeling when the space you have needs to work differently. And when a project touches structure, site work, or multiple trades at once, our general construction service puts one licensed contractor in charge of the whole thing.
+                Most homeowners don&apos;t think in contractor categories, and you don&apos;t have to. If your project is about the details you see and touch every day — trim, molding, built-in cabinetry, a mantel, a library wall — start with our finish carpentry and custom woodwork services. If it&apos;s about space, start with home additions when you need more of it, or complete remodeling when the space you have needs to work differently. And when a project touches structure, site work, or multiple trades at once, our general construction service puts one licensed contractor in charge of the whole thing.
               </p>
               <p>
-                In practice, the lines blur — and that's our advantage. A kitchen remodel needs structural know-how to open a wall and finish-carpentry precision to make the cabinetry look built with the house. An addition isn't done when it's framed; it's done when the trim inside matches the rest of your home so well that guests can't tell where the original house ends. Because we self-perform the carpentry and manage the construction, you don't have to coordinate between a builder and a finish crew. Bring us the goal, and we'll scope the right combination of services in the consultation.
+                In practice, the lines blur — and that&apos;s our advantage. A kitchen remodel needs structural know-how to open a wall and finish-carpentry precision to make the cabinetry look built with the house. An addition isn&apos;t done when it&apos;s framed; it&apos;s done when the trim inside matches the rest of your home so well that guests can&apos;t tell where the original house ends. Because we self-perform the carpentry and manage the construction, you don&apos;t have to coordinate between a builder and a finish crew. Bring us the goal, and we&apos;ll scope the right combination of services in the consultation.
               </p>
 
               <h3 className="text-2xl font-bold mt-10 mb-6 text-gray-900">Built for Northern California Homes</h3>
               <p>
-                Our five-county service area covers a remarkable range of homes and conditions: Gold Rush-era Victorians in Grass Valley and Placerville, Craftsman bungalows in Sacramento's established neighborhoods, newer custom homes in El Dorado Hills, foothill properties around Colfax and Auburn, and alpine cabins at Truckee and South Lake Tahoe. Every one of our services is delivered with that local context in mind — period-matched millwork on historic homes, Wildland-Urban Interface fire-hardening on wooded foothill lots, snow-load engineering at elevation, and heat- and soil-aware construction on the valley floor.
+                Our five-county service area covers a remarkable range of homes and conditions: Gold Rush-era Victorians in Grass Valley and Placerville, Craftsman bungalows in Sacramento&apos;s established neighborhoods, newer custom homes in El Dorado Hills, foothill properties around Colfax and Auburn, and alpine cabins at Truckee and South Lake Tahoe. Every one of our services is delivered with that local context in mind — period-matched millwork on historic homes, Wildland-Urban Interface fire-hardening on wooded foothill lots, snow-load engineering at elevation, and heat- and soil-aware construction on the valley floor.
               </p>
               <p>
                 That regional experience also shows in the logistics: we know the permitting offices, inspectors, and suppliers across Placer, Nevada, Sacramento, Yolo, and El Dorado Counties, which keeps projects moving no matter which community you call home.
@@ -364,7 +364,7 @@ const Services = () => {
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Discuss Your Project?</h2>
           <p className="text-xl mb-10 text-white max-w-3xl mx-auto">
-            Contact us today for a free consultation. We'll discuss your needs and provide a detailed quote.
+            Contact us today for a free consultation. We&apos;ll discuss your needs and provide a detailed quote.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -84,7 +84,7 @@ const FinishCarpentryCosts = () => {
         <div className="container mx-auto px-6 max-w-3xl">
           <p className="text-lg text-gray-700 leading-relaxed mb-10">
             The two questions we hear most in Colfax, Auburn, and the rest of
-            Placer County are "what will it cost?" and "how long will it take?"
+            Placer County are &quot;what will it cost?&quot; and &quot;how long will it take?&quot;
             This guide shares the same ranges we quote in person, so you can
             budget before you ever pick up the phone.
           </p>
@@ -120,7 +120,7 @@ const FinishCarpentryCosts = () => {
           <ul className="space-y-4 mb-10 text-gray-700 leading-relaxed">
             <li>
               <strong>Material choice.</strong> For painted trim we typically
-              recommend MDF or poplar — both stable through Placer County's
+              recommend MDF or poplar — both stable through Placer County&apos;s
               temperature swings and dry summers. Stain-grade work in oak, maple,
               or pine costs more in both material and labor, because every joint
               shows. Exterior trim in mountain areas calls for cedar or composite
@@ -154,7 +154,7 @@ const FinishCarpentryCosts = () => {
           <p className="text-gray-700 leading-relaxed mb-4">
             In California, any construction project over $500 legally requires a
             licensed contractor. Hiring unlicensed help puts you at risk and may
-            void your homeowner's insurance. Before hiring anyone, verify their
+            void your homeowner&apos;s insurance. Before hiring anyone, verify their
             license on the Contractors State License Board website — you can
             check ours right now:{' '}
             <a

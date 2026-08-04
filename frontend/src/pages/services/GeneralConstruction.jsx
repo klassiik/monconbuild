@@ -166,7 +166,7 @@ const GeneralConstruction = () => {
             <div className="bg-green-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">Complete General Contracting Services</h3>
               <p className="text-gray-700 mb-4">
-                As a licensed general contractor, Monument Construction handles the full scope of residential construction projects. Whether you're building a new home, adding to an existing one, or completely remodeling, we manage every phase with expertise and attention to detail.
+                As a licensed general contractor, Monument Construction handles the full scope of residential construction projects. Whether you&apos;re building a new home, adding to an existing one, or completely remodeling, we manage every phase with expertise and attention to detail.
               </p>
               <p className="text-gray-700">
                 Our general contracting services include site preparation, structural framing, roofing, siding, coordination of specialized trades (electrical, plumbing, HVAC), and complete interior finishing. We serve as the central point of contact and project manager for your entire construction process.
@@ -191,7 +191,7 @@ const GeneralConstruction = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Site Evaluation & Planning</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  Every project starts on the property, not on paper. We walk the site with you, assess existing conditions — soil, slope, access, utilities — and talk honestly about scope, budget, and timeline before anything is drawn. On older homes we look for the structural surprises that tend to surface once walls open up, so they're planned for rather than discovered.
+                  Every project starts on the property, not on paper. We walk the site with you, assess existing conditions — soil, slope, access, utilities — and talk honestly about scope, budget, and timeline before anything is drawn. On older homes we look for the structural surprises that tend to surface once walls open up, so they&apos;re planned for rather than discovered.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
@@ -200,7 +200,7 @@ const GeneralConstruction = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Permits & Engineering</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  We prepare and submit plans, coordinate structural engineering where it's required, and manage plan check with whichever authority has jurisdiction — city building departments or the county offices of Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. You don't chase paperwork; we do.
+                  We prepare and submit plans, coordinate structural engineering where it&apos;s required, and manage plan check with whichever authority has jurisdiction — city building departments or the county offices of Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. You don&apos;t chase paperwork; we do.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
@@ -225,7 +225,7 @@ const GeneralConstruction = () => {
 
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Building From the Valley Floor to the High Sierra</h3>
             <p className="text-lg text-gray-700 mb-6">
-              Our five-county service area spans an unusual range of building conditions — from Sacramento Valley neighborhoods near sea level to foothill towns like Colfax and Grass Valley, and on up to Truckee and South Lake Tahoe above 6,000 feet. General construction here isn't one-size-fits-all, and our estimates and plans reflect the site you actually have.
+              Our five-county service area spans an unusual range of building conditions — from Sacramento Valley neighborhoods near sea level to foothill towns like Colfax and Grass Valley, and on up to Truckee and South Lake Tahoe above 6,000 feet. General construction here isn&apos;t one-size-fits-all, and our estimates and plans reflect the site you actually have.
             </p>
             <p className="text-lg text-gray-700 mb-6">
               In the foothills, that means engineering foundations and decks for sloped, wooded lots, managing drainage on hillsides, and building to Wildland-Urban Interface fire standards — enclosed eaves, ember-resistant vents, and non-combustible exterior details where the code requires them. At elevation, roofs and structures are designed for real snow loads and a short building season. Down in the valley, hot-summer climates and expansive clay soils drive material choices and foundation planning, especially on older homes.

@@ -466,7 +466,7 @@ const Home = () => {
             <div className="container mx-auto px-6 md:px-12 text-center">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Start Your Project?</h2>
               <p className="text-xl md:text-2xl mb-10 text-white max-w-3xl mx-auto">
-                Get in touch today for a free consultation and quote. Let's bring your vision to life.
+                Get in touch today for a free consultation and quote. Let&apos;s bring your vision to life.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -187,7 +187,7 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Getting Started with Monument Construction</h2>
             <p className="text-center text-gray-600 mb-12 text-lg">
-              We've made it easy to connect with our team and begin your project. Here's our simple process:
+              We&apos;ve made it easy to connect with our team and begin your project. Here&apos;s our simple process:
             </p>
             
             <div className="grid md:grid-cols-4 gap-6 mb-12">
@@ -235,7 +235,7 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Request a Free Quote</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Fill out the form below and we'll contact you within 24 hours to discuss your project.
+                Fill out the form below and we&apos;ll contact you within 24 hours to discuss your project.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -471,7 +471,7 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Get In Touch</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Prefer to call or email? We're here to help answer your questions and discuss your project needs.
+                Prefer to call or email? We&apos;re here to help answer your questions and discuss your project needs.
               </p>
 
               <div className="space-y-6 mb-12">
@@ -569,7 +569,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">
-                    Project start times vary depending on our current schedule and the scope of your project. After our initial consultation, we'll provide a realistic timeline. Many projects can begin within 2-4 weeks of contract signing.
+                    Project start times vary depending on our current schedule and the scope of your project. After our initial consultation, we&apos;ll provide a realistic timeline. Many projects can begin within 2-4 weeks of contract signing.
                   </p>
                 </CardContent>
               </Card>
@@ -580,7 +580,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">
-                    Yes! We provide free consultations and quotes for all projects. We'll visit your site, discuss your needs, and provide a detailed estimate at no cost.
+                    Yes! We provide free consultations and quotes for all projects. We&apos;ll visit your site, discuss your needs, and provide a detailed estimate at no cost.
                   </p>
                 </CardContent>
               </Card>

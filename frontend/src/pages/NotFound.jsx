@@ -19,10 +19,10 @@ export default function NotFound() {
       <div className="text-center max-w-xl">
         <p className="text-green-700 font-semibold text-lg mb-2">404</p>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          We couldn't find that page
+          We couldn&apos;t find that page
         </h1>
         <p className="text-gray-600 mb-8">
-          The page may have moved or no longer exists. Let's get you back to solid ground.
+          The page may have moved or no longer exists. Let&apos;s get you back to solid ground.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link

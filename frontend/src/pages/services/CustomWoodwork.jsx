@@ -169,7 +169,7 @@ const CustomWoodwork = () => {
                 Custom woodwork represents the pinnacle of interior craftsmanship. Unlike standard, mass-produced cabinetry and furniture, custom woodwork is specifically designed and hand-crafted for your space and style preferences. Every piece is unique, tailored to your exact measurements, aesthetic preferences, and functional needs.
               </p>
               <p className="text-gray-700">
-                From bespoke kitchen cabinetry that maximizes storage and functionality, to stunning library shelving that becomes a room's focal point, custom woodwork combines artistry with practicality. Our master woodworkers select premium materials, use time-honored techniques, and pay close attention to detail - creating pieces that get treasured for generations.
+                From bespoke kitchen cabinetry that maximizes storage and functionality, to stunning library shelving that becomes a room&apos;s focal point, custom woodwork combines artistry with practicality. Our master woodworkers select premium materials, use time-honored techniques, and pay close attention to detail - creating pieces that get treasured for generations.
               </p>
             </div>
 
@@ -218,7 +218,7 @@ const CustomWoodwork = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Installation & Finishing</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  We expertly install your custom piece, ensuring perfect alignment and secure mounting. Final finishing touches include hardware installation, staining, and protection. You'll receive a beautiful, functional work of art built to last for decades.
+                  We expertly install your custom piece, ensuring perfect alignment and secure mounting. Final finishing touches include hardware installation, staining, and protection. You&apos;ll receive a beautiful, functional work of art built to last for decades.
                 </p>
               </div>
             </div>
@@ -300,7 +300,7 @@ const CustomWoodwork = () => {
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Create Something Beautiful</h2>
           <p className="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
-            Let's discuss your custom woodwork project in Colfax or anywhere in Placer County.
+            Let&apos;s discuss your custom woodwork project in Colfax or anywhere in Placer County.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact">
