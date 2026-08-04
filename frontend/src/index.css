@@ -99,3 +99,26 @@ code {
     @apply bg-background text-foreground;
     }
 }
+
+/* Saw-blade rotation for <MonumentLogo /> (components/brand/monument-logo.tsx).
+   Rotation is negative because the logo's parent group is mirrored
+   (scale(0.1,-0.1)), so a negative angle reads as clockwise on screen. */
+
+@keyframes blade-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.blade-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blade-spin 6s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blade-spin {
+    animation: none;
+  }
+}

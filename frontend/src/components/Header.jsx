@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Menu, X, Phone } from 'lucide-react';
 import { CONTACT_INFO } from '../utils/constants';
 import ErrorBoundary from './ErrorBoundary';
+import { MonumentLogo } from './brand/monument-logo';
 import { handleError } from '../utils/errorHandler';
 
 // ⚡ Bolt: Moved static navItems outside the component to prevent recreating the array on every render.
@@ -30,18 +31,11 @@ const Header = () => {
             <div className="flex items-center justify-between py-4">
               {/* Logo */}
               <Link to="/" className="flex items-center" aria-label="Monument Construction Home">
-                <img
-                  src="/logo.svg"
-                  alt="Monument Construction - Licensed Contractor Colfax CA"
-                  className="h-16 md:h-20 w-auto origin-left motion-safe:animate-logo-balloon"
-                  width="200"
-                  height="80"
-                  onError={(e) => {
-                    handleError(new Error('Failed to load logo image'), 'IMAGE_LOAD_ERROR', 'LOW', {
-                      component: 'Header',
-                      imageSource: '/logo.svg'
-                    });
-                  }}
+                {/* The balloon pulse stays on the <svg> root; the saw blade spins
+                    independently on an inner <g>, so the two compose without conflict. */}
+                <MonumentLogo
+                  className="h-16 md:h-20 w-auto origin-left text-black motion-safe:animate-logo-balloon"
+                  title="Monument Construction - Licensed Contractor Colfax CA"
                 />
               </Link>
 

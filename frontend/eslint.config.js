@@ -4,6 +4,7 @@
 import js from "@eslint/js";
 import reactPlugin from "eslint-plugin-react";
 import jsxA11y from "eslint-plugin-jsx-a11y";
+import tsParser from "@typescript-eslint/parser";
 import globals from "globals";
 
 export default [
@@ -80,6 +81,19 @@ export default [
       "react/no-unknown-property": "warn",
     },
   },
+  // TypeScript sources. The base block above lists ts/tsx in `files` but leaves
+  // the default parser in place, and espree throws on type syntax ("The keyword
+  // 'interface' is reserved"). Point those extensions at the TS parser.
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
+    },
+  },
+
   // Relax some UI-library specific files further if needed
   {
     files: ["src/components/ui/**/*.jsx"],
