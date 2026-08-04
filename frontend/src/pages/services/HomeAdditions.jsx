@@ -169,7 +169,7 @@ const HomeAdditions = () => {
                 A well-designed home addition is often the perfect solution for growing families or changing needs. Rather than the disruption and expense of selling and buying a new home, an addition lets you expand in place, maintain your community connections, and build equity in your existing property.
               </p>
               <p className="text-gray-700">
-                Home additions also add significant value to your property. Unlike many home improvements, a quality addition can add 50-80% of its cost back to your home's value, making it one of the best investments you can make in your property.
+                Home additions also add significant value to your property. Unlike many home improvements, a quality addition can add 50-80% of its cost back to your home&apos;s value, making it one of the best investments you can make in your property.
               </p>
             </div>
 
@@ -191,7 +191,7 @@ const HomeAdditions = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Design & Planning</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  We start by understanding your vision and needs. Our team works with you to develop design concepts, review options, and create detailed plans. We'll discuss budget, timeline, and how the addition will integrate with your existing home's style and structure.
+                  We start by understanding your vision and needs. Our team works with you to develop design concepts, review options, and create detailed plans. We&apos;ll discuss budget, timeline, and how the addition will integrate with your existing home&apos;s style and structure.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
@@ -209,7 +209,7 @@ const HomeAdditions = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Expert Construction</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  Our skilled construction team executes your addition with precision. We manage site preparation, foundation work, framing, electrical, plumbing, HVAC, and more. We ensure seamless integration with your existing home's systems and aesthetics.
+                  Our skilled construction team executes your addition with precision. We manage site preparation, foundation work, framing, electrical, plumbing, HVAC, and more. We ensure seamless integration with your existing home&apos;s systems and aesthetics.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
@@ -218,7 +218,7 @@ const HomeAdditions = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Finishing & Inspections</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  We complete all finishing work including drywall, painting, flooring, cabinetry, and final touches. All work passes final inspections and meets code requirements. We'll walk you through your completed addition and ensure you're completely satisfied.
+                  We complete all finishing work including drywall, painting, flooring, cabinetry, and final touches. All work passes final inspections and meets code requirements. We&apos;ll walk you through your completed addition and ensure you&apos;re completely satisfied.
                 </p>
               </div>
             </div>

@@ -159,7 +159,7 @@ const ResidentialProjects = () => {
               quality craftsmanship and personalized service on every home improvement project.
             </p>
             <p className="text-lg text-gray-700 mb-8">
-              Whether you're building a new home, renovating your kitchen, or adding a new room, our experienced team 
+              Whether you&apos;re building a new home, renovating your kitchen, or adding a new room, our experienced team 
               manages your project from start to finish with professionalism and care. Licensed contractor #801602.
             </p>
 
@@ -169,7 +169,7 @@ const ResidentialProjects = () => {
                 Residential construction projects require careful planning, precise execution, and constant attention to detail. Our team brings 25+ years of experience managing projects of all sizes - from targeted renovations to complete home transformations - making sure every project meets our high standards for quality, safety, and customer satisfaction.
               </p>
               <p className="text-gray-700">
-                We handle the full scope of residential work: coordinating all trades, managing permits and inspections, sourcing quality materials, and maintaining clear communication with you throughout the project. Whether it's a kitchen remodel, bathroom renovation, room addition, or complete home remodel, we bring the same dedication and expertise to every project.
+                We handle the full scope of residential work: coordinating all trades, managing permits and inspections, sourcing quality materials, and maintaining clear communication with you throughout the project. Whether it&apos;s a kitchen remodel, bathroom renovation, room addition, or complete home remodel, we bring the same dedication and expertise to every project.
               </p>
             </div>
 
@@ -200,7 +200,7 @@ const ResidentialProjects = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Planning & Permitting</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  We develop detailed plans and handle all permitting requirements with Placer County authorities. Our expertise with local building codes ensures your project complies with all regulations and passes inspections on the first try. We manage the permitting process so you don't have to.
+                  We develop detailed plans and handle all permitting requirements with Placer County authorities. Our expertise with local building codes ensures your project complies with all regulations and passes inspections on the first try. We manage the permitting process so you don&apos;t have to.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
@@ -218,7 +218,7 @@ const ResidentialProjects = () => {
                   <h4 className="text-lg font-semibold text-gray-900">Quality Completion</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  We complete all finishing work, conduct thorough inspections, and ensure everything passes final code review. We'll walk through your completed project with you, address any final questions, and provide documentation. Your satisfaction is our priority.
+                  We complete all finishing work, conduct thorough inspections, and ensure everything passes final code review. We&apos;ll walk through your completed project with you, address any final questions, and provide documentation. Your satisfaction is our priority.
                 </p>
               </div>
             </div>

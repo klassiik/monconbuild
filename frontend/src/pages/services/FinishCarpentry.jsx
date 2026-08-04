@@ -161,14 +161,14 @@ const FinishCarpentry = () => {
               Our master craftsmen specialize in custom woodwork that adds beauty, value, and functionality to your home.
             </p>
             <p className="text-lg text-gray-700 mb-8">
-              Whether you're looking for custom crown molding, built-in cabinetry, or decorative trim work, we deliver meticulous 
+              Whether you&apos;re looking for custom crown molding, built-in cabinetry, or decorative trim work, we deliver meticulous 
               attention to detail and superior craftsmanship on every project. Licensed contractor #801602.
             </p>
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">What is Finish Carpentry?</h3>
               <p className="text-gray-700 mb-4">
-                Finish carpentry is the art of adding the final touches to a space - the details that transform a room from basic to beautiful. Unlike rough carpentry (framing and structural work), finish carpentry focuses on the visible elements that define a room's character and elegance.
+                Finish carpentry is the art of adding the final touches to a space - the details that transform a room from basic to beautiful. Unlike rough carpentry (framing and structural work), finish carpentry focuses on the visible elements that define a room&apos;s character and elegance.
               </p>
               <p className="text-gray-700">
                 This includes crown molding, baseboards, window and door casings, wainscoting, built-in cabinetry, custom mantels, coffered ceilings, and decorative woodwork. These elements require precision, craftsmanship, and an eye for design to ensure they enhance the room while maintaining structural integrity.
@@ -179,7 +179,7 @@ const FinishCarpentry = () => {
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                 <h4 className="text-lg font-bold mb-3 text-gray-900">Consultation & Design</h4>
-                <p className="text-gray-700">We meet with you to understand your vision, discuss design options, and provide recommendations based on your home's architecture and your personal style.</p>
+                <p className="text-gray-700">We meet with you to understand your vision, discuss design options, and provide recommendations based on your home&apos;s architecture and your personal style.</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                 <h4 className="text-lg font-bold mb-3 text-gray-900">Material Selection</h4>

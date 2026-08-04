@@ -29,7 +29,7 @@ const Testimonials = ({ testimonials = [], showImages = true }) => {
               What Our Clients Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it - hear from satisfied customers throughout Placer and Nevada Counties.
+              Don&apos;t just take our word for it - hear from satisfied customers throughout Placer and Nevada Counties.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ const Testimonials = ({ testimonials = [], showImages = true }) => {
                     cite={testimonial.service}
                   >
                     <span className="sr-only">Testimonial: </span>
-                    "{testimonial.text}"
+                    &quot;{testimonial.text}&quot;
                   </blockquote>
 
                   {/* Customer info and image with enhanced accessibility */}
