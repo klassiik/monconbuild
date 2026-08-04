@@ -30,7 +30,11 @@ const Header = () => {
           <div className="container mx-auto px-6 md:px-12">
             <div className="flex items-center justify-between py-4">
               {/* Logo */}
-              <Link to="/" className="flex items-center" aria-label="Monument Construction Home">
+              <Link
+                to="/"
+                className="flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2"
+                aria-label="Monument Construction Home"
+              >
                 {/* The balloon pulse stays on the <svg> root; the saw blade spins
                     independently on an inner <g>, so the two compose without conflict. */}
                 <MonumentLogo
@@ -45,9 +49,10 @@ const Header = () => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`text-base font-medium transition-colors duration-300 hover:text-green-700 ${
+                    className={`text-base font-medium transition-colors duration-300 hover:text-green-700 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 ${
                       isActive(item.path) ? 'text-green-700 font-bold' : 'text-gray-700'
                     }`}
+                    aria-current={isActive(item.path) ? 'page' : undefined}
                   >
                     {item.name}
                   </Link>
@@ -58,7 +63,7 @@ const Header = () => {
               <div className="hidden lg:flex items-center gap-4">
                 <a 
                   href={`tel:${CONTACT_INFO.PHONE}`} 
-                  className="text-green-700 font-semibold hover:text-blue-700 transition-colors duration-300"
+                  className="text-green-700 font-semibold hover:text-blue-700 transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2"
                   aria-label={`Call ${CONTACT_INFO.FORMATTED_PHONE}`}
                 >
                   {CONTACT_INFO.FORMATTED_PHONE}
@@ -91,17 +96,18 @@ const Header = () => {
                     <Link
                       key={item.path}
                       to={item.path}
-                      className={`text-lg font-medium transition-colors duration-300 hover:text-green-700 py-2 ${
+                      className={`text-lg font-medium transition-colors duration-300 hover:text-green-700 py-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 ${
                         isActive(item.path) ? 'text-green-700 font-bold' : 'text-gray-700'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
+                      aria-current={isActive(item.path) ? 'page' : undefined}
                     >
                       {item.name}
                     </Link>
                   ))}
                   <a 
                     href={`tel:${CONTACT_INFO.PHONE}`}
-                    className="flex items-center gap-2 text-lg font-semibold text-green-700 py-2"
+                    className="flex items-center gap-2 text-lg font-semibold text-green-700 py-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2"
                     aria-label={`Call ${CONTACT_INFO.FORMATTED_PHONE}`}
                   >
                     <Phone className="w-5 h-5" />
@@ -131,7 +137,7 @@ const Header = () => {
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex items-center justify-between py-4">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2">
               <img 
                 src="/logo.svg" 
                 alt="Monument Construction - Licensed Contractor Colfax CA" 
@@ -143,7 +149,7 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <a 
                 href={`tel:${CONTACT_INFO.PHONE}`}
-                className="text-green-700 font-semibold"
+                className="text-green-700 font-semibold rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2"
               >
                 {CONTACT_INFO.FORMATTED_PHONE}
               </a>
