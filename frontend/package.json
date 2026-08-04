@@ -28,7 +28,7 @@
     "build": "tsc && node scripts/generate-sitemap.mjs && vite-react-ssg build",
     "preview:ssg": "vite preview",
     "build:analyze": "npm run build && npx vite-bundle-analyzer dist",
-    "lint": "eslint . --report-unused-disable-directives --max-warnings 117",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 114",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "security:audit": "npm audit --audit-level=moderate",
