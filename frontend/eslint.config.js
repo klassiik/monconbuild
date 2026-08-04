@@ -5,6 +5,7 @@ import js from "@eslint/js";
 import reactPlugin from "eslint-plugin-react";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import tsParser from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 import globals from "globals";
 
 export default [
@@ -91,6 +92,20 @@ export default [
       parserOptions: {
         ecmaFeatures: { jsx: true },
       },
+    },
+    plugins: {
+      "@typescript-eslint": tsPlugin,
+    },
+    rules: {
+      // Base no-unused-vars cannot read type annotations, so it reports the
+      // parameter names inside type signatures -- e.g. `args` in
+      // `type AsyncFunction<T> = (...args: any[]) => Promise<T>` at
+      // src/types/index.ts. Hand these files to the TS-aware rule instead.
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" },
+      ],
     },
   },
 
