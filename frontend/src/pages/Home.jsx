@@ -99,6 +99,7 @@ const PortfolioImage = React.memo(({ project, index }) => {
     </div>
   );
 });
+PortfolioImage.displayName = "PortfolioImage";
 
 // The hero title balloons once per full page load, sequenced after the header
 // logo animation (which ends at 2.5s); this module flag prevents a replay when
