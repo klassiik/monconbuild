@@ -4111,10 +4111,10 @@ w3c-xmlserializer@^5.0.0:
   dependencies:
     xml-name-validator "^5.0.0"
 
-web-vitals@^4.2.4:
-  version "4.2.4"
-  resolved "https://registry.npmjs.org/web-vitals/-/web-vitals-4.2.4.tgz"
-  integrity sha512-r4DIlprAGwJ7YM11VZp4R884m0Vmgr6EAKe3P+kO0PPj3Unqyvv59rczf6UiGcb9Z8QxZVcqKNwv/g0WNdWwsw==
+web-vitals@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-6.0.1.tgz#774de5fba561154313bcc09d125990f046fdd174"
+  integrity sha512-iF3+kno3Anlqi5fPVTQk9gYLfsCiL8P69Hof+AmZyVVx00E3e/BiGVvu+EsOy6jvTLqTKuiaRloPyw0JtdKbSw==
 
 webidl-conversions@^7.0.0:
   version "7.0.0"
