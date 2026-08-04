@@ -48,6 +48,33 @@ jobs:
           path: frontend/npm-audit-report.json
           retention-days: 30
 
+  lint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: npm ci
+
+      # Deliberately no continue-on-error: this job is the gate. `npm run lint`
+      # exits non-zero on any error and on more than --max-warnings (currently
+      # 114, the count at the time of writing), so new lint debt fails the PR
+      # instead of accumulating unnoticed the way the previous 117 warnings did.
+      # Lower that number in frontend/package.json as warnings are paid down.
+      - name: Run ESLint
+        working-directory: ./frontend
+        run: npm run lint
+
   # The Python Security Audit job was removed. backend/ is a FastAPI app with no
   # deployment path -- Vercel builds only frontend/ -- and this job's failures
   # were the sole reason the whole workflow was disabled manually, which also
@@ -168,7 +195,7 @@ jobs:
   security-summary:
     name: Security Summary
     runs-on: ubuntu-latest
-    needs: [npm-audit, codeql-analysis]
+    needs: [npm-audit, lint, codeql-analysis]
     if: always()
     steps:
       - name: Download all artifacts
@@ -189,6 +216,11 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
           fi
           
+          # ESLint
+          echo "### 🧹 ESLint" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ needs.lint.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
           # CodeQL
           echo "### 🔍 CodeQL Analysis" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{ needs.codeql-analysis.result }}" >> $GITHUB_STEP_SUMMARY
