@@ -66,6 +66,24 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-router"
         update-types: ["version-update:semver-major"]
+      # typescript 6 removed `baseUrl`, which tsconfig.json still sets. Verified
+      # by running typescript@6.0.3 against the real tsconfig: exit 2 with
+      # TS5101, where 5.9.3 exits 0. `npm run build` is `tsc && ...`, so this
+      # fails every deploy. The fix is deleting the baseUrl line -- `paths`
+      # resolves relative to the tsconfig without it -- but that is a deliberate
+      # change to make and verify on its own, not a bump. Drop this entry once
+      # baseUrl is gone. 5.x patch/minor updates still come through. See #191.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      # lucide-react v1 removed all brand icons, including Instagram, which is
+      # imported at src/components/Footer.jsx:2 -- rendered via Layout.jsx on
+      # every one of the 21 prerendered pages -- and at src/pages/About.jsx:6.
+      # All 24 lucide import sites were checked against v1.28.0's export list
+      # and Instagram is the only casualty, but a missing export fails the Vite
+      # build. Replacing that glyph is a design decision, not a bump. 0.x
+      # patch/minor updates still come through. See #194.
+      - dependency-name: "lucide-react"
+        update-types: ["version-update:semver-major"]
 
   # Backend (pip) is intentionally not watched. backend/server.py is a FastAPI app
   # with no deployment path: Vercel builds only frontend/ (static, no functions or
