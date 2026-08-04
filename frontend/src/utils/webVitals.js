@@ -6,6 +6,7 @@ function sendToAnalytics(metric) {
   try {
     // Log to console in development
     if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console -- development-only; the NODE_ENV guard is stripped from production builds
       console.log('Web Vital:', metric);
     }
 
@@ -25,6 +26,7 @@ function sendToAnalytics(metric) {
       // Log performance data for monitoring (no backend API needed for static sites)
       // Web vitals are automatically collected by Vercel Analytics if enabled
       if (process.env.NODE_ENV === 'development') {
+        // eslint-disable-next-line no-console -- development-only; the NODE_ENV guard is stripped from production builds
         console.log('Production Web Vital:', {
           name: metric.name,
           value: metric.value,
@@ -244,7 +246,10 @@ export function initializePerformanceObserver() {
       }
     }
 
-    console.log('Performance observer initialized');
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console -- development-only; the NODE_ENV guard is stripped from production builds
+      console.log('Performance observer initialized');
+    }
   } catch (error) {
     handleError(error, 'PERFORMANCE_OBSERVER_INIT_ERROR', 'MEDIUM', {
       browserSupport: {
@@ -294,25 +299,36 @@ export function exportPerformanceData() {
 // Wrapper function to initialize all performance monitoring with comprehensive error handling
 export function initializePerformanceMonitoring() {
   try {
-    console.log('Initializing comprehensive performance monitoring...');
-    
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console -- development-only; the NODE_ENV guard is stripped from production builds
+      console.log('Initializing comprehensive performance monitoring...');
+    }
+
     // Initialize with error boundaries
     initializeWebVitals();
     initializePerformanceObserver();
-    
-    // Log successful initialization
-    console.log('Performance monitoring initialized successfully');
+
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console -- development-only; the NODE_ENV guard is stripped from production builds
+      console.log('Performance monitoring initialized successfully');
+    }
   } catch (error) {
     handleError(error, 'PERFORMANCE_MONITORING_INIT_ERROR', 'HIGH', {
       timestamp: new Date().toISOString()
     });
     
-    // Fallback: Try basic initialization
+    // Fallback: Try basic initialization. Routed through sendToAnalytics -- the
+    // same handler the observer paths use -- rather than console.log, so the
+    // fallback actually reports metrics instead of only printing them, and so
+    // it respects the development-only console guard inside that function.
     try {
-      console.log('Attempting basic Web Vitals initialization...');
-      onCLS(console.log);
-      onLCP(console.log);
-      onFCP(console.log);
+      if (process.env.NODE_ENV === 'development') {
+        // eslint-disable-next-line no-console -- development-only; the NODE_ENV guard is stripped from production builds
+        console.log('Attempting basic Web Vitals initialization...');
+      }
+      onCLS(sendToAnalytics);
+      onLCP(sendToAnalytics);
+      onFCP(sendToAnalytics);
     } catch (fallbackError) {
       handleError(fallbackError, 'PERFORMANCE_FALLBACK_ERROR', 'HIGH');
     }

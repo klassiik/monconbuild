@@ -61,13 +61,11 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    console.log('Form submit triggered, formData:', formData);
 
     try {
       // Require Formspree form ID via Vite env
       const formId = import.meta.env.VITE_FORMSPREE_FORM_ID;
-      console.log('Form ID from env:', formId);
-      
+
       if (!formId) {
         console.error('Missing VITE_FORMSPREE_FORM_ID');
         toast.error("Configuration Required", {
@@ -103,7 +101,6 @@ const Contact = () => {
       formDataToSend.append('_replyto', formData.email);
 
       const endpoint = `https://formspree.io/f/${formId}`;
-      console.log('Sending to endpoint:', endpoint);
 
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -113,9 +110,7 @@ const Contact = () => {
         body: formDataToSend
       });
 
-      console.log('Response status:', response.status, 'ok:', response.ok);
       const data = await response.json();
-      console.log('Response data:', data);
 
       if (response.ok) {
         setSubmissionStatus('success');

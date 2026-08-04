@@ -34,7 +34,7 @@ export const createRoot = ViteReactSSG(
           const mod = await import('./utils/webVitals');
           mod.initializeWebVitals?.();
           mod.initializePerformanceObserver?.();
-        } catch (e) {
+        } catch {
           // Performance monitoring failed to load
         }
       });
@@ -44,7 +44,7 @@ export const createRoot = ViteReactSSG(
         try {
           const { default: Clarity } = await import('@microsoft/clarity');
           Clarity.init('trqrzo6kg0');
-        } catch (e) {
+        } catch {
           // Clarity failed to initialize
         }
       });
