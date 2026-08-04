@@ -6,7 +6,7 @@ import { Button } from '../../components/ui/button';
 import FAQSection from '../../components/FAQSection';
 import { residentialProjectsFAQs } from '../../data/faqs';
 import ServiceAreasBlock from '../../components/ServiceAreasBlock';
-import { CheckCircle2, Phone, Mail, Home, Award } from 'lucide-react';
+import { CheckCircle2, Phone, Mail, Award } from 'lucide-react';
 
 const ResidentialProjects = () => {
   // Breadcrumb data
