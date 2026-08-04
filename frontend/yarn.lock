@@ -3267,9 +3267,9 @@ p-locate@^5.0.0:
     p-limit "^3.0.2"
 
 p-queue@^9.1.0:
-  version "9.3.1"
-  resolved "https://registry.npmjs.org/p-queue/-/p-queue-9.3.1.tgz"
-  integrity sha512-POWdiIPmsUPGwb4FeQ4OBg46aqmcInSWe45CKDsGHiOBiVQM9chqfQTuqhuTzcg2Vz9faTI65at0KkVyVEiCHw==
+  version "9.3.3"
+  resolved "https://registry.yarnpkg.com/p-queue/-/p-queue-9.3.3.tgz#c5e528c7eb361b7ba8eb5a9406902f7f2e75fc8f"
+  integrity sha512-NXAOdnEe5FsZJfT4oK84lE1Y5cFFdWlRuOo5tww8DyNMxyRXwn39fIkUtNLKppcPC+UYU/bXujNCUGDv01y7CA==
   dependencies:
     eventemitter3 "^5.0.4"
     p-timeout "^7.0.0"
