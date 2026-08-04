@@ -18,8 +18,16 @@ updates:
       prefix: "chore(deps)"
       include: "scope"
     versioning-strategy: increase
+    # "direct" limits version-update PRs to the ~24 packages actually declared in
+    # frontend/package.json. Under "all", dependabot also proposed every indirect
+    # package -- 433 were outdated against a 10-PR limit, so the queue refilled
+    # faster than it could be cleared and never converged. The indirect tree is
+    # better handled in bulk by `npm update` plus `npm audit fix`, which move
+    # hundreds of packages in one lockfile commit. Security advisories for
+    # indirect packages still surface through Dependabot security updates, which
+    # are configured in repo settings and are not governed by this key.
     allow:
-      - dependency-type: "all"
+      - dependency-type: "direct"
     ignore:
       # Ignore major version updates for stable packages
       - dependency-name: "react"
