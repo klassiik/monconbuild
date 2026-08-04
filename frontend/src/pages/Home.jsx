@@ -41,7 +41,7 @@ const HeroBackground = () => {
 // ⚡ Bolt: Wrapped in React.memo() to prevent unnecessary re-renders when
 // the parent Home component's state (like galleryOpen/Index) changes.
 // Expect ~100% reduction in re-renders for these image tiles when opening the lightbox.
-const PortfolioImage = React.memo(({ project, index }) => {
+const PortfolioImage = React.memo(({ project }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -393,7 +393,7 @@ const Home = () => {
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 {portfolio.map((project, index) => (
-                  <PortfolioImage key={index} project={project} index={index} />
+                  <PortfolioImage key={index} project={project} />
                 ))}
               </div>
 
