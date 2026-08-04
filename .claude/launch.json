@@ -2,23 +2,20 @@
   "version": "0.0.1",
   "configurations": [
     {
+      // Port is pinned to 3000 to match `server.port` in frontend/vite.config.js,
+      // so a terminal `npm run dev` and the preview pane land on the same URL.
+      // --strictPort makes a busy port fail loudly instead of silently drifting to
+      // 3001, which would leave the preview pane pointing at a dead address.
       "name": "monconbuild-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "frontend"],
-      "port": 5173,
-      "autoPort": true
+      "runtimeArgs": ["run", "dev", "--prefix", "frontend", "--", "--port", "3000", "--strictPort"],
+      "port": 3000
     },
     {
       "name": "monconbuild-preview",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "preview:ssg", "--prefix", "frontend", "--", "--port", "4173", "--strictPort"],
       "port": 4173
-    },
-    {
-      "name": "monconbuild-dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "frontend", "--", "--port", "5173", "--strictPort"],
-      "port": 5173
     }
   ]
 }
