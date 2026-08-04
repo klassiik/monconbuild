@@ -8,9 +8,12 @@ import { Head } from 'vite-react-ssg';
 export const Schema = ({ schema }) => {
   return (
     <Head>
-      <script type="application/ld+json">
-        {JSON.stringify(schema)}
-      </script>
+      {/* dangerouslySetInnerHTML is required to prevent SSG serialization from escaping double quotes ("),
+          and .replace(/</g, '\\u003c') is required to prevent XSS via JSON payloads. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
+      />
     </Head>
   );
 };
