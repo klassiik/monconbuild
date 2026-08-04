@@ -32,6 +32,20 @@ updates:
       # v3 patch/minor updates still come through. See #149.
       - dependency-name: "tailwindcss"
         update-types: ["version-update:semver-major"]
+      # eslint and @eslint/js must move together -- @eslint/js@10 declares a peer
+      # of eslint ^10 -- so a major on either one alone breaks the pair. This repo
+      # is on eslint 9. Nothing in CI catches the mismatch: .npmrc sets
+      # legacy-peer-deps=true so npm installs the unmet peer without erroring, and
+      # the only checks are Vercel builds, which run `npm run build` and never
+      # invoke eslint. Such a bump lands green and silently breaks linting.
+      # eslint 10 also raises the engines floor to node ^20.19 || ^22.13 || >=24
+      # against the >=18 declared in package.json. Upgrade both together as a
+      # deliberate change, not a dependency bump. 9.x patch/minor updates still
+      # come through. See #151.
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@eslint/js"
+        update-types: ["version-update:semver-major"]
 
   # Backend (pip) is intentionally not watched. backend/server.py is a FastAPI app
   # with no deployment path: Vercel builds only frontend/ (static, no functions or
