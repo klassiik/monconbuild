@@ -13,7 +13,7 @@ on:
 jobs:
   npm-audit:
     name: NPM Security Audit
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -50,7 +50,7 @@ jobs:
 
   lint:
     name: ESLint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -83,7 +83,7 @@ jobs:
 
   codeql-analysis:
     name: CodeQL Security Analysis
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       security-events: write
       actions: read
@@ -108,7 +108,7 @@ jobs:
 
   dependency-review:
     name: Dependency Review
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: github.event_name == 'pull_request'
     steps:
       - name: Checkout repository
@@ -122,7 +122,7 @@ jobs:
 
   ssl-check:
     name: SSL Certificate & Headers Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: false  # Disabled - headers are configured in Vercel
     steps:
       - name: Check SSL certificate validity
@@ -168,7 +168,7 @@ jobs:
 
   owasp-zap-scan:
     name: OWASP ZAP Baseline Scan
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout repository
@@ -194,7 +194,7 @@ jobs:
 
   security-summary:
     name: Security Summary
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [npm-audit, lint, codeql-analysis]
     if: always()
     steps:
