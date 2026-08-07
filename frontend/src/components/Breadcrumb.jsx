@@ -28,9 +28,7 @@ const Breadcrumb = ({ items }) => {
     <>
       {/* Inject Breadcrumb Schema */}
       <Head>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\u003c') }} />
       </Head>
 
       {/* Visual Breadcrumb Navigation */}
