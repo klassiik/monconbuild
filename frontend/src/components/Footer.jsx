@@ -5,37 +5,40 @@ import { CONTACT_INFO, COMPANY_INFO } from '../utils/constants';
 import ErrorBoundary from './ErrorBoundary';
 import { handleError } from '../utils/errorHandler';
 
+// ⚡ Bolt: Moved static link arrays outside the component to prevent re-allocating
+// them on every render. Because the Footer appears on every page, hoisting these
+// constants reduces memory pressure and garbage collection overhead.
+const quickLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'Services', path: '/services' },
+  { name: 'About Us', path: '/about' },
+  { name: 'Portfolio', path: '/portfolio' },
+  { name: 'Service Areas', path: '/service-areas' },
+  { name: 'Contact', path: '/contact' }
+];
+
+const serviceLinks = [
+  { name: 'Finish Carpentry', path: '/services/finish-carpentry' },
+  { name: 'General Construction', path: '/services/general-construction' },
+  { name: 'Residential Projects', path: '/services/residential-projects' },
+  { name: 'Home Additions', path: '/services/home-additions' },
+  { name: 'Custom Woodwork', path: '/services/custom-woodwork' },
+  { name: 'Complete Remodeling', path: '/services/complete-remodeling' }
+];
+
+const serviceAreaLinks = [
+  { name: 'Auburn', path: '/service-areas/auburn' },
+  { name: 'Grass Valley', path: '/service-areas/grass-valley' },
+  { name: 'El Dorado Hills', path: '/service-areas/el-dorado-hills' },
+  { name: 'Placerville', path: '/service-areas/placerville' },
+  { name: 'South Lake Tahoe', path: '/service-areas/south-lake-tahoe' },
+  { name: 'Sacramento', path: '/service-areas/sacramento' },
+  { name: 'Davis', path: '/service-areas/davis' }
+];
+
 const Footer = () => {
   try {
     const currentYear = new Date().getFullYear();
-    
-    const quickLinks = [
-      { name: 'Home', path: '/' },
-      { name: 'Services', path: '/services' },
-      { name: 'About Us', path: '/about' },
-      { name: 'Portfolio', path: '/portfolio' },
-      { name: 'Service Areas', path: '/service-areas' },
-      { name: 'Contact', path: '/contact' }
-    ];
-    
-    const serviceLinks = [
-      { name: 'Finish Carpentry', path: '/services/finish-carpentry' },
-      { name: 'General Construction', path: '/services/general-construction' },
-      { name: 'Residential Projects', path: '/services/residential-projects' },
-      { name: 'Home Additions', path: '/services/home-additions' },
-      { name: 'Custom Woodwork', path: '/services/custom-woodwork' },
-      { name: 'Complete Remodeling', path: '/services/complete-remodeling' }
-    ];
-
-    const serviceAreaLinks = [
-      { name: 'Auburn', path: '/service-areas/auburn' },
-      { name: 'Grass Valley', path: '/service-areas/grass-valley' },
-      { name: 'El Dorado Hills', path: '/service-areas/el-dorado-hills' },
-      { name: 'Placerville', path: '/service-areas/placerville' },
-      { name: 'South Lake Tahoe', path: '/service-areas/south-lake-tahoe' },
-      { name: 'Sacramento', path: '/service-areas/sacramento' },
-      { name: 'Davis', path: '/service-areas/davis' }
-    ];
 
     return (
       <ErrorBoundary>
