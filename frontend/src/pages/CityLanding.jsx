@@ -94,8 +94,16 @@ export default function CityLanding() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${BASE}/og-default.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
+        {/* SECURITY FIX: Escaping < characters to prevent XSS in JSON-LD injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, '\\u003c') }}
+      />
+        {/* SECURITY FIX: Escaping < characters to prevent XSS in JSON-LD injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema).replace(/</g, '\\u003c') }}
+      />
       </Head>
 
       <Breadcrumb items={breadcrumbItems} />

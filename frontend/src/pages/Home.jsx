@@ -312,15 +312,21 @@ const Home = () => {
             <meta name="twitter:card" content="summary_large_image" />
             
             {/* Schema.org JSON-LD */}
-            <script type="application/ld+json">
-              {JSON.stringify(homepageSchema)}
-            </script>
-            <script type="application/ld+json">
-              {JSON.stringify(servicesListSchema)}
-            </script>
-            <script type="application/ld+json">
-              {JSON.stringify(reviewsSchema)}
-            </script>
+            {/* SECURITY FIX: Escaping < characters to prevent XSS in JSON-LD injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema).replace(/</g, '\\u003c') }}
+      />
+            {/* SECURITY FIX: Escaping < characters to prevent XSS in JSON-LD injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesListSchema).replace(/</g, '\\u003c') }}
+      />
+            {/* SECURITY FIX: Escaping < characters to prevent XSS in JSON-LD injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema).replace(/</g, '\\u003c') }}
+      />
           </Head>
 
           {/* Hero Section - Semantic HTML with LCP-friendly <img> */}
