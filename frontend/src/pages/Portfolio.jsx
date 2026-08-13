@@ -13,27 +13,37 @@ import { portfolioCategories, libraryProgress, featuredSlides } from '../data/po
 const optimized = (src, size) =>
   src && src.startsWith('/images/') ? src.replace('/images/', `/images/${size}/`) : src;
 
+// ⚡ Bolt: Hoisted static breadcrumbItems and schemaProjects outside the component
+// to prevent reallocation on every render.
+const breadcrumbItems = [
+  { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' },
+];
+
+// Build schema-friendly project entries from the category data.
+const schemaProjects = portfolioCategories.map((cat) => ({
+  id: cat.id,
+  title: cat.name,
+  category: cat.name,
+  description: cat.blurb,
+  location: 'Placer & Nevada Counties, CA',
+  thumbnail: cat.images[0],
+  images: cat.images,
+}));
+
+// ⚡ Bolt: Hoisted process steps array to avoid creating a new array each render
+const processSteps = [
+  { n: 1, title: 'Consultation', text: 'We discuss your vision, needs, and budget in detail.' },
+  { n: 2, title: 'Planning', text: 'Detailed project planning, timeline, and material selection.' },
+  { n: 3, title: 'Construction', text: 'Expert craftsmanship with regular progress updates.' },
+  { n: 4, title: 'Completion', text: 'Final walkthrough and your complete satisfaction.' },
+];
+
 const Portfolio = () => {
   const [gallery, setGallery] = useState({ open: false, images: [], title: '', index: 0 });
 
   const openGallery = (images, title, index = 0) =>
     setGallery({ open: true, images, title, index });
   const closeGallery = () => setGallery((g) => ({ ...g, open: false }));
-
-  const breadcrumbItems = [
-    { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' },
-  ];
-
-  // Build schema-friendly project entries from the category data.
-  const schemaProjects = portfolioCategories.map((cat) => ({
-    id: cat.id,
-    title: cat.name,
-    category: cat.name,
-    description: cat.blurb,
-    location: 'Placer & Nevada Counties, CA',
-    thumbnail: cat.images[0],
-    images: cat.images,
-  }));
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
@@ -174,12 +184,7 @@ const Portfolio = () => {
           </div>
 
           <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[
-              { n: 1, title: 'Consultation', text: 'We discuss your vision, needs, and budget in detail.' },
-              { n: 2, title: 'Planning', text: 'Detailed project planning, timeline, and material selection.' },
-              { n: 3, title: 'Construction', text: 'Expert craftsmanship with regular progress updates.' },
-              { n: 4, title: 'Completion', text: 'Final walkthrough and your complete satisfaction.' },
-            ].map((step) => (
+            {processSteps.map((step) => (
               <div key={step.n} className="text-center">
                 <div className="w-16 h-16 bg-green-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   {step.n}
