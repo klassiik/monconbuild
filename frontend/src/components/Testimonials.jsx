@@ -3,13 +3,16 @@ import { Card, CardContent } from './ui/card';
 import { Star, Quote } from 'lucide-react';
 import { handleError } from '../utils/errorHandler';
 
+// ⚡ Bolt: Hoisted static array out of component to prevent reallocation on every render
+const FIVE_STARS = Array.from({ length: 5 });
+
 // Enhanced Testimonials Component with comprehensive accessibility
 const Testimonials = ({ testimonials = [], showImages = true }) => {
   try {
     if (!testimonials || testimonials.length === 0) return null;
 
     const renderStars = () => {
-      return [...Array(5)].map((_, i) => (
+      return FIVE_STARS.map((_, i) => (
         <Star 
           key={i} 
           className="w-5 h-5 fill-green-700 text-green-700" 
