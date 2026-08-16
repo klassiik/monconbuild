@@ -3,20 +3,21 @@ import { Card, CardContent } from './ui/card';
 import { Star, Quote } from 'lucide-react';
 import { handleError } from '../utils/errorHandler';
 
+// ⚡ Bolt: Hoisted static star elements outside the component.
+// This prevents recreating the same array and React elements on every render
+// or for every testimonial, reducing memory allocation and improving rendering performance.
+const FIVE_STARS = [...Array(5)].map((_, i) => (
+  <Star
+    key={i}
+    className="w-5 h-5 fill-green-700 text-green-700"
+    aria-hidden="true"
+  />
+));
+
 // Enhanced Testimonials Component with comprehensive accessibility
 const Testimonials = ({ testimonials = [], showImages = true }) => {
   try {
     if (!testimonials || testimonials.length === 0) return null;
-
-    const renderStars = () => {
-      return [...Array(5)].map((_, i) => (
-        <Star 
-          key={i} 
-          className="w-5 h-5 fill-green-700 text-green-700" 
-          aria-hidden="true"
-        />
-      ));
-    };
 
     return (
       <section 
@@ -64,7 +65,7 @@ const Testimonials = ({ testimonials = [], showImages = true }) => {
                     >
                       Five star rating
                     </span>
-                    {renderStars()}
+                    {FIVE_STARS}
                   </div>
 
                   {/* Testimonial text with proper blockquote semantics */}
