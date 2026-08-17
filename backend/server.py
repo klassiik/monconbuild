@@ -89,7 +89,8 @@ class AuthenticationMiddleware:
         api_key = auth_header.split(" ")[1]
         
         # Simple API key verification (in production, use proper JWT or OAuth)
-        if not API_SECRET_KEY or not hmac.compare_digest(api_key, API_SECRET_KEY):
+        # SECURITY FIX: Encode strings to bytes before hmac.compare_digest to prevent TypeError crashes from non-ASCII characters
+        if not API_SECRET_KEY or not hmac.compare_digest(api_key.encode('utf-8'), API_SECRET_KEY.encode('utf-8')):
             raise HTTPException(status_code=401, detail="Invalid API key")
         
         return {"user_id": "authenticated_user", "api_key": api_key[:8] + "..."}
