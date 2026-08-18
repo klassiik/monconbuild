@@ -1,3 +1,6 @@
 ## 2026-07-23 - Accessible Form Submission Feedback
 **Learning:** Relying solely on text color changes for form success/error states is insufficient for both visual distinction and screen readers. Combining visual icons with `aria-live` regions ensures all users receive clear, immediate feedback.
 **Action:** Whenever implementing async form states, always pair visual loading indicators (spinners) with disabled states, and use `role="status" aria-live="polite"` for success messages and `role="alert" aria-live="assertive"` for error messages.
+## 2024-11-20 - Screen reader redundancy in Radix UI
+**Learning:** Radix UI boilerplate components often use purely visual icons from `lucide-react` (like Chevrons and Checkmarks for visual affordances in Accordions and Selects). Out of the box, these `lucide-react` SVGs do not always include `aria-hidden="true"`, which can cause screen readers to announce them redundantly alongside the semantic text they accompany.
+**Action:** When auditing or implementing Radix UI (or similar) unstyled primitives, always explicitly add `aria-hidden="true"` to any purely decorative or state-indicating SVG icon to ensure a clean, noise-free screen reader experience.
