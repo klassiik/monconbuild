@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
@@ -24,16 +24,20 @@ const Portfolio = () => {
     { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' },
   ];
 
-  // Build schema-friendly project entries from the category data.
-  const schemaProjects = portfolioCategories.map((cat) => ({
-    id: cat.id,
-    title: cat.name,
-    category: cat.name,
-    description: cat.blurb,
-    location: 'Placer & Nevada Counties, CA',
-    thumbnail: cat.images[0],
-    images: cat.images,
-  }));
+  // ⚡ Bolt: Memoize the schemaProjects array to prevent mapping over portfolioCategories
+  // on every render. Portfolio re-renders frequently when the user interacts with the
+  // lightbox (which updates the `gallery` state). This optimization saves CPU cycles.
+  const schemaProjects = useMemo(() => {
+    return portfolioCategories.map((cat) => ({
+      id: cat.id,
+      title: cat.name,
+      category: cat.name,
+      description: cat.blurb,
+      location: 'Placer & Nevada Counties, CA',
+      thumbnail: cat.images[0],
+      images: cat.images,
+    }));
+  }, []); // portfolioCategories is imported statically, so the dependency array is empty.
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
