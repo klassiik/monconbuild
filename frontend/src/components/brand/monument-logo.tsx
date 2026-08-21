@@ -10,6 +10,11 @@ interface MonumentLogoProps {
  * Colour is inherited via `currentColor`, so set it with a text utility:
  *   <MonumentLogo className="w-64 text-slate-900" />
  *
+ * Only part of the mark follows currentColor: the capital M and C, the plank
+ * rule and the saw blade. The lowercase "onument" and "onstruction" (and the
+ * dot over the i) are fixed at the brand blue #12448B, so a text utility will
+ * not recolour those.
+ *
  * Requires the `.blade-spin` keyframes from blade-spin.css to be in a
  * stylesheet that's imported by your entry (e.g. src/index.css).
  */
@@ -76,7 +81,7 @@ export function MonumentLogo({
       -97 168 l-16 22 154 0 154 0 17 -29z m236 -12 c7 -23 10 -43 8 -45 -9 -10
       -169 -44 -178 -38 -5 3 -9 10 -9 16 0 5 -11 32 -25 59 l-24 49 108 0 108 0 12
       -41z"/>
-      <path d="M3795 1830 c-9 -17 -23 -30 -35 -30 -24 0 -34 -16 -14 -24 13 -5 10
+      <path fill="#12448B" d="M3795 1830 c-9 -17 -23 -30 -35 -30 -24 0 -34 -16 -14 -24 13 -5 10
       -13 -14 -48 -63 -91 -122 -121 -63 -32 33 50 40 98 17 107 -7 3 -41 3 -75 0
       -60 -6 -62 -7 -87 -49 -38 -65 -89 -106 -127 -102 -49 5 -43 37 8 53 63 18 85
       34 85 58 0 77 -124 49 -176 -39 -26 -44 -84 -95 -84 -74 0 7 14 31 31 55 51
@@ -146,9 +151,9 @@ export function MonumentLogo({
         -65 -35 0 -9 -10 -15 -26 -15 -23 0 -25 3 -20 24 8 34 -5 39 -42 16z m173
         -505 c52 -51 16 -145 -55 -145 -37 0 -90 47 -90 79 0 78 92 120 145 66z"/>
       </g>
-      <path d="M3906 495 c-21 -21 -20 -32 3 -44 27 -15 60 11 45 35 -15 25 -29 27
+      <path fill="#12448B" d="M3906 495 c-21 -21 -20 -32 3 -44 27 -15 60 11 45 35 -15 25 -29 27
       -48 9z m34 -20 c0 -8 -7 -15 -15 -15 -16 0 -20 12 -8 23 11 12 23 8 23 -8z"/>
-      <path d="M3008 430 c-10 -18 -25 -30 -38 -30 -21 0 -28 -16 -9 -22 16 -5 -26
+      <path fill="#12448B" d="M3008 430 c-10 -18 -25 -30 -38 -30 -21 0 -28 -16 -9 -22 16 -5 -26
       -77 -57 -101 -23 -17 -24 -17 -24 2 0 11 -3 26 -6 35 -4 11 0 16 13 16 41 0
       59 51 24 70 -26 13 -54 13 -85 -2 -36 -16 -41 -42 -15 -88 18 -32 20 -42 9
       -55 -15 -17 -50 -20 -50 -4 0 7 7 17 17 24 23 17 10 45 -21 45 -19 0 -27 -7
