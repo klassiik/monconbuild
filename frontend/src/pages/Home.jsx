@@ -205,6 +205,8 @@ const services = [
   }
 ];
 
+const featuredImages = featuredSlides.map((s) => s.src);
+
 const portfolio = [
   {
     image: "/images/medium/Additions/addition-1.webp",
@@ -454,7 +456,7 @@ const Home = () => {
 
           {/* Featured slideshow lightbox */}
           <ImageGallery
-            images={featuredSlides.map((s) => s.src)}
+            images={featuredImages}
             isOpen={galleryOpen}
             onClose={() => setGalleryOpen(false)}
             initialIndex={galleryIndex}

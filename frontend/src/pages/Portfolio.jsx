@@ -13,6 +13,8 @@ import { portfolioCategories, libraryProgress, featuredSlides } from '../data/po
 const optimized = (src, size) =>
   src && src.startsWith('/images/') ? src.replace('/images/', `/images/${size}/`) : src;
 
+const featuredImages = featuredSlides.map((s) => s.src);
+
 const Portfolio = () => {
   const [gallery, setGallery] = useState({ open: false, images: [], title: '', index: 0 });
 
@@ -78,7 +80,7 @@ const Portfolio = () => {
               slides={featuredSlides}
               aspectClass="aspect-[4/3]"
               onSlideClick={(i) =>
-                openGallery(featuredSlides.map((s) => s.src), 'Featured Projects', i)
+                openGallery(featuredImages, 'Featured Projects', i)
               }
             />
           </div>
