@@ -13,6 +13,22 @@ import { portfolioCategories, libraryProgress, featuredSlides } from '../data/po
 const optimized = (src, size) =>
   src && src.startsWith('/images/') ? src.replace('/images/', `/images/${size}/`) : src;
 
+// ⚡ Bolt: Hoisted static array mapping to provide a stable reference, preventing
+// unnecessary re-renders or effect triggers in child components like ImageGallery or Schema.
+const schemaProjects = portfolioCategories.map((cat) => ({
+  id: cat.id,
+  title: cat.name,
+  category: cat.name,
+  description: cat.blurb,
+  location: 'Placer & Nevada Counties, CA',
+  thumbnail: cat.images[0],
+  images: cat.images,
+}));
+
+// Hoist additional static arrays
+const featuredSlideImages = featuredSlides.map((s) => s.src);
+const libraryProgressImages = libraryProgress.map((s) => s.src);
+
 const Portfolio = () => {
   const [gallery, setGallery] = useState({ open: false, images: [], title: '', index: 0 });
 
@@ -23,17 +39,6 @@ const Portfolio = () => {
   const breadcrumbItems = [
     { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' },
   ];
-
-  // Build schema-friendly project entries from the category data.
-  const schemaProjects = portfolioCategories.map((cat) => ({
-    id: cat.id,
-    title: cat.name,
-    category: cat.name,
-    description: cat.blurb,
-    location: 'Placer & Nevada Counties, CA',
-    thumbnail: cat.images[0],
-    images: cat.images,
-  }));
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
@@ -78,7 +83,7 @@ const Portfolio = () => {
               slides={featuredSlides}
               aspectClass="aspect-[4/3]"
               onSlideClick={(i) =>
-                openGallery(featuredSlides.map((s) => s.src), 'Featured Projects', i)
+                openGallery(featuredSlideImages, 'Featured Projects', i)
               }
             />
           </div>
@@ -147,7 +152,7 @@ const Portfolio = () => {
               interval={3500}
               aspectClass="aspect-[4/3]"
               onSlideClick={(i) =>
-                openGallery(libraryProgress.map((s) => s.src), 'Library Build — Start to Finish', i)
+                openGallery(libraryProgressImages, 'Library Build — Start to Finish', i)
               }
             />
           </div>

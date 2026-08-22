@@ -276,6 +276,10 @@ const reviewsSchema = testimonials.map((t) => ({
   "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }
 }));
 
+// ⚡ Bolt: Hoisted static array mapping to provide a stable reference, preventing
+// continuous effect triggers in child components like ImageGallery.
+const featuredSlideImages = featuredSlides.map((s) => s.src);
+
 // Hero section with hero.webp mountain background image for visual appeal
 const Home = () => {
   const [galleryOpen, setGalleryOpen] = useState(false);
@@ -454,7 +458,7 @@ const Home = () => {
 
           {/* Featured slideshow lightbox */}
           <ImageGallery
-            images={featuredSlides.map((s) => s.src)}
+            images={featuredSlideImages}
             isOpen={galleryOpen}
             onClose={() => setGalleryOpen(false)}
             initialIndex={galleryIndex}
