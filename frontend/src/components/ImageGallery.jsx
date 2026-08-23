@@ -57,9 +57,9 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
     const imgPrev = new Image();
     imgPrev.fetchPriority = 'low';
     imgPrev.src = images[prevIndex];
-  // `images` is intentionally omitted: Home passes `featuredSlides.map(...)`, a new
-  // array every render, so including it would re-run this effect continuously.
-  }, [isOpen, currentIndex]);
+  // ⚡ Bolt: Added `images` to dependencies now that Home & Portfolio hoist the array
+  // mappings, ensuring the preload hook stays correct while avoiding infinite re-renders.
+  }, [isOpen, currentIndex, images]);
 
   // Handle keyboard navigation
   useEffect(() => {
