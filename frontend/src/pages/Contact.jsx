@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { Schema } from '../components/Schema';
+import { trackLead } from '../utils/analytics';
 
 const Contact = () => {
   const breadcrumbItems = [
@@ -114,6 +115,15 @@ const Contact = () => {
 
       if (response.ok) {
         setSubmissionStatus('success');
+
+        // Fires before the reset below, while formData still holds the submission.
+        // Deliberately excludes name/email/phone -- GA4 must not receive PII.
+        trackLead({
+          projectType: formData.projectType,
+          city: formData.city,
+          source: 'contact_page'
+        });
+
         toast.success("Quote Request Received!", {
           description: "We'll contact you within 24 hours to discuss your project."
         });

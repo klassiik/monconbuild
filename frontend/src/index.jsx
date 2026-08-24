@@ -1,5 +1,6 @@
 import { ViteReactSSG } from 'vite-react-ssg';
 import { routes } from '@/App';
+import { initConversionTracking } from '@/utils/analytics';
 import "@/index.css";
 
 // vite-react-ssg drives rendering/hydration and provides the Head (react-helmet)
@@ -9,6 +10,11 @@ export const createRoot = ViteReactSSG(
   ({ isClient }) => {
     // Client-only side effects (skipped during static generation)
     if (!isClient) return;
+
+    // Phone/email click conversions. Attached eagerly rather than after idle --
+    // gtag() queues into dataLayer before gtag.js loads, so nothing is lost, and a
+    // visitor who taps "call" straight away still counts.
+    initConversionTracking();
 
     // Register service worker for aggressive caching
     if ('serviceWorker' in navigator && import.meta.env.PROD) {
