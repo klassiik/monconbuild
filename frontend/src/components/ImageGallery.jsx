@@ -57,9 +57,9 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
     const imgPrev = new Image();
     imgPrev.fetchPriority = 'low';
     imgPrev.src = images[prevIndex];
-  // `images` is intentionally omitted: Home passes `featuredSlides.map(...)`, a new
-  // array every render, so including it would re-run this effect continuously.
-  }, [isOpen, currentIndex]);
+  // ⚡ Bolt: `images` now has a stable reference since static array mapping was hoisted,
+  // preventing continuous effect re-runs.
+  }, [isOpen, currentIndex, images]);
 
   // Handle keyboard navigation
   useEffect(() => {

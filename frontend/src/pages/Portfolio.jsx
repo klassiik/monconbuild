@@ -9,6 +9,10 @@ import { PortfolioPageSchema, CreativeWorkSchema } from '../components/Schema';
 import { Camera } from 'lucide-react';
 import { portfolioCategories, libraryProgress, featuredSlides } from '../data/portfolio';
 
+// ⚡ Bolt: Hoist static array mapping outside component to maintain stable reference
+const featuredSlideImages = featuredSlides.map((s) => s.src);
+const libraryProgressImages = libraryProgress.map((s) => s.src);
+
 // Optimized "thumbnails"/"medium" variant paths (see scripts/import-images.mjs).
 const optimized = (src, size) =>
   src && src.startsWith('/images/') ? src.replace('/images/', `/images/${size}/`) : src;
@@ -78,7 +82,7 @@ const Portfolio = () => {
               slides={featuredSlides}
               aspectClass="aspect-[4/3]"
               onSlideClick={(i) =>
-                openGallery(featuredSlides.map((s) => s.src), 'Featured Projects', i)
+                openGallery(featuredSlideImages, 'Featured Projects', i)
               }
             />
           </div>
@@ -147,7 +151,7 @@ const Portfolio = () => {
               interval={3500}
               aspectClass="aspect-[4/3]"
               onSlideClick={(i) =>
-                openGallery(libraryProgress.map((s) => s.src), 'Library Build — Start to Finish', i)
+                openGallery(libraryProgressImages, 'Library Build — Start to Finish', i)
               }
             />
           </div>

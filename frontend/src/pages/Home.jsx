@@ -9,8 +9,12 @@ import AutoCarousel from '../components/AutoCarousel';
 import ImageGallery from '../components/ImageGallery';
 import { featuredSlides } from '../data/portfolio';
 import { CONTACT_INFO, COMPANY_INFO } from '../utils/constants';
+
 import ErrorBoundary from '../components/ErrorBoundary';
 import { handleError } from '../utils/errorHandler';
+
+// ⚡ Bolt: Hoist static array mapping outside component to maintain stable reference
+const featuredSlideImages = featuredSlides.map((s) => s.src);
 
 // LCP-friendly background image: no fade/blur gate — the image is preloaded via the
 // route <Head> below, so it must paint the moment it decodes to keep LCP fast.
@@ -454,7 +458,7 @@ const Home = () => {
 
           {/* Featured slideshow lightbox */}
           <ImageGallery
-            images={featuredSlides.map((s) => s.src)}
+            images={featuredSlideImages}
             isOpen={galleryOpen}
             onClose={() => setGalleryOpen(false)}
             initialIndex={galleryIndex}
