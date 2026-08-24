@@ -30,14 +30,6 @@ export const SERVICE_AREAS = {
   ALL: (import.meta.env.VITE_SERVICE_AREAS || 'Colfax,Auburn,Grass Valley,Nevada City,Truckee,Sacramento,Elk Grove,Folsom,Davis,Woodland,El Dorado Hills,South Lake Tahoe,Placerville').split(',').map(area => area.trim())
 };
 
-// Analytics Configuration
-export const ANALYTICS = {
-  GTM_ID: import.meta.env.VITE_GTM_ID || 'GTM-M8F6JTDV',
-  GA_ID: import.meta.env.VITE_GA_ID || null,
-  ENABLE_ANALYTICS: import.meta.env.VITE_ENABLE_ANALYTICS === 'true' || true,
-  ENABLE_PERFORMANCE_MONITORING: import.meta.env.VITE_ENABLE_PERFORMANCE_MONITORING === 'true' || true
-};
-
 // API Configuration
 export const API_CONFIG = {
   BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api',
