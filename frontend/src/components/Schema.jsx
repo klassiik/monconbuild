@@ -1,17 +1,26 @@
 import React from 'react';
-import { Head } from 'vite-react-ssg';
 
 /**
- * Schema Component - Injects JSON-LD structured data into page head
+ * Schema Component - renders JSON-LD structured data inline in the document body.
+ *
+ * Deliberately NOT inside <Head>: vite-react-ssg's Head only emits title/meta/link
+ * into the prerendered HTML, so a <script> placed there is dropped from the static
+ * output and only appears after hydration -- invisible to crawlers that don't run
+ * JS. Google accepts JSON-LD in <body>, so rendering it here is what gets it into
+ * the shipped HTML.
+ *
+ * dangerouslySetInnerHTML is required too: a JSX text child gets HTML-entity-escaped
+ * by SSG serialization, producing invalid JSON-LD (&quot; instead of "). The
+ * .replace() guards against a "</script>" inside the data breaking out of the block.
+ *
  * @param {Object} schema - Schema.org JSON-LD object
  */
 export const Schema = ({ schema }) => {
   return (
-    <Head>
-      <script type="application/ld+json">
-        {JSON.stringify(schema)}
-      </script>
-    </Head>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
+    />
   );
 };
 
