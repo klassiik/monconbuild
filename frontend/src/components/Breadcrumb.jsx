@@ -1,6 +1,5 @@
 import React from 'react';
 import { ChevronRight, Home } from 'lucide-react';
-import { Head } from 'vite-react-ssg';
 
 /**
  * Breadcrumb Component with Schema.org Structured Data
@@ -27,11 +26,10 @@ const Breadcrumb = ({ items }) => {
   return (
     <>
       {/* Inject Breadcrumb Schema */}
-      <Head>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
+      />
 
       {/* Visual Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200">
