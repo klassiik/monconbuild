@@ -30,15 +30,6 @@ export const SERVICE_AREAS = {
   ALL: (import.meta.env.VITE_SERVICE_AREAS || 'Colfax,Auburn,Grass Valley,Nevada City,Truckee,Sacramento,Elk Grove,Folsom,Davis,Woodland,El Dorado Hills,South Lake Tahoe,Placerville').split(',').map(area => area.trim())
 };
 
-// API Configuration
-export const API_CONFIG = {
-  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api',
-  ENDPOINTS: {
-    WEB_VITALS: '/analytics/web-vitals',
-    STATUS: '/status'
-  }
-};
-
 // SEO Configuration
 export const SEO_CONFIG = {
   DEFAULT_TITLE: 'Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA',
