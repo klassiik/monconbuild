@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Head } from 'vite-react-ssg';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -286,6 +286,17 @@ const Home = () => {
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [animateTitle] = useState(() => !heroTitleAnimated);
 
+  // ⚡ Bolt: Memoized handlers to prevent unnecessary re-renders of child components
+  // like AutoCarousel and ImageGallery when this parent component's state changes.
+  const handleSlideClick = useCallback((i) => {
+    setGalleryIndex(i);
+    setGalleryOpen(true);
+  }, []);
+
+  const handleCloseGallery = useCallback(() => {
+    setGalleryOpen(false);
+  }, []);
+
   useEffect(() => {
     heroTitleAnimated = true;
   }, []);
@@ -391,10 +402,7 @@ const Home = () => {
                 <AutoCarousel
                   slides={featuredSlides}
                   aspectClass="aspect-[4/3]"
-                  onSlideClick={(i) => {
-                    setGalleryIndex(i);
-                    setGalleryOpen(true);
-                  }}
+                  onSlideClick={handleSlideClick}
                 />
               </div>
 
@@ -463,7 +471,7 @@ const Home = () => {
           <ImageGallery
             images={featuredSlideImages}
             isOpen={galleryOpen}
-            onClose={() => setGalleryOpen(false)}
+            onClose={handleCloseGallery}
             initialIndex={galleryIndex}
             title="Featured Projects"
           />
