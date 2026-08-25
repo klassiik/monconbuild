@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
@@ -21,9 +21,22 @@ const libraryProgressImages = libraryProgress.map((s) => s.src);
 const Portfolio = () => {
   const [gallery, setGallery] = useState({ open: false, images: [], title: '', index: 0 });
 
-  const openGallery = (images, title, index = 0) =>
-    setGallery({ open: true, images, title, index });
-  const closeGallery = () => setGallery((g) => ({ ...g, open: false }));
+  // ⚡ Bolt: Memoized handlers to prevent unnecessary re-renders of child components
+  // like AutoCarousel and ImageGallery when this parent component's state changes.
+  const openGallery = useCallback((images, title, index = 0) =>
+    setGallery({ open: true, images, title, index }), []);
+
+  const closeGallery = useCallback(() => setGallery((g) => ({ ...g, open: false })), []);
+
+  // Memoized specifically for the featured slides carousel
+  const handleFeaturedSlideClick = useCallback((i) => {
+    openGallery(featuredSlideImages, 'Featured Projects', i);
+  }, [openGallery]);
+
+  // Memoized specifically for the library progress carousel
+  const handleLibrarySlideClick = useCallback((i) => {
+    openGallery(libraryProgressImages, 'Library Build — Start to Finish', i);
+  }, [openGallery]);
 
   const breadcrumbItems = [
     { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' },
@@ -82,9 +95,7 @@ const Portfolio = () => {
             <AutoCarousel
               slides={featuredSlides}
               aspectClass="aspect-[4/3]"
-              onSlideClick={(i) =>
-                openGallery(featuredSlideImages, 'Featured Projects', i)
-              }
+              onSlideClick={handleFeaturedSlideClick}
             />
           </div>
         </div>
@@ -151,9 +162,7 @@ const Portfolio = () => {
               slides={libraryProgress}
               interval={3500}
               aspectClass="aspect-[4/3]"
-              onSlideClick={(i) =>
-                openGallery(libraryProgressImages, 'Library Build — Start to Finish', i)
-              }
+              onSlideClick={handleLibrarySlideClick}
             />
           </div>
         </div>

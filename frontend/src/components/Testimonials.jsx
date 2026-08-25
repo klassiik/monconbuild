@@ -131,4 +131,6 @@ const Testimonials = ({ testimonials = [], showImages = true }) => {
   }
 };
 
-export default Testimonials;
+// ⚡ Bolt: Wrapped in React.memo to prevent unnecessary re-renders when parent state
+// (like lightbox open/close) changes, maintaining steady 60fps scrolling performance.
+export default React.memo(Testimonials);

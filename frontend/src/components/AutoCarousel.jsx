@@ -203,4 +203,6 @@ const AutoCarousel = ({
   );
 };
 
-export default AutoCarousel;
+// ⚡ Bolt: Wrapped in React.memo to prevent re-initializing timers and intersection
+// observers on every parent re-render (e.g. when opening a lightbox modal).
+export default React.memo(AutoCarousel);
