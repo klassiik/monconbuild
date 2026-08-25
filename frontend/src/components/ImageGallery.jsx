@@ -57,9 +57,10 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
     const imgPrev = new Image();
     imgPrev.fetchPriority = 'low';
     imgPrev.src = images[prevIndex];
-  // `images` is intentionally omitted: Home passes `featuredSlides.map(...)`, a new
-  // array every render, so including it would re-run this effect continuously.
-  }, [isOpen, currentIndex]);
+  // Every caller now passes a hoisted array, so `images` is a stable reference and
+  // can be listed honestly. Keep it that way: an inline `.map()` at a call site
+  // would put this effect back into a continuous re-run loop.
+  }, [isOpen, currentIndex, images]);
 
   // Handle keyboard navigation
   useEffect(() => {

@@ -13,6 +13,11 @@ import { portfolioCategories, libraryProgress, featuredSlides } from '../data/po
 const optimized = (src, size) =>
   src && src.startsWith('/images/') ? src.replace('/images/', `/images/${size}/`) : src;
 
+// Hoisted for the same reason as in Home.jsx -- these arrays reach ImageGallery
+// through gallery state and must not be rebuilt on every render.
+const featuredSlideImages = featuredSlides.map((s) => s.src);
+const libraryProgressImages = libraryProgress.map((s) => s.src);
+
 const Portfolio = () => {
   const [gallery, setGallery] = useState({ open: false, images: [], title: '', index: 0 });
 
@@ -78,7 +83,7 @@ const Portfolio = () => {
               slides={featuredSlides}
               aspectClass="aspect-[4/3]"
               onSlideClick={(i) =>
-                openGallery(featuredSlides.map((s) => s.src), 'Featured Projects', i)
+                openGallery(featuredSlideImages, 'Featured Projects', i)
               }
             />
           </div>
@@ -147,7 +152,7 @@ const Portfolio = () => {
               interval={3500}
               aspectClass="aspect-[4/3]"
               onSlideClick={(i) =>
-                openGallery(libraryProgress.map((s) => s.src), 'Library Build — Start to Finish', i)
+                openGallery(libraryProgressImages, 'Library Build — Start to Finish', i)
               }
             />
           </div>
