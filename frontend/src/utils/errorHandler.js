@@ -63,29 +63,20 @@ export class ErrorLogger {
       console.error('Application Error:', logEntry);
     }
 
-    // Send to monitoring service in production
-    if (process.env.NODE_ENV === 'production') {
-      this.sendToMonitoringService(logEntry);
-    }
+    // Errors stay in the in-memory ring buffer above, readable via
+    // getRecentErrors(). There is deliberately no remote reporting call.
+    //
+    // This used to POST every production error to /api/analytics/errors. That
+    // endpoint does not exist: the deploy is a static build with no functions,
+    // so the request was answered with the SPA fallback HTML. fetch() only
+    // rejects on network failure, not on a 404, so the catch never fired and
+    // the failure was invisible -- every production error quietly shipped a
+    // request that accomplished nothing.
+    //
+    // To add real reporting, call a service SDK here (Sentry, LogRocket) or a
+    // Vercel function you have actually deployed -- not a bare path.
 
     return logEntry;
-  }
-
-  // Send error to monitoring service (can be extended with Sentry, LogRocket, etc.)
-  async sendToMonitoringService(logEntry) {
-    try {
-      // Example: Send to custom analytics endpoint
-      await fetch('/api/analytics/errors', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(logEntry)
-      });
-    } catch (e) {
-      // Fail silently if monitoring service is unavailable
-      console.warn('Failed to send error to monitoring service:', e);
-    }
   }
 
   // Get recent errors for debugging
