@@ -276,6 +276,10 @@ const reviewsSchema = testimonials.map((t) => ({
   "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }
 }));
 
+// Hoisted so the reference is stable across renders: ImageGallery lists `images`
+// in its preload effect deps, and a fresh array each render would re-run it forever.
+const featuredSlideImages = featuredSlides.map((s) => s.src);
+
 // Hero section with hero.webp mountain background image for visual appeal
 const Home = () => {
   const [galleryOpen, setGalleryOpen] = useState(false);
@@ -454,7 +458,7 @@ const Home = () => {
 
           {/* Featured slideshow lightbox */}
           <ImageGallery
-            images={featuredSlides.map((s) => s.src)}
+            images={featuredSlideImages}
             isOpen={galleryOpen}
             onClose={() => setGalleryOpen(false)}
             initialIndex={galleryIndex}

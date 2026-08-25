@@ -245,7 +245,11 @@ const Contact = () => {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <Label htmlFor="name">Full Name *</Label>
+                  <Label htmlFor="name">
+                    Full Name{' '}
+                    <span aria-hidden="true">*</span>
+                    <span className="sr-only">(required)</span>
+                  </Label>
                   <Input
                     id="name"
                     name="name"
@@ -259,7 +263,11 @@ const Contact = () => {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email">
+                      Email Address{' '}
+                      <span aria-hidden="true">*</span>
+                      <span className="sr-only">(required)</span>
+                    </Label>
                     <Input
                       id="email"
                       name="email"
@@ -273,7 +281,11 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Label htmlFor="phone">
+                      Phone Number{' '}
+                      <span aria-hidden="true">*</span>
+                      <span className="sr-only">(required)</span>
+                    </Label>
                     <Input
                       id="phone"
                       name="phone"
@@ -288,7 +300,11 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="projectType">Project Type *</Label>
+                  <Label htmlFor="projectType">
+                    Project Type{' '}
+                    <span aria-hidden="true">*</span>
+                    <span className="sr-only">(required)</span>
+                  </Label>
                   <Select 
                     name="projectType" 
                     value={formData.projectType}
@@ -309,7 +325,11 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="location">Project Location *</Label>
+                  <Label htmlFor="location">
+                    Project Location{' '}
+                    <span aria-hidden="true">*</span>
+                    <span className="sr-only">(required)</span>
+                  </Label>
                   <Input
                     id="location"
                     name="location"
@@ -322,7 +342,11 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="city">Your City *</Label>
+                  <Label htmlFor="city">
+                    Your City{' '}
+                    <span aria-hidden="true">*</span>
+                    <span className="sr-only">(required)</span>
+                  </Label>
                   <Select 
                     name="city" 
                     value={formData.city}
@@ -416,7 +440,11 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="message">Project Details *</Label>
+                  <Label htmlFor="message">
+                    Project Details{' '}
+                    <span aria-hidden="true">*</span>
+                    <span className="sr-only">(required)</span>
+                  </Label>
                   <Textarea
                     id="message"
                     name="message"
