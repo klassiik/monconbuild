@@ -56,7 +56,7 @@ const Footer = () => {
                     href="https://www.cslb.ca.gov/801602" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="hover:text-blue-400 transition-colors"
+                    className="hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-green-900 rounded-sm"
                     aria-label="View California Contractor License #801602"
                   >
                     {COMPANY_INFO.FULL_LICENSE}
@@ -72,7 +72,7 @@ const Footer = () => {
                     <li key={link.path}>
                       <Link 
                         to={link.path} 
-                        className="hover:text-blue-400 transition-colors duration-300"
+                        className="hover:text-blue-400 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-green-900 rounded-sm"
                       >
                         {link.name}
                       </Link>
@@ -107,7 +107,7 @@ const Footer = () => {
                     <li key={link.path}>
                       <Link
                         to={link.path}
-                        className="hover:text-blue-400 transition-colors duration-300"
+                        className="hover:text-blue-400 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-green-900 rounded-sm"
                       >
                         {link.name}
                       </Link>
@@ -121,36 +121,36 @@ const Footer = () => {
                 <h3 className="text-white font-bold text-lg mb-6">Contact Us</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-1" />
+                    <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-1" aria-hidden="true" />
                     <span>Colfax, CA<br />Serving Northern California</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                    <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" aria-hidden="true" />
                     <a 
                       href={`tel:${CONTACT_INFO.PHONE}`} 
-                      className="hover:text-blue-400 transition-colors duration-300"
+                      className="hover:text-blue-400 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-green-900 rounded-sm"
                       aria-label={`Call ${CONTACT_INFO.FORMATTED_PHONE}`}
                     >
                       {CONTACT_INFO.FORMATTED_PHONE}
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                    <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" aria-hidden="true" />
                     <a 
                       href={`mailto:${CONTACT_INFO.EMAIL}`} 
-                      className="hover:text-blue-400 transition-colors duration-300 break-all"
+                      className="hover:text-blue-400 transition-colors duration-300 break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-green-900 rounded-sm"
                       aria-label={`Email ${CONTACT_INFO.EMAIL}`}
                     >
                       {CONTACT_INFO.EMAIL}
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Instagram className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                    <Instagram className="w-5 h-5 text-blue-400 flex-shrink-0" aria-hidden="true" />
                     <a 
                       href="https://www.instagram.com/wrconstruct7/" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-blue-400 transition-colors duration-300"
+                      className="hover:text-blue-400 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-green-900 rounded-sm"
                       aria-label="Follow us on Instagram"
                     >
                       @wrconstruct7
@@ -189,10 +189,10 @@ const Footer = () => {
               © {new Date().getFullYear()} Monument Construction. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <a href={`tel:${CONTACT_INFO.PHONE}`} className="text-sm">
+              <a href={`tel:${CONTACT_INFO.PHONE}`} className="text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-green-900 rounded-sm">
                 {CONTACT_INFO.FORMATTED_PHONE}
               </a>
-              <a href={`mailto:${CONTACT_INFO.EMAIL}`} className="text-sm">
+              <a href={`mailto:${CONTACT_INFO.EMAIL}`} className="text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-green-900 rounded-sm">
                 Contact Us
               </a>
             </div>
