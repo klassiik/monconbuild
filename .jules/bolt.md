@@ -5,3 +5,6 @@
 ## 2024-08-02 - [Preloading sequential media]
 **Learning:** Preloading next and previous images when a lightbox/gallery is open significantly reduces perceived load time for the user when they navigate sequentially. However, preloaded images must use `fetchPriority = 'low'` to avoid contending with the current visible image on constrained connections. Furthermore, if the `images` array is passed inline (creating a new reference each render), it must be omitted from the preload effect's dependency array (or memoized at the call site) to prevent the effect from firing continuously and negating the optimization.
 **Action:** Always consider implementing logic to pre-fetch adjacent assets in carousels and lightboxes (e.g., using `new Image().src = ...`) so they are ready by the time the user navigates, but explicitly set `fetchPriority = 'low'` and carefully manage dependency references.
+## 2025-08-29 - [Hoisting elements]
+**Learning:** Build and dependency management tools like `pnpm` modify un-tracked files (e.g., `pnpm-lock.yaml`, `sitemap.xml`) which might slip into git history and clog PRs.
+**Action:** Be mindful of untracked files after doing frontend build (`pnpm install`, `pnpm run build`, etc.). Review `git status` closely before creating commits to make sure no auto-generated build artifacts are added to commits.
