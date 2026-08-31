@@ -171,7 +171,7 @@ const AutoCarousel = ({
             aria-label="Previous slide"
             className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
           >
-            <ChevronLeft className="w-5 h-5 md:w-7 md:h-7" />
+            <ChevronLeft className="w-5 h-5 md:w-7 md:h-7" aria-hidden="true" />
           </button>
           <button
             type="button"
@@ -179,7 +179,7 @@ const AutoCarousel = ({
             aria-label="Next slide"
             className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
           >
-            <ChevronRight className="w-5 h-5 md:w-7 md:h-7" />
+            <ChevronRight className="w-5 h-5 md:w-7 md:h-7" aria-hidden="true" />
           </button>
 
           {/* Dots */}
