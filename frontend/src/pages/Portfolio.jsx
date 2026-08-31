@@ -18,6 +18,19 @@ const optimized = (src, size) =>
 const featuredSlideImages = featuredSlides.map((s) => s.src);
 const libraryProgressImages = libraryProgress.map((s) => s.src);
 
+// ⚡ Bolt: Build schema-friendly project entries from the category data outside the component.
+// This prevents recreating the schemaProjects array on every render, maintaining a stable
+// reference for the PortfolioPageSchema and CreativeWorkSchema components.
+const schemaProjects = portfolioCategories.map((cat) => ({
+  id: cat.id,
+  title: cat.name,
+  category: cat.name,
+  description: cat.blurb,
+  location: 'Placer & Nevada Counties, CA',
+  thumbnail: cat.images[0],
+  images: cat.images,
+}));
+
 const Portfolio = () => {
   const [gallery, setGallery] = useState({ open: false, images: [], title: '', index: 0 });
 
@@ -28,17 +41,6 @@ const Portfolio = () => {
   const breadcrumbItems = [
     { name: 'Portfolio', url: 'https://www.monconbuild.com/portfolio' },
   ];
-
-  // Build schema-friendly project entries from the category data.
-  const schemaProjects = portfolioCategories.map((cat) => ({
-    id: cat.id,
-    title: cat.name,
-    category: cat.name,
-    description: cat.blurb,
-    location: 'Placer & Nevada Counties, CA',
-    thumbnail: cat.images[0],
-    images: cat.images,
-  }));
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
