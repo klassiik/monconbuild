@@ -5,3 +5,7 @@
 ## 2025-10-25 - [Missing aria-hidden in Radix UI Boilerplate]
 **Learning:** Radix UI boilerplate components installed into the project (like `select.jsx` and `accordion.jsx`) often include decorative `lucide-react` icons that lack `aria-hidden="true"` attributes out of the box. This causes screen readers to redundantly announce decorative icons alongside the text content.
 **Action:** Always verify newly added generic UI component files from libraries (like Radix UI / shadcn/ui) to ensure decorative icons are properly hidden from screen readers.
+
+## 2025-10-25 - [Missing aria-hidden on Decorative Icons]
+**Learning:** Custom components using `lucide-react` often lack `aria-hidden="true"` on decorative icons out of the box, causing screen readers to redundantly announce decorative icons alongside the text content.
+**Action:** Always verify that newly added or existing generic UI components and icons (like those from Radix UI or `lucide-react`) have decorative icons properly hidden from screen readers.

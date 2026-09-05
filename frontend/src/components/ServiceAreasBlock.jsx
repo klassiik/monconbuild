@@ -27,7 +27,7 @@ const ServiceAreasBlock = ({ heading = 'Service Areas', intro }) => (
     <div className="grid md:grid-cols-3 gap-4 mb-12">
       {SERVICE_AREA_CITIES.map((area) => (
         <div key={area} className="flex items-center text-gray-700">
-          <CheckCircle2 className="w-5 h-5 text-green-600 mr-2" />
+          <CheckCircle2 className="w-5 h-5 text-green-600 mr-2" aria-hidden="true" />
           {area}
         </div>
       ))}

@@ -80,7 +80,7 @@ const Header = () => {
                 aria-controls="mobile-menu"
                 aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               >
-                {isMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+                {isMenuOpen ? <X className="w-8 h-8" aria-hidden="true" /> : <Menu className="w-8 h-8" aria-hidden="true" />}
               </button>
             </div>
 
@@ -106,7 +106,7 @@ const Header = () => {
                     className="flex items-center gap-2 text-lg font-semibold text-green-700 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 rounded-sm"
                     aria-label={`Call ${CONTACT_INFO.FORMATTED_PHONE}`}
                   >
-                    <Phone className="w-5 h-5" />
+                    <Phone className="w-5 h-5" aria-hidden="true" />
                     {CONTACT_INFO.FORMATTED_PHONE}
                   </a>
                   <Button 
