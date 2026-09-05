@@ -104,6 +104,18 @@ const AutoCarousel = ({
     return () => io.disconnect();
   }, [kick]);
 
+  // ⚡ Bolt: Preload the next slide's image to ensure it's fully downloaded
+  // before the auto-advance or arrow click transitions to it. This eliminates
+  // network delay flashes and improves the perceived performance.
+  // Expect smoother transitions across all network conditions.
+  useEffect(() => {
+    if (count <= 1) return;
+    const nextIdx = (index + 1) % count;
+    const imgNext = new Image();
+    imgNext.fetchPriority = 'low';
+    imgNext.src = toMedium(slides[nextIdx].src);
+  }, [index, count, slides]);
+
   // The auto-advance timer. `index` in the deps restarts the countdown after
   // every advance (auto, kick, arrows, or swipe) so the cadence stays even.
   useEffect(() => {
