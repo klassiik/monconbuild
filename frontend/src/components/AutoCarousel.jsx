@@ -34,6 +34,28 @@ const AutoCarousel = ({
   const next = useCallback(() => setIndex((i) => (i + 1) % count), [count]);
   const prev = useCallback(() => setIndex((i) => (i - 1 + count) % count), [count]);
 
+  // ⚡ Bolt: Track explicitly loaded indices to prevent eager loading of all absolute positioned slides.
+  // Using native loading="lazy" fails here because all absolutely positioned images technically intersect the viewport.
+  const [loaded, setLoaded] = useState(() => new Set([0]));
+
+  useEffect(() => {
+    if (count <= 1) return;
+    const nextIndex = (index + 1) % count;
+
+    // Explicit programmatic preloading of the next slide
+    const imgNext = new Image();
+    imgNext.fetchPriority = 'low';
+    imgNext.src = toMedium(slides[nextIndex]?.src);
+
+    setLoaded((prevLoaded) => {
+      if (prevLoaded.has(index) && prevLoaded.has(nextIndex)) return prevLoaded;
+      const newSet = new Set(prevLoaded);
+      newSet.add(index);
+      newSet.add(nextIndex);
+      return newSet;
+    });
+  }, [index, count, slides]);
+
   const handleTouchStart = (e) => {
     touchRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
     setPaused(true);
@@ -142,12 +164,15 @@ const AutoCarousel = ({
               i === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
-            <img
-              src={toMedium(slide.src)}
-              alt={[slide.title, slide.caption].filter(Boolean).join(' — ') || 'Project photo'}
-              loading={i === 0 ? 'eager' : 'lazy'}
-              className="h-full w-full object-cover"
-            />
+            {/* ⚡ Bolt: Only render images that have been explicitly preloaded or are active/next to save bandwidth on initial load */}
+            {loaded.has(i) && (
+              <img
+                src={toMedium(slide.src)}
+                alt={[slide.title, slide.caption].filter(Boolean).join(' — ') || 'Project photo'}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                className="h-full w-full object-cover"
+              />
+            )}
             {(slide.title || slide.caption) && (
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 md:p-6 text-left">
                 {slide.title && (
