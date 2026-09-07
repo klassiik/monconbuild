@@ -9,3 +9,8 @@
 **Vulnerability:** In `FAQSection.jsx`, user-provided or dynamic FAQ content was serialized directly into a `<script type="application/ld+json">` tag using `dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}` without escaping. An attacker could embed `</script><script>alert(1)</script>` into a question or answer, which `JSON.stringify` leaves as-is, terminating the script block and executing arbitrary JavaScript.
 **Learning:** `JSON.stringify` does not escape HTML characters like `<` and `>`. When injecting JSON directly into HTML using `dangerouslySetInnerHTML` (which is necessary here because Vite's SSG incorrectly escapes double quotes in React text children), the output must be manually sanitized for HTML context.
 **Prevention:** Always escape `<` characters (e.g., using `.replace(/</g, '\u003c')`) when injecting JSON payloads into HTML `<script>` blocks via `dangerouslySetInnerHTML`.
+
+## 2025-10-26 - [Formspree Honeypot Implementation]
+**Vulnerability:** Contact form lacks spam protection, exposing it to automated bot submissions which could result in spam or denial of service.
+**Learning:** Utilizing native Formspree `_gotcha` fields provides an effective, invisible anti-spam measure without negatively impacting user experience like traditional captchas.
+**Prevention:** Always include natively supported honeypot fields in third-party form submissions as a baseline anti-spam measure.

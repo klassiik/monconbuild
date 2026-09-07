@@ -40,7 +40,8 @@ const Contact = () => {
     city: '',
     budget: '',
     message: '',
-    timeline: ''
+    timeline: '',
+    _gotcha: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState('idle');
@@ -97,6 +98,9 @@ const Contact = () => {
       formDataToSend.append('timeline', formData.timeline);
       formDataToSend.append('budget', formData.budget);
       formDataToSend.append('message', formData.message);
+      if (formData._gotcha !== undefined) {
+        formDataToSend.append('_gotcha', formData._gotcha);
+      }
       // Formspree helpers
       formDataToSend.append('_subject', `New Quote Request - ${formData.projectType} in ${formData.city}`);
       formDataToSend.append('_replyto', formData.email);
@@ -138,7 +142,8 @@ const Contact = () => {
           city: '',
           budget: '',
           message: '',
-          timeline: ''
+          timeline: '',
+          _gotcha: ''
         });
       } else {
         setSubmissionStatus('error');
@@ -244,6 +249,15 @@ const Contact = () => {
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                <input
+                  type="text"
+                  name="_gotcha"
+                  value={formData._gotcha}
+                  onChange={handleChange}
+                  style={{ display: 'none' }}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
                 <div>
                   <Label htmlFor="name">
                     Full Name{' '}
