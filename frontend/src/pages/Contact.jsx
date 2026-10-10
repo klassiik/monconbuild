@@ -544,7 +544,7 @@ const Contact = () => {
                       <MapPin className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Service Area</h3>
-                        <p className="text-gray-700 font-semibold">Colfax, CA</p>
+                        <p className="text-gray-700 font-semibold">22245 Placer Hills Rd, Colfax, CA 95713</p>
                         <p className="text-gray-600 mt-2">Serving all of Placer, Nevada, Sacramento, Yolo & El Dorado Counties</p>
                       </div>
                     </div>
