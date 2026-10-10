@@ -29,7 +29,7 @@ const FinishCarpentryCosts = () => {
     },
     "publisher": { "@id": "https://www.monconbuild.com/#organization" },
     "datePublished": "2026-07-21",
-    "dateModified": "2026-07-21",
+    "dateModified": "2026-10-10",
     "mainEntityOfPage": URL
   };
 
@@ -153,10 +153,12 @@ const FinishCarpentryCosts = () => {
             ))}
           </ul>
 
-          <h2 className="text-3xl font-bold mb-6 text-gray-900">The $500 rule: why licensing matters</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-900">The $1,000 rule: why licensing matters</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            In California, any construction project over $500 legally requires a
-            licensed contractor. Hiring unlicensed help puts you at risk and may
+            Since January 1, 2025, California law requires a licensed contractor
+            for any project over $1,000 in combined labor and materials — and for
+            any job that needs a building permit or uses hired help, no matter how
+            small. Hiring unlicensed help puts you at risk and may
             void your homeowner&apos;s insurance. Before hiring anyone, verify their
             license on the Contractors State License Board website — you can
             check ours right now:{' '}
