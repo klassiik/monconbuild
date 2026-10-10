@@ -31,6 +31,7 @@ export const routes = [
       { path: 'services/home-additions', lazy: lazyRoute(() => import('./pages/services/HomeAdditions')) },
       { path: 'services/custom-woodwork', lazy: lazyRoute(() => import('./pages/services/CustomWoodwork')) },
       { path: 'services/complete-remodeling', lazy: lazyRoute(() => import('./pages/services/CompleteRemodeling')) },
+      { path: 'services/kitchen-remodeling', lazy: lazyRoute(() => import('./pages/services/KitchenRemodeling')) },
       { path: 'guides/finish-carpentry-cost-placer-county', lazy: lazyRoute(() => import('./pages/guides/FinishCarpentryCosts')) },
       // Emitted as dist/404.html (Vercel serves it with a real 404 status).
       { path: '404', lazy: lazyRoute(() => import('./pages/NotFound')) },

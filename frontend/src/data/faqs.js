@@ -141,3 +141,26 @@ export const residentialProjectsFAQs = [
     answer: "Yes! All our work includes a one-year craftsmanship warranty covering defects in workmanship. Many materials (windows, roofing, appliances) carry manufacturer warranties we help you maintain. We also carry liability insurance and workers' compensation, protecting you from liability during construction. We stand behind our work long after project completion."
   }
 ];
+
+export const kitchenRemodelingFAQs = [
+  {
+    question: "How long does a kitchen remodel take?",
+    answer: "Most kitchen remodels take 6-12 weeks once work starts. A cabinetry-led refresh that keeps the existing layout sits at the shorter end; moving walls, plumbing, or gas lines, or waiting on custom cabinetry and counters, pushes toward the longer end. We give you a written schedule before demolition begins."
+  },
+  {
+    question: "Do I need a permit to remodel my kitchen?",
+    answer: "If the project moves or adds plumbing, electrical, gas, or walls, it almost always needs a building permit from your city or county. Replacing cabinets and counters in the same layout often does not. As a licensed general contractor (#801602), we determine what your project requires, pull the permits, and schedule the inspections."
+  },
+  {
+    question: "Can we live at home during a kitchen remodel?",
+    answer: "Yes, most families do. We help you set up a temporary kitchen elsewhere in the house, contain dust at the work area, and keep the rest of your home usable. We'll walk through the plan for water, power, and access before work begins."
+  },
+  {
+    question: "Do you build custom cabinets or install stock cabinets?",
+    answer: "Both. Finish carpentry is our specialty, so we can build custom cabinets, islands, and built-ins sized exactly to your space, or install semi-custom and stock lines when they fit the budget better. Many kitchens mix the two: stock base cabinets with a custom island, pantry, or hood surround."
+  },
+  {
+    question: "What affects the cost of a kitchen remodel?",
+    answer: "The biggest factors are whether the layout changes (moving plumbing, gas, or walls), custom versus semi-custom or stock cabinetry, countertop material, appliance and fixture choices, and what turns up behind the walls of older homes. We visit, measure, and give you a free, itemized quote so you can decide where to spend and where to save."
+  }
+];

@@ -32,6 +32,7 @@ const ROUTES = [
   { path: '/services/home-additions', sources: ['src/pages/services/HomeAdditions.jsx'] },
   { path: '/services/custom-woodwork', sources: ['src/pages/services/CustomWoodwork.jsx'] },
   { path: '/services/complete-remodeling', sources: ['src/pages/services/CompleteRemodeling.jsx'] },
+  { path: '/services/kitchen-remodeling', sources: ['src/pages/services/KitchenRemodeling.jsx'] },
   { path: '/guides/finish-carpentry-cost-placer-county', sources: ['src/pages/guides/FinishCarpentryCosts.jsx'] },
   ...CITIES.map((c) => ({
     path: `/service-areas/${c.slug}`,

@@ -4,7 +4,7 @@ import { Head } from 'vite-react-ssg';
 import { Button } from '../components/ui/button';
 import Breadcrumb from '../components/Breadcrumb';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Hammer, Home, Building2, Drill, PaintBucket, Ruler } from 'lucide-react';
+import { Hammer, Home, Building2, Drill, PaintBucket, Ruler, ChefHat } from 'lucide-react';
 import Testimonials from '../components/Testimonials';
 import { Schema } from '../components/Schema';
 
@@ -71,6 +71,13 @@ const Services = () => {
           "url": "https://www.monconbuild.com/services/complete-remodeling",
           "name": "Complete Remodeling",
           "description": "Whole-house renovations and remodeling"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://www.monconbuild.com/services/kitchen-remodeling",
+          "name": "Kitchen Remodeling",
+          "description": "Full kitchen remodels and custom-cabinetry refreshes"
         }
       ]
     }
@@ -177,6 +184,20 @@ const Services = () => {
         "Basement finishing",
         "Historic home restoration",
         "Interior and exterior updates"
+      ]
+    },
+    {
+      icon: <ChefHat className="w-12 h-12" />,
+      title: "Kitchen Remodeling",
+      link: "/services/kitchen-remodeling",
+      description: "Full kitchen remodels and cabinetry-led refreshes. We move walls and utilities when the layout needs it, and build the custom cabinets, islands and trim that make the room.",
+      features: [
+        "Layout changes and wall removal",
+        "Custom cabinets and islands",
+        "Pantries and built-in dry bars",
+        "Counters, tile and lighting",
+        "Permits and inspections",
+        "Crown molding and trim"
       ]
     }
   ];
@@ -324,6 +345,9 @@ const Services = () => {
               </a>
               <a href="/services/complete-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
                 <span className="text-lg font-semibold text-green-700">Complete Remodeling</span>
+              </a>
+              <a href="/services/kitchen-remodeling" className="flex items-center p-4 bg-white rounded-lg hover:bg-green-100 transition-colors border border-green-200 hover:border-green-700">
+                <span className="text-lg font-semibold text-green-700">Kitchen Remodeling</span>
               </a>
             </div>
           </div>
