@@ -24,7 +24,8 @@ const Footer = () => {
       { name: 'Residential Projects', path: '/services/residential-projects' },
       { name: 'Home Additions', path: '/services/home-additions' },
       { name: 'Custom Woodwork', path: '/services/custom-woodwork' },
-      { name: 'Complete Remodeling', path: '/services/complete-remodeling' }
+      { name: 'Complete Remodeling', path: '/services/complete-remodeling' },
+      { name: 'Kitchen Remodeling', path: '/services/kitchen-remodeling' }
     ];
 
     const serviceAreaLinks = [

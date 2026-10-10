@@ -178,6 +178,13 @@ const servicesListSchema = {
       "url": "https://www.monconbuild.com/services/complete-remodeling",
       "name": "Complete Remodeling",
       "description": "Whole-house renovations and remodeling"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "url": "https://www.monconbuild.com/services/kitchen-remodeling",
+      "name": "Kitchen Remodeling",
+      "description": "Full kitchen remodels and custom-cabinetry refreshes"
     }
   ]
 };
@@ -186,21 +193,25 @@ const services = [
   {
     icon: <Hammer className="w-8 h-8" />,
     title: "Finish Carpentry",
+    link: "/services/finish-carpentry",
     description: "Expert custom woodwork, trim, moldings, and built-ins that showcase true craftsmanship."
   },
   {
     icon: <HomeIcon className="w-8 h-8" />,
     title: "Residential Construction",
+    link: "/services/residential-projects",
     description: "Complete residential projects from ground work to final touches with attention to detail."
   },
   {
     icon: <Wrench className="w-8 h-8" />,
-    title: "Remodeling & Renovations",
-    description: "Transform your existing space with quality craftsmanship and attention to detail."
+    title: "Kitchen & Home Remodeling",
+    link: "/services/kitchen-remodeling",
+    description: "Full kitchen remodels, custom-cabinetry refreshes, and whole-home renovations built with finish-carpentry precision."
   },
   {
     icon: <Building2 className="w-8 h-8" />,
     title: "Complete Construction",
+    link: "/services/general-construction",
     description: "Full-service construction from foundation to finish, bringing your vision to life."
   }
 ];
@@ -439,7 +450,9 @@ const Home = () => {
                       <div className="text-green-700 mb-4 group-hover:scale-110 transition-transform duration-300">
                         {service.icon}
                       </div>
-                      <h3 className="text-xl font-bold mb-3 text-slate-900">{service.title}</h3>
+                      <h3 className="text-xl font-bold mb-3 text-slate-900">
+                        <Link to={service.link} className="hover:text-green-700 transition-colors">{service.title}</Link>
+                      </h3>
                       <p className="text-gray-600 leading-relaxed">{service.description}</p>
                     </CardContent>
                   </Card>

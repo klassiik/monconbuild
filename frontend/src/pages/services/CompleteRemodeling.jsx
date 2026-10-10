@@ -286,6 +286,13 @@ const CompleteRemodeling = () => {
               </a>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Kitchen Remodeling</h3>
+              <p className="text-gray-700 mb-4">Full kitchen remodels and custom-cabinetry refreshes.</p>
+              <a href="/services/kitchen-remodeling" className="text-green-700 hover:text-blue-800 font-semibold">
+                Learn More →
+              </a>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-bold mb-3 text-gray-900">All Services</h3>
               <p className="text-gray-700 mb-4">View our complete range of construction and carpentry services.</p>
               <a href="/services" className="text-green-700 hover:text-blue-800 font-semibold">
