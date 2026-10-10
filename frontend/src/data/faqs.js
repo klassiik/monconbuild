@@ -15,7 +15,7 @@ export const finishCarpentryFAQs = [
   },
   {
     question: "Do I need a licensed contractor for finish carpentry in California?",
-    answer: "Yes! In California, any finish carpentry project over $500 requires a licensed contractor. Monument Construction holds California Contractor License #801602, ensuring your project meets all state requirements, building codes, and insurance standards. Hiring an unlicensed contractor puts you at risk and may void your homeowner's insurance."
+    answer: "Yes, for most projects. Since January 1, 2025, California requires a licensed contractor for any job over $1,000 in combined labor and materials, and for any job that needs a building permit or uses hired help, regardless of price. Monument Construction holds California Contractor License #801602, ensuring your project meets all state requirements, building codes, and insurance standards. Hiring an unlicensed contractor puts you at risk and may void your homeowner's insurance."
   },
   {
     question: "What types of wood are best for trim and molding in the Sierra Nevada climate?",
