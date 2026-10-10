@@ -116,7 +116,7 @@ const homepageSchema = {
   "@type": "WebPage",
   "@id": "https://www.monconbuild.com/#webpage",
   "url": "https://www.monconbuild.com/",
-  "name": "Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA",
+  "name": "Monument Construction | General Contractor Colfax CA",
   "description": "Professional finish carpentry and general construction services serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California. Licensed contractor #801602. Featured on DIY Network TV.",
   "isPartOf": {
     "@type": "WebSite",
@@ -296,8 +296,8 @@ const Home = () => {
         <div className="min-h-screen">
           {/* SEO Meta Tags and Schema.org Structured Data */}
           <Head>
-            <title>Monument Construction | Carpentry & Construction Colfax CA</title>
-            <meta name="description" content="Expert finish carpentry & construction in Northern CA. Licensed contractor #801602 serving Placer, Nevada, Sacramento & El Dorado Counties. (916) 607-1972" />
+            <title>Monument Construction | General Contractor Colfax CA</title>
+            <meta name="description" content="Licensed contractor #801602 in Colfax. Finish carpentry, remodels & additions in Placer, Nevada, Sacramento, Yolo & El Dorado Counties. (916) 607-1972" />
             <link rel="canonical" href="https://www.monconbuild.com/" />
             {/* Hero (LCP) preload lives here, not index.html, so only the homepage
                 downloads it; imagesrcset keeps it matched to the <img srcset> pick.
@@ -308,7 +308,7 @@ const Home = () => {
                 imagesrcset pick is evaluated against a different viewport than the img. */}
             
             {/* Open Graph Tags */}
-            <meta property="og:title" content="Monument Construction | Expert Finish Carpentry & General Contractor Colfax CA" />
+            <meta property="og:title" content="Monument Construction | General Contractor Colfax CA" />
             <meta property="og:description" content="Licensed contractor serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties with quality finish carpentry and complete construction services." />
             <meta property="og:url" content="https://www.monconbuild.com/" />
             <meta property="og:type" content="website" />

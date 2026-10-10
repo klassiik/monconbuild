@@ -122,7 +122,7 @@ const Footer = () => {
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-1" />
-                    <span>Colfax, CA<br />Serving Northern California</span>
+                    <span>22245 Placer Hills Rd<br />Colfax, CA 95713<br />Serving Northern California</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
