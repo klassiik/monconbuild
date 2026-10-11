@@ -32,7 +32,8 @@ export function MonumentLogo({
       preserveAspectRatio="xMidYMid meet"
       className={className}
     >
-      <title>{title}</title>
+      {/* No <title> child: aria-label already names the image, and an SVG <title>
+          in the prerendered HTML gets miscounted as a second document <title>. */}
       <g transform="translate(0.000000,289.000000) scale(0.100000,-0.100000)"
       fill="currentColor" stroke="none">
       <path d="M2080 2837 c-265 -90 -441 -241 -785 -672 -110 -137 -236 -286 -280
