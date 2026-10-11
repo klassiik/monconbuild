@@ -163,6 +163,9 @@ const HomeAdditions = () => {
               From second-story additions to accessory dwelling units (ADUs), we handle every aspect of your home expansion 
               project with expert craftsmanship and attention to detail. California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">License #801602</a>.
             </p>
+            <p className="text-lg text-gray-700 mb-8">
+              Adding on in Nevada County? Our page on <a href="/service-areas/grass-valley" className="text-green-700 hover:text-blue-800 underline">building and remodeling in Grass Valley</a> covers city and county permitting, fire-zone construction, and planning additions around well and septic setbacks.
+            </p>
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">
               <h3 className="text-2xl font-bold mb-6 text-gray-900">Why Add On vs. Moving?</h3>

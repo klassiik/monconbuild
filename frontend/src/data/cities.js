@@ -37,12 +37,13 @@ export const CITIES = [
     elevation: '~2,400 ft',
     zip: '95945',
     geo: { lat: 39.2191, lng: -121.0611 },
-    tagline: 'Historic-home remodeling & construction in Grass Valley, CA',
+    tagline: 'Remodeling contractor & home builder in Grass Valley, CA',
     intro:
       "Grass Valley is one of the best-preserved Gold Rush towns in California, and its housing reflects it — Victorians, Craftsman bungalows, and mining-era cottages downtown, giving way to forested acreage as you head out of town. Restoring and updating these homes without erasing their character is some of the most rewarding work we do.",
     localContext: [
       "Working on Grass Valley's older homes means matching what's already there: milling trim and moldings to period profiles, rebuilding porches and staircases, and blending additions so seamlessly that they read as original. Our finish-carpentry background is what makes that possible — most of these details can't be bought off a shelf.",
-      "Beyond downtown, Grass Valley's forested lots at 2,400 ft bring a four-season climate with real snow and a high wildfire-severity rating. That drives decisions on framing, exterior materials, deck design, and the ember-resistant detailing the area increasingly requires."
+      "Beyond downtown, Grass Valley's forested lots at 2,400 ft bring a four-season climate with real snow and a high wildfire-severity rating. That drives decisions on framing, exterior materials, deck design, and the ember-resistant detailing the area increasingly requires.",
+      "Not every Grass Valley job is a restoration. Out in Alta Sierra, Cedar Ridge, and the acreage toward Chicago Park, we remodel kitchens and baths, add bedrooms and second stories, and build new homes from the foundation up. We're a short drive up Highway 174 from our base in Colfax, and as a licensed general contractor we run the whole job ourselves — permits, framing, trades, and the finish work at the end."
     ],
     considerations: [
       { title: 'Permitting', text: 'Work is permitted through the City of Grass Valley or Nevada County depending on location. We manage submittals and inspections and are used to the added review that comes with historic properties.' },
@@ -50,8 +51,8 @@ export const CITIES = [
       { title: 'Fire & forest lots', text: 'Grass Valley sits in a high fire-severity zone. We build with defensible space and ember-resistant construction in mind on wooded and rural parcels.' },
       { title: 'Rural systems', text: 'Many outlying properties are on well and septic. We coordinate additions and ADUs around those systems and the setbacks they require.' }
     ],
-    neighborhoods: ['Downtown Grass Valley', 'Alta Sierra', 'Cedar Ridge', 'Chicago Park'],
-    popularServices: ['complete-remodeling', 'custom-woodwork', 'finish-carpentry', 'home-additions'],
+    neighborhoods: ['Downtown Grass Valley', 'Alta Sierra', 'Cedar Ridge', 'Chicago Park', 'Nevada City', 'Rough and Ready', 'Penn Valley'],
+    popularServices: ['complete-remodeling', 'kitchen-remodeling', 'home-additions', 'general-construction', 'finish-carpentry', 'custom-woodwork'],
     nearby: ['auburn', 'placerville'],
   },
   {
