@@ -175,6 +175,9 @@ const CompleteRemodeling = () => {
               <p className="text-gray-700">
                 Complete remodeling projects can include kitchen and bathroom renovations, flooring replacement, interior redesigns, exterior updates, and more. The result is a home that&apos;s not only more beautiful and functional but also more valuable and efficient. With our 25+ years of experience, we make the entire remodeling process smooth and stress-free.
               </p>
+              <p className="text-gray-700 mt-4">
+                Older homes take the most planning. If yours is one of Grass Valley&apos;s Victorians or mining-era cottages, see our <a href="/service-areas/grass-valley" className="text-green-700 hover:text-blue-800 underline">remodeling contractor in Grass Valley</a> page for how we match period trim and work through historic-property review.
+              </p>
             </div>
 
             <h3 className="text-2xl font-bold mb-4 text-gray-900">Remodeling Services</h3>

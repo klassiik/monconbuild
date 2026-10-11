@@ -15,6 +15,7 @@ const SERVICE_LABELS = {
   'home-additions': 'Home Additions',
   'custom-woodwork': 'Custom Woodwork',
   'complete-remodeling': 'Complete Remodeling',
+  'kitchen-remodeling': 'Kitchen Remodeling',
 };
 
 const BASE = 'https://www.monconbuild.com';
