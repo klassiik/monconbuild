@@ -103,10 +103,10 @@ const GeneralConstruction = () => {
   return (
     <div className="min-h-screen">
       <Head>
-        <title>General Contractor | Colfax, Auburn & Placer County CA</title>
+        <title>General Contractor | Colfax & Placer County CA</title>
         <meta name="description" content="Full-service general construction in Placer County. New homes, remodels, additions & more. Licensed contractor #801602." />
         <link rel="canonical" href="https://www.monconbuild.com/services/general-construction" />
-        <meta property="og:title" content="General Contractor | Colfax, Auburn & Placer County CA" />
+        <meta property="og:title" content="General Contractor | Colfax & Placer County CA" />
         <meta property="og:description" content="Full-service general construction in Placer County. New homes, remodels, additions & more. Licensed contractor #801602." />
         <meta property="og:url" content="https://www.monconbuild.com/services/general-construction" />
         <meta property="og:type" content="website" />
@@ -231,8 +231,11 @@ const GeneralConstruction = () => {
             <p className="text-lg text-gray-700 mb-6">
               In the foothills, that means engineering foundations and decks for sloped, wooded lots, managing drainage on hillsides, and building to Wildland-Urban Interface fire standards — enclosed eaves, ember-resistant vents, and non-combustible exterior details where the code requires them. At elevation, roofs and structures are designed for real snow loads and a short building season. Down in the valley, hot-summer climates and expansive clay soils drive material choices and foundation planning, especially on older homes.
             </p>
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-lg text-gray-700 mb-6">
               Hiring us as your general contractor means one point of responsibility for all of it: scheduling, materials procurement, subcontractor management, code compliance, and quality control from the first day of groundwork to the last coat of paint. That single-point accountability — backed by 25+ years in these specific communities — is what keeps projects on budget and out of dispute.
+            </p>
+            <p className="text-lg text-gray-700 mb-8">
+              Building in Auburn? Our <a href="/service-areas/auburn" className="text-green-700 hover:text-blue-800 underline">general contractor in Auburn</a> page covers City of Auburn and Placer County permitting, WUI fire-zone requirements, and the older-home work we do there most.
             </p>
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">
