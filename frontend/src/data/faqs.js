@@ -30,7 +30,7 @@ export const finishCarpentryFAQs = [
 export const homeAdditionsFAQs = [
   {
     question: "How much does a home addition cost in Placer County?",
-    answer: "Home addition costs in Placer County typically range from $200-$500 per square foot, depending on complexity, materials, and finishes. A 200 sq ft room addition might cost $40,000-$100,000, while a second-story addition can range from $150,000-$400,000+. Factors affecting cost include foundation work, matching existing architecture, permits, and finish level. We provide detailed, itemized quotes for all projects."
+    answer: "It depends on the size of the addition, whether it's on the ground floor or a second story, how much foundation work the lot needs, and the finish level you want. Sloped lots, well and septic setbacks, and matching your home's existing trim and roofline all factor in. We walk the site with you first, then give you a detailed, itemized written quote rather than a ballpark guess."
   },
   {
     question: "Do I need permits for a home addition in California?",
@@ -42,7 +42,7 @@ export const homeAdditionsFAQs = [
   },
   {
     question: "Will a home addition increase my property value?",
-    answer: "Quality home additions typically add 50-80% of their cost back to your home's value. In Placer County's strong real estate market, well-designed additions that match your home's architecture often provide excellent ROI. Bedroom and bathroom additions tend to add the most value. We can discuss value considerations during your free consultation."
+    answer: "A well-built addition adds usable living space, and extra bedrooms and bathrooms are what buyers tend to look for. How much value it adds depends on your neighborhood and the market when you sell, so a local appraiser or agent is the right person for a number. Our part is building it so it looks and works like it was always part of the house."
   },
   {
     question: "Can you build ADUs (Accessory Dwelling Units) in Placer County?",

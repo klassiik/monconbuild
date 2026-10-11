@@ -173,7 +173,7 @@ const HomeAdditions = () => {
                 A well-designed home addition is often the perfect solution for growing families or changing needs. Rather than the disruption and expense of selling and buying a new home, an addition lets you expand in place, maintain your community connections, and build equity in your existing property.
               </p>
               <p className="text-gray-700">
-                Home additions also add significant value to your property. Unlike many home improvements, a quality addition can add 50-80% of its cost back to your home&apos;s value, making it one of the best investments you can make in your property.
+                A well-built addition also adds real, usable square footage to a house you already know works for you. Built right, it looks like it was always part of the home. How much it adds at resale depends on your neighborhood and the market when you sell, and a local appraiser can speak to that better than any contractor.
               </p>
             </div>
 
