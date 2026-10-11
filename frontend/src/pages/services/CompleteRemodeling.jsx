@@ -103,10 +103,10 @@ const CompleteRemodeling = () => {
   return (
     <div className="min-h-screen">
       <Head>
-        <title>Home Remodeling | Colfax, Auburn & Placer County CA</title>
+        <title>Home Remodeling | Colfax & Placer County CA</title>
         <meta name="description" content="Full-service home remodeling in Colfax & Placer County. Complete transformations with expert craftsmanship & attention." />
         <link rel="canonical" href="https://www.monconbuild.com/services/complete-remodeling" />
-        <meta property="og:title" content="Home Remodeling | Colfax, Auburn & Placer County CA" />
+        <meta property="og:title" content="Home Remodeling | Colfax & Placer County CA" />
         <meta property="og:description" content="Full-service home remodeling in Colfax & Placer County. Complete transformations with expert craftsmanship & attention." />
         <meta property="og:url" content="https://www.monconbuild.com/services/complete-remodeling" />
         <meta property="og:type" content="website" />
@@ -162,6 +162,9 @@ const CompleteRemodeling = () => {
             <p className="text-lg text-gray-700 mb-8">
               From minor updates to complete renovations, we manage every phase of your remodeling project with 
               professional expertise and meticulous attention to detail. California Contractor <a href="https://www.cslb.ca.gov/801602" target="_blank" rel="noopener noreferrer" className="text-green-700 hover:text-blue-800 underline">License #801602</a>.
+            </p>
+            <p className="text-lg text-gray-700 mb-8">
+              Remodeling an older Auburn home? Our <a href="/service-areas/auburn" className="text-green-700 hover:text-blue-800 underline">general contractor in Auburn</a> page covers local permitting and the structural updates those homes usually need once the walls come off.
             </p>
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">
