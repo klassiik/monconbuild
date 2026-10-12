@@ -3,7 +3,7 @@
 export const finishCarpentryFAQs = [
   {
     question: "How much does finish carpentry cost in Colfax, CA?",
-    answer: "Finish carpentry costs in Colfax typically range from $50-$100 per hour for labor, with material costs additional. A typical crown molding installation for a 12x14 room might cost $800-$1,500. Custom built-ins range from $2,000-$10,000+ depending on size and complexity. We provide free detailed quotes for all projects in Placer County."
+    answer: "It depends on the scope: how many rooms, the trim profiles and materials you choose, whether pieces are custom-milled to match existing work, and the condition of the walls and ceilings we're working on. Our finish carpentry cost guide covers typical market rates in Placer County. For your project, we measure on site and give you a free, detailed written quote."
   },
   {
     question: "What's the difference between rough carpentry and finish carpentry?",
@@ -30,7 +30,7 @@ export const finishCarpentryFAQs = [
 export const homeAdditionsFAQs = [
   {
     question: "How much does a home addition cost in Placer County?",
-    answer: "Home addition costs in Placer County typically range from $200-$500 per square foot, depending on complexity, materials, and finishes. A 200 sq ft room addition might cost $40,000-$100,000, while a second-story addition can range from $150,000-$400,000+. Factors affecting cost include foundation work, matching existing architecture, permits, and finish level. We provide detailed, itemized quotes for all projects."
+    answer: "It depends on the size of the addition, whether it's on the ground floor or a second story, how much foundation work the lot needs, and the finish level you want. Sloped lots, well and septic setbacks, and matching your home's existing trim and roofline all factor in. We walk the site with you first, then give you a detailed, itemized written quote rather than a ballpark guess."
   },
   {
     question: "Do I need permits for a home addition in California?",
@@ -42,7 +42,7 @@ export const homeAdditionsFAQs = [
   },
   {
     question: "Will a home addition increase my property value?",
-    answer: "Quality home additions typically add 50-80% of their cost back to your home's value. In Placer County's strong real estate market, well-designed additions that match your home's architecture often provide excellent ROI. Bedroom and bathroom additions tend to add the most value. We can discuss value considerations during your free consultation."
+    answer: "A well-built addition adds usable living space, and extra bedrooms and bathrooms are what buyers tend to look for. How much value it adds depends on your neighborhood and the market when you sell, so a local appraiser or agent is the right person for a number. Our part is building it so it looks and works like it was always part of the house."
   },
   {
     question: "Can you build ADUs (Accessory Dwelling Units) in Placer County?",
@@ -80,7 +80,7 @@ export const customWoodworkFAQs = [
   },
   {
     question: "How much do custom built-ins cost?",
-    answer: "Custom built-in costs vary based on size, materials, and complexity. A basic bookshelf unit might start around $2,000-$4,000. Full wall entertainment centers range from $5,000-$15,000. Custom home office built-ins typically cost $4,000-$12,000. We provide detailed quotes after measuring your space and discussing design preferences."
+    answer: "Custom built-in costs depend on size, wood species, painted versus stain-grade finish, hardware, and how much detail goes into the design. A simple bookshelf is a very different project from a full-wall library or home office. We measure your space, talk through the design with you, and then give you a detailed written quote."
   },
   {
     question: "What wood species do you work with?",
@@ -99,7 +99,7 @@ export const customWoodworkFAQs = [
 export const completeRemodelingFAQs = [
   {
     question: "How much does a complete home remodel cost?",
-    answer: "Complete home remodeling in Placer County typically costs $100-$300+ per square foot depending on scope and finishes. A whole-house remodel of a 2,000 sq ft home might range from $200,000-$600,000. Kitchen remodels average $25,000-$75,000, bathrooms $15,000-$40,000. We provide detailed estimates breaking down all costs including materials, labor, permits, and design services."
+    answer: "It depends on how much of the house is involved, whether walls, plumbing, or electrical are moving, what turns up once walls are opened on an older home, and the finishes you choose. We walk the house with you, then provide a detailed estimate that breaks out materials, labor, permits, and design, so you can see exactly where the money goes."
   },
   {
     question: "Should I remodel or buy a new home?",
