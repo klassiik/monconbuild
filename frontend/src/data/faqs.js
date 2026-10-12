@@ -3,7 +3,7 @@
 export const finishCarpentryFAQs = [
   {
     question: "How much does finish carpentry cost in Colfax, CA?",
-    answer: "Finish carpentry costs in Colfax typically range from $50-$100 per hour for labor, with material costs additional. A typical crown molding installation for a 12x14 room might cost $800-$1,500. Custom built-ins range from $2,000-$10,000+ depending on size and complexity. We provide free detailed quotes for all projects in Placer County."
+    answer: "It depends on the scope: how many rooms, the trim profiles and materials you choose, whether pieces are custom-milled to match existing work, and the condition of the walls and ceilings we're working on. Our finish carpentry cost guide covers typical market rates in Placer County. For your project, we measure on site and give you a free, detailed written quote."
   },
   {
     question: "What's the difference between rough carpentry and finish carpentry?",
@@ -80,7 +80,7 @@ export const customWoodworkFAQs = [
   },
   {
     question: "How much do custom built-ins cost?",
-    answer: "Custom built-in costs vary based on size, materials, and complexity. A basic bookshelf unit might start around $2,000-$4,000. Full wall entertainment centers range from $5,000-$15,000. Custom home office built-ins typically cost $4,000-$12,000. We provide detailed quotes after measuring your space and discussing design preferences."
+    answer: "Custom built-in costs depend on size, wood species, painted versus stain-grade finish, hardware, and how much detail goes into the design. A simple bookshelf is a very different project from a full-wall library or home office. We measure your space, talk through the design with you, and then give you a detailed written quote."
   },
   {
     question: "What wood species do you work with?",
@@ -99,7 +99,7 @@ export const customWoodworkFAQs = [
 export const completeRemodelingFAQs = [
   {
     question: "How much does a complete home remodel cost?",
-    answer: "Complete home remodeling in Placer County typically costs $100-$300+ per square foot depending on scope and finishes. A whole-house remodel of a 2,000 sq ft home might range from $200,000-$600,000. Kitchen remodels average $25,000-$75,000, bathrooms $15,000-$40,000. We provide detailed estimates breaking down all costs including materials, labor, permits, and design services."
+    answer: "It depends on how much of the house is involved, whether walls, plumbing, or electrical are moving, what turns up once walls are opened on an older home, and the finishes you choose. We walk the house with you, then provide a detailed estimate that breaks out materials, labor, permits, and design, so you can see exactly where the money goes."
   },
   {
     question: "Should I remodel or buy a new home?",
