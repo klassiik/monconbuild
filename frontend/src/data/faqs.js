@@ -29,24 +29,28 @@ export const finishCarpentryFAQs = [
 
 export const homeAdditionsFAQs = [
   {
-    question: "How much does a home addition cost in Placer County?",
+    question: "How much does a home addition cost?",
     answer: "It depends on the size of the addition, whether it's on the ground floor or a second story, how much foundation work the lot needs, and the finish level you want. Sloped lots, well and septic setbacks, and matching your home's existing trim and roofline all factor in. We walk the site with you first, then give you a detailed, itemized written quote rather than a ballpark guess."
   },
   {
-    question: "Do I need permits for a home addition in California?",
-    answer: "Yes, home additions in California require building permits from your local building department. This includes structural, electrical, and plumbing permits. As a licensed general contractor (#801602), Monument Construction handles all permit applications, plan submissions, and inspections for your project in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties."
+    question: "Do I need a permit for a home addition in California?",
+    answer: "Yes. Any addition that adds square footage needs a building permit, covering the structure, electrical, plumbing and mechanical work, plus planning or HOA approval where it applies. Inside a city, the city building department issues it; outside city limits, the county does. We prepare the plans, handle the submittals, and schedule every inspection."
   },
   {
-    question: "How long does it take to build a home addition?",
-    answer: "A typical room addition in Colfax or Auburn takes 8-16 weeks from permit approval to completion. Second-story additions may take 12-20 weeks. Timeline factors include permit approval (4-8 weeks), weather conditions, material availability, and project complexity. We provide detailed schedules and keep you updated throughout construction."
+    question: "How long does a home addition take?",
+    answer: "It runs in three phases: design and engineering, plan check with your city or county, and construction. Plan-check time varies by jurisdiction and season, and a second story takes longer to build than a ground-floor room. After the site walk we give you a written schedule for your project and keep it updated as we go."
   },
   {
-    question: "Will a home addition increase my property value?",
-    answer: "A well-built addition adds usable living space, and extra bedrooms and bathrooms are what buyers tend to look for. How much value it adds depends on your neighborhood and the market when you sell, so a local appraiser or agent is the right person for a number. Our part is building it so it looks and works like it was always part of the house."
+    question: "Can we live at home during construction?",
+    answer: "Usually, yes. Most of an addition is built outside the existing walls, and we seal off the work area until it's time to open into the house. Second-story additions are the exception that needs the most planning, since the roof comes off for a while. We'll talk through what to expect at your site walk."
   },
   {
-    question: "Can you build ADUs (Accessory Dwelling Units) in Placer County?",
-    answer: "Yes! We design and build ADUs throughout Placer, Nevada, Sacramento, Yolo, and El Dorado Counties. California's ADU laws make it easier than ever to add rental income or multi-generational living space. We navigate local zoning requirements, handle permits, and ensure your ADU meets all state and county regulations including setbacks, utility connections, and building codes."
+    question: "Will the addition match my house?",
+    answer: "That's the part we care about most. We're finish carpenters, so we match your existing trim profiles, casings and baseboards, carry the roofline and siding through, and line up floors and ceilings so there's no step or seam where old meets new. The goal is an addition nobody can pick out."
+  },
+  {
+    question: "Should I build an addition or an ADU?",
+    answer: "An addition makes your main house bigger: a primary suite, a family room, a second story. An ADU (accessory dwelling unit) is a separate, self-contained home on the same lot, with its own entrance and kitchen, and it follows different zoning rules. We build both, and we can walk your lot with you to see which one fits."
   }
 ];
 
