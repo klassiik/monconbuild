@@ -126,7 +126,7 @@ const FinishCarpentry = () => {
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
+      <section className="relative bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -200,7 +200,7 @@ const FinishCarpentry = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-700 mr-3 flex-shrink-0 mt-1" />
+                  <CheckCircle2 className="w-6 h-6 text-green-700 mr-3 shrink-0 mt-1" />
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
@@ -208,7 +208,7 @@ const FinishCarpentry = () => {
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">
               <div className="flex items-start mb-4">
-                <Award className="w-8 h-8 text-green-800 mr-4 flex-shrink-0" />
+                <Award className="w-8 h-8 text-green-800 mr-4 shrink-0" />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Why Choose Monument Construction?</h3>
                   <ul className="space-y-2 text-gray-700">
@@ -324,7 +324,7 @@ const FinishCarpentry = () => {
       />
 
       {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-green-700 to-green-900 text-white">
+      <section className="py-16 bg-linear-to-r from-green-700 to-green-900 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Ready to Transform Your Home with Expert Finish Carpentry?

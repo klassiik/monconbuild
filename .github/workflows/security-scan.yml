@@ -119,6 +119,23 @@ jobs:
         with:
           fail-on-severity: high
           allow-licenses: MIT, Apache-2.0, BSD-3-Clause, BSD-2-Clause, ISC
+          # lightningcss is MPL-2.0 and is required by Tailwind v4 (@tailwindcss/postcss).
+          # It runs only at build time to compile CSS and is not shipped to the site, and
+          # MPL-2.0 is file-level copyleft, so using it unmodified is fine. Excepted per
+          # package rather than allowing MPL-2.0 for every dependency.
+          allow-dependencies-licenses: >-
+            pkg:npm/lightningcss,
+            pkg:npm/lightningcss-android-arm64,
+            pkg:npm/lightningcss-darwin-arm64,
+            pkg:npm/lightningcss-darwin-x64,
+            pkg:npm/lightningcss-freebsd-x64,
+            pkg:npm/lightningcss-linux-arm-gnueabihf,
+            pkg:npm/lightningcss-linux-arm64-gnu,
+            pkg:npm/lightningcss-linux-arm64-musl,
+            pkg:npm/lightningcss-linux-x64-gnu,
+            pkg:npm/lightningcss-linux-x64-musl,
+            pkg:npm/lightningcss-win32-arm64-msvc,
+            pkg:npm/lightningcss-win32-x64-msvc
 
   ssl-check:
     name: SSL Certificate & Headers Check

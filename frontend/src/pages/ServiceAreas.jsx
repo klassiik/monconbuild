@@ -162,11 +162,11 @@ const ServiceAreas = () => {
       <Breadcrumb items={breadcrumbItems} />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
+      <section className="bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Service Areas</h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            <p className="text-xl md:text-2xl md:leading-8 text-gray-300 leading-relaxed">
               Proudly serving Placer, Nevada, Sacramento, Yolo, and El Dorado Counties in Northern California with quality construction and finish carpentry services.
             </p>
           </div>
@@ -224,7 +224,7 @@ const ServiceAreas = () => {
                 Being locally based in Colfax provides significant advantages. We understand the local building codes, climate considerations, and community standards. We maintain fast response times, can coordinate inspections efficiently, and have established relationships with local suppliers and subcontractors. This local expertise means your project benefits from our deep understanding of what works in our region.
               </p>
 
-              <div className="grid md:grid-cols-2 gap-6 my-10">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                   <h3 className="text-lg font-bold mb-3 text-gray-900">Primary Coverage Area</h3>
                   <ul className="space-y-2 text-sm">
@@ -303,7 +303,7 @@ const ServiceAreas = () => {
               <Card key={index} className="border-2 hover:shadow-xl transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="text-3xl text-green-700">{county.name}</CardTitle>
-                  <p className="text-lg text-gray-600 mt-4">{county.description}</p>
+                  <p className="text-lg text-gray-600">{county.description}</p>
                 </CardHeader>
                 <CardContent>
                   <h4 className="font-bold text-lg mb-4 text-slate-900">Communities Served:</h4>

@@ -108,7 +108,7 @@ export default function CityLanding() {
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
+      <section className="bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <p className="inline-flex items-center gap-2 text-green-200 font-semibold mb-4">
@@ -117,7 +117,7 @@ export default function CityLanding() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               {city.name} General Contractor &amp; Remodeling
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 leading-relaxed">{city.tagline}</p>
+            <p className="text-xl md:text-2xl md:leading-8 text-gray-200 leading-relaxed">{city.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <Button asChild size="lg" className="bg-white text-green-800 hover:bg-gray-100">
                 <Link to="/contact">Request a Free Quote</Link>
@@ -162,7 +162,7 @@ export default function CityLanding() {
                 <Card key={i} className="border-gray-200">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-lg text-gray-900">
-                      <CheckCircle2 className="w-5 h-5 text-green-700 flex-shrink-0" /> {c.title}
+                      <CheckCircle2 className="w-5 h-5 text-green-700 shrink-0" /> {c.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>

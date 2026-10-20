@@ -86,11 +86,11 @@ const About = () => {
       <Breadcrumb items={breadcrumbItems} />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
+      <section className="bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">About Monument Construction</h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            <p className="text-xl md:text-2xl md:leading-8 text-gray-300 leading-relaxed">
               Quality craftsmanship and trusted service in Placer, Nevada, Sacramento, Yolo, and El Dorado Counties since day one.
             </p>
           </div>
@@ -244,7 +244,7 @@ const About = () => {
               "Truckee",
               "Lincoln"
             ].map((city, index) => (
-              <div key={index} className="p-4 bg-white rounded-lg shadow">
+              <div key={index} className="p-4 bg-white rounded-lg shadow-sm">
                 <p className="font-semibold text-slate-900">{city}</p>
               </div>
             ))}

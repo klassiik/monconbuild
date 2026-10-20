@@ -220,11 +220,11 @@ const Services = () => {
       <Breadcrumb items={breadcrumbItems} />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
+      <section className="bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Services</h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            <p className="text-xl md:text-2xl md:leading-8 text-gray-300 leading-relaxed">
               From expert finish carpentry to complete construction projects, Monument Construction delivers quality craftsmanship across all services.
             </p>
           </div>
@@ -244,12 +244,12 @@ const Services = () => {
                 Our services are designed to meet the diverse needs of homeowners looking to improve, expand, or completely renovate their properties. Whether you&apos;re interested in adding custom trim work to enhance your home&apos;s interior, expanding with a new addition, or undertaking a full remodeling project, we have the expertise and experience to deliver exceptional results.
               </p>
 
-              <h3 className="text-2xl font-bold mt-10 mb-6 text-gray-900">Our Approach to Every Project</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Our Approach to Every Project</h3>
               <p>
                 We believe in quality over quantity. That&apos;s why we&apos;re selective about which projects we take on and operate primarily through referrals from satisfied clients. Each project receives our full attention and commitment to excellence.
               </p>
 
-              <div className="grid md:grid-cols-2 gap-6 my-10">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
                   <h4 className="text-lg font-bold mb-4 text-gray-900">Detailed Consultation</h4>
                   <p className="text-sm">We work closely with you to understand your vision, budget, and timeline. Our consultations are thorough and transparent, so you know exactly what to expect.</p>
@@ -268,7 +268,7 @@ const Services = () => {
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold mt-10 mb-6 text-gray-900">Which Service Do You Need?</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Which Service Do You Need?</h3>
               <p>
                 Most homeowners don&apos;t think in contractor categories, and you don&apos;t have to. If your project is about the details you see and touch every day — trim, molding, built-in cabinetry, a mantel, a library wall — start with our finish carpentry and custom woodwork services. If it&apos;s about space, start with home additions when you need more of it, or complete remodeling when the space you have needs to work differently. And when a project touches structure, site work, or multiple trades at once, our general construction service puts one licensed contractor in charge of the whole thing.
               </p>
@@ -276,7 +276,7 @@ const Services = () => {
                 In practice, the lines blur — and that&apos;s our advantage. A kitchen remodel needs structural know-how to open a wall and finish-carpentry precision to make the cabinetry look built with the house. An addition isn&apos;t done when it&apos;s framed; it&apos;s done when the trim inside matches the rest of your home so well that guests can&apos;t tell where the original house ends. Because we self-perform the carpentry and manage the construction, you don&apos;t have to coordinate between a builder and a finish crew. Bring us the goal, and we&apos;ll scope the right combination of services in the consultation.
               </p>
 
-              <h3 className="text-2xl font-bold mt-10 mb-6 text-gray-900">Built for Northern California Homes</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Built for Northern California Homes</h3>
               <p>
                 Our five-county service area covers a remarkable range of homes and conditions: Gold Rush-era Victorians in Grass Valley and Placerville, Craftsman bungalows in Sacramento&apos;s established neighborhoods, newer custom homes in El Dorado Hills, foothill properties around Colfax and Auburn, and alpine cabins at Truckee and South Lake Tahoe. Every one of our services is delivered with that local context in mind — period-matched millwork on historic homes, Wildland-Urban Interface fire-hardening on wooded foothill lots, snow-load engineering at elevation, and heat- and soil-aware construction on the valley floor.
               </p>
@@ -296,10 +296,10 @@ const Services = () => {
               <a key={index} href={service.link} className="no-underline">
                 <Card className="border-2 hover:border-green-700 transition-all duration-300 hover:shadow-xl h-full cursor-pointer">
                   <CardHeader>
-                    <div className="text-green-700 mb-4">
+                    <div className="text-green-700 mb-5.5">
                       {service.icon}
                     </div>
-                    <CardTitle className="text-2xl md:text-3xl mb-4">{service.title}</CardTitle>
+                    <CardTitle className="text-2xl md:text-3xl">{service.title}</CardTitle>
                     <p className="text-gray-600 text-lg leading-relaxed">{service.description}</p>
                   </CardHeader>
                   <CardContent>

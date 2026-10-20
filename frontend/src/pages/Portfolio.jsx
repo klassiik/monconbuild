@@ -64,11 +64,11 @@ const Portfolio = () => {
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-16 md:py-20">
+      <section className="bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-16 md:py-20">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Work</h1>
-            <p className="text-lg md:text-2xl text-gray-200 leading-relaxed">
+            <p className="text-lg md:text-2xl md:leading-8 text-gray-200 leading-relaxed">
               Real projects across Placer, Nevada, Sacramento, Yolo &amp; El Dorado Counties — browse by category below.
             </p>
           </div>
@@ -81,7 +81,7 @@ const Portfolio = () => {
           <div className="max-w-4xl mx-auto">
             <AutoCarousel
               slides={featuredSlides}
-              aspectClass="aspect-[4/3]"
+              aspectClass="aspect-4/3"
               onSlideClick={(i) =>
                 openGallery(featuredSlideImages, 'Featured Projects', i)
               }
@@ -106,9 +106,9 @@ const Portfolio = () => {
                 key={cat.id}
                 type="button"
                 onClick={() => openGallery(cat.images, cat.name, 0)}
-                className="group text-left rounded-xl overflow-hidden shadow-lg hover:shadow-2xl bg-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-700"
+                className="group text-left rounded-xl overflow-hidden shadow-lg hover:shadow-2xl bg-white transition-all duration-300 focus:outline-hidden focus:ring-2 focus:ring-green-700"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-4/3 overflow-hidden">
                   <img
                     src={optimized(cat.images[0], 'medium')}
                     srcSet={`${optimized(cat.images[0], 'thumbnails')} 400w, ${optimized(cat.images[0], 'medium')} 1200w`}
@@ -150,7 +150,7 @@ const Portfolio = () => {
             <AutoCarousel
               slides={libraryProgress}
               interval={3500}
-              aspectClass="aspect-[4/3]"
+              aspectClass="aspect-4/3"
               onSlideClick={(i) =>
                 openGallery(libraryProgressImages, 'Library Build — Start to Finish', i)
               }

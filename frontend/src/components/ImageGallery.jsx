@@ -121,7 +121,7 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xs"
       onClick={onClose}
       onKeyDown={(e) => e.key === 'Escape' && onClose()}
       role="dialog"
@@ -132,7 +132,7 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
+        className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
         aria-label="Close gallery"
       >
         <X className="w-6 h-6" />
@@ -153,7 +153,7 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
             e.stopPropagation();
             goToPrevious();
           }}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
           aria-label="Previous image"
         >
           <ChevronLeft className="w-8 h-8" />
@@ -194,7 +194,7 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
             e.stopPropagation();
             goToNext();
           }}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
           aria-label="Next image"
         >
           <ChevronRight className="w-8 h-8" />
@@ -214,7 +214,7 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0, title }) => {
                 setIsLoading(true);
                 setCurrentIndex(idx);
               }}
-              className={`flex-shrink-0 w-16 h-16 rounded-md overflow-hidden border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 ${
+              className={`shrink-0 w-16 h-16 rounded-md overflow-hidden border-2 transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 ${
                 idx === currentIndex 
                   ? 'border-green-500 scale-110' 
                   : 'border-transparent opacity-60 hover:opacity-100'

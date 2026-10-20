@@ -34,10 +34,12 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-dom"
         update-types: ["version-update:semver-major"]
-      # Tailwind v4 is a rewrite, not an upgrade: it needs @tailwindcss/postcss,
-      # `@import "tailwindcss"` in place of the @tailwind directives, and the
-      # theme colors behind `@apply border-border` moved into a CSS @theme block.
-      # v3 patch/minor updates still come through. See #149.
+      # Tailwind majors are migrations, not bumps. v3 -> v4 needed the
+      # @tailwindcss/postcss plugin, a CSS @theme config, a pinned v3 palette, and
+      # layout fixes for the new cascade layers and space-y selector. Plan the next
+      # major the same way. 4.x patch/minor updates still come through. See #149.
+      # This rule only covers version updates: a security update can still propose
+      # a major when the patched transitive dep requires one, as #335 did.
       - dependency-name: "tailwindcss"
         update-types: ["version-update:semver-major"]
       # eslint and @eslint/js must move together -- @eslint/js@10 declares a peer

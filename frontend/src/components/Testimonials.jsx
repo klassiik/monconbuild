@@ -41,7 +41,7 @@ const Testimonials = ({ testimonials = [], showImages = true }) => {
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={index} 
-                className="border-2 hover:border-green-700 transition-all duration-300 hover:shadow-xl relative overflow-hidden bg-gradient-to-br from-slate-50 to-white"
+                className="border-2 hover:border-green-700 transition-all duration-300 hover:shadow-xl relative overflow-hidden bg-linear-to-br from-slate-50 to-white"
                 role="listitem"
                 aria-label={`Testimonial from ${testimonial.name} in ${testimonial.location}`}
               >
@@ -79,7 +79,7 @@ const Testimonials = ({ testimonials = [], showImages = true }) => {
                   {/* Customer info and image with enhanced accessibility */}
                   <div className="flex items-center gap-4">
                     {showImages && testimonial.image && (
-                      <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                      <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0">
                         <img 
                           src={testimonial.image} 
                           alt={`${testimonial.name} - ${testimonial.location} customer`}

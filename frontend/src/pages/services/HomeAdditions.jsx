@@ -195,7 +195,7 @@ const HomeAdditions = () => {
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
+      <section className="relative bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -370,7 +370,7 @@ const HomeAdditions = () => {
                   key={photo.src}
                   type="button"
                   onClick={() => setGallery({ open: true, index })}
-                  className="relative aspect-[4/3] overflow-hidden rounded-lg group focus:outline-none focus-visible:ring-4 focus-visible:ring-green-700"
+                  className="relative aspect-4/3 overflow-hidden rounded-lg group focus:outline-hidden focus-visible:ring-4 focus-visible:ring-green-700"
                   aria-label={`View larger: ${photo.alt}`}
                 >
                   <img
@@ -393,10 +393,10 @@ const HomeAdditions = () => {
               {processSteps.map((step, index) => (
                 <div
                   key={step.title}
-                  className={`bg-gradient-to-br ${index % 2 === 0 ? 'from-blue-50 to-blue-100' : 'from-green-50 to-green-100'} p-6 rounded-lg`}
+                  className={`bg-linear-to-br ${index % 2 === 0 ? 'from-blue-50 to-blue-100' : 'from-green-50 to-green-100'} p-6 rounded-lg`}
                 >
                   <div className="flex items-start mb-3">
-                    <div className={`${index % 2 === 0 ? 'bg-green-700' : 'bg-green-600'} text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold`}>
+                    <div className={`${index % 2 === 0 ? 'bg-green-700' : 'bg-green-600'} text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 font-bold`}>
                       {index + 1}
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900">{step.title}</h3>
@@ -412,7 +412,7 @@ const HomeAdditions = () => {
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">
               <div className="flex items-start mb-4">
-                <Award className="w-8 h-8 text-green-800 mr-4 flex-shrink-0" />
+                <Award className="w-8 h-8 text-green-800 mr-4 shrink-0" />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Why Homeowners Hire Us for Additions</h3>
                   <ul className="space-y-2 text-gray-700">
@@ -469,7 +469,7 @@ const HomeAdditions = () => {
       />
 
       {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-green-700 to-green-900 text-white">
+      <section className="py-16 bg-linear-to-r from-green-700 to-green-900 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Planning a Home Addition?

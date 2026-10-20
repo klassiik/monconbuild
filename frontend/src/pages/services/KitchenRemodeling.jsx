@@ -113,7 +113,7 @@ const KitchenRemodeling = () => {
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
+      <section className="relative bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -167,7 +167,7 @@ const KitchenRemodeling = () => {
                 <ul className="space-y-3">
                   {fullRemodel.map((item) => (
                     <li key={item} className="flex items-start">
-                      <CheckCircle2 className="w-5 h-5 text-green-700 mr-3 flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-green-700 mr-3 shrink-0 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
@@ -182,7 +182,7 @@ const KitchenRemodeling = () => {
                 <ul className="space-y-3">
                   {cabinetryRefresh.map((item) => (
                     <li key={item} className="flex items-start">
-                      <CheckCircle2 className="w-5 h-5 text-green-700 mr-3 flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-green-700 mr-3 shrink-0 mt-1" />
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
@@ -197,7 +197,7 @@ const KitchenRemodeling = () => {
                   key={photo.src}
                   type="button"
                   onClick={() => setGallery({ open: true, index })}
-                  className="relative aspect-[4/3] overflow-hidden rounded-lg group focus:outline-none focus-visible:ring-4 focus-visible:ring-green-700"
+                  className="relative aspect-4/3 overflow-hidden rounded-lg group focus:outline-hidden focus-visible:ring-4 focus-visible:ring-green-700"
                   aria-label={`View larger: ${photo.alt}`}
                 >
                   <img
@@ -229,9 +229,9 @@ const KitchenRemodeling = () => {
 
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Kitchen Remodeling Process</h2>
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+              <div className="bg-linear-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 font-bold">1</div>
                   <h3 className="text-lg font-semibold text-gray-900">Visit &amp; Measure</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -239,9 +239,9 @@ const KitchenRemodeling = () => {
                   the plumbing, electrical and framing we&apos;ll be working around.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+              <div className="bg-linear-to-br from-green-50 to-green-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">2</div>
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 font-bold">2</div>
                   <h3 className="text-lg font-semibold text-gray-900">Design, Quote &amp; Permits</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -249,9 +249,9 @@ const KitchenRemodeling = () => {
                   any permits your city or county requires.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+              <div className="bg-linear-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 font-bold">3</div>
                   <h3 className="text-lg font-semibold text-gray-900">Build</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -259,9 +259,9 @@ const KitchenRemodeling = () => {
                   dust, keep the site clean, and keep you updated on the schedule.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+              <div className="bg-linear-to-br from-green-50 to-green-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">4</div>
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 font-bold">4</div>
                   <h3 className="text-lg font-semibold text-gray-900">Finish &amp; Walkthrough</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -285,7 +285,7 @@ const KitchenRemodeling = () => {
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">
               <div className="flex items-start mb-4">
-                <Award className="w-8 h-8 text-green-800 mr-4 flex-shrink-0" />
+                <Award className="w-8 h-8 text-green-800 mr-4 shrink-0" />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Why Homeowners Choose Monument</h3>
                   <ul className="space-y-2 text-gray-700">
@@ -341,7 +341,7 @@ const KitchenRemodeling = () => {
       />
 
       {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-green-700 to-green-900 text-white">
+      <section className="py-16 bg-linear-to-r from-green-700 to-green-900 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Ready to Plan Your New Kitchen?

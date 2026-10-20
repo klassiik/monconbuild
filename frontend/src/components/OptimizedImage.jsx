@@ -248,7 +248,7 @@ export const BackgroundImage = ({ src, alt, children, className = '', ...props }
           onLoad={handleImageLoad}
           onError={handleImageError}
           className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
-            loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105 blur-sm'
+            loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105 blur-xs'
           }`}
           aria-hidden="true"
         />

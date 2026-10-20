@@ -175,11 +175,11 @@ const Contact = () => {
       <Breadcrumb items={breadcrumbItems} />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
+      <section className="bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-28">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            <p className="text-xl md:text-2xl md:leading-8 text-gray-300 leading-relaxed">
               Ready to start your project? Get in touch today for a free consultation and quote.
             </p>
           </div>
@@ -196,22 +196,22 @@ const Contact = () => {
             </p>
             
             <div className="grid md:grid-cols-4 gap-6 mb-12">
-              <div className="bg-white p-6 rounded-lg shadow text-center">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="text-3xl font-bold text-green-700 mb-3">1</div>
                 <h3 className="font-bold text-gray-900 mb-2">Contact Us</h3>
                 <p className="text-sm text-gray-600">Fill out our form or call with your project details</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow text-center">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="text-3xl font-bold text-green-700 mb-3">2</div>
                 <h3 className="font-bold text-gray-900 mb-2">Initial Consultation</h3>
                 <p className="text-sm text-gray-600">We discuss your vision, timeline, and budget</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow text-center">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="text-3xl font-bold text-green-700 mb-3">3</div>
                 <h3 className="font-bold text-gray-900 mb-2">Free Quote</h3>
                 <p className="text-sm text-gray-600">Receive a detailed estimate for your project</p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow text-center">
+              <div className="bg-white p-6 rounded-lg shadow-sm text-center">
                 <div className="text-3xl font-bold text-green-700 mb-3">4</div>
                 <h3 className="font-bold text-gray-900 mb-2">Project Starts</h3>
                 <p className="text-sm text-gray-600">We begin with professionalism and expertise</p>
@@ -511,7 +511,7 @@ const Contact = () => {
                 <Card className="border-2 hover:border-green-700 transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Phone className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
+                      <Phone className="w-8 h-8 text-green-700 shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Phone</h3>
                         <a href="tel:+19166071972" className="text-green-700 hover:text-blue-700 text-xl font-semibold transition-colors duration-300">
@@ -526,7 +526,7 @@ const Contact = () => {
                 <Card className="border-2 hover:border-green-700 transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Mail className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
+                      <Mail className="w-8 h-8 text-green-700 shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Email</h3>
                         <a href="mailto:monumentconstruction@comcast.net" className="text-green-700 hover:text-blue-700 font-semibold transition-colors duration-300 break-all">
@@ -541,7 +541,7 @@ const Contact = () => {
                 <Card className="border-2 hover:border-green-700 transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <MapPin className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
+                      <MapPin className="w-8 h-8 text-green-700 shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Service Area</h3>
                         <p className="text-gray-700 font-semibold">22245 Placer Hills Rd, Colfax, CA 95713</p>
@@ -554,7 +554,7 @@ const Contact = () => {
                 <Card className="border-2 hover:border-green-700 transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Clock className="w-8 h-8 text-green-700 flex-shrink-0 mt-1" />
+                      <Clock className="w-8 h-8 text-green-700 shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-lg mb-2 text-slate-900">Response Time</h3>
                         <p className="text-gray-700 font-semibold">Within 24 hours</p>

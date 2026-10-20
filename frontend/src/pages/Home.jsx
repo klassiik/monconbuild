@@ -90,7 +90,7 @@ const PortfolioImage = React.memo(({ project }) => {
             />
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-green-900 via-transparent to-transparent opacity-60"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-green-900 via-transparent to-transparent opacity-60"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
           <h3 className="text-xl font-bold mb-1">{project.title}</h3>
           <p className="text-sm text-gray-200">{project.description}</p>
@@ -347,17 +347,17 @@ const Home = () => {
             <HeroBackground />
 
             {/* Subtle bottom scrim for text legibility */}
-            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" aria-hidden="true"></div>
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-black/60 via-black/20 to-transparent z-10" aria-hidden="true"></div>
 
             {/* Optional: Add a subtle pattern overlay */}
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20 z-10" aria-hidden="true"></div>
 
             <div className="container mx-auto px-6 md:px-12 relative z-20 pb-12 md:pb-16">
               <div className="max-w-2xl">
-                <h1 className={`text-3xl md:text-4xl font-semibold mb-4 leading-snug${animateTitle ? ' origin-left motion-safe:animate-title-balloon' : ''}`}>
+                <h1 className={`text-3xl md:text-4xl md:leading-10 font-semibold mb-4 leading-snug ${animateTitle ? 'origin-left motion-safe:animate-title-balloon' : ''}`}>
                   Professional Construction & Finish Carpentry
                 </h1>
-                <p className="text-base md:text-lg mb-6 text-gray-200 leading-relaxed">
+                <p className="text-base md:text-lg md:leading-7 mb-6 text-gray-200 leading-relaxed">
                   Serving Placer, Nevada, Sacramento, Yolo & El Dorado Counties. Licensed, experienced, and trusted craftsmanship from ground work to complete construction.
                 </p>
 
@@ -401,7 +401,7 @@ const Home = () => {
               <div className="max-w-4xl mx-auto mb-12 md:mb-16">
                 <AutoCarousel
                   slides={featuredSlides}
-                  aspectClass="aspect-[4/3]"
+                  aspectClass="aspect-4/3"
                   onSlideClick={(i) => {
                     setGalleryIndex(i);
                     setGalleryOpen(true);

@@ -122,11 +122,11 @@ const Footer = () => {
                 <h3 className="text-white font-bold text-lg mb-6">Contact Us</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-1" />
+                    <MapPin className="w-5 h-5 text-blue-400 shrink-0 mt-1" />
                     <span>22245 Placer Hills Rd<br />Colfax, CA 95713<br />Serving Northern California</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                    <Phone className="w-5 h-5 text-blue-400 shrink-0" />
                     <a 
                       href={`tel:${CONTACT_INFO.PHONE}`} 
                       className="hover:text-blue-400 transition-colors duration-300"
@@ -136,7 +136,7 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                    <Mail className="w-5 h-5 text-blue-400 shrink-0" />
                     <a 
                       href={`mailto:${CONTACT_INFO.EMAIL}`} 
                       className="hover:text-blue-400 transition-colors duration-300 break-all"
@@ -146,7 +146,7 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Instagram className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                    <Instagram className="w-5 h-5 text-blue-400 shrink-0" />
                     <a 
                       href="https://www.instagram.com/wrconstruct7/" 
                       target="_blank"
