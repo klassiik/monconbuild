@@ -33,12 +33,12 @@ export default function Layout() {
       <div className="App" style={{ minHeight: '100vh', backgroundColor: '#f0f0f0' }}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-green-800 focus:font-bold focus:shadow-md focus:top-0 focus:left-0"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-100 focus:px-4 focus:py-2 focus:bg-white focus:text-green-800 focus:font-bold focus:shadow-md focus:top-0 focus:left-0"
         >
           Skip to main content
         </a>
         <Header />
-        <main id="main-content" tabIndex={-1} className="outline-none">
+        <main id="main-content" tabIndex={-1} className="outline-hidden">
           <Outlet />
         </main>
         <Footer />

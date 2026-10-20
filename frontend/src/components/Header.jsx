@@ -46,7 +46,7 @@ const Header = () => {
                     key={item.path}
                     to={item.path}
                     aria-current={isActive(item.path) ? 'page' : undefined}
-                    className={`text-base font-medium transition-colors duration-300 hover:text-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 rounded-sm ${
+                    className={`text-base font-medium transition-colors duration-300 hover:text-green-700 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 rounded-sm ${
                       isActive(item.path) ? 'text-green-700 font-bold' : 'text-gray-700'
                     }`}
                   >
@@ -59,7 +59,7 @@ const Header = () => {
               <div className="hidden lg:flex items-center gap-4">
                 <a 
                   href={`tel:${CONTACT_INFO.PHONE}`} 
-                  className="text-green-700 font-semibold hover:text-blue-700 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 rounded-sm"
+                  className="text-green-700 font-semibold hover:text-blue-700 transition-colors duration-300 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 rounded-sm"
                   aria-label={`Call ${CONTACT_INFO.FORMATTED_PHONE}`}
                 >
                   {CONTACT_INFO.FORMATTED_PHONE}
@@ -74,7 +74,7 @@ const Header = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="lg:hidden -mr-2 p-2 text-gray-700 hover:text-green-700 transition-colors duration-300 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700"
+                className="lg:hidden -mr-2 p-2 text-gray-700 hover:text-green-700 transition-colors duration-300 rounded-md focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-green-700"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
@@ -93,7 +93,7 @@ const Header = () => {
                       key={item.path}
                       to={item.path}
                       aria-current={isActive(item.path) ? 'page' : undefined}
-                      className={`text-lg font-medium transition-colors duration-300 hover:text-green-700 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 rounded-sm ${
+                      className={`text-lg font-medium transition-colors duration-300 hover:text-green-700 py-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 rounded-sm ${
                         isActive(item.path) ? 'text-green-700 font-bold' : 'text-gray-700'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
@@ -103,7 +103,7 @@ const Header = () => {
                   ))}
                   <a 
                     href={`tel:${CONTACT_INFO.PHONE}`}
-                    className="flex items-center gap-2 text-lg font-semibold text-green-700 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 rounded-sm"
+                    className="flex items-center gap-2 text-lg font-semibold text-green-700 py-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-green-700 focus-visible:ring-offset-2 rounded-sm"
                     aria-label={`Call ${CONTACT_INFO.FORMATTED_PHONE}`}
                   >
                     <Phone className="w-5 h-5" />

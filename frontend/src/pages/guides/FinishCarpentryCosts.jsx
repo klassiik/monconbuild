@@ -67,7 +67,7 @@ const FinishCarpentryCosts = () => {
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-24">
+      <section className="relative bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-20 md:py-24">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -147,7 +147,7 @@ const FinishCarpentryCosts = () => {
           <ul className="space-y-3 mb-10">
             {timelines.map((t) => (
               <li key={t} className="flex items-start gap-3 text-gray-700">
-                <CheckCircle2 className="w-5 h-5 text-green-700 flex-shrink-0 mt-1" />
+                <CheckCircle2 className="w-5 h-5 text-green-700 shrink-0 mt-1" />
                 <span>{t}</span>
               </li>
             ))}
@@ -204,7 +204,7 @@ const FinishCarpentryCosts = () => {
       </article>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-green-700 to-green-900 text-white">
+      <section className="py-16 bg-linear-to-r from-green-700 to-green-900 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready for a real number?</h2>
           <p className="text-xl mb-8">

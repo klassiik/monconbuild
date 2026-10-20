@@ -17,7 +17,7 @@ const toMedium = (src) =>
 const AutoCarousel = ({
   slides = [],
   interval = 4500,
-  aspectClass = 'aspect-[16/9]',
+  aspectClass = 'aspect-video',
   onSlideClick,
 }) => {
   const [index, setIndex] = useState(0);
@@ -149,12 +149,12 @@ const AutoCarousel = ({
               className="h-full w-full object-cover"
             />
             {(slide.title || slide.caption) && (
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 md:p-6 text-left">
+              <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4 md:p-6 text-left">
                 {slide.title && (
-                  <h3 className="text-white text-lg md:text-2xl font-bold drop-shadow">{slide.title}</h3>
+                  <h3 className="text-white text-lg md:text-2xl font-bold drop-shadow-sm">{slide.title}</h3>
                 )}
                 {slide.caption && (
-                  <p className="text-gray-200 text-sm md:text-base drop-shadow">{slide.caption}</p>
+                  <p className="text-gray-200 text-sm md:text-base drop-shadow-sm">{slide.caption}</p>
                 )}
               </div>
             )}
@@ -169,7 +169,7 @@ const AutoCarousel = ({
             type="button"
             onClick={prev}
             aria-label="Previous slide"
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
           >
             <ChevronLeft className="w-5 h-5 md:w-7 md:h-7" />
           </button>
@@ -177,7 +177,7 @@ const AutoCarousel = ({
             type="button"
             onClick={next}
             aria-label="Next slide"
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/70 text-white transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50"
           >
             <ChevronRight className="w-5 h-5 md:w-7 md:h-7" />
           </button>
@@ -191,7 +191,7 @@ const AutoCarousel = ({
                 onClick={() => setIndex(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === index ? 'true' : undefined}
-                className={`h-2.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 ${
+                className={`h-2.5 rounded-full transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 ${
                   i === index ? 'w-6 bg-white' : 'w-2.5 bg-white/50 hover:bg-white/80'
                 }`}
               />

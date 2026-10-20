@@ -124,7 +124,7 @@ const ResidentialProjects = () => {
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
+      <section className="relative bg-linear-to-br from-green-900 via-green-800 to-emerald-900 text-white py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -178,7 +178,7 @@ const ResidentialProjects = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-12">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-green-700 mr-3 flex-shrink-0 mt-1" />
+                  <CheckCircle2 className="w-6 h-6 text-green-700 mr-3 shrink-0 mt-1" />
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
@@ -186,36 +186,36 @@ const ResidentialProjects = () => {
 
             <h3 className="text-2xl font-bold mb-6 text-gray-900">Our Residential Project Process</h3>
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+              <div className="bg-linear-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">1</div>
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 font-bold">1</div>
                   <h4 className="text-lg font-semibold text-gray-900">Initial Consultation</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
                   We meet with you to understand your vision, needs, and budget. We ask questions, listen carefully, and provide professional recommendations based on our years of experience. This consultation helps us create accurate estimates and detailed project plans tailored to your specific goals.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+              <div className="bg-linear-to-br from-green-50 to-green-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">2</div>
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 font-bold">2</div>
                   <h4 className="text-lg font-semibold text-gray-900">Planning & Permitting</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
                   We develop detailed plans and handle all permitting requirements with Placer County authorities. Our expertise with local building codes ensures your project complies with all regulations and passes inspections on the first try. We manage the permitting process so you don&apos;t have to.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+              <div className="bg-linear-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">3</div>
+                  <div className="bg-green-700 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 font-bold">3</div>
                   <h4 className="text-lg font-semibold text-gray-900">Expert Construction</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
                   Our skilled team executes your project with precision and professionalism. We coordinate all trades - electrical, plumbing, HVAC, carpentry, and more - so everything works together smoothly and efficiently. We keep you in the loop throughout the whole project.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+              <div className="bg-linear-to-br from-green-50 to-green-100 p-6 rounded-lg">
                 <div className="flex items-start mb-3">
-                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-3 font-bold">4</div>
+                  <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 font-bold">4</div>
                   <h4 className="text-lg font-semibold text-gray-900">Quality Completion</h4>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -226,7 +226,7 @@ const ResidentialProjects = () => {
 
             <div className="bg-green-50 p-8 rounded-lg mb-12">
               <div className="flex items-start mb-4">
-                <Award className="w-8 h-8 text-green-800 mr-4 flex-shrink-0" />
+                <Award className="w-8 h-8 text-green-800 mr-4 shrink-0" />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Trusted by Homeowners</h3>
                   <ul className="space-y-2 text-gray-700">
@@ -326,7 +326,7 @@ const ResidentialProjects = () => {
       />
 
       {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-green-700 to-green-900 text-white">
+      <section className="py-16 bg-linear-to-r from-green-700 to-green-900 text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Ready to Start Your Residential Project?
