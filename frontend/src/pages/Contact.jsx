@@ -40,7 +40,8 @@ const Contact = () => {
     city: '',
     budget: '',
     message: '',
-    timeline: ''
+    timeline: '',
+    _gotcha: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState('idle');
@@ -100,6 +101,9 @@ const Contact = () => {
       // Formspree helpers
       formDataToSend.append('_subject', `New Quote Request - ${formData.projectType} in ${formData.city}`);
       formDataToSend.append('_replyto', formData.email);
+      if (formData._gotcha !== undefined) {
+        formDataToSend.append('_gotcha', formData._gotcha);
+      }
 
       const endpoint = `https://formspree.io/f/${formId}`;
 
@@ -477,6 +481,16 @@ const Contact = () => {
                     <span>We could not send your request. Please try again or call (916) 607-1972.</span>
                   </div>
                 )}
+
+                <input
+                  type="text"
+                  name="_gotcha"
+                  value={formData._gotcha || ''}
+                  onChange={handleChange}
+                  style={{ display: 'none' }}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
 
                 <Button 
                   type="submit" 
