@@ -104,6 +104,15 @@ const AutoCarousel = ({
     return () => io.disconnect();
   }, [kick]);
 
+  // ⚡ Bolt: Explicitly preload the next image to prevent all hidden slides from
+  // fetching simultaneously when intersecting the viewport.
+  useEffect(() => {
+    if (count <= 1) return;
+    const nextIdx = (index + 1) % count;
+    const img = new window.Image();
+    img.src = toMedium(slides[nextIdx].src);
+  }, [index, count, slides]);
+
   // The auto-advance timer. `index` in the deps restarts the countdown after
   // every advance (auto, kick, arrows, or swipe) so the cadence stays even.
   useEffect(() => {
@@ -142,12 +151,16 @@ const AutoCarousel = ({
               i === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
-            <img
-              src={toMedium(slide.src)}
-              alt={[slide.title, slide.caption].filter(Boolean).join(' — ') || 'Project photo'}
-              loading={i === 0 ? 'eager' : 'lazy'}
-              className="h-full w-full object-cover"
-            />
+            {/* ⚡ Bolt: Only mount images for current and adjacent slides to prevent
+                the browser from downloading all absolutely positioned slides at once. */}
+            {(i === index || i === (index + 1) % count || i === (index - 1 + count) % count) && (
+              <img
+                src={toMedium(slide.src)}
+                alt={[slide.title, slide.caption].filter(Boolean).join(' — ') || 'Project photo'}
+                loading={i === 0 ? 'eager' : undefined}
+                className="h-full w-full object-cover"
+              />
+            )}
             {(slide.title || slide.caption) && (
               <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4 md:p-6 text-left">
                 {slide.title && (
