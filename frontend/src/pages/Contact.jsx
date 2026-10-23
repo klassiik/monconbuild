@@ -256,6 +256,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    maxLength={100} // Security: limit input length to prevent DoS via large payloads
                     className="mt-2"
                     placeholder="John Smith"
                   />
@@ -275,6 +276,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      maxLength={150} // Security: limit input length
                       className="mt-2"
                       placeholder="john@example.com"
                     />
@@ -293,6 +295,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
+                      maxLength={20} // Security: limit input length
                       className="mt-2"
                       placeholder="(916) 555-0123"
                     />
@@ -336,6 +339,7 @@ const Contact = () => {
                     value={formData.location}
                     onChange={handleChange}
                     required
+                    maxLength={150} // Security: limit input length
                     className="mt-2"
                     placeholder="Street address or general area"
                   />
@@ -451,6 +455,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    maxLength={2000} // Security: limit input length to prevent abuse
                     className="mt-2 min-h-32"
                     placeholder="Please describe your project, including scope, budget considerations, and any specific requirements..."
                   />
