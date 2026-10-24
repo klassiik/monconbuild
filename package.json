@@ -20,11 +20,6 @@
     "url": "https://github.com/klassiik/monconbuild/issues"
   },
   "homepage": "https://github.com/klassiik/monconbuild#readme",
-  "dependencies": {
-    "chrome-launcher": "^1.2.1",
-    "commander": "^14.0.1",
-    "lighthouse": "^12.6.1"
-  },
   "devDependencies": {
     "baseline-browser-mapping": "^2.11.0",
     "sharp": "^0.35.5"
